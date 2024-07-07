@@ -14,10 +14,9 @@
     </head>
     <body>
         <!-- Navigation Bar -->
-        <header>
+        <header id="headerAll">
             <a href="">WebJa</a>
-
-            <ul>
+            <ul id="headerList">
                 <li><a href="">HTML</a></li>
                 <li><a href="">CSS</a></li>
                 <li><a href="">JS</a></li>
@@ -25,15 +24,17 @@
                 <li><a href="">JSX</a></li>
             </ul>
 
-            <button>Contact</button>
+            <button id="headerButton"><a href="">Conatact</a></button>
+
+            <button id="hamBurgerButton" onclick="makeHeader()"><img src="/UI/icon/image.png" width="25px" alt=""></button>
         </header>
-        <div class="caret">
+        <div class="caret" id="carati">
             <div class="place">
-                <button><img src="/UI/icon/caret-right-outline-icon.png"  alt="" width="18px"></button>
+                <button onclick="caretSideBar()"><img src="/UI/icon/caret-right-outline-icon.png"  alt="" width="18px"></button>
             </div>
         </div>
 
-        <div class="wrapper">
+        <div class="wrapper" id="wrapi">
             <div class="sidebar">
                 <h3>SideBar Content</h3>
                 <a href="">Topics 1</a>
@@ -101,6 +102,6 @@
         <footer>
 
         </footer>
-        <script src="" async defer></script>
+        <script src="UICSS.js" ></script>
     </body>
 </html>

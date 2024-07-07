@@ -3,12 +3,14 @@ body
     background-color: white;
     height: 100vh;
     margin: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 
+/* Header Section */
 header
 {
     display: flex;
-    height: 10vh;
+    height: min(10vw,80px);
     width: 100%;
     background-color: rgb(79, 79, 79);
     justify-content: space-between;
@@ -22,7 +24,7 @@ header
 header a
 {   
     font-size: max(2vw,20px);
-    padding-left: 2vw;
+    margin-left: 2vw;
     color: cornsilk;
     text-decoration: none;
 
@@ -46,16 +48,41 @@ header ul li a:hover
     color: rgb(0, 200, 255);
 }
 
-.wrapper{
+#headerButton
+{   
+    border: none;   
+    border-radius: 10px;
+    margin-right: 2vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(rgb(221, 221, 221),rgb(208, 208, 208),rgb(170, 170, 170),rgb(180, 180, 180));
+    
+}
+#headerButton:hover
+{
+    scale: 1.1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    /* background-color: rgb(79, 79, 79); */
+    background-image: linear-gradient(rgb(79, 79, 79),rgb(131, 130, 130));
+}
+#headerButton a
+{   
+    text-decoration: none;
+    text-align: center;
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* SlideBar Section */
+#wrapi{
     /* margin-top: 10vh; */
-    width: 12vw;
+    width: max(12vw,150px);
     display: flex;
     flex-direction: column;
     transition: .3s ease-in;
-    left: -10px;
+    /* position: absolute;
+    left: -10px; */
 }
-.wrapper:hover{
-    /* scale: 1.01; */
+#wrapi:hover{
     left: 0px;
 }
 
@@ -79,6 +106,14 @@ header ul li a:hover
     margin: 2px;
     text-align: center;
 }
+.sidebar a:hover
+{
+    scale: 1.1;
+}
+.sidebar h3{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
 .sidebar a:hover{
     color: rgb(80, 51, 7);
     background-color:rgb(46, 249, 225);
@@ -93,20 +128,53 @@ header ul li a:hover
     {
         display: none;
     }
-    header button{
+    #headerButton{
         display: none;
     }
     header{
         margin: auto;
     }
+    header a{
+        font-size: max(2vw,30px);
+        margin-left: 2vw;
+    }
+    #hamBurgerButton{
+        height: 40px;
+        width: 40px;
+        margin-right: 2vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        background-image: linear-gradient(rgb(221, 221, 221),rgb(208, 208, 208),rgb(170, 170, 170),rgb(180, 180, 180));
+        border-radius: 5px;
+    }
+    #hamBurgerButton:hover
+    {
+        scale: 1.05;
+    }
+    
+
 
 }
+
+@media(min-width:501px)
+{
+    #hamBurgerButton{
+        display: none;
+        
+    }
+    
+}
+
 
 
 @media(max-width:900px)
 {
-    .wrapper{
-        display: none;
+    #wrapi{
+        display:none;
     }
 }
 
@@ -121,9 +189,9 @@ header ul li a:hover
 {   
     position: absolute;
     top:40vh;
-    left: -15px;
+    left: -10px;
     height: 200px;
-    width: 25px;
+    width: 20px;
     background-color:rgb(158, 158, 158);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -144,3 +212,5 @@ header ul li a:hover
     background-color: inherit;
     border: none;
 }
+
+
