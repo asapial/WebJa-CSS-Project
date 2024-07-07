@@ -1,16 +1,14 @@
-body
-{
+body {
     background-color: white;
     height: 100vh;
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* Header Section */
-header
-{
+/* #headerAll Section */
+#headerAll {
     display: flex;
-    height: min(10vw,80px);
+    height: min(10vw, 80px);
     width: 100%;
     background-color: rgb(79, 79, 79);
     justify-content: space-between;
@@ -21,51 +19,49 @@ header
     z-index: 1000;
 }
 
-header a
-{   
-    font-size: max(2vw,20px);
+#headerAll a {
+    font-size: max(2vw, 20px);
     margin-left: 2vw;
     color: cornsilk;
     text-decoration: none;
-
 }
-header a:hover
-{
+
+#headerAll a:hover {
     scale: 1.1;
     color: rgb(0, 200, 255);
 }
 
-header ul{
+#headerAll ul {
     padding-top: 2vw;
 }
-header ul li{
+
+#headerLI {
     display: inline-flex;
     padding-bottom: 2vw;
 }
-header ul li a:hover
-{
+
+#headerLI a:hover {
     scale: 1.1;
     color: rgb(0, 200, 255);
 }
 
-#headerButton
-{   
-    border: none;   
+#headerButton {
+    border: none;
     border-radius: 10px;
     margin-right: 2vw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    background-image: linear-gradient(rgb(221, 221, 221),rgb(208, 208, 208),rgb(170, 170, 170),rgb(180, 180, 180));
-    
+    background-image: linear-gradient(rgb(221, 221, 221), rgb(208, 208, 208), rgb(170, 170, 170), rgb(180, 180, 180));
+
 }
-#headerButton:hover
-{
+
+#headerButton:hover {
     scale: 1.1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
     /* background-color: rgb(79, 79, 79); */
-    background-image: linear-gradient(rgb(79, 79, 79),rgb(131, 130, 130));
+    background-image: linear-gradient(rgb(79, 79, 79), rgb(131, 130, 130));
 }
-#headerButton a
-{   
+
+#headerButton a {
     text-decoration: none;
     text-align: center;
     margin: auto;
@@ -73,21 +69,21 @@ header ul li a:hover
 }
 
 /* SlideBar Section */
-#wrapi{
+#wrapi {
     /* margin-top: 10vh; */
-    width: max(12vw,150px);
+    width: max(12vw, 150px);
     display: flex;
     flex-direction: column;
     transition: .3s ease-in;
     /* position: absolute;
     left: -10px; */
 }
-#wrapi:hover{
+
+#wrapi:hover {
     left: 0px;
 }
 
-.sidebar
-{   
+.sidebar {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -97,48 +93,93 @@ header ul li a:hover
     background-color: black;
 }
 
-.sidebar a{
+.sidebar a {
     width: 100%;
     background-color: gray;
     color: cornsilk;
-    text-decoration: none; 
+    text-decoration: none;
     padding-bottom: 1px;
     margin: 2px;
     text-align: center;
 }
-.sidebar a:hover
-{
+
+.sidebar a:hover {
     scale: 1.1;
 }
-.sidebar h3{
+
+.sidebar h3 {
     color: white;
     font-family: 'Times New Roman', Times, serif;
 }
-.sidebar a:hover{
+
+.sidebar a:hover {
     color: rgb(80, 51, 7);
-    background-color:rgb(46, 249, 225);
+    background-color: rgb(46, 249, 225);
 }
-.sidebar h3{
+
+.sidebar h3 {
     text-align: center;
 }
 
-@media(max-width:500px)
-{
-    header ul
-    {
-        display: none;
+@media(max-width:500px) {
+
+    #header500 {
+        padding-top: 10px;
+        display: flex;
+        height: 200px;
+        width: 100%;
+        background-color: rgb(79, 79, 79);
+        font-family: 'Times New Roman', Times, serif;
+        border-bottom: 2px solid rgb(46, 46, 46);
+        position: relative;
+        z-index: 1000;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
-    #headerButton{
-        display: none;
-    }
-    header{
-        margin: auto;
-    }
-    header a{
-        font-size: max(2vw,30px);
+
+    #header500Button {
+        border: none;
+        border-radius: 10px;
         margin-left: 2vw;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        background-image: linear-gradient(rgb(221, 221, 221), rgb(208, 208, 208), rgb(170, 170, 170), rgb(180, 180, 180));
+
     }
-    #hamBurgerButton{
+
+    #header500Button:hover {
+        scale: 1.1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        /* background-color: rgb(79, 79, 79); */
+        background-image: linear-gradient(rgb(79, 79, 79), rgb(131, 130, 130));
+    }
+
+    #header500 {
+        display: none;
+    }
+
+    #headerLI {
+        display: none;
+    }
+
+    #headerButton {
+        display: none;
+    }
+
+    #header500 a {
+        font-size: 5vw;
+        margin-left: 2vw;
+        color: cornsilk;
+        text-decoration: none;
+
+    }
+
+    #header500 a:hover {
+        scale: 1.1;
+        color: rgb(0, 200, 255);
+    }
+
+    #hamBurgerButton {
         height: 40px;
         width: 40px;
         margin-right: 2vh;
@@ -148,51 +189,50 @@ header ul li a:hover
         align-items: center;
         border: none;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        background-image: linear-gradient(rgb(221, 221, 221),rgb(208, 208, 208),rgb(170, 170, 170),rgb(180, 180, 180));
+        background-image: linear-gradient(rgb(221, 221, 221), rgb(208, 208, 208), rgb(170, 170, 170), rgb(180, 180, 180));
         border-radius: 5px;
     }
-    #hamBurgerButton:hover
-    {
+
+    #hamBurgerButton:hover {
         scale: 1.05;
     }
-    
+
 
 
 }
 
-@media(min-width:501px)
-{
-    #hamBurgerButton{
+@media(min-width:501px) {
+    #hamBurgerButton {
         display: none;
-        
+
     }
-    
-}
 
-
-
-@media(max-width:900px)
-{
-    #wrapi{
-        display:none;
-    }
-}
-
-@media(min-width:900px)
-{
-    .caret{
+    #header500 {
         display: none;
     }
 }
 
-.place
-{   
+
+
+@media(max-width:900px) {
+    #wrapi {
+        display: none;
+    }
+}
+
+@media(min-width:900px) {
+    .caret {
+        display: none;
+    }
+}
+
+.place {
     position: absolute;
-    top:40vh;
+    top: 40vh;
     left: -10px;
     height: 200px;
     width: 20px;
-    background-color:rgb(158, 158, 158);
+    background-color: rgb(158, 158, 158);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     transition: .5s ease-out;
@@ -202,15 +242,12 @@ header ul li a:hover
     align-items: end;
 }
 
-.place:hover
-{   
+.place:hover {
     left: 0px;
     scale: 1.05;
 }
 
-.place button{
+.place button {
     background-color: inherit;
     border: none;
 }
-
-
