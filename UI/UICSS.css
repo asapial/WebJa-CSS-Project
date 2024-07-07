@@ -1,0 +1,146 @@
+body
+{
+    background-color: white;
+    height: 100vh;
+    margin: 0;
+}
+
+header
+{
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(79, 79, 79);
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 2px solid rgb(46, 46, 46);
+    position: relative;
+    z-index: 1000;
+}
+
+header a
+{   
+    font-size: max(2vw,20px);
+    padding-left: 2vw;
+    color: cornsilk;
+    text-decoration: none;
+
+}
+header a:hover
+{
+    scale: 1.1;
+    color: rgb(0, 200, 255);
+}
+
+header ul{
+    padding-top: 2vw;
+}
+header ul li{
+    display: inline-flex;
+    padding-bottom: 2vw;
+}
+header ul li a:hover
+{
+    scale: 1.1;
+    color: rgb(0, 200, 255);
+}
+
+.wrapper{
+    /* margin-top: 10vh; */
+    width: 12vw;
+    display: flex;
+    flex-direction: column;
+    transition: .3s ease-in;
+    left: -10px;
+}
+.wrapper:hover{
+    /* scale: 1.01; */
+    left: 0px;
+}
+
+.sidebar
+{   
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+.sidebar a{
+    width: 100%;
+    background-color: gray;
+    color: cornsilk;
+    text-decoration: none; 
+    padding-bottom: 1px;
+    margin: 2px;
+    text-align: center;
+}
+.sidebar a:hover{
+    color: rgb(80, 51, 7);
+    background-color:rgb(46, 249, 225);
+}
+.sidebar h3{
+    text-align: center;
+}
+
+@media(max-width:500px)
+{
+    header ul
+    {
+        display: none;
+    }
+    header button{
+        display: none;
+    }
+    header{
+        margin: auto;
+    }
+
+}
+
+
+@media(max-width:900px)
+{
+    .wrapper{
+        display: none;
+    }
+}
+
+@media(min-width:900px)
+{
+    .caret{
+        display: none;
+    }
+}
+
+.place
+{   
+    position: absolute;
+    top:40vh;
+    left: -15px;
+    height: 200px;
+    width: 25px;
+    background-color:rgb(158, 158, 158);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: .5s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+}
+
+.place:hover
+{   
+    left: 0px;
+    scale: 1.05;
+}
+
+.place button{
+    background-color: inherit;
+    border: none;
+}

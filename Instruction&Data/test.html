@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Image Width Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .main-container {
+            width: 80%;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h2 {
+            margin: 0;
+            padding-bottom: 10px;
+        }
+        .example-number {
+            border: 10px solid transparent;
+            border-image: url('/Picture/pattern.jpg') 30 round;
+            border-image-width: 30px;
+        }
+        .example-percentage {
+            border: 10px solid transparent;
+            border-image: url('/Picture/pattern.jpg') 30 round;
+            border-image-width: 20%;
+        }
+        .example-auto {
+            border: 10px solid transparent;
+            border-image: url('/Picture/pattern.jpg') 30 round;
+            border-image-width: auto;
+        }
+        .example-inherit {
+            border: 10px solid transparent;
+            border-image: url('/Picture/pattern.jpg') 30 round;
+            border-image-width: inherit;
+        }
+    </style>
+</head>
+<body>
+    <a href="/Learning Topics/"></a>
+    <div class="main-container">
+        <h1>border-image-width</h1>
+        <div class="sub-container example-number">
+            <h2>Number Value</h2>
+            <p>border-image-width: 30px;</p>
+        </div>
+        <div class="sub-container example-percentage">
+            <h2>Percentage Value</h2>
+            <p>border-image-width: 20%;</p>
+        </div>
+        <div class="sub-container example-auto">
+            <h2>Auto Value</h2>
+            <p>border-image-width: auto;</p>
+        </div>
+        <div class="sub-container example-inherit">
+            <h2>Inherit Value</h2>
+            <p>border-image-width: inherit;</p>
+        </div>
+    </div>
+</body>
+</html>

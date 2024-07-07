@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium UI</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="content1"></div>
+
+        <!-- Main Content -->
+        <div class="content">
+             <!-- Content Load -->
+            <div id="content2"></div>
+            <h1>Welcome to the Premium UI</h1>
+            <p>This is the main content area. You can add any content here.</p>
+        </div>
+    </div>
+
+    <script>
+        function loadHTMLContent(url, elementId) {
+          fetch(url)
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById(elementId).innerHTML = data;
+            })
+            .catch((error) =>
+              console.error("Error loading HTML content:", error)
+            );
+        }
+  
+        loadHTMLContent("UI.html", "content1");
+        loadHTMLContent("/Learning Topics/1. align-content.html", "content2");
+        // loadHTMLContent('5_experienceFeature.html', 'content3');
+        // loadHTMLContent('4_sideBar.html', 'content4');
+        // loadHTMLContent('file5.html', 'content5');
+        // const link='<a onclick=&quot;makeExperience(1)&quot;>LiveIt</a>'
+        // function loadFooter(link) {
+        //   document.getElementById("footer").innerHTML = link;
+        // }
+      </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+Answer Format:
+1. Give the definition of this CSS property named the header section "Definition"
+2. Give all possible values and description in tabular form named the header section "Values"
+3. Give example data for possible values in css style and comment beside the value named the header section "Example"
+4. Give details description of this CSS property and how it can be implemented named the header section "Description"
+5. Give those property names and difference with this property in tabular form named the header section "All Most Simillar Properties" like this
+Property| Description| Difference
+6. Give a list which browser supports this property in tabular form named the header section "Browser Compatibility"
+7. Give an example which contains all the values of this property with premium UI named the header section "Example Code"
+Example Description:
+    -> Create the example with all possible values of this property
+    -> Give a header which values are used for that property
+    -> Keep the main container whitish and make the others component colourful
+    -> Make a container with shadow so that it looked premium UI

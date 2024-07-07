@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium UI</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color-dark: #343a40;
+            --text-color-dark: white;
+            --sidebar-bg-color-dark: #343a40;
+            --sidebar-text-color-dark: white;
+            --sidebar-hover-color-dark: #495057;
+
+            --bg-color-light: #f8f9fa;
+            --text-color-light: #343a40;
+            --sidebar-bg-color-light: #e9ecef;
+            --sidebar-text-color-light: #343a40;
+            --sidebar-hover-color-light: #ced4da;
+        }
+
+        body.theme-dark,
+        .navbar.theme-dark,
+        .content.theme-dark {
+            background-color: var(--bg-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        .sidebar.theme-dark {
+            background-color: var(--sidebar-bg-color-dark);
+            color: var(--sidebar-text-color-dark);
+        }
+
+        .sidebar.theme-dark a {
+            color: var(--sidebar-text-color-dark);
+        }
+
+        .sidebar.theme-dark a:hover {
+            background-color: var(--sidebar-hover-color-dark);
+        }
+
+        body.theme-light,
+        .navbar.theme-light,
+        .content.theme-light {
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+        }
+
+        .sidebar.theme-light {
+            background-color: var(--sidebar-bg-color-light);
+            color: var(--sidebar-text-color-light);
+        }
+
+        .sidebar.theme-light a {
+            color: var(--sidebar-text-color-light);
+        }
+
+        .sidebar.theme-light a:hover {
+            background-color: var(--sidebar-hover-color-light);
+        }
+
+        .wrapper {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        .content {
+            flex: 1;
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        .navbar {
+            color: white;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .navbar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="theme-dark">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark theme-dark">
+        <a class="navbar-brand" href="#">
+            <h1>WebJa</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">
+                        Theme: 
+                        <input type="range" id="themeSlider" min="1" max="2" step="1" value="1">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="wrapper">
+        <div class="sidebar theme-dark">
+            <h2>CSS Topics</h2>
+            <a href="#">Topic 1</a>
+            <a href="#">Topic 2</a>
+            <a href="#">Topic 3</a>
+            <a href="#">Topic 4</a>
+            <a href="#">Topic 5</a>
+            <a href="#">Topic 6</a>
+            <a href="#">Topic 7</a>
+            <a href="#">Topic 8</a>
+            <a href="#">Topic 9</a>
+            <a href="#">Topic 10</a>
+            <a href="#">Topic 11</a>
+            <a href="#">Topic 12</a>
+            <a href="#">Topic 13</a>
+            <a href="#">Topic 14</a>
+            <a href="#">Topic 15</a>
+            <a href="#">Topic 16</a>
+            <a href="#">Topic 17</a>
+            <a href="#">Topic 18</a>
+            <a href="#">Topic 19</a>
+            <a href="#">Topic 20</a>
+            <a href="#">Topic 21</a>
+            <a href="#">Topic 22</a>
+            <a href="#">Topic 23</a>
+            <a href="#">Topic 24</a>
+            <a href="#">Topic 25</a>
+            <a href="#">Topic 26</a>
+            <a href="#">Topic 27</a>
+            <a href="#">Topic 28</a>
+            <a href="#">Topic 29</a>
+            <a href="#">Topic 30</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content theme-dark">
+            <h1>Welcome to the Premium UI</h1>
+            <p>This is the main content area. You can add any content here.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('themeSlider').addEventListener('input', function () {
+            const theme = this.value === '1' ? 'theme-dark' : 'theme-light';
+            document.body.className = theme;
+            document.querySelector('.navbar').className = 'navbar navbar-expand-lg ' + (theme === 'theme-dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-light') + ' ' + theme;
+            document.querySelector('.sidebar').className = 'sidebar ' + theme;
+            document.querySelector('.content').className = 'content ' + theme;
+        });
+    </script>
+</body>
+
+</html>

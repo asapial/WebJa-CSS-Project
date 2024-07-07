@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium UI</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .wrapper {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #343a40;
+            color: white;
+            height: 100vh;
+            /* position: fixed;
+            overflow-y: auto;
+            margin-top: 13vh; */
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            
+        }
+
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+
+        .content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .navbar {
+            background-color: #343a40;
+            color: white;
+            /* position: fixed;
+            width: 100%;
+            z-index: 1000; */
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .navbar {
+                width: 100%;
+            }
+            h3{
+                text-align: center;
+            }
+            a {
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><h1>WebJa</h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Content Load -->
+    <!-- Sidebar -->
+    <div class="wrapper">
+        <div class="sidebar">
+            <h3>CSS Topics</h3>
+            <!-- <a href="#" onclick="loadHTMLContent("/Learning Topics/1. align-content.html", 'content2');  return false;">align-content</a>
+<a href="#" onclick="loadHTMLContent("/Learning Topics/2. align-items.html", 'content2');  return false;">align-items</a>
+<a href="#" onclick="loadHTMLContent("/Learning Topics/3. align-self.html", 'content2');  return false;">align-self</a>
+<a href="#" onclick="loadHTMLContent("/Learning Topics/4. all.html", 'content2');  return false;">all</a>
+<a href="#" onclick="loadHTMLContent("/Learning Topics/5. animation.html", 'content2');  return false;">animation</a>
+<a href="#" onclick="loadHTMLContent("/Learning Topics/6. animation-delay.html", 'content2');  return false;">animation-delay</a> -->
+            <a href="/Learning Topics/1. align-content.html">Topic 1</a>
+            <a href="#">Topic 2</a>
+            <a href="#">Topic 3</a>
+            <a href="#">Topic 4</a>
+            <a href="#">Topic 5</a>
+            <a href="#">Topic 6</a>
+            <a href="#">Topic 7</a>
+            <a href="#">Topic 8</a>
+            <a href="#">Topic 9</a>
+            <a href="#">Topic 10</a>
+            <a href="#">Topic 11</a>
+            <a href="#">Topic 12</a>
+            <a href="#">Topic 13</a>
+            <a href="#">Topic 14</a>
+            <a href="#">Topic 15</a>
+            <a href="#">Topic 16</a>
+            <a href="#">Topic 17</a>
+            <a href="#">Topic 18</a>
+            <a href="#">Topic 19</a>
+            <a href="#">Topic 20</a>
+            <a href="#">Topic 21</a>
+            <a href="#">Topic 22</a>
+            <a href="#">Topic 23</a>
+            <a href="#">Topic 24</a>
+            <a href="#">Topic 25</a>
+            <a href="#">Topic 26</a>
+            <a href="#">Topic 27</a>
+            <a href="#">Topic 28</a>
+            <a href="#">Topic 29</a>
+            <a href="#">Topic 30</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <h1>Welcome to the Premium UI</h1>
+            <p>This is the main content area. You can add any content here.</p>
+        </div>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
