@@ -1,0 +1,167 @@
+## Definition
+The `border-top-width` CSS property sets the width of the top border of an element.
+
+## Values
+
+| Value     | Description                                                      |
+|-----------|------------------------------------------------------------------|
+| `<length>`| Specifies the width in units such as `px`, `em`, `rem`, etc.     |
+| `thin`    | A thin border width.                                             |
+| `medium`  | A medium border width (default).                                 |
+| `thick`   | A thick border width.                                            |
+| `initial` | Sets the property to its default value.                          |
+| `inherit` | Inherits the property from its parent element.                   |
+
+## Example
+
+```css
+/* length value */
+.element1 {
+  border-top-width: 10px; /* 10px width */
+}
+
+/* thin */
+.element2 {
+  border-top-width: thin; /* thin width */
+}
+
+/* medium */
+.element3 {
+  border-top-width: medium; /* medium width */
+}
+
+/* thick */
+.element4 {
+  border-top-width: thick; /* thick width */
+}
+
+/* initial */
+.element5 {
+  border-top-width: initial; /* initial value */
+}
+
+/* inherit */
+.element6 {
+  border-top-width: inherit; /* inherits from parent */
+}
+```
+
+## Description
+The `border-top-width` property allows you to specify the thickness of the top border of an element. It can be set using specific length values (such as pixels, ems, etc.) or predefined keywords like `thin`, `medium`, and `thick`. This property is often used in combination with other border properties like `border-top-style` and `border-top-color` to create a complete border for the top side of an element.
+
+## All Most Similar Properties
+
+| Property             | Description                                                      | Difference                                                   |
+|----------------------|------------------------------------------------------------------|--------------------------------------------------------------|
+| `border-right-width` | Sets the width of the right border.                              | Applies to the right border instead of the top.              |
+| `border-bottom-width`| Sets the width of the bottom border.                             | Applies to the bottom border instead of the top.             |
+| `border-left-width`  | Sets the width of the left border.                               | Applies to the left border instead of the top.               |
+| `border-width`       | Shorthand for setting the width of all four borders.             | Sets all four borders, not just the top border.              |
+
+## Browser Compatibility
+
+| Browser           | Supported Versions |
+|-------------------|--------------------|
+| Chrome            | Yes                |
+| Firefox           | Yes                |
+| Safari            | Yes                |
+| Edge              | Yes                |
+| Internet Explorer | Yes                |
+| Opera             | Yes                |
+
+## In JavaScript
+
+```js
+element.style.borderTopWidth = '10px'; // Setting the border-top-width to 10px
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Top Width Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+    }
+    .element1, .element2, .element3, .element4, .element5, .element6 {
+      margin: 10px 0;
+      padding: 20px;
+      background-color: #ff9999;
+      border-top-style: solid;
+    }
+    .element1 {
+      border-top-width: 10px;
+    }
+    .element2 {
+      border-top-width: thin;
+    }
+    .element3 {
+      border-top-width: medium;
+    }
+    .element4 {
+      border-top-width: thick;
+    }
+    .element5 {
+      border-top-width: initial;
+    }
+    .element6 {
+      border-top-width: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Values of border-top-width</h1>
+    <div class="sub-container">
+      <h2>10px</h2>
+      <div class="element1">border-top-width: 10px;</div>
+    </div>
+    <div class="sub-container">
+      <h2>thin</h2>
+      <div class="element2">border-top-width: thin;</div>
+    </div>
+    <div class="sub-container">
+      <h2>medium</h2>
+      <div class="element3">border-top-width: medium;</div>
+    </div>
+    <div class="sub-container">
+      <h2>thick</h2>
+      <div class="element4">border-top-width: thick;</div>
+    </div>
+    <div class="sub-container">
+      <h2>initial</h2>
+      <div class="element5">border-top-width: initial;</div>
+    </div>
+    <div class="sub-container">
+      <h2>inherit</h2>
+      <div class="element6">border-top-width: inherit;</div>
+    </div>
+  </div>
+</body>
+</html>
+```

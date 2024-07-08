@@ -1,0 +1,115 @@
+### Definition
+The `break-inside` CSS property specifies how page, column, or region breaks should behave inside a specified element.
+
+### Values
+| Value        | Description                                                      |
+|--------------|------------------------------------------------------------------|
+| `auto`       | Default. Neither force nor forbid a break inside the element.    |
+| `avoid`      | Avoid any break inside the element.                              |
+| `avoid-page` | Avoid a page break inside the element.                           |
+| `avoid-column` | Avoid a column break inside the element.                       |
+| `avoid-region` | Avoid a region break inside the element.                       |
+
+### Example
+```css
+/* Example data for possible values */
+.element {
+  break-inside: auto; /* No forced break */
+  break-inside: avoid; /* Avoid break inside */
+  break-inside: avoid-page; /* Avoid page break inside */
+  break-inside: avoid-column; /* Avoid column break inside */
+  break-inside: avoid-region; /* Avoid region break inside */
+}
+```
+
+### Description
+The `break-inside` property is used to control page, column, or region breaks inside an element. This property is particularly useful in paged media, such as printed documents, or multi-column layouts. By setting this property, you can prevent content from breaking within an element, which helps to maintain the visual integrity of the content.
+
+### All Most Similar Properties
+| Property       | Description                                                        | Difference                                                       |
+|----------------|--------------------------------------------------------------------|------------------------------------------------------------------|
+| `break-before` | Specifies a break before the element.                              | Affects breaks before the element instead of inside.             |
+| `break-after`  | Specifies a break after the element.                               | Affects breaks after the element instead of inside.              |
+| `page-break-inside` | Specifies a page break inside the element (deprecated).        | Similar to `break-inside` but only affects page breaks.          |
+| `column-break-inside` | Specifies a column break inside the element (deprecated).    | Similar to `break-inside` but only affects column breaks.        |
+
+### Browser Compatibility
+| Browser           | Supported Versions        |
+|-------------------|---------------------------|
+| Chrome            | 50+                       |
+| Firefox           | 65+                       |
+| Edge              | 12+                       |
+| Safari            | 10.1+                     |
+| Opera             | 37+                       |
+
+### In JavaScript
+```javascript
+// Example of using break-inside property in JavaScript
+element.style.breakInside = "avoid"; // Avoid break inside the element
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      height: 100vh;
+      margin: 0;
+    }
+    .main-container {
+      background-color: #fff;
+      width: 80%;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      margin: 0;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">CSS `break-inside` Property Values</h1>
+    <div class="sub-container">
+      <h2>auto</h2>
+      <div style="break-inside: auto;">Content with auto value</div>
+    </div>
+    <div class="sub-container">
+      <h2>avoid</h2>
+      <div style="break-inside: avoid;">Content with avoid value</div>
+    </div>
+    <div class="sub-container">
+      <h2>avoid-page</h2>
+      <div style="break-inside: avoid-page;">Content with avoid-page value</div>
+    </div>
+    <div class="sub-container">
+      <h2>avoid-column</h2>
+      <div style="break-inside: avoid-column;">Content with avoid-column value</div>
+    </div>
+    <div class="sub-container">
+      <h2>avoid-region</h2>
+      <div style="break-inside: avoid-region;">Content with avoid-region value</div>
+    </div>
+  </div>
+</body>
+</html>
+```

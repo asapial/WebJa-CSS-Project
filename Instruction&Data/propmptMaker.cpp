@@ -30,10 +30,11 @@ for(int i=num-1;i<500;i++)
     cout<<"1. Give the definition of this CSS property named the header section \"Definition\" "<<endl;
     cout<<"2. Give all possible values and description in tabular form named the header section \"Values\" "<<endl;
     cout<<"3. Give example data for possible values in css style and comment beside the value named the header section \"Example\" "<<endl;
-    cout<<"4. Give details description of this CSS property named the header section \"Description\" "<<endl;
+    cout<<"4. Give details description of this CSS property how it can be implemented named the header section \"Description\" "<<endl;
     cout<<"5. Give those property names and difference with this property in tabular form named the header section \"All Most Simillar Properties\" like this |Property| Description| Difference"<<endl;
     cout<<"6. Give a list which browser supports this property in tabular form named the header section \"Browser Compatibility\" "<<endl;
-    cout<<"7. Give an example which contains all the values of this property with premium UI named the header section \"Example Code\" "<<endl;
+    cout<<"7. How it can be used in JavaScript in js style named the header section \"In JavaScript\" "<<endl;
+    cout<<"8. Give an example which contains all the values of this property with premium UI named the header section \"Example Code\" "<<endl;
     cout<<"Example Description:"<<endl;
     cout<<"\t -> Create the example with all possible values of this property "<<endl;
     cout<<"\t -> Give a header which values are used for that property and make this centerly aligned "<<endl;

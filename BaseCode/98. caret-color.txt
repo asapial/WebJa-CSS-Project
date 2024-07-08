@@ -1,0 +1,108 @@
+### Definition
+The `caret-color` CSS property sets the color of the text input caret (blinking cursor) within an element that accepts text input.
+
+### Values
+| Value    | Description                                      |
+|----------|--------------------------------------------------|
+| `auto`   | Default. The browser chooses the caret color.    |
+| `<color>`| Specifies the color of the caret.                |
+| `transparent` | Makes the caret invisible.                  |
+
+### Example
+```css
+/* Example data for possible values */
+input {
+  caret-color: auto; /* Default caret color */
+  caret-color: red; /* Red caret color */
+  caret-color: transparent; /* Invisible caret */
+}
+```
+
+### Description
+The `caret-color` property allows you to change the color of the text input caret in an element that accepts text input, such as `<input>` and `<textarea>`. This can be particularly useful for improving accessibility and for matching the caret color to a custom theme or design.
+
+### All Most Similar Properties
+| Property      | Description                                            | Difference                              |
+|---------------|--------------------------------------------------------|-----------------------------------------|
+| `color`       | Sets the color of the text inside an element.          | Affects text color, not caret color.    |
+| `background-color` | Sets the background color of an element.         | Affects background, not caret color.    |
+
+### Browser Compatibility
+| Browser        | Supported Versions |
+|----------------|--------------------|
+| Chrome         | 57+                |
+| Firefox        | 53+                |
+| Edge           | 79+                |
+| Safari         | 11.1+              |
+| Opera          | 44+                |
+
+### In JavaScript
+```javascript
+// Example of using caret-color property in JavaScript
+element.style.caretColor = "blue"; // Set caret color to blue
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      height: 100vh;
+      margin: 0;
+    }
+    .main-container {
+      background-color: #fff;
+      width: 80%;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+      text-align: center;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    h2 {
+      margin: 0;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">CSS `caret-color` Property Values</h1>
+    <div class="sub-container">
+      <h2>auto</h2>
+      <input type="text" style="caret-color: auto;" placeholder="Caret color auto">
+    </div>
+    <div class="sub-container">
+      <h2>red</h2>
+      <input type="text" style="caret-color: red;" placeholder="Caret color red">
+    </div>
+    <div class="sub-container">
+      <h2>transparent</h2>
+      <input type="text" style="caret-color: transparent;" placeholder="Caret color transparent">
+    </div>
+  </div>
+</body>
+</html>
+```

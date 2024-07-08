@@ -24,7 +24,9 @@ int i=1;
 for(auto x:s)
 {   
     string link,topic;
-    link=x.substr(4,x.size()-5);
+    string len=to_string(i);
+    int sizi=len.size();
+    link=x.substr(sizi+3,x.size()-sizi-4);
     topic=link;
     link="/Learning Topics/"+to_string(i)+'.'+" "+link+'.'+"html";
     cout<<"<a href=\"#\" onclick=\"loadHTMLContent(\'"<<link<<"\', \'content2\');  return false;\">"<<topic<<"</a>"<<endl;

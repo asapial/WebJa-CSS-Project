@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Border Image Width Example</title>
+    <title>Border Right Example</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f8f9fa;
             margin: 0;
+            background-color: #f5f5f5;
         }
-        .main-container {
+        .container {
             width: 80%;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
             border-radius: 20px;
-            background-color: #fff;
+            background-color: white;
             padding: 20px;
             text-align: center;
         }
@@ -26,54 +25,132 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
             border-radius: 20px;
             background-color: #dcdbdb;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 10px auto;
+            padding: 10px;
+            text-align: left;
+        }
+        h1 {
+            text-align: center;
         }
         h2 {
-            margin: 0;
-            padding-bottom: 10px;
+            margin: 10px 0;
         }
-        .example-number {
-            border: 10px solid transparent;
-            border-image: url('/Picture/pattern.jpg') 30 round;
-            border-image-width: 30px;
+        .example1 {
+            border-right-width: thin;
         }
-        .example-percentage {
-            border: 10px solid transparent;
-            border-image: url('/Picture/pattern.jpg') 30 round;
-            border-image-width: 20%;
+        .example2 {
+            border-right-width: medium;
         }
-        .example-auto {
-            border: 10px solid transparent;
-            border-image: url('/Picture/pattern.jpg') 30 round;
-            border-image-width: auto;
+        .example3 {
+            border-right-width: thick;
         }
-        .example-inherit {
-            border: 10px solid transparent;
-            border-image: url('/Picture/pattern.jpg') 30 round;
-            border-image-width: inherit;
+        .example4 {
+            border-right-width: 10px;
+        }
+        .example5 {
+            border-right-style: none;
+        }
+        .example6 {
+            border-right-style: hidden;
+        }
+        .example7 {
+            border-right-style: dotted;
+        }
+        .example8 {
+            border-right-style: dashed;
+        }
+        .example9 {
+            border-right-style: solid;
+        }
+        .example10 {
+            border-right-style: double;
+        }
+        .example11 {
+            border-right-style: groove;
+        }
+        .example12 {
+            border-right-style: ridge;
+        }
+        .example13 {
+            border-right-style: inset;
+        }
+        .example14 {
+            border-right-style: outset;
+        }
+        .example15 {
+            order-right-style: solid;
+            border-right-color: red;
+        }
+        .example16 {
+            order-right-style: solid;
+            border-right-color: green;
+        }
+        .example17 {
+            order-right-style: solid;
+            border-right-color: blue;
+        }
+        .example18 {
+            order-right-style: solid;
+            border-right-color: #ff00ff;
         }
     </style>
 </head>
 <body>
-    <a href="/Learning Topics/"></a>
-    <div class="main-container">
-        <h1>border-image-width</h1>
-        <div class="sub-container example-number">
-            <h2>Number Value</h2>
-            <p>border-image-width: 30px;</p>
+    <div class="container">
+        <h1>Border Right Property Examples</h1>
+        <div class="sub-container example1">
+            <h2>border-right-width: thin</h2>
         </div>
-        <div class="sub-container example-percentage">
-            <h2>Percentage Value</h2>
-            <p>border-image-width: 20%;</p>
+        <div class="sub-container example2">
+            <h2>border-right-width: medium</h2>
         </div>
-        <div class="sub-container example-auto">
-            <h2>Auto Value</h2>
-            <p>border-image-width: auto;</p>
+        <div class="sub-container example3">
+            <h2>border-right-width: thick</h2>
         </div>
-        <div class="sub-container example-inherit">
-            <h2>Inherit Value</h2>
-            <p>border-image-width: inherit;</p>
+        <div class="sub-container example4">
+            <h2>border-right-width: 10px</h2>
+        </div>
+        <div class="sub-container example5">
+            <h2>border-right-style: none</h2>
+        </div>
+        <div class="sub-container example6">
+            <h2>border-right-style: hidden</h2>
+        </div>
+        <div class="sub-container example7">
+            <h2>border-right-style: dotted</h2>
+        </div>
+        <div class="sub-container example8">
+            <h2>border-right-style: dashed</h2>
+        </div>
+        <div class="sub-container example9">
+            <h2>border-right-style: solid</h2>
+        </div>
+        <div class="sub-container example10">
+            <h2>border-right-style: double</h2>
+        </div>
+        <div class="sub-container example11">
+            <h2>border-right-style: groove</h2>
+        </div>
+        <div class="sub-container example12">
+            <h2>border-right-style: ridge</h2>
+        </div>
+        <div class="sub-container example13">
+            <h2>border-right-style: inset</h2>
+        </div>
+        <div class="sub-container example14">
+            <h2>border-right-style: outset</h2>
+        </div>
+        <div class="sub-container example15">
+            <h2>border-right-color: red</h2>
+        </div>
+        <div class="sub-container example16">
+            <h2>border-right-color: green</h2>
+        </div>
+        <div class="sub-container example17">
+            <h2>border-right-color: blue</h2>
+        </div>
+        <div class="sub-container example18">
+            <h2>border-right-color: #ff00ff</h2>
         </div>
     </div>
 </body>

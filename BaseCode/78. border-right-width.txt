@@ -1,0 +1,135 @@
+## Definition
+The `border-right-width` CSS property sets the width of the right border of an element.
+
+## Values
+| Value         | Description                                           |
+|---------------|-------------------------------------------------------|
+| `thin`        | A thin border width.                                  |
+| `medium`      | A medium border width (default).                      |
+| `thick`       | A thick border width.                                 |
+| `<length>`    | A specific width, defined using length units (e.g., px, em, rem, etc.). |
+
+## Example
+```css
+element1 {
+  border-right-width: thin; /* thin */
+}
+
+element2 {
+  border-right-width: medium; /* medium */
+}
+
+element3 {
+  border-right-width: thick; /* thick */
+}
+
+element4 {
+  border-right-width: 5px; /* specific width in pixels */
+}
+
+element5 {
+  border-right-width: 0.5em; /* specific width in em units */
+}
+```
+
+## Description
+The `border-right-width` property allows you to define the width of the right border of an element. It can be set using predefined values like `thin`, `medium`, or `thick`, or with specific length units like `px`, `em`, `rem`, and others. This property is often used alongside `border-right-style` and `border-right-color` to fully style the right border of an element.
+
+## All Most Simillar Properties
+| Property             | Description                                           | Difference                                                                                 |
+|----------------------|-------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `border-width`       | Sets the width of all four borders.                   | `border-width` sets the width for all borders, while `border-right-width` sets only the right border width. |
+| `border-left-width`  | Sets the width of the left border.                    | `border-left-width` sets the left border width, `border-right-width` sets the right border width.             |
+| `border-top-width`   | Sets the width of the top border.                     | `border-top-width` sets the top border width, `border-right-width` sets the right border width.               |
+| `border-bottom-width`| Sets the width of the bottom border.                  | `border-bottom-width` sets the bottom border width, `border-right-width` sets the right border width.         |
+
+## Browser Compatibility
+| Browser    | Supported Version |
+|------------|-------------------|
+| Chrome     | All versions      |
+| Firefox    | All versions      |
+| Safari     | All versions      |
+| Edge       | All versions      |
+| Opera      | All versions      |
+
+## In JavaScript
+```js
+// Example of setting the border-right-width property in JavaScript
+document.getElementById("myElement").style.borderRightWidth = "5px";
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Right Width Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+    }
+    h2 {
+      margin: 0 0 10px;
+    }
+    .thin {
+      border-right: thin solid black;
+    }
+    .medium {
+      border-right: medium solid black;
+    }
+    .thick {
+      border-right: thick solid black;
+    }
+    .px {
+      border-right: 5px solid black;
+    }
+    .em {
+      border-right: 0.5em solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Border Right Width Values</h1>
+    <div class="sub-container thin">
+      <h2>thin</h2>
+    </div>
+    <div class="sub-container medium">
+      <h2>medium</h2>
+    </div>
+    <div class="sub-container thick">
+      <h2>thick</h2>
+    </div>
+    <div class="sub-container px">
+      <h2>5px</h2>
+    </div>
+    <div class="sub-container em">
+      <h2>0.5em</h2>
+    </div>
+  </div>
+</body>
+</html>
+```

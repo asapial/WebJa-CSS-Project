@@ -1,0 +1,144 @@
+## Definition
+The `box-decoration-break` CSS property specifies how the element's decorations (such as borders, background, and box-shadow) should behave when the element's box is fragmented due to being broken across lines, columns, or pages.
+
+## Values
+
+| Value     | Description                                                                 |
+|-----------|-----------------------------------------------------------------------------|
+| `slice`   | The box decorations are applied to each fragment of the element as if the element were not fragmented. |
+| `clone`   | The box decorations are applied to each fragment of the element separately, with each fragment treated as a distinct box. |
+| `initial` | Sets the property to its default value.                                      |
+| `inherit` | Inherits the property from its parent element.                               |
+
+## Example
+
+```css
+/* slice */
+.element1 {
+  box-decoration-break: slice; /* Decorations are applied as if the element were not fragmented */
+}
+
+/* clone */
+.element2 {
+  box-decoration-break: clone; /* Decorations are applied to each fragment separately */
+}
+
+/* initial */
+.element3 {
+  box-decoration-break: initial; /* Sets the property to its default value */
+}
+
+/* inherit */
+.element4 {
+  box-decoration-break: inherit; /* Inherits the property from its parent element */
+}
+```
+
+## Description
+The `box-decoration-break` property is useful when dealing with multi-line text, columns, or pages where elements might be fragmented. The `slice` value ensures that the element's box decorations (borders, background, and box-shadow) are applied continuously across the fragments as if the element were not broken. The `clone` value, on the other hand, treats each fragment as a separate box, applying decorations to each fragment individually.
+
+## All Most Similar Properties
+
+| Property        | Description                                                                 | Difference                                                   |
+|-----------------|-----------------------------------------------------------------------------|--------------------------------------------------------------|
+| `box-shadow`    | Adds shadow effects around an element's frame.                              | Affects only shadow, not other decorations.                  |
+| `border`        | Sets the border for an element.                                             | Affects only the border, not other decorations.              |
+| `background`    | Sets the background for an element.                                         | Affects only the background, not other decorations.          |
+| `overflow-wrap` | Controls how text should behave when it overflows its container.            | Affects text overflow behavior, not decorations.             |
+
+## Browser Compatibility
+
+| Browser           | Supported Versions |
+|-------------------|--------------------|
+| Chrome            | Yes                |
+| Firefox           | Yes                |
+| Safari            | Yes                |
+| Edge              | Yes                |
+| Internet Explorer | No                 |
+| Opera             | Yes                |
+
+## In JavaScript
+
+```js
+element.style.boxDecorationBreak = 'clone'; // Setting the box-decoration-break property to 'clone'
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Decoration Break Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+    }
+    .element1, .element2, .element3, .element4 {
+      margin: 10px 0;
+      padding: 20px;
+      background-color: #ff9999;
+      border: 2px solid #000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      width: 100px;
+    }
+    .element1 {
+      box-decoration-break: slice;
+    }
+    .element2 {
+      box-decoration-break: clone;
+    }
+    .element3 {
+      box-decoration-break: initial;
+    }
+    .element4 {
+      box-decoration-break: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Values of box-decoration-break</h1>
+    <div class="sub-container">
+      <h2>slice</h2>
+      <div class="element1">box-decoration-break: slice;</div>
+    </div>
+    <div class="sub-container">
+      <h2>clone</h2>
+      <div class="element2">box-decoration-break: clone;</div>
+    </div>
+    <div class="sub-container">
+      <h2>initial</h2>
+      <div class="element3">box-decoration-break: initial;</div>
+    </div>
+    <div class="sub-container">
+      <h2>inherit</h2>
+      <div class="element4">box-decoration-break: inherit;</div>
+    </div>
+  </div>
+</body>
+</html>
+```

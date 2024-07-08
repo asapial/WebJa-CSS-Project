@@ -1,0 +1,163 @@
+## Definition
+The `bottom` CSS property specifies the vertical position of a positioned element. It affects the vertical position of an absolutely positioned element relative to its containing block's bottom edge.
+
+## Values
+
+| Value       | Description                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| `<length>`  | Specifies the bottom position using length units like `px`, `em`, `rem`, etc. |
+| `<percentage>` | Specifies the bottom position as a percentage of the containing block's height. |
+| `auto`      | The default value. The bottom position is not explicitly set.               |
+| `initial`   | Sets the property to its default value.                                     |
+| `inherit`   | Inherits the property from its parent element.                              |
+
+## Example
+
+```css
+/* length value */
+.element1 {
+  position: absolute;
+  bottom: 20px; /* 20px from bottom */
+}
+
+/* percentage value */
+.element2 {
+  position: absolute;
+  bottom: 50%; /* 50% from bottom */
+}
+
+/* auto */
+.element3 {
+  position: absolute;
+  bottom: auto; /* default value */
+}
+
+/* initial */
+.element4 {
+  position: absolute;
+  bottom: initial; /* initial value */
+}
+
+/* inherit */
+.element5 {
+  position: absolute;
+  bottom: inherit; /* inherits from parent */
+}
+```
+
+## Description
+The `bottom` property is used in conjunction with `position: absolute`, `position: fixed`, or `position: relative` to specify the distance between the bottom edge of the element and the bottom edge of its containing block. When used with `position: relative`, it moves the element's bottom edge from its normal position by the specified amount. When used with `position: absolute` or `position: fixed`, it specifies the distance from the bottom edge of the containing block.
+
+## All Most Similar Properties
+
+| Property | Description | Difference |
+|----------|-------------|------------|
+| `top`    | Specifies the vertical position of a positioned element. | Positions the element from the top instead of the bottom. |
+| `left`   | Specifies the horizontal position of a positioned element. | Positions the element from the left instead of the bottom. |
+| `right`  | Specifies the horizontal position of a positioned element. | Positions the element from the right instead of the bottom. |
+| `margin-bottom` | Sets the bottom margin of an element. | Affects the margin, not the positioning. |
+
+## Browser Compatibility
+
+| Browser           | Supported Versions |
+|-------------------|--------------------|
+| Chrome            | Yes                |
+| Firefox           | Yes                |
+| Safari            | Yes                |
+| Edge              | Yes                |
+| Internet Explorer | Yes                |
+| Opera             | Yes                |
+
+## In JavaScript
+
+```js
+element.style.bottom = '20px'; // Setting the bottom position to 20px
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bottom Property Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      height: 300px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+      position: relative;
+      height: 200px;
+    }
+    .element1, .element2, .element3, .element4, .element5 {
+      margin: 10px 0;
+      padding: 20px;
+      background-color: #ff9999;
+      position: absolute;
+    }
+    .element1 {
+      bottom: 20px;
+    }
+    .element2 {
+      bottom: 50%;
+    }
+    .element3 {
+      bottom: auto;
+    }
+    .element4 {
+      bottom: initial;
+    }
+    .element5 {
+      bottom: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Values of bottom property</h1>
+    <div class="sub-container">
+      <h2>20px</h2>
+      <div class="element1">bottom: 20px;</div>
+    </div>
+    <div class="sub-container">
+      <h2>50%</h2>
+      <div class="element2">bottom: 50%;</div>
+    </div>
+    <div class="sub-container">
+      <h2>auto</h2>
+      <div class="element3">bottom: auto;</div>
+    </div>
+    <div class="sub-container">
+      <h2>initial</h2>
+      <div class="element4">bottom: initial;</div>
+    </div>
+    <div class="sub-container">
+      <h2>inherit</h2>
+      <div class="element5">bottom: inherit;</div>
+    </div>
+  </div>
+</body>
+</html>
+```

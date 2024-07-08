@@ -1,0 +1,169 @@
+### Definition
+The `break-before` CSS property specifies whether a page, column, or region break should occur before a specified element.
+
+### Values
+| Value     | Description                                                                 |
+|-----------|-----------------------------------------------------------------------------|
+| `auto`    | Default. Neither force nor forbid a break before the element.               |
+| `avoid`   | Avoid a break before the element.                                           |
+| `always`  | Always force a page break before the element.                               |
+| `all`     | Force a break before the element, on all media types.                       |
+| `avoid-page` | Avoid a page break before the element.                                  |
+| `page`    | Force a page break before the element.                                      |
+| `left`    | Force one or two page breaks before the element to make the next page a left page. |
+| `right`   | Force one or two page breaks before the element to make the next page a right page. |
+| `recto`   | Force a break before the element, making the next page a recto page.        |
+| `verso`   | Force a break before the element, making the next page a verso page.        |
+| `avoid-column` | Avoid a column break before the element.                             |
+| `column`  | Force a column break before the element.                                    |
+| `avoid-region` | Avoid a region break before the element.                             |
+| `region`  | Force a region break before the element.                                    |
+
+### Example
+```css
+/* Example data for possible values */
+.element {
+  break-before: auto; /* No forced break */
+  break-before: avoid; /* Avoid break before */
+  break-before: always; /* Always break before */
+  break-before: all; /* Break before on all media */
+  break-before: avoid-page; /* Avoid page break before */
+  break-before: page; /* Force page break before */
+  break-before: left; /* Force left page break before */
+  break-before: right; /* Force right page break before */
+  break-before: recto; /* Force recto page break before */
+  break-before: verso; /* Force verso page break before */
+  break-before: avoid-column; /* Avoid column break before */
+  break-before: column; /* Force column break before */
+  break-before: avoid-region; /* Avoid region break before */
+  break-before: region; /* Force region break before */
+}
+```
+
+### Description
+The `break-before` property is used to control page, column, or region breaks before an element. This is particularly useful in paged media, such as printed documents, or multi-column layouts. By setting this property, you can ensure that content begins on a new page or column, or avoid breaking content across pages or columns.
+
+### All Most Similar Properties
+| Property     | Description                                                        | Difference                                                       |
+|--------------|--------------------------------------------------------------------|------------------------------------------------------------------|
+| `break-after` | Specifies a break after the element.                              | Affects breaks after the element instead of before.              |
+| `break-inside` | Specifies if a break should occur within the element.            | Affects breaks within the element instead of before.             |
+| `page-break-before` | Specifies a page break before the element (deprecated).     | Similar to `break-before` but only affects page breaks.          |
+| `column-break-before` | Specifies a column break before the element (deprecated). | Similar to `break-before` but only affects column breaks.        |
+
+### Browser Compatibility
+| Browser           | Supported Versions        |
+|-------------------|---------------------------|
+| Chrome            | 50+                       |
+| Firefox           | 65+                       |
+| Edge              | 12+                       |
+| Safari            | 10.1+                     |
+| Opera             | 37+                       |
+
+### In JavaScript
+```javascript
+// Example of using break-before property in JavaScript
+element.style.breakBefore = "always"; // Always break before the element
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      height: 100vh;
+      margin: 0;
+    }
+    .main-container {
+      background-color: #fff;
+      width: 80%;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      margin: 0;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">CSS `break-before` Property Values</h1>
+    <div class="sub-container">
+      <h2>auto</h2>
+      <div style="break-before: auto;">Content with auto value</div>
+    </div>
+    <div class="sub-container">
+      <h2>avoid</h2>
+      <div style="break-before: avoid;">Content with avoid value</div>
+    </div>
+    <div class="sub-container">
+      <h2>always</h2>
+      <div style="break-before: always;">Content with always value</div>
+    </div>
+    <div class="sub-container">
+      <h2>all</h2>
+      <div style="break-before: all;">Content with all value</div>
+    </div>
+    <div class="sub-container">
+      <h2>avoid-page</h2>
+      <div style="break-before: avoid-page;">Content with avoid-page value</div>
+    </div>
+    <div class="sub-container">
+      <h2>page</h2>
+      <div style="break-before: page;">Content with page value</div>
+    </div>
+    <div class="sub-container">
+      <h2>left</h2>
+      <div style="break-before: left;">Content with left value</div>
+    </div>
+    <div class="sub-container">
+      <h2>right</h2>
+      <div style="break-before: right;">Content with right value</div>
+    </div>
+    <div class="sub-container">
+      <h2>recto</h2>
+      <div style="break-before: recto;">Content with recto value</div>
+    </div>
+    <div class="sub-container">
+      <h2>verso</h2>
+      <div style="break-before: verso;">Content with verso value</div>
+    </div>
+    <div class="sub-container">
+      <h2>avoid-column</h2>
+      <div style="break-before: avoid-column;">Content with avoid-column value</div>
+    </div>
+    <div class="sub-container">
+      <h2>column</h2>
+      <div style="break-before: column;">Content with column value</div>
+    </div>
+    <div class="sub-container">
+      <h2>avoid-region</h2>
+      <div style="break-before: avoid-region;">Content with avoid-region value</div>
+    </div>
+    <div class="sub-container">
+      <h2>region</h2>
+      <div style="break-before: region;">Content with region value</div>
+    </div>
+  </div>
+</body>
+</html>
+```

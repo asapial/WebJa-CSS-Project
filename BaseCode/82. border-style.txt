@@ -1,0 +1,183 @@
+## Definition
+The `border-style` CSS property sets the line style for all four sides of an element's border.
+
+## Values
+| Value        | Description                                                                                      |
+|--------------|--------------------------------------------------------------------------------------------------|
+| `none`       | No border (invisible).                                                                           |
+| `hidden`     | Same as `none`, but when applied to a table element, it hides the cell borders.                  |
+| `dotted`     | A series of dots.                                                                                |
+| `dashed`     | A series of short line segments.                                                                 |
+| `solid`      | A single solid line.                                                                             |
+| `double`     | Two parallel solid lines with some space between them.                                           |
+| `groove`     | Appears as though it is carved into the page.                                                    |
+| `ridge`      | Appears as though it is coming out of the page.                                                  |
+| `inset`      | Makes the element appear embedded.                                                              |
+| `outset`     | Makes the element appear as though it is coming out of the canvas.                               |
+| `initial`    | Sets this property to its default value.                                                         |
+| `inherit`    | Inherits this property from its parent element.                                                  |
+
+## Example
+```css
+.element1 {
+  border-style: none; /* No border */
+}
+
+.element2 {
+  border-style: dotted; /* Dotted border */
+}
+
+.element3 {
+  border-style: dashed; /* Dashed border */
+}
+
+.element4 {
+  border-style: solid; /* Solid border */
+}
+
+.element5 {
+  border-style: double; /* Double border */
+}
+
+.element6 {
+  border-style: groove; /* Grooved border */
+}
+
+.element7 {
+  border-style: ridge; /* Ridged border */
+}
+
+.element8 {
+  border-style: inset; /* Inset border */
+}
+
+.element9 {
+  border-style: outset; /* Outset border */
+}
+```
+
+## Description
+The `border-style` property is used to specify the style of the borders for an element. It can be applied to set different styles for the top, right, bottom, and left borders using the shorthand `border-style` or individually using `border-top-style`, `border-right-style`, `border-bottom-style`, and `border-left-style`. This property helps in designing the appearance of the border, giving various visual effects to enhance the UI.
+
+## All Most Similar Properties
+| Property              | Description                                            | Difference                                                                    |
+|-----------------------|--------------------------------------------------------|-------------------------------------------------------------------------------|
+| `border-width`        | Sets the width of the border.                          | `border-width` sets the thickness, while `border-style` sets the style of the line. |
+| `border-color`        | Sets the color of the border.                          | `border-color` defines the color, while `border-style` defines the line style.      |
+| `border`              | Shorthand for `border-width`, `border-style`, and `border-color`. | `border` combines several properties including `border-style` into one.             |
+| `outline-style`       | Sets the style of the outline.                         | `outline-style` affects the outline around an element, not the border.               |
+
+## Browser Compatibility
+| Browser    | Supported Version |
+|------------|-------------------|
+| Chrome     | All               |
+| Firefox    | All               |
+| Safari     | All               |
+| Edge       | All               |
+| Opera      | All               |
+
+## In JavaScript
+```js
+// Example of setting the border-style property in JavaScript
+document.getElementById("myElement").style.borderStyle = "dashed";
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Style Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+    }
+    h2 {
+      margin: 0 0 10px;
+    }
+    .style-none {
+      border-style: none;
+    }
+    .style-dotted {
+      border-style: dotted;
+    }
+    .style-dashed {
+      border-style: dashed;
+    }
+    .style-solid {
+      border-style: solid;
+    }
+    .style-double {
+      border-style: double;
+    }
+    .style-groove {
+      border-style: groove;
+    }
+    .style-ridge {
+      border-style: ridge;
+    }
+    .style-inset {
+      border-style: inset;
+    }
+    .style-outset {
+      border-style: outset;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Border Style Values</h1>
+    <div class="sub-container style-none">
+      <h2>none</h2>
+    </div>
+    <div class="sub-container style-dotted">
+      <h2>dotted</h2>
+    </div>
+    <div class="sub-container style-dashed">
+      <h2>dashed</h2>
+    </div>
+    <div class="sub-container style-solid">
+      <h2>solid</h2>
+    </div>
+    <div class="sub-container style-double">
+      <h2>double</h2>
+    </div>
+    <div class="sub-container style-groove">
+      <h2>groove</h2>
+    </div>
+    <div class="sub-container style-ridge">
+      <h2>ridge</h2>
+    </div>
+    <div class="sub-container style-inset">
+      <h2>inset</h2>
+    </div>
+    <div class="sub-container style-outset">
+      <h2>outset</h2>
+    </div>
+  </div>
+</body>
+</html>
+```

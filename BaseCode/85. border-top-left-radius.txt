@@ -1,0 +1,140 @@
+## Definition
+The `border-top-left-radius` CSS property rounds the top-left corner of an element by specifying the radius of the circle or ellipse defining the curve.
+
+## Values
+
+| Value             | Description                                                      |
+|-------------------|------------------------------------------------------------------|
+| `<length>`        | Defines the horizontal and vertical radii of the ellipse as a length (e.g., `10px`, `1em`). |
+| `<percentage>`    | Defines the horizontal and vertical radii of the ellipse as a percentage of the box's size (e.g., `50%`). |
+| `initial`         | Sets the property to its default value.                          |
+| `inherit`         | Inherits the property from its parent element.                   |
+
+## Example
+
+```css
+/* length values */
+.element1 {
+  border-top-left-radius: 10px; /* 10px radius */
+}
+
+/* percentage values */
+.element2 {
+  border-top-left-radius: 50%; /* 50% radius */
+}
+
+/* initial value */
+.element3 {
+  border-top-left-radius: initial; /* initial value */
+
+/* inherit value */
+.element4 {
+  border-top-left-radius: inherit; /* inherits from parent */
+}
+```
+
+## Description
+The `border-top-left-radius` property allows you to round the top-left corner of an element. You can specify the radius using lengths (pixels, ems, etc.) or percentages. When using percentages, the value is relative to the size of the element. It accepts two values to define the radii of the ellipse separately for the horizontal and vertical axes. By default, if only one value is provided, it applies to both axes.
+
+## All Most Similar Properties
+
+| Property                 | Description                                                      | Difference                                                   |
+|--------------------------|------------------------------------------------------------------|--------------------------------------------------------------|
+| `border-top-right-radius`| Rounds the top-right corner of an element.                       | Applies to the top-right corner instead of the top-left.     |
+| `border-bottom-left-radius` | Rounds the bottom-left corner of an element.                   | Applies to the bottom-left corner instead of the top-left.   |
+| `border-bottom-right-radius`| Rounds the bottom-right corner of an element.                  | Applies to the bottom-right corner instead of the top-left.  |
+| `border-radius`          | Shorthand for setting all four border-radius properties.         | Sets all four corners, not just the top-left corner.         |
+
+## Browser Compatibility
+
+| Browser           | Supported Versions |
+|-------------------|--------------------|
+| Chrome            | Yes                |
+| Firefox           | Yes                |
+| Safari            | Yes                |
+| Edge              | Yes                |
+| Internet Explorer | 9+                 |
+| Opera             | Yes                |
+
+## In JavaScript
+
+```js
+element.style.borderTopLeftRadius = '10px'; // Setting the border-top-left-radius to 10px
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Top Left Radius Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+    }
+    .element1, .element2, .element3, .element4 {
+      margin: 10px 0;
+      padding: 20px;
+      background-color: #ff9999;
+      border-radius: 20px;
+    }
+    .element1 {
+      border-top-left-radius: 10px;
+    }
+    .element2 {
+      border-top-left-radius: 50%;
+    }
+    .element3 {
+      border-top-left-radius: initial;
+    }
+    .element4 {
+      border-top-left-radius: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Values of border-top-left-radius</h1>
+    <div class="sub-container">
+      <h2>10px</h2>
+      <div class="element1">border-top-left-radius: 10px;</div>
+    </div>
+    <div class="sub-container">
+      <h2>50%</h2>
+      <div class="element2">border-top-left-radius: 50%;</div>
+    </div>
+    <div class="sub-container">
+      <h2>initial</h2>
+      <div class="element3">border-top-left-radius: initial;</div>
+    </div>
+    <div class="sub-container">
+      <h2>inherit</h2>
+      <div class="element4">border-top-left-radius: inherit;</div>
+    </div>
+  </div>
+</body>
+</html>
+```

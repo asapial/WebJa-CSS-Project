@@ -1,0 +1,156 @@
+### Definition
+The `caption-side` CSS property specifies the placement of a table's caption.
+
+### Values
+| Value        | Description                                                              |
+|--------------|--------------------------------------------------------------------------|
+| `top`        | The caption box will be above the table. This is the default value.      |
+| `bottom`     | The caption box will be below the table.                                 |
+| `inline-start` | The caption box will be at the inline-start of the table (left in LTR).|
+| `inline-end` | The caption box will be at the inline-end of the table (right in LTR).   |
+
+### Example
+```css
+/* Example data for possible values */
+table {
+  caption-side: top; /* Caption above the table */
+  caption-side: bottom; /* Caption below the table */
+  caption-side: inline-start; /* Caption at the inline-start of the table */
+  caption-side: inline-end; /* Caption at the inline-end of the table */
+}
+```
+
+### Description
+The `caption-side` property is used to control the placement of a caption in relation to the table it describes. By default, the caption is placed above the table, but this can be changed to below, or to the start or end of the inline flow, which is particularly useful for supporting different writing directions (left-to-right or right-to-left).
+
+### All Most Similar Properties
+| Property       | Description                                          | Difference                                     |
+|----------------|------------------------------------------------------|------------------------------------------------|
+| `text-align`   | Specifies the horizontal alignment of text.          | Aligns text within an element, not related to caption placement. |
+| `vertical-align` | Specifies the vertical alignment of an inline or table-cell box. | Aligns content within an element, not related to caption placement. |
+
+### Browser Compatibility
+| Browser           | Supported Versions        |
+|-------------------|---------------------------|
+| Chrome            | 2+                        |
+| Firefox           | 1+                        |
+| Edge              | 12+                       |
+| Safari            | 1+                        |
+| Opera             | 7+                        |
+
+### In JavaScript
+```javascript
+// Example of using caption-side property in JavaScript
+element.style.captionSide = "bottom"; // Place caption below the table
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      height: 100vh;
+      margin: 0;
+    }
+    .main-container {
+      background-color: #fff;
+      width: 80%;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    caption {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin: 0;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">CSS `caption-side` Property Values</h1>
+    <div class="sub-container">
+      <h2>top</h2>
+      <table style="caption-side: top;">
+        <caption>Top Caption</caption>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+        </tr>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+        </tr>
+      </table>
+    </div>
+    <div class="sub-container">
+      <h2>bottom</h2>
+      <table style="caption-side: bottom;">
+        <caption>Bottom Caption</caption>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+        </tr>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+        </tr>
+      </table>
+    </div>
+    <div class="sub-container">
+      <h2>inline-start</h2>
+      <table style="caption-side: inline-start;">
+        <caption>Inline Start Caption</caption>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+        </tr>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+        </tr>
+      </table>
+    </div>
+    <div class="sub-container">
+      <h2>inline-end</h2>
+      <table style="caption-side: inline-end;">
+        <caption>Inline End Caption</caption>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+        </tr>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+```

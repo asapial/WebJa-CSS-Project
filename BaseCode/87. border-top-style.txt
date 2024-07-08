@@ -1,0 +1,247 @@
+## Definition
+The `border-top-style` CSS property sets the line style of an element's top border.
+
+## Values
+
+| Value     | Description                               |
+|-----------|-------------------------------------------|
+| `none`    | No border.                                |
+| `hidden`  | Same as `none`, but used in table elements to prevent border conflicts. |
+| `dotted`  | Border is a series of dots.               |
+| `dashed`  | Border is a series of short line segments.|
+| `solid`   | Border is a single solid line.            |
+| `double`  | Border is two solid lines.                |
+| `groove`  | Border looks as though it is carved into the page. |
+| `ridge`   | Border looks the opposite of `groove`.    |
+| `inset`   | Border makes the element appear embedded. |
+| `outset`  | Border makes the element appear raised.   |
+| `initial` | Sets the property to its default value.   |
+| `inherit` | Inherits the property from its parent element.|
+
+## Example
+
+```css
+/* none */
+.element1 {
+  border-top-style: none; /* No border */
+}
+
+/* hidden */
+.element2 {
+  border-top-style: hidden; /* Hidden border */
+}
+
+/* dotted */
+.element3 {
+  border-top-style: dotted; /* Dotted border */
+}
+
+/* dashed */
+.element4 {
+  border-top-style: dashed; /* Dashed border */
+}
+
+/* solid */
+.element5 {
+  border-top-style: solid; /* Solid border */
+}
+
+/* double */
+.element6 {
+  border-top-style: double; /* Double border */
+}
+
+/* groove */
+.element7 {
+  border-top-style: groove; /* Groove border */
+}
+
+/* ridge */
+.element8 {
+  border-top-style: ridge; /* Ridge border */
+}
+
+/* inset */
+.element9 {
+  border-top-style: inset; /* Inset border */
+}
+
+/* outset */
+.element10 {
+  border-top-style: outset; /* Outset border */
+}
+
+/* initial */
+.element11 {
+  border-top-style: initial; /* Initial value */
+}
+
+/* inherit */
+.element12 {
+  border-top-style: inherit; /* Inherits from parent */
+}
+```
+
+## Description
+The `border-top-style` property allows you to define the style of the top border of an element. The property accepts various line styles such as `none`, `dotted`, `solid`, and more. It is often used in combination with other border properties like `border-top-width` and `border-top-color` to create a complete border for the top side of an element.
+
+## All Most Similar Properties
+
+| Property            | Description                                                      | Difference                                                   |
+|---------------------|------------------------------------------------------------------|--------------------------------------------------------------|
+| `border-right-style`| Sets the style of the right border.                              | Applies to the right border instead of the top.              |
+| `border-bottom-style`| Sets the style of the bottom border.                            | Applies to the bottom border instead of the top.             |
+| `border-left-style` | Sets the style of the left border.                               | Applies to the left border instead of the top.               |
+| `border-style`      | Shorthand for setting the style of all four borders.             | Sets all four borders, not just the top border.              |
+
+## Browser Compatibility
+
+| Browser           | Supported Versions |
+|-------------------|--------------------|
+| Chrome            | Yes                |
+| Firefox           | Yes                |
+| Safari            | Yes                |
+| Edge              | Yes                |
+| Internet Explorer | Yes                |
+| Opera             | Yes                |
+
+## In JavaScript
+
+```js
+element.style.borderTopStyle = 'solid'; // Setting the border-top-style to solid
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Top Style Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+    }
+    .element1, .element2, .element3, .element4, .element5, 
+    .element6, .element7, .element8, .element9, .element10, 
+    .element11, .element12 {
+      margin: 10px 0;
+      padding: 20px;
+      background-color: #ff9999;
+      border-top-width: 5px;
+    }
+    .element1 {
+      border-top-style: none;
+    }
+    .element2 {
+      border-top-style: hidden;
+    }
+    .element3 {
+      border-top-style: dotted;
+    }
+    .element4 {
+      border-top-style: dashed;
+    }
+    .element5 {
+      border-top-style: solid;
+    }
+    .element6 {
+      border-top-style: double;
+    }
+    .element7 {
+      border-top-style: groove;
+    }
+    .element8 {
+      border-top-style: ridge;
+    }
+    .element9 {
+      border-top-style: inset;
+    }
+    .element10 {
+      border-top-style: outset;
+    }
+    .element11 {
+      border-top-style: initial;
+    }
+    .element12 {
+      border-top-style: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Values of border-top-style</h1>
+    <div class="sub-container">
+      <h2>none</h2>
+      <div class="element1">border-top-style: none;</div>
+    </div>
+    <div class="sub-container">
+      <h2>hidden</h2>
+      <div class="element2">border-top-style: hidden;</div>
+    </div>
+    <div class="sub-container">
+      <h2>dotted</h2>
+      <div class="element3">border-top-style: dotted;</div>
+    </div>
+    <div class="sub-container">
+      <h2>dashed</h2>
+      <div class="element4">border-top-style: dashed;</div>
+    </div>
+    <div class="sub-container">
+      <h2>solid</h2>
+      <div class="element5">border-top-style: solid;</div>
+    </div>
+    <div class="sub-container">
+      <h2>double</h2>
+      <div class="element6">border-top-style: double;</div>
+    </div>
+    <div class="sub-container">
+      <h2>groove</h2>
+      <div class="element7">border-top-style: groove;</div>
+    </div>
+    <div class="sub-container">
+      <h2>ridge</h2>
+      <div class="element8">border-top-style: ridge;</div>
+    </div>
+    <div class="sub-container">
+      <h2>inset</h2>
+      <div class="element9">border-top-style: inset;</div>
+    </div>
+    <div class="sub-container">
+      <h2>outset</h2>
+      <div class="element10">border-top-style: outset;</div>
+    </div>
+    <div class="sub-container">
+      <h2>initial</h2>
+      <div class="element11">border-top-style: initial;</div>
+    </div>
+    <div class="sub-container">
+      <h2>inherit</h2>
+      <div class="element12">border-top-style: inherit;</div>
+    </div>
+  </div>
+</body>
+</html>
+```

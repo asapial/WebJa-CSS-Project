@@ -1,0 +1,159 @@
+### Definition
+The `clear` CSS property specifies whether an element can be next to floating elements that precede it or must be moved down (cleared) below them.
+
+### Values
+| Value    | Description                                                          |
+|----------|----------------------------------------------------------------------|
+| `none`   | The element is not moved down to avoid floats. This is the default.  |
+| `left`   | The element is moved down until it is clear of floating elements on the left. |
+| `right`  | The element is moved down until it is clear of floating elements on the right. |
+| `both`   | The element is moved down until it is clear of floating elements on both sides. |
+| `inline-start` | The element is moved down until it is clear of floating elements at the inline start. |
+| `inline-end` | The element is moved down until it is clear of floating elements at the inline end. |
+
+### Example
+```css
+/* Example data for possible values */
+.clear-none {
+  clear: none; /* No clearing */
+}
+
+.clear-left {
+  clear: left; /* Clear left floats */
+}
+
+.clear-right {
+  clear: right; /* Clear right floats */
+}
+
+.clear-both {
+  clear: both; /* Clear both left and right floats */
+}
+
+.clear-inline-start {
+  clear: inline-start; /* Clear inline-start floats */
+}
+
+.clear-inline-end {
+  clear: inline-end; /* Clear inline-end floats */
+}
+```
+
+### Description
+The `clear` property is used in conjunction with the `float` property. It ensures that an element is moved below (cleared) any floating elements to the left, right, both, or inline sides. This property is often used in layout design to control how elements wrap around floated elements.
+
+### All Most Similar Properties
+| Property | Description | Difference |
+|----------|-------------|------------|
+| `float`  | Specifies whether an element should float to the left, right, or not at all. | `float` positions elements to the left or right, while `clear` controls elements' position relative to floated elements. |
+| `overflow` | Specifies what happens if content overflows an element's box. | `overflow` controls content within an element, while `clear` affects the position of the element itself. |
+
+### Browser Compatibility
+| Browser  | Supported Versions |
+|----------|--------------------|
+| Chrome   | All                |
+| Firefox  | All                |
+| Edge     | All                |
+| Safari   | All                |
+| Opera    | All                |
+
+### In JavaScript
+```javascript
+// Example of using clear property in JavaScript
+element.style.clear = "both"; // Clear both left and right floats
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      height: 100vh;
+      margin: 0;
+    }
+    .main-container {
+      background-color: #fff;
+      width: 80%;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+      text-align: center;
+    }
+    .box {
+      float: left;
+      width: 30%;
+      height: 50px;
+      margin: 10px;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+    }
+    .clear-box {
+      width: 100%;
+      height: 30px;
+      background-color: #FF5722;
+      color: white;
+      text-align: center;
+      line-height: 30px;
+      clear: both;
+    }
+    h2 {
+      margin: 0;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">CSS `clear` Property Values</h1>
+    <div class="sub-container">
+      <h2>none</h2>
+      <div class="box">Float</div>
+      <div class="clear-box clear-none">Clear: None</div>
+    </div>
+    <div class="sub-container">
+      <h2>left</h2>
+      <div class="box">Float</div>
+      <div class="clear-box clear-left">Clear: Left</div>
+    </div>
+    <div class="sub-container">
+      <h2>right</h2>
+      <div class="box">Float</div>
+      <div class="clear-box clear-right">Clear: Right</div>
+    </div>
+    <div class="sub-container">
+      <h2>both</h2>
+      <div class="box">Float</div>
+      <div class="clear-box clear-both">Clear: Both</div>
+    </div>
+    <div class="sub-container">
+      <h2>inline-start</h2>
+      <div class="box">Float</div>
+      <div class="clear-box clear-inline-start">Clear: Inline Start</div>
+    </div>
+    <div class="sub-container">
+      <h2>inline-end</h2>
+      <div class="box">Float</div>
+      <div class="clear-box clear-inline-end">Clear: Inline End</div>
+    </div>
+  </div>
+</body>
+</html>
+```

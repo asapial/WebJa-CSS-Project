@@ -1,0 +1,163 @@
+## Definition
+The `border-left-color` CSS property sets the color of an element's left border.
+
+## Values
+
+| Value       | Description                           |
+|-------------|---------------------------------------|
+| `<color>`   | Specifies the color of the left border. It can be any valid CSS color value (e.g., `red`, `#ff0000`, `rgb(255, 0, 0)`). |
+| `transparent` | Makes the left border color transparent. |
+| `inherit`   | Inherits the border color from the parent element. |
+| `initial`   | Sets the property to its default value. |
+| `unset`     | Resets the property to either `inherit` or `initial`, depending on whether the property is inherited. |
+
+## Example
+
+```css
+.element {
+  border-left-color: red; /* Named color */
+  border-left-color: #00ff00; /* Hex color */
+  border-left-color: rgb(0, 0, 255); /* RGB color */
+  border-left-color: rgba(255, 0, 0, 0.5); /* RGBA color */
+  border-left-color: transparent; /* Transparent */
+  border-left-color: inherit; /* Inherit value */
+  border-left-color: initial; /* Initial value */
+  border-left-color: unset; /* Unset value */
+}
+```
+
+## Description
+The `border-left-color` property allows you to set the color of the left border of an element. It can accept any valid CSS color value, including named colors, hex values, RGB, RGBA, HSL, and HSLA values. This property can be useful for highlighting the left side of an element or for matching the border color to the overall design scheme of the web page. It overrides any border color settings set by the shorthand `border-color` or the `border-left` property.
+
+## All Most Similar Properties
+
+| Property                | Description                                         | Difference                                        |
+|-------------------------|-----------------------------------------------------|---------------------------------------------------|
+| `border-left`           | Sets all properties of the left border.             | Affects width, style, and color, not just color.  |
+| `border-color`          | Sets the color of all four borders.                 | Affects all borders, not just the left.           |
+| `border-top-color`      | Sets the color of the top border.                   | Affects the top border instead of the left.       |
+| `border-right-color`    | Sets the color of the right border.                 | Affects the right border instead of the left.     |
+| `border-bottom-color`   | Sets the color of the bottom border.                | Affects the bottom border instead of the left.    |
+
+## Browser Compatibility
+
+| Browser            | Supported Version |
+|--------------------|-------------------|
+| Chrome             | Yes               |
+| Firefox            | Yes               |
+| Safari             | Yes               |
+| Edge               | Yes               |
+| Internet Explorer  | Yes               |
+
+## In JavaScript
+
+```js
+document.querySelector('.element').style.borderLeftColor = 'blue';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            text-align: center;
+        }
+        .red {
+            border-left-color: red;
+            border-left-width: 4px;
+            border-left-style: solid;
+        }
+        .green {
+            border-left-color: #00ff00;
+            border-left-width: 4px;
+            border-left-style: solid;
+        }
+        .blue {
+            border-left-color: rgb(0, 0, 255);
+            border-left-width: 4px;
+            border-left-style: solid;
+        }
+        .rgba {
+            border-left-color: rgba(255, 0, 0, 0.5);
+            border-left-width: 4px;
+            border-left-style: solid;
+        }
+        .transparent {
+            border-left-color: transparent;
+            border-left-width: 4px;
+            border-left-style: solid;
+        }
+        .inherit {
+            border-left-color: inherit;
+            border-left-width: 4px;
+            border-left-style: solid;
+        }
+        .initial {
+            border-left-color: initial;
+            border-left-width: 4px;
+            border-left-style: solid;
+        }
+        .unset {
+            border-left-color: unset;
+            border-left-width: 4px;
+            border-left-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Values of border-left-color</h1>
+        <div class="sub-container red">
+            <h2>red</h2>
+        </div>
+        <div class="sub-container green">
+            <h2>#00ff00</h2>
+        </div>
+        <div class="sub-container blue">
+            <h2>rgb(0, 0, 255)</h2>
+        </div>
+        <div class="sub-container rgba">
+            <h2>rgba(255, 0, 0, 0.5)</h2>
+        </div>
+        <div class="sub-container transparent">
+            <h2>transparent</h2>
+        </div>
+        <div class="sub-container inherit">
+            <h2>inherit</h2>
+        </div>
+        <div class="sub-container initial">
+            <h2>initial</h2>
+        </div>
+        <div class="sub-container unset">
+            <h2>unset</h2>
+        </div>
+    </div>
+</body>
+</html>
+```

@@ -1,0 +1,135 @@
+## Definition
+The `border-right` CSS property sets the width, style, and color of the right border of an element.
+
+## Values
+| Value           | Description                                                                            |
+|-----------------|----------------------------------------------------------------------------------------|
+| `border-right-width`  | Sets the width of the right border. Possible values: `thin`, `medium`, `thick`, `<length>`. |
+| `border-right-style`  | Sets the style of the right border. Possible values: `none`, `hidden`, `dotted`, `dashed`, `solid`, `double`, `groove`, `ridge`, `inset`, `outset`. |
+| `border-right-color`  | Sets the color of the right border. Possible values: `<color>`. |
+
+## Example
+```css
+/* border-right-width */
+element1 {
+  border-right-width: thick; /* thick */
+}
+
+element2 {
+  border-right-width: 5px; /* 5px */
+}
+
+/* border-right-style */
+element3 {
+  border-right-style: dotted; /* dotted */
+}
+
+element4 {
+  border-right-style: solid; /* solid */
+}
+
+/* border-right-color */
+element5 {
+  border-right-color: red; /* red */
+}
+
+element6 {
+  border-right-color: #00FF00; /* #00FF00 */
+}
+```
+
+## Description
+The `border-right` property is a shorthand property for setting the individual right border properties (`border-right-width`, `border-right-style`, and `border-right-color`). It can be used to apply specific styles to the right border of an element, such as setting the width to `thick`, the style to `solid`, and the color to `red`. This property is commonly used to customize the appearance of the right border of an element, providing flexibility in terms of border styling and visual design.
+
+## All Most Simillar Properties
+| Property        | Description                                                                | Difference                                                                                       |
+|-----------------|----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| `border`        | Sets all four borders (top, right, bottom, left)                           | `border` sets all borders simultaneously, whereas `border-right` sets only the right border.     |
+| `border-left`   | Sets the left border                                                       | `border-left` sets the left border, `border-right` sets the right border.                        |
+| `border-top`    | Sets the top border                                                        | `border-top` sets the top border, `border-right` sets the right border.                          |
+| `border-bottom` | Sets the bottom border                                                     | `border-bottom` sets the bottom border, `border-right` sets the right border.                    |
+
+## Browser Compatibility
+| Browser    | Supported Version |
+|------------|-------------------|
+| Chrome     | All versions      |
+| Firefox    | All versions      |
+| Safari     | All versions      |
+| Edge       | All versions      |
+| Opera      | All versions      |
+
+## In JavaScript
+```js
+// Example of setting the border-right property in JavaScript
+document.getElementById("myElement").style.borderRight = "5px solid red";
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Right Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+    }
+    h2 {
+      margin: 0 0 10px;
+    }
+    .thick-border {
+      border-right: thick solid red;
+    }
+    .medium-border {
+      border-right: medium dotted green;
+    }
+    .thin-border {
+      border-right: thin dashed blue;
+    }
+    .custom-border {
+      border-right: 5px double purple;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Border Right Property Values</h1>
+    <div class="sub-container thick-border">
+      <h2>thick solid red</h2>
+    </div>
+    <div class="sub-container medium-border">
+      <h2>medium dotted green</h2>
+    </div>
+    <div class="sub-container thin-border">
+      <h2>thin dashed blue</h2>
+    </div>
+    <div class="sub-container custom-border">
+      <h2>5px double purple</h2>
+    </div>
+  </div>
+</body>
+</html>
+```

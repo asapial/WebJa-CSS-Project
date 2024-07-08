@@ -1,0 +1,142 @@
+## Definition
+The `border-right-color` CSS property sets the color of the right border of an element.
+
+## Values
+| Value   | Description           |
+|---------|-----------------------|
+| `<color>` | Sets the color of the right border. It can be any valid CSS color value such as color names, hex values, rgb(), rgba(), hsl(), hsla(). |
+
+## Example
+```css
+element1 {
+  border-right-color: red; /* color name */
+}
+
+element2 {
+  border-right-color: #00FF00; /* hex value */
+}
+
+element3 {
+  border-right-color: rgb(0, 0, 255); /* rgb value */
+}
+
+element4 {
+  border-right-color: rgba(255, 165, 0, 0.5); /* rgba value */
+}
+
+element5 {
+  border-right-color: hsl(120, 100%, 50%); /* hsl value */
+}
+
+element6 {
+  border-right-color: hsla(240, 100%, 50%, 0.3); /* hsla value */
+}
+```
+
+## Description
+The `border-right-color` property allows you to set the color of the right border of an element. It can be used in conjunction with other border properties such as `border-right-width` and `border-right-style` to create a styled right border. The color can be specified using various formats including named colors, hexadecimal, RGB, RGBA, HSL, and HSLA values.
+
+## All Most Simillar Properties
+| Property            | Description                                       | Difference                                                                                     |
+|---------------------|---------------------------------------------------|------------------------------------------------------------------------------------------------|
+| `border-color`      | Sets the color of all four borders                | `border-color` sets the color for all borders, while `border-right-color` sets only the right border color. |
+| `border-top-color`  | Sets the color of the top border                  | `border-top-color` sets the top border color, `border-right-color` sets the right border color.           |
+| `border-left-color` | Sets the color of the left border                 | `border-left-color` sets the left border color, `border-right-color` sets the right border color.           |
+| `border-bottom-color`| Sets the color of the bottom border               | `border-bottom-color` sets the bottom border color, `border-right-color` sets the right border color.           |
+
+## Browser Compatibility
+| Browser    | Supported Version |
+|------------|-------------------|
+| Chrome     | All versions      |
+| Firefox    | All versions      |
+| Safari     | All versions      |
+| Edge       | All versions      |
+| Opera      | All versions      |
+
+## In JavaScript
+```js
+// Example of setting the border-right-color property in JavaScript
+document.getElementById("myElement").style.borderRightColor = "blue";
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Right Color Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+    }
+    h2 {
+      margin: 0 0 10px;
+    }
+    .color-name {
+      border-right: 5px solid red;
+    }
+    .hex-value {
+      border-right: 5px solid #00FF00;
+    }
+    .rgb-value {
+      border-right: 5px solid rgb(0, 0, 255);
+    }
+    .rgba-value {
+      border-right: 5px solid rgba(255, 165, 0, 0.5);
+    }
+    .hsl-value {
+      border-right: 5px solid hsl(120, 100%, 50%);
+    }
+    .hsla-value {
+      border-right: 5px solid hsla(240, 100%, 50%, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Border Right Color Values</h1>
+    <div class="sub-container color-name">
+      <h2>color name: red</h2>
+    </div>
+    <div class="sub-container hex-value">
+      <h2>hex value: #00FF00</h2>
+    </div>
+    <div class="sub-container rgb-value">
+      <h2>rgb value: rgb(0, 0, 255)</h2>
+    </div>
+    <div class="sub-container rgba-value">
+      <h2>rgba value: rgba(255, 165, 0, 0.5)</h2>
+    </div>
+    <div class="sub-container hsl-value">
+      <h2>hsl value: hsl(120, 100%, 50%)</h2>
+    </div>
+    <div class="sub-container hsla-value">
+      <h2>hsla value: hsla(240, 100%, 50%, 0.3)</h2>
+    </div>
+  </div>
+</body>
+</html>
+```

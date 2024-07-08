@@ -1,0 +1,181 @@
+## Definition
+The `border-width` CSS property sets the width of an element's border. This can be applied to all four sides of an element's border.
+
+## Values
+
+| Value          | Description                                                      |
+|----------------|------------------------------------------------------------------|
+| `<length>`     | Specifies the width in units such as `px`, `em`, `rem`, etc.     |
+| `thin`         | A thin border width.                                             |
+| `medium`       | A medium border width (default).                                 |
+| `thick`        | A thick border width.                                            |
+| `initial`      | Sets the property to its default value.                          |
+| `inherit`      | Inherits the property from its parent element.                   |
+| `<length> <length> <length> <length>` | Sets the width for top, right, bottom, and left borders respectively. |
+
+## Example
+
+```css
+/* Single length value */
+.element1 {
+  border-width: 5px; /* 5px width on all sides */
+}
+
+/* thin */
+.element2 {
+  border-width: thin; /* thin width on all sides */
+}
+
+/* medium */
+.element3 {
+  border-width: medium; /* medium width on all sides */
+}
+
+/* thick */
+.element4 {
+  border-width: thick; /* thick width on all sides */
+}
+
+/* different values for each side */
+.element5 {
+  border-width: 2px 4px 6px 8px; /* top right bottom left */
+}
+
+/* initial */
+.element6 {
+  border-width: initial; /* initial value */
+}
+
+/* inherit */
+.element7 {
+  border-width: inherit; /* inherits from parent */
+}
+```
+
+## Description
+The `border-width` property defines the width of an element's border and can accept one, two, three, or four values. If one value is given, it applies to all four sides. If two values are given, the first value applies to the top and bottom, and the second to the left and right. If three values are given, the first applies to the top, the second to the left and right, and the third to the bottom. If four values are given, they apply to the top, right, bottom, and left in that order.
+
+## All Most Similar Properties
+
+| Property             | Description                                                      | Difference                                                   |
+|----------------------|------------------------------------------------------------------|--------------------------------------------------------------|
+| `border-top-width`   | Sets the width of the top border.                                | Applies only to the top border.                              |
+| `border-right-width` | Sets the width of the right border.                              | Applies only to the right border.                            |
+| `border-bottom-width`| Sets the width of the bottom border.                             | Applies only to the bottom border.                           |
+| `border-left-width`  | Sets the width of the left border.                               | Applies only to the left border.                             |
+| `border`             | Shorthand for setting border-width, border-style, and border-color for all four sides. | Sets width along with style and color.                       |
+
+## Browser Compatibility
+
+| Browser           | Supported Versions |
+|-------------------|--------------------|
+| Chrome            | Yes                |
+| Firefox           | Yes                |
+| Safari            | Yes                |
+| Edge              | Yes                |
+| Internet Explorer | Yes                |
+| Opera             | Yes                |
+
+## In JavaScript
+
+```js
+element.style.borderWidth = '5px'; // Setting the border-width to 5px on all sides
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Width Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+    }
+    .element1, .element2, .element3, .element4, .element5, .element6, .element7 {
+      margin: 10px 0;
+      padding: 20px;
+      background-color: #ff9999;
+      border-style: solid;
+    }
+    .element1 {
+      border-width: 5px;
+    }
+    .element2 {
+      border-width: thin;
+    }
+    .element3 {
+      border-width: medium;
+    }
+    .element4 {
+      border-width: thick;
+    }
+    .element5 {
+      border-width: 2px 4px 6px 8px;
+    }
+    .element6 {
+      border-width: initial;
+    }
+    .element7 {
+      border-width: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Values of border-width</h1>
+    <div class="sub-container">
+      <h2>5px</h2>
+      <div class="element1">border-width: 5px;</div>
+    </div>
+    <div class="sub-container">
+      <h2>thin</h2>
+      <div class="element2">border-width: thin;</div>
+    </div>
+    <div class="sub-container">
+      <h2>medium</h2>
+      <div class="element3">border-width: medium;</div>
+    </div>
+    <div class="sub-container">
+      <h2>thick</h2>
+      <div class="element4">border-width: thick;</div>
+    </div>
+    <div class="sub-container">
+      <h2>2px 4px 6px 8px</h2>
+      <div class="element5">border-width: 2px 4px 6px 8px;</div>
+    </div>
+    <div class="sub-container">
+      <h2>initial</h2>
+      <div class="element6">border-width: initial;</div>
+    </div>
+    <div class="sub-container">
+      <h2>inherit</h2>
+      <div class="element7">border-width: inherit;</div>
+    </div>
+  </div>
+</body>
+</html>
+```
