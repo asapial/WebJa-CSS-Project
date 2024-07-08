@@ -474,10 +474,10 @@ html,body {
     border-top: 1px solid #c6cbd1;
   }
 
-  /* #setText table tr:nth-child(2n),
+  #setText table tr:nth-child(2n),
   #preview-content table tr:nth-child(2n) {
     background-color: #f6f8fa;
-  } */
+  }
 
 
   #setText .main-title,
@@ -941,9 +941,10 @@ ol.enumerate.lower-alpha {
     visibility: visible;
     word-break: break-word;
     padding: 2.5em;
-    max-width: 800px;
+    width: max(70vw,430px);
     margin: auto;
     box-sizing: content-box;
+    overflow-x: hidden;
   }
 
   #preview h1,

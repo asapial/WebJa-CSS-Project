@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium TryIt Editor</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            height: 90vh;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            height: 10%;
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid #444;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .editPanel {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .editor {
+            width: 33.33%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .editor textarea {
+            flex: 1;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            border: none;
+            padding: 20px;
+            font-size: 16px;
+            resize: none;
+            outline: none;
+        }
+
+        .editor .run-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .editor .run-button:hover {
+            background-color: #0056b3;
+        }
+
+        .output {
+            width: 100%;
+            height: 20%;
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+            border-top: 1px solid #444;
+            overflow: auto;
+        }
+
+        .output iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: #fff;
+        }
+
+        .footer {
+            height: 10%;
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            border-top: 1px solid #444;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Premium TryIt Editor</h1>
+        </div>
+        <div class="editPanel">
+            <div class="editor">
+                <textarea id="html-code" placeholder="Type your HTML here...">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello, world!</h1>
+    <p>This is a sample HTML and CSS content.</p>
+</body>
+</html>
+                </textarea>
+            </div>
+            <div class="editor">
+                <textarea id="css-code" placeholder="Type your CSS here...">
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+}
+h1 {
+    color: #007BFF;
+}
+                </textarea>
+            </div>
+            <div class="editor">
+                <textarea id="js-code" placeholder="Type your JavaScript here...">
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Hello, world!');
+});
+                </textarea>
+                <button class="run-button" id="run-button">Run</button>
+            </div>
+        </div>
+        <div class="output">
+            <iframe id="output"></iframe>
+        </div>
+        <div class="footer">
+            WebJa
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('run-button').addEventListener('click', function() {
+            const htmlCode = document.getElementById('html-code').value;
+            const cssCode = document.getElementById('css-code').value;
+            const jsCode = document.getElementById('js-code').value;
+            const code = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <style>
+                        ${cssCode}
+                    </style>
+                </head>
+                <body>
+                    ${htmlCode}
+                    <script>
+                        ${jsCode}
+                    </script>
+                </body>
+                </html>
+            `;
+            updateOutput(code);
+        });
+
+        function updateOutput(code) {
+            const output = document.getElementById('output');
+            const doc = output.contentDocument || output.contentWindow.document;
+            doc.open();
+            doc.write(code);
+            doc.close();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const initialHtmlCode = document.getElementById('html-code').value;
+            const initialCssCode = document.getElementById('css-code').value;
+            const initialJsCode = document.getElementById('js-code').value;
+            const initialCode = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <style>
+                        ${initialCssCode}
+                    </style>
+                </head>
+                <body>
+                    ${initialHtmlCode}
+                    <script>
+                        ${initialJsCode}
+                    </script>
+                </body>
+                </html>
+            `;
+            updateOutput(initialCode);
+        });
+    </script>
+</body>
+</html>

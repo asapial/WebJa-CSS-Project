@@ -3,6 +3,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
+    overflow-x: hidden;
 }
 
 /* #headerAll Section */
@@ -10,25 +11,26 @@ body {
     display: flex;
     height: min(10vw, 80px);
     width: 100%;
-    background-color: rgb(79, 79, 79);
+    background-color: #071739;
     justify-content: space-between;
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
-    border-bottom: 2px solid rgb(46, 46, 46);
+    border-bottom: 2px solid rgb(246, 83, 99);
     position: relative;
     z-index: 1000;
 }
 
 #headerAll a {
-    font-size: max(2vw, 20px);
+    font-size: max(2.5vw, 20px);
     margin-left: 2vw;
-    color: cornsilk;
+    color:#E3C39D;
     text-decoration: none;
+    font-weight: bold;
 }
 
 #headerAll a:hover {
     scale: 1.1;
-    color: rgb(0, 200, 255);
+    color: #A4B5C4;
 }
 
 #headerAll ul {
@@ -75,8 +77,8 @@ body {
     display: flex;
     flex-direction: column;
     transition: .3s ease-in;
-    /* position: absolute;
-    left: -10px; */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.91);
+    position: fixed;
 }
 
 #wrapi:hover {
@@ -90,32 +92,36 @@ body {
     flex-direction: column;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: black;
+    background-color: #223A59;
+    
 }
 
 .sidebar a {
     width: 100%;
-    background-color: gray;
-    color: cornsilk;
+    /* background-color: gray; */
+    color: #D1DDED;
+    font-size: 1.2em;
+    word-break: break-all;
     text-decoration: none;
     padding-bottom: 1px;
     margin: 2px;
-    text-align: center;
+    text-align: left;
+    margin-left: .5vw;
+    
 }
 
 .sidebar a:hover {
-    scale: 1.1;
+    scale: 1.05;
+    color: #49F3F0;
 }
 
 .sidebar h3 {
+    font-size: 1.5em;
+    font-weight: bolder;
     color: white;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.sidebar a:hover {
-    color: rgb(80, 51, 7);
-    background-color: rgb(46, 249, 225);
-}
 
 .sidebar h3 {
     text-align: center;
@@ -215,23 +221,19 @@ body {
 
 
 @media(max-width:900px) {
-    #wrapi {
+    #wrapi{
         display: none;
-    }
+    } 
+    
     .data
     {
         position: absolute;
         top: min(10vw, 80px);
-        left:0vw;
-        background-color: red;
-        width: 99vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        z-index: 1001;
+        left:0 !important;
+        /* background-color: red; */
+        width: 100vw !important;
         overflow-y: scroll;
         height: calc(100vh -  min(10vw, 80px));
-    
     }
 }
 
@@ -255,6 +257,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: end;
+    z-index: 1001;
 }
 
 .place:hover {
@@ -275,11 +278,10 @@ body {
     top: min(10vw, 80px);
     left: max(12vw, 150px);
     /* background-color: red; */
-    width: calc(99vw - max(12vw, 150px));
+    width: calc(100vw - max(12vw, 150px));
     display: flex;
     flex-direction: row;
     justify-content: center;
-
     overflow-y: scroll;
     height: calc(100vh -  min(10vw, 80px));
 
