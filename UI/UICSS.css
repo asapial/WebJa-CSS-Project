@@ -218,6 +218,21 @@ body {
     #wrapi {
         display: none;
     }
+    .data
+    {
+        position: absolute;
+        top: min(10vw, 80px);
+        left:0vw;
+        background-color: red;
+        width: 99vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        z-index: 1001;
+        overflow-y: scroll;
+        height: calc(100vh -  min(10vw, 80px));
+    
+    }
 }
 
 @media(min-width:900px) {
@@ -250,4 +265,22 @@ body {
 .place button {
     background-color: inherit;
     border: none;
+}
+
+/* Data Section  */
+
+.data
+{
+    position: absolute;
+    top: min(10vw, 80px);
+    left: max(12vw, 150px);
+    /* background-color: red; */
+    width: calc(99vw - max(12vw, 150px));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    overflow-y: scroll;
+    height: calc(100vh -  min(10vw, 80px));
+
 }
