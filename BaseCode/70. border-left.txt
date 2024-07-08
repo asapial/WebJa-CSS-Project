@@ -1,1 +1,146 @@
-Blank File
+## Definition
+The `border-left` CSS property is a shorthand for setting all the properties for the left border of an element. It sets the width, style, and color of the left border.
+
+## Values
+
+| Value             | Description                                             |
+|-------------------|---------------------------------------------------------|
+| `<border-width>`  | Specifies the width of the left border.                 |
+| `<border-style>`  | Specifies the style of the left border.                 |
+| `<border-color>`  | Specifies the color of the left border.                 |
+| `inherit`         | Inherits the border settings from the parent element.   |
+| `initial`         | Sets the border to its default value.                   |
+| `unset`           | Resets the border to either `inherit` or `initial`.     |
+
+## Example
+
+```css
+.element {
+  border-left: 1px solid black; /* Width, style, and color */
+  border-left: thin dotted red; /* Thin width, dotted style, red color */
+  border-left: medium dashed blue; /* Medium width, dashed style, blue color */
+  border-left: thick double green; /* Thick width, double style, green color */
+  border-left: inherit; /* Inherit value */
+  border-left: initial; /* Initial value */
+  border-left: unset; /* Unset value */
+}
+```
+
+## Description
+The `border-left` property is used to define the left border of an element. It can be used to set the width, style, and color of the border in a single declaration. This property is useful for styling the left border specifically, and it overrides any border styles set by the `border` shorthand property for the left border.
+
+## All Most Similar Properties
+
+| Property            | Description                                       | Difference                              |
+|---------------------|---------------------------------------------------|-----------------------------------------|
+| `border`            | Sets all borders of an element.                   | Affects all borders, not just the left. |
+| `border-left-width` | Sets the width of the left border.                | Only sets the width.                    |
+| `border-left-style` | Sets the style of the left border.                | Only sets the style.                    |
+| `border-left-color` | Sets the color of the left border.                | Only sets the color.                    |
+| `border-right`      | Sets all properties of the right border.          | Affects the right border instead.       |
+| `border-top`        | Sets all properties of the top border.            | Affects the top border instead.         |
+| `border-bottom`     | Sets all properties of the bottom border.         | Affects the bottom border instead.      |
+
+## Browser Compatibility
+
+| Browser            | Supported Version |
+|--------------------|-------------------|
+| Chrome             | Yes               |
+| Firefox            | Yes               |
+| Safari             | Yes               |
+| Edge               | Yes               |
+| Internet Explorer  | Yes               |
+
+## In JavaScript
+
+```js
+document.querySelector('.element').style.borderLeft = '2px solid red';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            text-align: center;
+        }
+        .solid {
+            border-left: 4px solid black;
+        }
+        .dotted {
+            border-left: 4px dotted red;
+        }
+        .dashed {
+            border-left: 4px dashed blue;
+        }
+        .double {
+            border-left: 4px double green;
+        }
+        .inherit {
+            border-left: inherit;
+            border-left: 4px solid black; /* Example parent style */
+        }
+        .initial {
+            border-left: initial;
+            border-left: 4px solid black; /* Example initial style */
+        }
+        .unset {
+            border-left: unset;
+            border-left: 4px solid black; /* Example unset style */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Values of border-left</h1>
+        <div class="sub-container solid">
+            <h2>solid</h2>
+        </div>
+        <div class="sub-container dotted">
+            <h2>dotted</h2>
+        </div>
+        <div class="sub-container dashed">
+            <h2>dashed</h2>
+        </div>
+        <div class="sub-container double">
+            <h2>double</h2>
+        </div>
+        <div class="sub-container inherit">
+            <h2>inherit</h2>
+        </div>
+        <div class="sub-container initial">
+            <h2>initial</h2>
+        </div>
+        <div class="sub-container unset">
+            <h2>unset</h2>
+        </div>
+    </div>
+</body>
+</html>
+```

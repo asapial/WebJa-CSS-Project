@@ -1,1 +1,152 @@
-Blank File
+## Definition
+The `box-sizing` CSS property defines how the width and height of an element are calculated: whether they include the padding and borders, or not.
+
+## Values
+
+| Value            | Description                                                                                          |
+|------------------|------------------------------------------------------------------------------------------------------|
+| `content-box`    | Default value. The width and height properties (and min/max properties) include only the content. Border and padding are not included. |
+| `border-box`     | The width and height properties (and min/max properties) include content, padding, and border, but not the margin. |
+| `initial`        | Sets the property to its default value (`content-box`).                                              |
+| `inherit`        | Inherits the property from its parent element.                                                        |
+
+## Example
+
+```css
+/* Content-box */
+.element1 {
+  box-sizing: content-box; /* Default value */
+  width: 100px; 
+  padding: 20px; 
+  border: 10px solid black; /* Total width: 160px (100 + 20*2 + 10*2) */
+}
+
+/* Border-box */
+.element2 {
+  box-sizing: border-box; 
+  width: 100px; 
+  padding: 20px; 
+  border: 10px solid black; /* Total width: 100px (content + padding + border) */
+}
+
+/* Initial */
+.element3 {
+  box-sizing: initial; /* Default value: content-box */
+}
+
+/* Inherit */
+.element4 {
+  box-sizing: inherit; /* Inherits from parent */
+}
+```
+
+## Description
+The `box-sizing` property allows you to change the default CSS box model used to calculate widths and heights of elements. By default, the width and height you assign to an element only apply to the element's content box. The `box-sizing` property can be used to include the padding and border in the element's total width and height.
+
+- `content-box`: The width and height properties include only the content, but not the padding, border, or margin.
+- `border-box`: The width and height properties include the padding and border, but not the margin. This makes it easier to manage layouts.
+
+## All Most Similar Properties
+
+| Property         | Description                                   | Difference                                   |
+|------------------|-----------------------------------------------|----------------------------------------------|
+| `width`          | Sets the width of an element.                 | Does not include padding or border by default. |
+| `height`         | Sets the height of an element.                | Does not include padding or border by default. |
+| `padding`        | Sets the padding space on all four sides of an element. | Affects the element's padding area, not box-sizing. |
+| `border`         | Sets the border for an element.               | Affects the element's border area, not box-sizing. |
+
+## Browser Compatibility
+
+| Browser           | Supported Versions |
+|-------------------|--------------------|
+| Chrome            | Yes                |
+| Firefox           | Yes                |
+| Safari            | Yes                |
+| Edge              | Yes                |
+| Internet Explorer | Yes (from version 8) |
+| Opera             | Yes                |
+
+## In JavaScript
+
+```js
+element.style.boxSizing = 'border-box'; // Setting box-sizing property
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Sizing Property Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      background-color: #ffffff;
+      padding: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+    }
+    .element1, .element2, .element3, .element4 {
+      margin: 10px 0;
+      padding: 20px;
+      background-color: #ff9999;
+      border: 10px solid #000;
+      display: inline-block;
+      width: 100px;
+    }
+    .element1 {
+      box-sizing: content-box;
+    }
+    .element2 {
+      box-sizing: border-box;
+    }
+    .element3 {
+      box-sizing: initial;
+    }
+    .element4 {
+      box-sizing: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Values of box-sizing property</h1>
+    <div class="sub-container">
+      <h2>content-box</h2>
+      <div class="element1">box-sizing: content-box;</div>
+    </div>
+    <div class="sub-container">
+      <h2>border-box</h2>
+      <div class="element2">box-sizing: border-box;</div>
+    </div>
+    <div class="sub-container">
+      <h2>initial</h2>
+      <div class="element3">box-sizing: initial;</div>
+    </div>
+    <div class="sub-container">
+      <h2>inherit</h2>
+      <div class="element4">box-sizing: inherit;</div>
+    </div>
+  </div>
+</body>
+</html>
+```

@@ -1,1 +1,147 @@
-Blank File
+## Definition
+The `border-radius` CSS property defines the radius of an element's corners. It allows you to round the corners of an element.
+
+## Values
+
+| Value                   | Description                                                                          |
+|-------------------------|--------------------------------------------------------------------------------------|
+| `<length>`              | Defines the radius of the corners in fixed units (e.g., `px`, `em`, `rem`).          |
+| `<percentage>`          | Defines the radius of the corners as a percentage of the element's dimensions.       |
+| `initial`               | Sets the property to its default value.                                              |
+| `inherit`               | Inherits the property from the parent element.                                       |
+| `unset`                 | Resets the property to its natural value (either inherited or initial).              |
+| `/` (slash)             | Allows defining elliptical corners with two values for each corner (horizontal/vertical). |
+
+## Example
+
+```css
+.element {
+  border-radius: 10px; /* 10 pixels radius for all corners */
+  border-radius: 50%; /* 50% radius for all corners */
+  border-radius: 10px 20px; /* 10px for top-left/bottom-right, 20px for top-right/bottom-left */
+  border-radius: 10px 20px 30px 40px; /* Top-left 10px, top-right 20px, bottom-right 30px, bottom-left 40px */
+  border-radius: 10px / 20px; /* 10px horizontal radius, 20px vertical radius */
+  border-radius: inherit; /* Inherit value */
+  border-radius: initial; /* Initial value */
+  border-radius: unset; /* Unset value */
+}
+```
+
+## Description
+The `border-radius` property allows you to add rounded corners to elements. You can specify a single radius for all corners or use multiple values to define different radii for each corner. The property can accept lengths or percentages, and it supports elliptical shapes using the slash syntax.
+
+## All Most Similar Properties
+
+| Property              | Description                                                      | Difference                                |
+|-----------------------|------------------------------------------------------------------|-------------------------------------------|
+| `border-top-left-radius`     | Sets the radius for the top-left corner.                      | Affects only the top-left corner.         |
+| `border-top-right-radius`    | Sets the radius for the top-right corner.                     | Affects only the top-right corner.        |
+| `border-bottom-left-radius`  | Sets the radius for the bottom-left corner.                   | Affects only the bottom-left corner.      |
+| `border-bottom-right-radius` | Sets the radius for the bottom-right corner.                  | Affects only the bottom-right corner.     |
+
+## Browser Compatibility
+
+| Browser            | Supported Version |
+|--------------------|-------------------|
+| Chrome             | Yes               |
+| Firefox            | Yes               |
+| Safari             | Yes               |
+| Edge               | Yes               |
+| Internet Explorer  | Yes               |
+
+## In JavaScript
+
+```js
+document.querySelector('.element').style.borderRadius = '20px';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            text-align: center;
+        }
+        .radius-10px {
+            border-radius: 10px;
+        }
+        .radius-50percent {
+            border-radius: 50%;
+        }
+        .radius-10px-20px {
+            border-radius: 10px 20px;
+        }
+        .radius-10px-20px-30px-40px {
+            border-radius: 10px 20px 30px 40px;
+        }
+        .radius-10px-20px-elliptical {
+            border-radius: 10px / 20px;
+        }
+        .inherit {
+            border-radius: inherit;
+        }
+        .initial {
+            border-radius: initial;
+        }
+        .unset {
+            border-radius: unset;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Values of border-radius</h1>
+        <div class="sub-container radius-10px">
+            <h2>10px</h2>
+        </div>
+        <div class="sub-container radius-50percent">
+            <h2>50%</h2>
+        </div>
+        <div class="sub-container radius-10px-20px">
+            <h2>10px 20px</h2>
+        </div>
+        <div class="sub-container radius-10px-20px-30px-40px">
+            <h2>10px 20px 30px 40px</h2>
+        </div>
+        <div class="sub-container radius-10px-20px-elliptical">
+            <h2>10px / 20px</h2>
+        </div>
+        <div class="sub-container inherit">
+            <h2>inherit</h2>
+        </div>
+        <div class="sub-container initial">
+            <h2>initial</h2>
+        </div>
+        <div class="sub-container unset">
+            <h2>unset</h2>
+        </div>
+    </div>
+</body>
+</html>
+```

@@ -1,1 +1,114 @@
-Blank File
+## Definition
+The `border-top` CSS property is a shorthand property for setting all the individual properties of the top border in a single declaration, including `border-top-width`, `border-top-style`, and `border-top-color`.
+
+## Values
+| Value            | Description                                                                                              |
+|------------------|----------------------------------------------------------------------------------------------------------|
+| `border-width`   | Sets the width of the top border. Can be a length (e.g., `px`, `em`) or one of the keywords: `thin`, `medium`, `thick`. |
+| `border-style`   | Sets the style of the top border. Possible values: `none`, `hidden`, `dotted`, `dashed`, `solid`, `double`, `groove`, `ridge`, `inset`, `outset`. |
+| `border-color`   | Sets the color of the top border. Can be a color name, hex value, rgb(), rgba(), hsl(), or hsla().         |
+
+## Example
+```css
+.element1 {
+  border-top: 2px solid #000; /* 2px solid black border */
+}
+
+.element2 {
+  border-top: medium dashed red; /* medium dashed red border */
+}
+
+.element3 {
+  border-top: thick double blue; /* thick double blue border */
+}
+```
+
+## Description
+The `border-top` property is used to set the width, style, and color of the top border of an element. This shorthand property allows for a more concise way of defining the top border, rather than setting `border-top-width`, `border-top-style`, and `border-top-color` separately. This property helps in creating visually distinct top borders for elements, enhancing the design and layout of a webpage.
+
+## All Most Similar Properties
+| Property             | Description                                         | Difference                                                            |
+|----------------------|-----------------------------------------------------|----------------------------------------------------------------------|
+| `border-top-width`   | Sets the width of the top border.                   | Only sets the width, whereas `border-top` sets width, style, and color. |
+| `border-top-style`   | Sets the style of the top border.                   | Only sets the style, whereas `border-top` sets width, style, and color. |
+| `border-top-color`   | Sets the color of the top border.                   | Only sets the color, whereas `border-top` sets width, style, and color. |
+| `border`             | Sets the width, style, and color of all four borders. | Sets all four borders, whereas `border-top` only sets the top border.   |
+
+## Browser Compatibility
+| Browser    | Supported Version |
+|------------|-------------------|
+| Chrome     | All               |
+| Firefox    | All               |
+| Safari     | All               |
+| Edge       | All               |
+| Opera      | All               |
+
+## In JavaScript
+```js
+// Example of setting the border-top property in JavaScript
+document.getElementById("myElement").style.borderTop = "3px solid green";
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Top Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+    }
+    h2 {
+      margin: 0 0 10px;
+    }
+    .border-solid {
+      border-top: 2px solid #000;
+    }
+    .border-dashed {
+      border-top: medium dashed red;
+    }
+    .border-double {
+      border-top: thick double blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Border Top Values</h1>
+    <div class="sub-container border-solid">
+      <h2>2px solid #000</h2>
+    </div>
+    <div class="sub-container border-dashed">
+      <h2>medium dashed red</h2>
+    </div>
+    <div class="sub-container border-double">
+      <h2>thick double blue</h2>
+    </div>
+  </div>
+</body>
+</html>
+```

@@ -1,1 +1,135 @@
-Blank File
+## Definition
+The `border-start-end-radius` CSS property defines a logical border radius on the starting side of the block's end in the flow relative to the writing mode, directionality, and text orientation.
+
+## Values
+| Value     | Description                                                   |
+|-----------|---------------------------------------------------------------|
+| `<length>`| Specifies the radius as a length value (e.g., px, em, rem, %). |
+| `inherit` | Inherits the border radius value from its parent element.      |
+| `initial` | Sets the property to its default value.                        |
+| `unset`   | Resets the property to its natural value.                      |
+
+## Example
+```css
+element1 {
+  border-start-end-radius: 10px; /* sets radius to 10px */
+}
+
+element2 {
+  border-start-end-radius: 50%; /* sets radius to 50% */
+}
+
+element3 {
+  border-start-end-radius: inherit; /* inherits the radius value from parent */
+}
+
+element4 {
+  border-start-end-radius: initial; /* sets radius to its default value */
+}
+
+element5 {
+  border-start-end-radius: unset; /* resets radius to its natural value */
+}
+```
+
+## Description
+The `border-start-end-radius` property is used to create rounded corners at the starting side of the block's end in a flow. The property can be specified using length values or percentages and takes into account the writing mode, directionality, and text orientation. This property provides a logical way to define border radii that adapt to different writing modes.
+
+## All Most Similar Properties
+| Property                   | Description                                                 | Difference                                                                                                                                      |
+|----------------------------|-------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| `border-radius`            | Sets the border radius for all corners of an element.       | `border-radius` affects all corners, while `border-start-end-radius` targets the starting side of the block's end in a logical flow.              |
+| `border-start-start-radius`| Defines a radius on the starting side of the block's start. | `border-start-start-radius` affects the starting side of the block's start, whereas `border-start-end-radius` affects the starting side of the end. |
+| `border-end-start-radius`  | Sets a radius on the ending side of the block's start.      | `border-end-start-radius` affects the ending side of the block's start, while `border-start-end-radius` affects the starting side of the block's end.|
+| `border-end-end-radius`    | Defines a radius on the ending side of the block's end.     | `border-end-end-radius` affects the ending side of the block's end, while `border-start-end-radius` affects the starting side of the block's end.   |
+
+## Browser Compatibility
+| Browser    | Supported Version |
+|------------|-------------------|
+| Chrome     | 89+               |
+| Firefox    | 66+               |
+| Safari     | 12.1+             |
+| Edge       | 79+               |
+| Opera      | 76+               |
+
+## In JavaScript
+```js
+// Example of setting the border-start-end-radius property in JavaScript
+document.getElementById("myElement").style.borderStartEndRadius = "10px";
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Start End Radius Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+    }
+    h2 {
+      margin: 0 0 10px;
+    }
+    .radius-10px {
+      border-start-end-radius: 10px;
+    }
+    .radius-50pct {
+      border-start-end-radius: 50%;
+    }
+    .radius-inherit {
+      border-start-end-radius: inherit;
+    }
+    .radius-initial {
+      border-start-end-radius: initial;
+    }
+    .radius-unset {
+      border-start-end-radius: unset;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Border Start End Radius Values</h1>
+    <div class="sub-container radius-10px">
+      <h2>10px</h2>
+    </div>
+    <div class="sub-container radius-50pct">
+      <h2>50%</h2>
+    </div>
+    <div class="sub-container radius-inherit">
+      <h2>inherit</h2>
+    </div>
+    <div class="sub-container radius-initial">
+      <h2>initial</h2>
+    </div>
+    <div class="sub-container radius-unset">
+      <h2>unset</h2>
+    </div>
+  </div>
+</body>
+</html>
+```

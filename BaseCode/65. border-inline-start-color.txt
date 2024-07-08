@@ -1,1 +1,153 @@
-Blank File
+## Definition
+The `border-inline-start-color` CSS property sets the color of the logical inline start border of an element. This is a logical property that depends on the element's writing mode, directionality, and text orientation.
+
+## Values
+
+| Value    | Description                                                                                      |
+|----------|--------------------------------------------------------------------------------------------------|
+| `color`  | Specifies the color of the border. Can be a named color, a hex value, an RGB value, or an HSL value. |
+| `inherit`| Inherits the color from the parent element.                                                       |
+| `initial`| Sets the property to its default value.                                                           |
+| `unset`  | Resets the property to either `inherit` or `initial`, depending on whether the property is inherited. |
+
+## Example
+
+```css
+.element {
+  border-inline-start-color: red; /* Named color */
+  border-inline-start-color: #ff0000; /* Hex color */
+  border-inline-start-color: rgb(255, 0, 0); /* RGB color */
+  border-inline-start-color: hsl(0, 100%, 50%); /* HSL color */
+  border-inline-start-color: inherit; /* Inherit value */
+  border-inline-start-color: initial; /* Initial value */
+  border-inline-start-color: unset; /* Unset value */
+}
+```
+
+## Description
+The `border-inline-start-color` property allows developers to set the color of the inline start border of an element, which can change depending on the writing mode and text direction of the element. For example, in a left-to-right (LTR) writing mode, the inline start border is the left border, while in a right-to-left (RTL) writing mode, the inline start border is the right border. This property provides greater flexibility and control in styling for internationalization and bidirectional text.
+
+## All Most Similar Properties
+
+| Property                      | Description                                                                         | Difference                                                                                          |
+|-------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| `border-inline-start-width`   | Sets the width of the inline start border.                                           | Sets the width instead of the color.                                                                |
+| `border-inline-start-style`   | Sets the style of the inline start border.                                           | Sets the style instead of the color.                                                                |
+| `border-inline-end-color`     | Sets the color of the inline end border.                                             | Affects the inline end border rather than the inline start border.                                   |
+| `border-left-color`           | Sets the color of the left border (physical).                                        | Always affects the left border regardless of writing mode.                                          |
+| `border-right-color`          | Sets the color of the right border (physical).                                       | Always affects the right border regardless of writing mode.                                         |
+
+## Browser Compatibility
+
+| Browser        | Supported Version |
+|----------------|-------------------|
+| Chrome         | Yes               |
+| Firefox        | Yes               |
+| Safari         | Yes               |
+| Edge           | Yes               |
+| Internet Explorer | No            |
+
+## In JavaScript
+
+```js
+document.querySelector('.element').style.borderInlineStartColor = 'blue';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            text-align: center;
+        }
+        .red {
+            border-inline-start-color: red;
+            border-inline-start-style: solid;
+            border-inline-start-width: 4px;
+        }
+        .hex {
+            border-inline-start-color: #ff0000;
+            border-inline-start-style: solid;
+            border-inline-start-width: 4px;
+        }
+        .rgb {
+            border-inline-start-color: rgb(255, 0, 0);
+            border-inline-start-style: solid;
+            border-inline-start-width: 4px;
+        }
+        .hsl {
+            border-inline-start-color: hsl(0, 100%, 50%);
+            border-inline-start-style: solid;
+            border-inline-start-width: 4px;
+        }
+        .inherit {
+            border-inline-start-color: inherit;
+            border-inline-start-style: solid;
+            border-inline-start-width: 4px;
+        }
+        .initial {
+            border-inline-start-color: initial;
+            border-inline-start-style: solid;
+            border-inline-start-width: 4px;
+        }
+        .unset {
+            border-inline-start-color: unset;
+            border-inline-start-style: solid;
+            border-inline-start-width: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Values of border-inline-start-color</h1>
+        <div class="sub-container red">
+            <h2>red</h2>
+        </div>
+        <div class="sub-container hex">
+            <h2>#ff0000</h2>
+        </div>
+        <div class="sub-container rgb">
+            <h2>rgb(255, 0, 0)</h2>
+        </div>
+        <div class="sub-container hsl">
+            <h2>hsl(0, 100%, 50%)</h2>
+        </div>
+        <div class="sub-container inherit">
+            <h2>inherit</h2>
+        </div>
+        <div class="sub-container initial">
+            <h2>initial</h2>
+        </div>
+        <div class="sub-container unset">
+            <h2>unset</h2>
+        </div>
+    </div>
+</body>
+</html>
+```

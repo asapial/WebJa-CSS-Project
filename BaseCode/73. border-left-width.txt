@@ -1,1 +1,157 @@
-Blank File
+## Definition
+The `border-left-width` CSS property sets the width of the left border of an element.
+
+## Values
+
+| Value    | Description                         |
+|----------|-------------------------------------|
+| `thin`   | Sets the left border to a thin width. |
+| `medium` | Sets the left border to a medium width. |
+| `thick`  | Sets the left border to a thick width. |
+| `<length>` | Specifies the width of the left border. It can be a fixed length (e.g., `px`, `em`, `rem`). |
+| `inherit`| Inherits the width from the parent element. |
+| `initial`| Sets the width to its default value. |
+| `unset`  | Resets the property to its natural value (either inherited or initial). |
+
+## Example
+
+```css
+.element {
+  border-left-width: thin; /* Thin border */
+  border-left-width: medium; /* Medium border */
+  border-left-width: thick; /* Thick border */
+  border-left-width: 2px; /* 2 pixels border */
+  border-left-width: 0.5em; /* 0.5 em border */
+  border-left-width: inherit; /* Inherit value */
+  border-left-width: initial; /* Initial value */
+  border-left-width: unset; /* Unset value */
+}
+```
+
+## Description
+The `border-left-width` property defines the width of the left border of an element. It can take predefined values (`thin`, `medium`, `thick`) or specific length values. This property is useful for controlling the thickness of the left border independently of other borders. It can be used in combination with `border-left-style` and `border-left-color` to fully define the appearance of the left border.
+
+## All Most Similar Properties
+
+| Property              | Description                                  | Difference                                |
+|-----------------------|----------------------------------------------|-------------------------------------------|
+| `border-left`         | Sets all properties of the left border.      | Affects width, style, and color.          |
+| `border-width`        | Sets the width of all four borders.          | Affects all borders, not just the left.   |
+| `border-right-width`  | Sets the width of the right border.          | Affects the right border instead.         |
+| `border-top-width`    | Sets the width of the top border.            | Affects the top border instead.           |
+| `border-bottom-width` | Sets the width of the bottom border.         | Affects the bottom border instead.        |
+
+## Browser Compatibility
+
+| Browser            | Supported Version |
+|--------------------|-------------------|
+| Chrome             | Yes               |
+| Firefox            | Yes               |
+| Safari             | Yes               |
+| Edge               | Yes               |
+| Internet Explorer  | Yes               |
+
+## In JavaScript
+
+```js
+document.querySelector('.element').style.borderLeftWidth = '4px';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            text-align: center;
+        }
+        .thin {
+            border-left-width: thin;
+            border-left-style: solid;
+            border-left-color: black;
+        }
+        .medium {
+            border-left-width: medium;
+            border-left-style: solid;
+            border-left-color: black;
+        }
+        .thick {
+            border-left-width: thick;
+            border-left-style: solid;
+            border-left-color: black;
+        }
+        .length {
+            border-left-width: 10px;
+            border-left-style: solid;
+            border-left-color: black;
+        }
+        .inherit {
+            border-left-width: inherit;
+            border-left-style: solid;
+            border-left-color: black;
+        }
+        .initial {
+            border-left-width: initial;
+            border-left-style: solid;
+            border-left-color: black;
+        }
+        .unset {
+            border-left-width: unset;
+            border-left-style: solid;
+            border-left-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Values of border-left-width</h1>
+        <div class="sub-container thin">
+            <h2>thin</h2>
+        </div>
+        <div class="sub-container medium">
+            <h2>medium</h2>
+        </div>
+        <div class="sub-container thick">
+            <h2>thick</h2>
+        </div>
+        <div class="sub-container length">
+            <h2>length</h2>
+        </div>
+        <div class="sub-container inherit">
+            <h2>inherit</h2>
+        </div>
+        <div class="sub-container initial">
+            <h2>initial</h2>
+        </div>
+        <div class="sub-container unset">
+            <h2>unset</h2>
+        </div>
+    </div>
+</body>
+</html>
+```

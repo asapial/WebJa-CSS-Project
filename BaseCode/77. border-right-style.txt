@@ -1,1 +1,191 @@
-Blank File
+## Definition
+The `border-right-style` CSS property sets the line style of an element's right border.
+
+## Values
+| Value     | Description                                           |
+|-----------|-------------------------------------------------------|
+| `none`    | No border.                                            |
+| `hidden`  | Same as `none`, but has different behavior in tables. |
+| `dotted`  | A series of dots.                                     |
+| `dashed`  | A series of short line segments.                      |
+| `solid`   | A single solid line.                                  |
+| `double`  | Two parallel solid lines.                             |
+| `groove`  | Looks as if it were carved in the surface.            |
+| `ridge`   | Looks as if it were coming out of the surface.        |
+| `inset`   | Looks as if it were embedded in the surface.          |
+| `outset`  | Looks as if it were coming out of the canvas.         |
+
+## Example
+```css
+element1 {
+  border-right-style: none; /* none */
+}
+
+element2 {
+  border-right-style: hidden; /* hidden */
+}
+
+element3 {
+  border-right-style: dotted; /* dotted */
+}
+
+element4 {
+  border-right-style: dashed; /* dashed */
+}
+
+element5 {
+  border-right-style: solid; /* solid */
+}
+
+element6 {
+  border-right-style: double; /* double */
+}
+
+element7 {
+  border-right-style: groove; /* groove */
+}
+
+element8 {
+  border-right-style: ridge; /* ridge */
+}
+
+element9 {
+  border-right-style: inset; /* inset */
+}
+
+element10 {
+  border-right-style: outset; /* outset */
+}
+```
+
+## Description
+The `border-right-style` property defines the style of the right border of an element. This property accepts various line styles such as `solid`, `dotted`, `dashed`, `double`, `groove`, `ridge`, `inset`, `outset`, `none`, and `hidden`. This allows for a wide range of visual effects on the right border of elements. It can be used in conjunction with other border properties to create detailed and visually appealing borders.
+
+## All Most Simillar Properties
+| Property             | Description                                           | Difference                                                                                 |
+|----------------------|-------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `border-style`       | Sets the style of all four borders.                   | `border-style` sets the style for all borders, while `border-right-style` sets only the right border style. |
+| `border-left-style`  | Sets the style of the left border.                    | `border-left-style` sets the left border style, `border-right-style` sets the right border style.             |
+| `border-top-style`   | Sets the style of the top border.                     | `border-top-style` sets the top border style, `border-right-style` sets the right border style.               |
+| `border-bottom-style`| Sets the style of the bottom border.                  | `border-bottom-style` sets the bottom border style, `border-right-style` sets the right border style.         |
+
+## Browser Compatibility
+| Browser    | Supported Version |
+|------------|-------------------|
+| Chrome     | All versions      |
+| Firefox    | All versions      |
+| Safari     | All versions      |
+| Edge       | All versions      |
+| Opera      | All versions      |
+
+## In JavaScript
+```js
+// Example of setting the border-right-style property in JavaScript
+document.getElementById("myElement").style.borderRightStyle = "dashed";
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Right Style Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+    }
+    h2 {
+      margin: 0 0 10px;
+    }
+    .none {
+      border-right: 5px none black;
+    }
+    .hidden {
+      border-right: 5px hidden black;
+    }
+    .dotted {
+      border-right: 5px dotted black;
+    }
+    .dashed {
+      border-right: 5px dashed black;
+    }
+    .solid {
+      border-right: 5px solid black;
+    }
+    .double {
+      border-right: 5px double black;
+    }
+    .groove {
+      border-right: 5px groove black;
+    }
+    .ridge {
+      border-right: 5px ridge black;
+    }
+    .inset {
+      border-right: 5px inset black;
+    }
+    .outset {
+      border-right: 5px outset black;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Border Right Style Values</h1>
+    <div class="sub-container none">
+      <h2>none</h2>
+    </div>
+    <div class="sub-container hidden">
+      <h2>hidden</h2>
+    </div>
+    <div class="sub-container dotted">
+      <h2>dotted</h2>
+    </div>
+    <div class="sub-container dashed">
+      <h2>dashed</h2>
+    </div>
+    <div class="sub-container solid">
+      <h2>solid</h2>
+    </div>
+    <div class="sub-container double">
+      <h2>double</h2>
+    </div>
+    <div class="sub-container groove">
+      <h2>groove</h2>
+    </div>
+    <div class="sub-container ridge">
+      <h2>ridge</h2>
+    </div>
+    <div class="sub-container inset">
+      <h2>inset</h2>
+    </div>
+    <div class="sub-container outset">
+      <h2>outset</h2>
+    </div>
+  </div>
+</body>
+</html>
+```

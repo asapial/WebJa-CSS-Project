@@ -1,1 +1,216 @@
-Blank File
+## Definition
+The `border-inline-start-style` CSS property sets the style of the logical inline start border of an element. This is a logical property that depends on the element's writing mode, directionality, and text orientation.
+
+## Values
+
+| Value     | Description                                                                 |
+|-----------|-----------------------------------------------------------------------------|
+| `none`    | No border.                                                                  |
+| `hidden`  | Same as `none`, but in terms of border conflict resolution for table elements. |
+| `dotted`  | A series of dots.                                                           |
+| `dashed`  | A series of short dashes.                                                   |
+| `solid`   | A single solid line.                                                        |
+| `double`  | Two solid lines. The space between them is equal to the width of the border. |
+| `groove`  | Looks as if it were carved in the canvas.                                   |
+| `ridge`   | Looks as if it were coming out of the canvas.                               |
+| `inset`   | Makes the box look as if it were embedded in the canvas.                    |
+| `outset`  | Makes the box look as if it were coming out of the canvas.                  |
+| `inherit` | Inherits the style from the parent element.                                 |
+| `initial` | Sets the property to its default value.                                     |
+| `unset`   | Resets the property to either `inherit` or `initial`, depending on whether the property is inherited. |
+
+## Example
+
+```css
+.element {
+  border-inline-start-style: none; /* No border */
+  border-inline-start-style: hidden; /* Hidden border */
+  border-inline-start-style: dotted; /* Dotted border */
+  border-inline-start-style: dashed; /* Dashed border */
+  border-inline-start-style: solid; /* Solid border */
+  border-inline-start-style: double; /* Double border */
+  border-inline-start-style: groove; /* Groove border */
+  border-inline-start-style: ridge; /* Ridge border */
+  border-inline-start-style: inset; /* Inset border */
+  border-inline-start-style: outset; /* Outset border */
+  border-inline-start-style: inherit; /* Inherit value */
+  border-inline-start-style: initial; /* Initial value */
+  border-inline-start-style: unset; /* Unset value */
+}
+```
+
+## Description
+The `border-inline-start-style` property allows developers to set the style of the inline start border of an element, which can change depending on the writing mode and text direction of the element. For example, in a left-to-right (LTR) writing mode, the inline start border is the left border, while in a right-to-left (RTL) writing mode, the inline start border is the right border. This property provides greater flexibility and control in styling for internationalization and bidirectional text.
+
+## All Most Similar Properties
+
+| Property                      | Description                                                                         | Difference                                                                                          |
+|-------------------------------|-------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| `border-inline-start-width`   | Sets the width of the inline start border.                                           | Sets the width instead of the style.                                                                |
+| `border-inline-start-color`   | Sets the color of the inline start border.                                           | Sets the color instead of the style.                                                                |
+| `border-inline-end-style`     | Sets the style of the inline end border.                                             | Affects the inline end border rather than the inline start border.                                   |
+| `border-left-style`           | Sets the style of the left border (physical).                                        | Always affects the left border regardless of writing mode.                                          |
+| `border-right-style`          | Sets the style of the right border (physical).                                       | Always affects the right border regardless of writing mode.                                         |
+
+## Browser Compatibility
+
+| Browser        | Supported Version |
+|----------------|-------------------|
+| Chrome         | Yes               |
+| Firefox        | Yes               |
+| Safari         | Yes               |
+| Edge           | Yes               |
+| Internet Explorer | No            |
+
+## In JavaScript
+
+```js
+document.querySelector('.element').style.borderInlineStartStyle = 'dotted';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            text-align: center;
+        }
+        .none {
+            border-inline-start-style: none;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .hidden {
+            border-inline-start-style: hidden;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .dotted {
+            border-inline-start-style: dotted;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .dashed {
+            border-inline-start-style: dashed;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .solid {
+            border-inline-start-style: solid;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .double {
+            border-inline-start-style: double;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .groove {
+            border-inline-start-style: groove;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .ridge {
+            border-inline-start-style: ridge;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .inset {
+            border-inline-start-style: inset;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .outset {
+            border-inline-start-style: outset;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .inherit {
+            border-inline-start-style: inherit;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .initial {
+            border-inline-start-style: initial;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+        .unset {
+            border-inline-start-style: unset;
+            border-inline-start-width: 4px;
+            border-inline-start-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Values of border-inline-start-style</h1>
+        <div class="sub-container none">
+            <h2>none</h2>
+        </div>
+        <div class="sub-container hidden">
+            <h2>hidden</h2>
+        </div>
+        <div class="sub-container dotted">
+            <h2>dotted</h2>
+        </div>
+        <div class="sub-container dashed">
+            <h2>dashed</h2>
+        </div>
+        <div class="sub-container solid">
+            <h2>solid</h2>
+        </div>
+        <div class="sub-container double">
+            <h2>double</h2>
+        </div>
+        <div class="sub-container groove">
+            <h2>groove</h2>
+        </div>
+        <div class="sub-container ridge">
+            <h2>ridge</h2>
+        </div>
+        <div class="sub-container inset">
+            <h2>inset</h2>
+        </div>
+        <div class="sub-container outset">
+            <h2>outset</h2>
+        </div>
+        <div class="sub-container inherit">
+            <h2>inherit</h2>
+        </div>
+        <div class="sub-container initial">
+            <h2>initial</h2>
+        </div>
+        <div class="sub-container unset">
+            <h2>unset</h2>
+        </div>
+    </div>
+</body>
+</html>
+```

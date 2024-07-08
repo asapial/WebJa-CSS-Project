@@ -1,1 +1,144 @@
-Blank File
+## Definition
+The `border-top-color` CSS property sets the color of an element's top border.
+
+## Values
+| Value       | Description                                                                                           |
+|-------------|-------------------------------------------------------------------------------------------------------|
+| `<color>`   | Specifies the color of the top border. Can be a color name, hex value, rgb(), rgba(), hsl(), hsla().  |
+| `inherit`   | Inherits the color from its parent element.                                                           |
+
+## Example
+```css
+.element1 {
+  border-top-color: red; /* Red color */
+}
+
+.element2 {
+  border-top-color: #00ff00; /* Hex color value for green */
+}
+
+.element3 {
+  border-top-color: rgb(0, 0, 255); /* RGB color value for blue */
+}
+
+.element4 {
+  border-top-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red */
+}
+
+.element5 {
+  border-top-color: hsl(120, 100%, 50%); /* HSL color value for green */
+}
+
+.element6 {
+  border-top-color: hsla(240, 100%, 50%, 0.3); /* Semi-transparent blue using HSLA */
+}
+```
+
+## Description
+The `border-top-color` property is used to define the color of the top border of an element. It can accept any valid CSS color value, including named colors, hex values, RGB and RGBA values, HSL and HSLA values, and the keyword `inherit`. This property is useful for customizing the appearance of an element's border to match the design requirements of a webpage.
+
+## All Most Similar Properties
+| Property             | Description                                      | Difference                                                   |
+|----------------------|--------------------------------------------------|--------------------------------------------------------------|
+| `border-top-width`   | Sets the width of the top border.                | Only sets the width, whereas `border-top-color` sets color.  |
+| `border-top-style`   | Sets the style of the top border.                | Only sets the style, whereas `border-top-color` sets color.  |
+| `border-top`         | Shorthand for setting the width, style, and color of the top border. | Sets width, style, and color, whereas `border-top-color` only sets color. |
+
+## Browser Compatibility
+| Browser    | Supported Version |
+|------------|-------------------|
+| Chrome     | All               |
+| Firefox    | All               |
+| Safari     | All               |
+| Edge       | All               |
+| Opera      | All               |
+
+## In JavaScript
+```js
+// Example of setting the border-top-color property in JavaScript
+document.getElementById("myElement").style.borderTopColor = "blue";
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Top Color Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      border-top-width: 4px;
+      border-top-style: solid;
+    }
+    h2 {
+      margin: 0 0 10px;
+    }
+    .border-red {
+      border-top-color: red;
+    }
+    .border-green {
+      border-top-color: #00ff00;
+    }
+    .border-blue {
+      border-top-color: rgb(0, 0, 255);
+    }
+    .border-semi-transparent-red {
+      border-top-color: rgba(255, 0, 0, 0.5);
+    }
+    .border-hsl-green {
+      border-top-color: hsl(120, 100%, 50%);
+    }
+    .border-hsla-blue {
+      border-top-color: hsla(240, 100%, 50%, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Border Top Color Values</h1>
+    <div class="sub-container border-red">
+      <h2>red</h2>
+    </div>
+    <div class="sub-container border-green">
+      <h2>#00ff00</h2>
+    </div>
+    <div class="sub-container border-blue">
+      <h2>rgb(0, 0, 255)</h2>
+    </div>
+    <div class="sub-container border-semi-transparent-red">
+      <h2>rgba(255, 0, 0, 0.5)</h2>
+    </div>
+    <div class="sub-container border-hsl-green">
+      <h2>hsl(120, 100%, 50%)</h2>
+    </div>
+    <div class="sub-container border-hsla-blue">
+      <h2>hsla(240, 100%, 50%, 0.3)</h2>
+    </div>
+  </div>
+</body>
+</html>
+```

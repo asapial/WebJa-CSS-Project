@@ -1,1 +1,96 @@
-Blank File
+### Definition
+The `@charset` rule defines the character encoding used in the style sheet.
+
+### Values
+| Value       | Description                         |
+|-------------|-------------------------------------|
+| `<charset>` | Specifies the character encoding.   |
+
+### Example
+```css
+/* Example data for possible values */
+@charset "UTF-8"; /* Using UTF-8 character encoding */
+@charset "ISO-8859-1"; /* Using ISO-8859-1 character encoding */
+```
+
+### Description
+The `@charset` rule must be the first element in a CSS file. It tells the browser which character encoding should be used to interpret the CSS file. This is important for ensuring that any non-ASCII characters in the file are correctly interpreted. Common character encodings include UTF-8 and ISO-8859-1.
+
+### All Most Similar Properties
+| Property      | Description                                             | Difference                              |
+|---------------|---------------------------------------------------------|-----------------------------------------|
+| `<meta charset>` | HTML tag that sets the character encoding for the HTML document. | Sets character encoding for HTML, not CSS. |
+| `@import`     | Allows you to import an external CSS file.              | Imports CSS files but does not set character encoding. |
+
+### Browser Compatibility
+| Browser        | Supported Versions |
+|----------------|--------------------|
+| Chrome         | All                |
+| Firefox        | All                |
+| Edge           | All                |
+| Safari         | All                |
+| Opera          | All                |
+
+### In JavaScript
+```javascript
+// Example of setting charset in a JavaScript-created style element
+var style = document.createElement('style');
+style.innerHTML = '@charset "UTF-8"; body { font-family: Arial, sans-serif; }';
+document.head.appendChild(style);
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @charset "UTF-8";
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .main-container {
+      background-color: #fff;
+      width: 80%;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      margin: 0;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">CSS `@charset` Property Values</h1>
+    <div class="sub-container">
+      <h2>@charset "UTF-8"</h2>
+      <p>Using UTF-8 character encoding</p>
+    </div>
+    <div class="sub-container">
+      <h2>@charset "ISO-8859-1"</h2>
+      <p>Using ISO-8859-1 character encoding</p>
+    </div>
+  </div>
+</body>
+</html>
+```

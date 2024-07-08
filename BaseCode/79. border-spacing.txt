@@ -1,1 +1,170 @@
-Blank File
+## Definition
+The `border-spacing` CSS property sets the distance between the borders of adjacent table cells.
+
+## Values
+| Value       | Description                                                       |
+|-------------|-------------------------------------------------------------------|
+| `<length>`  | Specifies the distance between borders. Can be in px, em, rem, etc.|
+| `inherit`   | Inherits the border-spacing value from its parent element.         |
+
+## Example
+```css
+table1 {
+  border-spacing: 10px; /* sets a 10px space between borders */
+}
+
+table2 {
+  border-spacing: 1em; /* sets a 1em space between borders */
+}
+
+table3 {
+  border-spacing: 5px 10px; /* sets a 5px space between horizontal borders and 10px between vertical borders */
+}
+
+table4 {
+  border-spacing: inherit; /* inherits the border-spacing value from its parent */
+}
+```
+
+## Description
+The `border-spacing` property is used to set the spacing between the borders of adjacent table cells. The spacing can be set uniformly using a single length value, or differently for horizontal and vertical spacing using two length values. This property only applies when `border-collapse` is set to `separate`.
+
+## All Most Similar Properties
+| Property             | Description                                          | Difference                                                                                   |
+|----------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------|
+| `border-collapse`    | Determines whether table borders are collapsed into a single border or separated. | `border-spacing` only applies when `border-collapse` is set to `separate`.                   |
+| `padding`            | Sets the padding inside table cells.                 | `padding` affects the space inside cells, while `border-spacing` affects the space between cells. |
+
+## Browser Compatibility
+| Browser    | Supported Version |
+|------------|-------------------|
+| Chrome     | All versions      |
+| Firefox    | All versions      |
+| Safari     | All versions      |
+| Edge       | All versions      |
+| Opera      | All versions      |
+
+## In JavaScript
+```js
+// Example of setting the border-spacing property in JavaScript
+document.getElementById("myTable").style.borderSpacing = "10px";
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border Spacing Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    .container {
+      width: 80%;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+    }
+    h2 {
+      margin: 0 0 10px;
+    }
+    table {
+      width: 100%;
+      border: 1px solid black;
+      border-collapse: separate;
+    }
+    .spacing-10px {
+      border-spacing: 10px;
+    }
+    .spacing-1em {
+      border-spacing: 1em;
+    }
+    .spacing-5px-10px {
+      border-spacing: 5px 10px;
+    }
+    .spacing-inherit {
+      border-spacing: inherit;
+    }
+    td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Border Spacing Values</h1>
+    <div class="sub-container spacing-10px">
+      <h2>10px</h2>
+      <table>
+        <tr>
+          <td>Cell 1</td>
+          <td>Cell 2</td>
+        </tr>
+        <tr>
+          <td>Cell 3</td>
+          <td>Cell 4</td>
+        </tr>
+      </table>
+    </div>
+    <div class="sub-container spacing-1em">
+      <h2>1em</h2>
+      <table>
+        <tr>
+          <td>Cell 1</td>
+          <td>Cell 2</td>
+        </tr>
+        <tr>
+          <td>Cell 3</td>
+          <td>Cell 4</td>
+        </tr>
+      </table>
+    </div>
+    <div class="sub-container spacing-5px-10px">
+      <h2>5px 10px</h2>
+      <table>
+        <tr>
+          <td>Cell 1</td>
+          <td>Cell 2</td>
+        </tr>
+        <tr>
+          <td>Cell 3</td>
+          <td>Cell 4</td>
+        </tr>
+      </table>
+    </div>
+    <div class="sub-container spacing-inherit">
+      <h2>inherit</h2>
+      <table>
+        <tr>
+          <td>Cell 1</td>
+          <td>Cell 2</td>
+        </tr>
+        <tr>
+          <td>Cell 3</td>
+          <td>Cell 4</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+```
