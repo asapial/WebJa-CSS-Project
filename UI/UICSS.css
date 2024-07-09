@@ -11,30 +11,30 @@ body {
     display: flex;
     height: min(10vw, 80px);
     width: 100%;
-    background-color: #071739;
+    background-color: #668286;
     justify-content: space-between;
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
-    border-bottom: 2px solid rgb(246, 83, 99);
     position: relative;
     z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 #headerAll a {
     font-size: max(2.5vw, 20px);
     margin-left: 2vw;
-    color:#E3C39D;
+    color:cornsilk;
     text-decoration: none;
     font-weight: bold;
 }
 
 #headerAll a:hover {
     scale: 1.1;
-    color: #A4B5C4;
+    color: rgb(93, 73, 2);
 }
 
 #headerAll ul {
-    padding-top: 2vw;
+    padding-top: 2.5vw;
 }
 
 #headerLI {
@@ -44,7 +44,7 @@ body {
 
 #headerLI a:hover {
     scale: 1.1;
-    color: rgb(0, 200, 255);
+    color: rgb(93, 73, 2);
 }
 
 #headerButton {
@@ -52,15 +52,14 @@ body {
     border-radius: 10px;
     margin-right: 2vw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    background-image: linear-gradient(rgb(221, 221, 221), rgb(208, 208, 208), rgb(170, 170, 170), rgb(180, 180, 180));
+    background-image: linear-gradient(#668286,#8eb5bb,#668286)
 
 }
 
 #headerButton:hover {
     scale: 1.1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-    /* background-color: rgb(79, 79, 79); */
-    background-image: linear-gradient(rgb(79, 79, 79), rgb(131, 130, 130));
+    background-image: linear-gradient(#596B6D,#8eb5bb,#596B6D)
 }
 
 #headerButton a {
@@ -73,7 +72,7 @@ body {
 /* SlideBar Section */
 #wrapi {
     /* margin-top: 10vh; */
-    width: max(12vw, 150px);
+    width: max(15vw, 150px);
     display: flex;
     flex-direction: column;
     transition: .3s ease-in;
@@ -92,21 +91,22 @@ body {
     flex-direction: column;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: #223A59;
+    background-color: #596B6D;
     
 }
 
 .sidebar a {
     width: 100%;
     /* background-color: gray; */
-    color: #D1DDED;
-    font-size: 1.2em;
+    color: #DADCD0;
+    font-size: 130%;
     word-break: break-all;
     text-decoration: none;
     padding-bottom: 1px;
     margin: 2px;
     text-align: left;
     margin-left: .5vw;
+    font-family: 'Times New Roman', Times, serif;
     
 }
 
@@ -116,9 +116,9 @@ body {
 }
 
 .sidebar h3 {
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-weight: bolder;
-    color: white;
+    color: #fdfff3;
     font-family: 'Times New Roman', Times, serif;
 }
 
