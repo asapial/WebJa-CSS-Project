@@ -12,6 +12,7 @@ body {
     height: min(10vw, 80px);
     width: 100%;
     background-color: #668286;
+    /* background-color: #1A5276; */
     justify-content: space-between;
     align-items: center;
     font-family: 'Times New Roman', Times, serif;
@@ -91,7 +92,8 @@ body {
     flex-direction: column;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: #596B6D;
+    /* background-color: #596B6D; */
+    background-color: #2C3E50;
     
 }
 
