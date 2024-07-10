@@ -1,1 +1,148 @@
-Blank File
+
+# Definition
+The `color-scheme` CSS property allows an element to indicate which color schemes it can comfortably be rendered in. Commonly used to specify whether an element should follow the user's system color scheme preference (e.g., light or dark mode).
+
+# Values
+
+| Value           | Description                                                               |
+|-----------------|---------------------------------------------------------------------------|
+| `normal`        | Indicates that the element is suited to a user agent-defined color scheme.|
+| `light`         | Indicates that the element is suited to light color schemes.              |
+| `dark`          | Indicates that the element is suited to dark color schemes.               |
+| `light dark`    | Indicates that the element is suited to both light and dark color schemes.|
+
+# Example
+
+```css
+/* normal: user agent-defined color scheme */
+.example-normal {
+    color-scheme: normal; /* User agent-defined color scheme */
+}
+
+/* light: suited to light color schemes */
+.example-light {
+    color-scheme: light; /* Light color scheme */
+}
+
+/* dark: suited to dark color schemes */
+.example-dark {
+    color-scheme: dark; /* Dark color scheme */
+}
+
+/* light dark: suited to both light and dark color schemes */
+.example-light-dark {
+    color-scheme: light dark; /* Both light and dark color schemes */
+}
+```
+
+# Description
+The `color-scheme` property enables an element to specify which color schemes it can be rendered in, helping it adapt to different system color preferences such as light and dark modes. This property enhances the accessibility and user experience by ensuring that elements can automatically adjust to the user's preferred color scheme.
+
+# All Most Simillar Properties
+
+| Property          | Description                                            | Difference                                               |
+|-------------------|--------------------------------------------------------|----------------------------------------------------------|
+| `background-color`| Sets the background color of an element.               | Applies to background color, not scheme preferences.     |
+| `color`           | Sets the text color of an element.                     | Applies to text color, not scheme preferences.           |
+| `border-color`    | Sets the color of the border of an element.            | Applies to border color, not scheme preferences.         |
+
+# Browser Compatibility
+
+| Browser           | Supported Versions     |
+|-------------------|------------------------|
+| Chrome            | Yes                    |
+| Firefox           | Yes                    |
+| Safari            | Yes                    |
+| Edge              | Yes                    |
+| Opera             | Yes                    |
+| Internet Explorer | No                     |
+
+# In JavaScript
+
+```javascript
+// Using JavaScript to set the color-scheme property
+const element = document.getElementById("myElement");
+element.style.colorScheme = "dark";
+```
+
+# Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS color-scheme Property Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+        }
+        .example {
+            margin: 10px;
+            padding: 10px;
+            background-color: #fafafa;
+            border: 1px solid #ccc;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .example-normal {
+            color-scheme: normal;
+        }
+        .example-light {
+            color-scheme: light;
+        }
+        .example-dark {
+            color-scheme: dark;
+        }
+        .example-light-dark {
+            color-scheme: light dark;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS color-scheme Property Values</h1>
+        <div class="sub-container">
+            <h2>color-scheme: normal</h2>
+            <div class="example example-normal">This follows the user agent-defined color scheme.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color-scheme: light</h2>
+            <div class="example example-light">This follows the light color scheme.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color-scheme: dark</h2>
+            <div class="example example-dark">This follows the dark color scheme.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color-scheme: light dark</h2>
+            <div class="example example-light-dark">This follows both light and dark color schemes.</div>
+        </div>
+    </div>
+</body>
+</html>
+```

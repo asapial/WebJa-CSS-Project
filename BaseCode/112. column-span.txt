@@ -1,1 +1,140 @@
-Blank File
+## Definition
+The `column-span` CSS property makes an element span across multiple columns in a multi-column layout.
+
+## Values
+
+| Value   | Description                                                            |
+|---------|------------------------------------------------------------------------|
+| `none`  | The element does not span multiple columns. This is the default value. |
+| `all`   | The element spans across all columns.                                  |
+| `initial` | Sets this property to its default value.                              |
+| `inherit` | Inherits this property from its parent element.                       |
+
+## Example
+
+```css
+/* none value */
+.container .no-span {
+  column-span: none; /* does not span columns */
+}
+
+/* all value */
+.container .span-all {
+  column-span: all; /* spans across all columns */
+}
+
+/* inherit value */
+.container .inherit-span {
+  column-span: inherit; /* inherits from parent */
+}
+
+/* initial value */
+.container .initial-span {
+  column-span: initial; /* default value */
+}
+```
+
+## Description
+The `column-span` property controls whether an element spans across multiple columns or not. It is particularly useful in multi-column layouts to create sections that should not be split by columns, such as headers or images. When `column-span: all` is applied, the element will span across all the columns, effectively creating a break in the multi-column flow.
+
+### Implementation
+- Use `column-span: all` to make elements like headers or footers span across all columns, ensuring they do not get split.
+- Use `column-span: none` for elements that should remain within a single column.
+- This property only affects elements within a multi-column layout.
+
+## All Most Similar Properties
+
+| Property            | Description                                              | Difference                                          |
+|---------------------|----------------------------------------------------------|-----------------------------------------------------|
+| `column-count`      | Specifies the number of columns an element should be divided into. | Controls the number of columns, not element spanning. |
+| `column-width`      | Specifies the ideal width of columns in a multi-column layout. | Controls the width of columns, not element spanning. |
+| `column-gap`        | Specifies the gap between columns.                       | Controls the space between columns, not element spanning. |
+
+## Browser Compatibility
+
+| Browser            | Supported Version |
+|--------------------|-------------------|
+| Chrome             | Yes, since 50     |
+| Firefox            | Yes, since 52     |
+| Safari             | Yes, since 10.1   |
+| Edge               | Yes, since 12     |
+| Internet Explorer  | Yes, since 10     |
+| Opera              | Yes, since 37     |
+
+## In JavaScript
+
+```js
+// Setting column-span using JavaScript
+document.querySelector('.span-all').style.columnSpan = 'all';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Column Span Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .main-container {
+      width: 80%;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #dcdbdb;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      column-count: 3;
+      column-gap: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .span-all {
+      column-span: all;
+      background-color: #ffcccb;
+    }
+    .no-span {
+      column-span: none;
+      background-color: #d3ffd3;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">Column Span Property Values</h1>
+    <div class="sub-container">
+      <div class="span-all">
+        <h2>all</h2>
+        <p>This section spans across all columns.</p>
+      </div>
+      <div class="no-span">
+        <h2>none</h2>
+        <p>This section does not span across columns.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+      </div>
+      <div class="no-span">
+        <h2>none</h2>
+        <p>This section does not span across columns.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+```

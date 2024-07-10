@@ -1,1 +1,145 @@
-Blank File
+## Definition
+The `column-rule` CSS property sets the width, style, and color of the rule (line) drawn between columns in a multi-column layout.
+
+## Values
+
+| Value                  | Description                                                                                              |
+|------------------------|----------------------------------------------------------------------------------------------------------|
+| `<column-rule-width>`  | Specifies the width of the rule. Can be any valid length (e.g., `thin`, `medium`, `thick`, `5px`).       |
+| `<column-rule-style>`  | Specifies the style of the rule. Can be any valid border-style value (e.g., `none`, `solid`, `dotted`).   |
+| `<column-rule-color>`  | Specifies the color of the rule. Can be any valid color value (e.g., `red`, `#ff0000`, `rgb(255, 0, 0)`). |
+| `inherit`              | Inherits this property from its parent element.                                                          |
+| `initial`              | Sets this property to its default value.                                                                 |
+| `unset`                | Resets the property to its inherited value if inherited, or to its initial value if not.                 |
+
+## Example
+
+```css
+/* column-rule-width */
+.container {
+  column-rule-width: 5px; /* 5px width */
+}
+
+/* column-rule-style */
+.container {
+  column-rule-style: solid; /* solid style */
+}
+
+/* column-rule-color */
+.container {
+  column-rule-color: red; /* red color */
+}
+
+/* combined usage */
+.container {
+  column-rule: 3px dashed blue; /* 3px dashed blue rule */
+}
+
+/* inherit value */
+.container {
+  column-rule: inherit; /* inherits from parent */
+}
+
+/* initial value */
+.container {
+  column-rule: initial; /* default value */
+}
+
+/* unset value */
+.container {
+  column-rule: unset; /* reset to inherited or initial */
+```
+
+## Description
+The `column-rule` property is a shorthand property for setting the width, style, and color of the rule between columns in a multi-column layout. It can be specified with any combination of `<column-rule-width>`, `<column-rule-style>`, and `<column-rule-color>` values.
+
+### Implementation
+- Apply `column-rule` to a block-level element to set the rule between its columns.
+- Combine with other multi-column properties like `column-count`, `column-width`, and `column-gap` for more detailed layout control.
+- Useful in creating visually distinct and organized multi-column layouts by adding rules between columns.
+
+## All Most Similar Properties
+
+| Property         | Description                                                 | Difference                                                        |
+|------------------|-------------------------------------------------------------|-------------------------------------------------------------------|
+| `column-count`   | Specifies the number of columns an element should be divided into. | Controls the number of columns, not the rule between them.       |
+| `column-width`   | Specifies the optimal width of the columns.                 | Defines the width of columns, not the rule between them.         |
+| `column-gap`     | Sets the gap between the columns.                           | Affects the space between columns, not the rule between them.    |
+| `border`         | Sets the width, style, and color of an element's border.    | Applies to the element's border, not the rule between columns.   |
+
+## Browser Compatibility
+
+| Browser            | Supported Version |
+|--------------------|-------------------|
+| Chrome             | Yes, since 50     |
+| Firefox            | Yes, since 52     |
+| Safari             | Yes, since 10.1   |
+| Edge               | Yes, since 12     |
+| Internet Explorer  | Yes, since 10     |
+| Opera              | Yes, since 37     |
+
+## In JavaScript
+
+```js
+// Setting column-rule using JavaScript
+document.querySelector('.container').style.columnRule = '3px solid blue';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Column Rule Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .main-container {
+      width: 80%;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #dcdbdb;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      column-count: 3;
+      column-gap: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">Column Rule Property Values</h1>
+    <div class="sub-container" style="column-rule: 5px solid red;">
+      <h2>5px solid red</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    </div>
+    <div class="sub-container" style="column-rule: 3px dashed blue;">
+      <h2>3px dashed blue</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    </div>
+    <div class="sub-container" style="column-rule: 2px dotted green;">
+      <h2>2px dotted green</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    </div>
+  </div>
+</body>
+</html>
+```

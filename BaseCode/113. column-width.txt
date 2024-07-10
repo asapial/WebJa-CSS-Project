@@ -1,1 +1,133 @@
-Blank File
+## Definition
+The `column-width` CSS property specifies the ideal width of columns in a multi-column layout.
+
+## Values
+
+| Value     | Description                                                 |
+|-----------|-------------------------------------------------------------|
+| `<length>`| A length value specifying the ideal width of the columns.   |
+| `auto`    | The browser will determine the width of the columns.        |
+| `initial` | Sets this property to its default value.                    |
+| `inherit` | Inherits this property from its parent element.             |
+
+## Example
+
+```css
+/* length value */
+.container .fixed-width {
+  column-width: 200px; /* column width set to 200px */
+}
+
+/* auto value */
+.container .auto-width {
+  column-width: auto; /* browser determines the column width */
+}
+
+/* initial value */
+.container .initial-width {
+  column-width: initial; /* sets to default value */
+}
+
+/* inherit value */
+.container .inherit-width {
+  column-width: inherit; /* inherits from parent */
+}
+```
+
+## Description
+The `column-width` property defines the ideal width of each column in a multi-column layout. The actual number of columns will be determined by the available width and the specified column width. If the `column-width` property is set, the browser will determine the number of columns based on the available width and the specified column width.
+
+### Implementation
+- Use `column-width: <length>` to set a specific width for columns.
+- Use `column-width: auto` to let the browser determine the column width.
+- This property is useful in responsive designs to control the width of columns based on the viewport width.
+
+## All Most Similar Properties
+
+| Property        | Description                                              | Difference                                          |
+|-----------------|----------------------------------------------------------|-----------------------------------------------------|
+| `column-count`  | Specifies the number of columns an element should be divided into. | Controls the number of columns, not their width.     |
+| `column-gap`    | Specifies the gap between columns.                       | Controls the space between columns, not their width. |
+| `column-span`   | Specifies how many columns an element should span.       | Controls spanning across columns, not their width.   |
+
+## Browser Compatibility
+
+| Browser            | Supported Version |
+|--------------------|-------------------|
+| Chrome             | Yes, since 50     |
+| Firefox            | Yes, since 52     |
+| Safari             | Yes, since 10.1   |
+| Edge               | Yes, since 12     |
+| Internet Explorer  | Yes, since 10     |
+| Opera              | Yes, since 37     |
+
+## In JavaScript
+
+```js
+// Setting column-width using JavaScript
+document.querySelector('.fixed-width').style.columnWidth = '200px';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Column Width Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .main-container {
+      width: 80%;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #dcdbdb;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      column-gap: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .fixed-width {
+      column-width: 200px;
+      background-color: #d3ffd3;
+    }
+    .auto-width {
+      column-width: auto;
+      background-color: #ffcccb;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">Column Width Property Values</h1>
+    <div class="sub-container fixed-width">
+      <h2>200px</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+      <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+    </div>
+    <div class="sub-container auto-width">
+      <h2>auto</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+      <p>Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.</p>
+    </div>
+  </div>
+</body>
+</html>
+```

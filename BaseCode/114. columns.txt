@@ -1,1 +1,132 @@
-Blank File
+## Definition
+The `columns` CSS property is a shorthand property for setting both `column-width` and `column-count`. This property is used to define the number and width of columns in a multi-column layout.
+
+## Values
+| Value              | Description                                                      |
+|--------------------|------------------------------------------------------------------|
+| `auto`             | Sets both the column width and the number of columns to automatic.|
+| `<length>`         | Defines the width of the columns.                                |
+| `<number>`         | Defines the number of columns.                                   |
+
+## Example
+```css
+/* Example of 'columns' property with different values */
+
+.container1 {
+  columns: auto; /* Sets columns to automatic */
+}
+
+.container2 {
+  columns: 200px; /* Sets the column width to 200px */
+}
+
+.container3 {
+  columns: 3; /* Sets the number of columns to 3 */
+}
+
+.container4 {
+  columns: 100px 3; /* Sets the column width to 100px and the number of columns to 3 */
+}
+```
+
+## Description
+The `columns` property is a shorthand for setting `column-width` and `column-count` simultaneously. This property allows developers to create multi-column layouts by specifying either the number of columns or the width of each column, or both. When both values are specified, the browser calculates the optimal layout based on the given width and number of columns. If only one value is specified, the other is set to `auto` by default.
+
+## All Most Similar Properties
+| Property           | Description                                       | Difference                                                                                 |
+|--------------------|---------------------------------------------------|-------------------------------------------------------------------------------------------|
+| `column-width`     | Specifies the width of the columns.               | Defines only the width, not the number of columns.                                         |
+| `column-count`     | Specifies the number of columns.                  | Defines only the number of columns, not the width of each column.                          |
+| `column-gap`       | Specifies the gap between columns.                | Only affects the space between columns, not their width or number.                         |
+| `column-rule`      | Sets the style, width, and color of the rule between columns. | Affects the border between columns, not their layout.                                     |
+
+## Browser Compatibility
+| Browser           | Supported Versions       |
+|-------------------|--------------------------|
+| Chrome            | Yes, from version 50     |
+| Firefox           | Yes, from version 50     |
+| Edge              | Yes, from version 12     |
+| Safari            | Yes, from version 9      |
+| Opera             | Yes, from version 37     |
+| Internet Explorer | Yes, from version 10     |
+
+## In JavaScript
+```js
+// Example of setting 'columns' property using JavaScript
+
+let element = document.querySelector('.container');
+element.style.columns = '100px 3'; // Sets the column width to 100px and the number of columns to 3
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    .main-container {
+      background-color: #ffffff;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+      width: 80%;
+      padding: 20px;
+      text-align: center;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      border-radius: 20px;
+      background-color: #dcdbdb;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    .container1 {
+      columns: auto;
+    }
+    .container2 {
+      columns: 200px;
+    }
+    .container3 {
+      columns: 3;
+    }
+    .container4 {
+      columns: 100px 3;
+    }
+  </style>
+  <title>CSS columns Property Example</title>
+</head>
+<body>
+  <div class="main-container">
+    <h1>CSS columns Property Example</h1>
+    <div class="sub-container container1">
+      <h2>columns: auto</h2>
+      <p>Content in auto columns. Content in auto columns. Content in auto columns. Content in auto columns. Content in auto columns.</p>
+    </div>
+    <div class="sub-container container2">
+      <h2>columns: 200px</h2>
+      <p>Content in 200px columns. Content in 200px columns. Content in 200px columns. Content in 200px columns. Content in 200px columns.</p>
+    </div>
+    <div class="sub-container container3">
+      <h2>columns: 3</h2>
+      <p>Content in 3 columns. Content in 3 columns. Content in 3 columns. Content in 3 columns. Content in 3 columns.</p>
+    </div>
+    <div class="sub-container container4">
+      <h2>columns: 100px 3</h2>
+      <p>Content in 100px 3 columns. Content in 100px 3 columns. Content in 100px 3 columns. Content in 100px 3 columns. Content in 100px 3 columns.</p>
+    </div>
+  </div>
+</body>
+</html>
+```

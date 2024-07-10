@@ -1,1 +1,207 @@
-Blank File
+# Definition
+The `color` CSS property sets the color of the text content of an element. This can include any text contained within the element, as well as the current color of an element's outline.
+
+# Values
+
+| Value                 | Description                                                 |
+|-----------------------|-------------------------------------------------------------|
+| `<color>`             | Can be a named color, hex value, RGB, RGBA, HSL, or HSLA.   |
+| `inherit`             | Inherits the color from its parent element.                 |
+| `initial`             | Sets the color to its default value.                        |
+| `unset`               | Resets the property to its natural value (inherit or initial).|
+
+# Example
+
+```css
+/* named color */
+.example-named {
+    color: red; /* Named color */
+}
+
+/* hex value */
+.example-hex {
+    color: #00ff00; /* Hex color value */
+}
+
+/* RGB value */
+.example-rgb {
+    color: rgb(0, 0, 255); /* RGB color value */
+}
+
+/* RGBA value */
+.example-rgba {
+    color: rgba(255, 0, 0, 0.5); /* RGBA color value with opacity */
+}
+
+/* HSL value */
+.example-hsl {
+    color: hsl(120, 100%, 50%); /* HSL color value */
+}
+
+/* HSLA value */
+.example-hsla {
+    color: hsla(240, 100%, 50%, 0.5); /* HSLA color value with opacity */
+}
+
+/* inherit value */
+.example-inherit {
+    color: inherit; /* Inherits color from parent */
+}
+
+/* initial value */
+.example-initial {
+    color: initial; /* Sets to default color */
+}
+
+/* unset value */
+.example-unset {
+    color: unset; /* Resets to natural value */
+}
+```
+
+# Description
+The `color` property is used to set the color of the text within an element. It accepts various types of color values, including named colors, hex values, RGB, RGBA, HSL, and HSLA. This property can also inherit the color from its parent element, be set to its initial value, or be unset to return to its natural value. Using this property enhances the readability and aesthetic appeal of text on a webpage.
+
+# All Most Simillar Properties
+
+| Property     | Description                                            | Difference                                               |
+|--------------|--------------------------------------------------------|----------------------------------------------------------|
+| `background-color` | Sets the background color of an element.            | Applies to the background, not the text.                 |
+| `border-color`     | Sets the color of the border of an element.          | Applies to the border, not the text.                     |
+| `outline-color`    | Sets the color of the outline of an element.         | Applies to the outline, not the text.                    |
+
+# Browser Compatibility
+
+| Browser      | Supported Versions     |
+|--------------|------------------------|
+| Chrome       | Yes                    |
+| Firefox      | Yes                    |
+| Safari       | Yes                    |
+| Edge         | Yes                    |
+| Opera        | Yes                    |
+| Internet Explorer | Yes               |
+
+# In JavaScript
+
+```javascript
+// Using JavaScript to set the color property
+const element = document.getElementById("myElement");
+element.style.color = "rgb(0, 0, 255)";
+```
+
+# Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS color Property Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+        }
+        .example {
+            margin: 10px;
+            padding: 10px;
+            background-color: #fafafa;
+            border: 1px solid #ccc;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .example-named {
+            color: red;
+        }
+        .example-hex {
+            color: #00ff00;
+        }
+        .example-rgb {
+            color: rgb(0, 0, 255);
+        }
+        .example-rgba {
+            color: rgba(255, 0, 0, 0.5);
+        }
+        .example-hsl {
+            color: hsl(120, 100%, 50%);
+        }
+        .example-hsla {
+            color: hsla(240, 100%, 50%, 0.5);
+        }
+        .example-inherit {
+            color: inherit;
+        }
+        .example-initial {
+            color: initial;
+        }
+        .example-unset {
+            color: unset;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS color Property Values</h1>
+        <div class="sub-container">
+            <h2>color: red</h2>
+            <div class="example example-named">This is red text.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color: #00ff00</h2>
+            <div class="example example-hex">This is green text.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color: rgb(0, 0, 255)</h2>
+            <div class="example example-rgb">This is blue text.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color: rgba(255, 0, 0, 0.5)</h2>
+            <div class="example example-rgba">This is semi-transparent red text.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color: hsl(120, 100%, 50%)</h2>
+            <div class="example example-hsl">This is green text using HSL.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color: hsla(240, 100%, 50%, 0.5)</h2>
+            <div class="example example-hsla">This is semi-transparent blue text using HSLA.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color: inherit</h2>
+            <div class="example example-inherit">This inherits the color from the parent.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color: initial</h2>
+            <div class="example example-initial">This sets the color to its default value.</div>
+        </div>
+        <div class="sub-container">
+            <h2>color: unset</h2>
+            <div class="example example-unset">This resets the color to its natural value.</div>
+        </div>
+    </div>
+</body>
+</html>
+```

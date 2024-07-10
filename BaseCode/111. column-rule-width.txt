@@ -1,1 +1,147 @@
-Blank File
+## Definition
+The `column-rule-width` CSS property sets the width of the rule (line) drawn between columns in a multi-column layout.
+
+## Values
+
+| Value     | Description                                                     |
+|-----------|-----------------------------------------------------------------|
+| `<length>`| Specifies the width of the rule. Can be in units such as px, em, rem, etc. |
+| `thin`    | Specifies a thin rule.                                         |
+| `medium`  | Specifies a medium rule. (default)                              |
+| `thick`   | Specifies a thick rule.                                         |
+| `initial` | Sets this property to its default value.                        |
+| `inherit` | Inherits this property from its parent element.                 |
+
+## Example
+
+```css
+/* thin value */
+.container {
+  column-rule-width: thin; /* thin rule */
+}
+
+/* medium value */
+.container {
+  column-rule-width: medium; /* medium rule */
+}
+
+/* thick value */
+.container {
+  column-rule-width: thick; /* thick rule */
+}
+
+/* length value (e.g., 5px) */
+.container {
+  column-rule-width: 5px; /* 5px rule */
+}
+
+/* inherit value */
+.container {
+  column-rule-width: inherit; /* inherits from parent */
+}
+
+/* initial value */
+.container {
+  column-rule-width: initial; /* default value */
+}
+```
+
+## Description
+The `column-rule-width` property defines the width of the rule (line) drawn between columns in a multi-column layout. It can be specified using length values or keywords. This property enhances the visual separation between columns and helps in organizing multi-column content.
+
+### Implementation
+- Apply `column-rule-width` to a block-level element to set the width of the rule between its columns.
+- Combine with other multi-column properties like `column-count`, `column-width`, `column-gap`, and `column-rule-style` for comprehensive layout control.
+- Useful in creating visually distinct and organized multi-column layouts by adjusting the width of the rules between columns.
+
+## All Most Similar Properties
+
+| Property               | Description                                                      | Difference                                                        |
+|------------------------|------------------------------------------------------------------|-------------------------------------------------------------------|
+| `column-rule-style`    | Specifies the style of the rule between columns.                 | Defines the style of the rule, not its width.                     |
+| `column-rule-color`    | Specifies the color of the rule between columns.                 | Defines the color of the rule, not its width.                     |
+| `column-rule`          | Shorthand property for setting the width, style, and color of the rule between columns. | Combines multiple properties including width.                     |
+| `border-width`         | Sets the width of an element's border.                           | Applies to the element's border, not the rule between columns.    |
+
+## Browser Compatibility
+
+| Browser            | Supported Version |
+|--------------------|-------------------|
+| Chrome             | Yes, since 50     |
+| Firefox            | Yes, since 52     |
+| Safari             | Yes, since 10.1   |
+| Edge               | Yes, since 12     |
+| Internet Explorer  | Yes, since 10     |
+| Opera              | Yes, since 37     |
+
+## In JavaScript
+
+```js
+// Setting column-rule-width using JavaScript
+document.querySelector('.container').style.columnRuleWidth = '5px';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Column Rule Width Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .main-container {
+      width: 80%;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #dcdbdb;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      column-count: 3;
+      column-gap: 20px;
+      column-rule-style: solid;
+      column-rule-color: black;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">Column Rule Width Property Values</h1>
+    <div class="sub-container" style="column-rule-width: thin;">
+      <h2>thin</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    </div>
+    <div class="sub-container" style="column-rule-width: medium;">
+      <h2>medium</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    </div>
+    <div class="sub-container" style="column-rule-width: thick;">
+      <h2>thick</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    </div>
+    <div class="sub-container" style="column-rule-width: 5px;">
+      <h2>5px</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    </div>
+  </div>
+</body>
+</html>
+```

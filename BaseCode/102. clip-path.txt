@@ -1,1 +1,205 @@
-Blank File
+# Definition
+The `clip-path` CSS property creates a clipping region that defines what part of an element should be displayed. The parts of the element that lie inside the region are shown, while those outside are hidden.
+
+# Values
+
+| Value         | Description                                                                                  |
+|---------------|----------------------------------------------------------------------------------------------|
+| `none`        | No clipping is applied.                                                                      |
+| `url()`       | Defines a clipping path using an SVG path or reference.                                       |
+| `inset()`     | Defines a rectangular clipping path with optional rounded corners.                           |
+| `circle()`    | Defines a circular clipping path.                                                            |
+| `ellipse()`   | Defines an elliptical clipping path.                                                         |
+| `polygon()`   | Defines a polygonal clipping path.                                                           |
+| `path()`      | Defines a path for clipping using an SVG path definition.                                     |
+| `inherit`     | Inherits the clipping path from the parent element.                                           |
+
+# Example
+
+```css
+/* none: no clipping */
+.example-none {
+    clip-path: none; /* No clipping applied */
+}
+
+/* url: clipping using an SVG path */
+.example-url {
+    clip-path: url(#myClipPath); /* SVG path reference */
+}
+
+/* inset: rectangular clipping */
+.example-inset {
+    clip-path: inset(10px 20px 30px 40px); /* Rectangular clipping with offsets */
+}
+
+/* circle: circular clipping */
+.example-circle {
+    clip-path: circle(50% at 50% 50%); /* Circular clipping with radius and position */
+}
+
+/* ellipse: elliptical clipping */
+.example-ellipse {
+    clip-path: ellipse(50% 30% at 50% 50%); /* Elliptical clipping with radii and position */
+}
+
+/* polygon: polygonal clipping */
+.example-polygon {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangular clipping path */
+}
+
+/* path: path-based clipping */
+.example-path {
+    clip-path: path('M10 10 H 90 V 90 H 10 L 10 10'); /* SVG path definition */
+}
+
+/* inherit: inherits clipping from parent */
+.example-inherit {
+    clip-path: inherit; /* Inherits clipping from parent element */
+}
+```
+
+# Description
+The `clip-path` property allows you to define complex clipping paths for elements, enabling creative and flexible designs. It supports various shapes like rectangles, circles, ellipses, polygons, and paths. This property is versatile and can be used with both CSS shapes and SVG paths, making it a powerful tool for web designers to control the visibility of parts of an element.
+
+# All Most Simillar Properties
+
+| Property     | Description                                            | Difference                                               |
+|--------------|--------------------------------------------------------|----------------------------------------------------------|
+| `clip`       | Defines a rectangular clipping region.                 | Limited to rectangular shapes; deprecated.               |
+| `mask`       | Clips the content using an image as a mask.            | Uses images or gradients to define the clipping region.  |
+| `overflow`   | Controls the content visibility beyond the element's box. | Manages overflow, not specifically clipping.             |
+
+# Browser Compatibility
+
+| Browser      | Supported Versions     |
+|--------------|------------------------|
+| Chrome       | Yes                    |
+| Firefox      | Yes                    |
+| Safari       | Yes                    |
+| Edge         | Yes                    |
+| Opera        | Yes                    |
+| Internet Explorer | No               |
+
+# In JavaScript
+
+```javascript
+// Using JavaScript to set the clip-path property
+const element = document.getElementById("myElement");
+element.style.clipPath = "circle(50% at 50% 50%)";
+```
+
+# Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS clip-path Property Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+        }
+        .example {
+            margin: 10px;
+            padding: 10px;
+            background-color: #fafafa;
+            border: 1px solid #ccc;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        .example-none {
+            clip-path: none;
+        }
+        .example-url {
+            clip-path: url(#myClipPath);
+        }
+        .example-inset {
+            clip-path: inset(10px 20px 30px 40px);
+        }
+        .example-circle {
+            clip-path: circle(50% at 50% 50%);
+        }
+        .example-ellipse {
+            clip-path: ellipse(50% 30% at 50% 50%);
+        }
+        .example-polygon {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+        .example-path {
+            clip-path: path('M10 10 H 90 V 90 H 10 L 10 10');
+        }
+        .example-inherit {
+            clip-path: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS clip-path Property Values</h1>
+        <div class="sub-container">
+            <h2>clip-path: none</h2>
+            <div class="example example-none">This is fully visible content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: url(#myClipPath)</h2>
+            <svg width="0" height="0">
+                <defs>
+                    <clipPath id="myClipPath">
+                        <circle cx="50" cy="50" r="50"/>
+                    </clipPath>
+                </defs>
+            </svg>
+            <div class="example example-url">This is clipped using an SVG path.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: inset(10px 20px 30px 40px)</h2>
+            <div class="example example-inset">This is clipped content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: circle(50% at 50% 50%)</h2>
+            <div class="example example-circle">This is circular clipped content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: ellipse(50% 30% at 50% 50%)</h2>
+            <div class="example example-ellipse">This is elliptical clipped content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: polygon(50% 0%, 0% 100%, 100% 100%)</h2>
+            <div class="example example-polygon">This is polygonal clipped content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: path('M10 10 H 90 V 90 H 10 L 10 10')</h2>
+            <div class="example example-path">This is path-based clipped content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: inherit</h2>
+            <div class="example example-inherit">This inherits clipping from its parent.</div>
+        </div>
+    </div>
+</body>
+</html>
+```

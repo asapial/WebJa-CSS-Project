@@ -1,1 +1,140 @@
-Blank File
+## Definition
+The `column-rule-color` CSS property sets the color of the rule (line) drawn between columns in a multi-column layout.
+
+## Values
+
+| Value         | Description                                                   |
+|---------------|---------------------------------------------------------------|
+| `<color>`     | Specifies the color of the rule. Can be any valid color value (e.g., `red`, `#ff0000`, `rgb(255, 0, 0)`). |
+| `inherit`     | Inherits this property from its parent element.               |
+| `initial`     | Sets this property to its default value.                      |
+| `unset`       | Resets the property to its inherited value if inherited, or to its initial value if not. |
+
+## Example
+
+```css
+/* color value */
+.container {
+  column-rule-color: red; /* red color */
+}
+
+/* color value with hex */
+.container {
+  column-rule-color: #ff0000; /* red color in hex */
+}
+
+/* color value with rgb */
+.container {
+  column-rule-color: rgb(255, 0, 0); /* red color in rgb */
+}
+
+/* inherit value */
+.container {
+  column-rule-color: inherit; /* inherits from parent */
+}
+
+/* initial value */
+.container {
+  column-rule-color: initial; /* default value */
+}
+
+/* unset value */
+.container {
+  column-rule-color: unset; /* reset to inherited or initial */
+```
+
+## Description
+The `column-rule-color` property is used to set the color of the rule between columns in a multi-column layout. It can be specified using any valid color value, including named colors, hex values, and RGB values.
+
+### Implementation
+- Apply `column-rule-color` to a block-level element to set the color of the rule between its columns.
+- Combine with other multi-column properties like `column-count`, `column-width`, `column-gap`, and `column-rule-style` for more detailed layout control.
+- Useful in creating visually distinct and organized multi-column layouts by adding colored rules between columns.
+
+## All Most Similar Properties
+
+| Property               | Description                                                      | Difference                                                        |
+|------------------------|------------------------------------------------------------------|-------------------------------------------------------------------|
+| `column-rule-width`    | Specifies the width of the rule between columns.                 | Defines the width of the rule, not its color.                     |
+| `column-rule-style`    | Specifies the style of the rule between columns.                 | Defines the style of the rule, not its color.                     |
+| `column-rule`          | Shorthand property for setting the width, style, and color of the rule between columns. | Combines multiple properties including color.                     |
+| `border-color`         | Sets the color of an element's border.                           | Applies to the element's border, not the rule between columns.    |
+
+## Browser Compatibility
+
+| Browser            | Supported Version |
+|--------------------|-------------------|
+| Chrome             | Yes, since 50     |
+| Firefox            | Yes, since 52     |
+| Safari             | Yes, since 10.1   |
+| Edge               | Yes, since 12     |
+| Internet Explorer  | Yes, since 10     |
+| Opera              | Yes, since 37     |
+
+## In JavaScript
+
+```js
+// Setting column-rule-color using JavaScript
+document.querySelector('.container').style.columnRuleColor = 'blue';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Column Rule Color Example</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .main-container {
+      width: 80%;
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+    .sub-container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #dcdbdb;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+      column-count: 3;
+      column-gap: 20px;
+      column-rule-width: 3px;
+      column-rule-style: solid;
+    }
+    h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <h1 style="text-align: center;">Column Rule Color Property Values</h1>
+    <div class="sub-container" style="column-rule-color: red;">
+      <h2>red</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    </div>
+    <div class="sub-container" style="column-rule-color: #00ff00;">
+      <h2>#00ff00</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    </div>
+    <div class="sub-container" style="column-rule-color: rgb(0, 0, 255);">
+      <h2>rgb(0, 0, 255)</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+    </div>
+  </div>
+</body>
+</html>
+```
