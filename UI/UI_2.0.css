@@ -182,6 +182,7 @@ body{
     font-size: 1.2vw;
     font-family: 'Times New Roman', Times, serif;
     color: #ECF0F1;
+    text-decoration: none;
 }
 .wrapper a:hover{
     scale: 1.05;
