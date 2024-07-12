@@ -4,7 +4,7 @@ body{
     height: 100vh;
 }
 
-.container
+#container
 {   
     height: 100vh;
     width: 100vw;
@@ -41,6 +41,7 @@ body{
     grid-area: d1;
     padding: .3vw;
 }
+
 .data_2
 {
     grid-area: d2;
@@ -128,6 +129,7 @@ body{
     background-image: linear-gradient( #2C3E50, #506a83, #2C3E50);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.555);
     transition: .3s ease-out;
+    
 }
 
 .LiveIt button:hover{
@@ -139,6 +141,7 @@ body{
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     color: #DAF7A6 ;
+    text-decoration: none;
 }
 
 
@@ -146,10 +149,69 @@ body{
 {
     height: 30%;
     background-color:#2C3E50;
-    z-index: 1000;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 100%;
+    grid-template-areas: "t1 t2 t3 t4 t5 t6 t7 t8 t9 t10 t11 t12";
+    align-items: center;
+    justify-items: center;
 }
 
-.sideBar{
+.topics_1
+{
+    grid-area: t1;
+}
+
+.topics_1 button
+{
+    border: none;
+    background-color: inherit;   
+}
+.topics_2{
+    grid-area: t2;
+}
+
+.topics_3{
+    grid-area: t3;
+}
+
+.topics_4{
+    grid-area: t4;
+}
+
+.topics_5{
+    grid-area: t5;
+}
+
+.topics_6{
+    grid-area: t6;
+}
+
+.topics_7{
+    grid-area: t7;
+}
+
+.topics_8{
+    grid-area: t8;
+}
+
+.topics_9{
+    grid-area: t9;
+}
+
+.topics_10{
+    grid-area: t10;
+}
+
+.topics_11{
+    grid-area: t11;
+}
+
+.topics_12{
+    grid-area: t12;
+}
+
+#sideBar{
     grid-area: s;
     background-color: #2C3E50;
     overflow-y: scroll;
@@ -209,4 +271,52 @@ body{
     grid-area: a;
     background-color: inherit;
     border: 1px solid black;
+}
+
+
+@media(max-width:900px)
+{
+
+#container
+{   
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns:auto  repeat(11,1fr) ;
+    grid-template-rows: max(5vw,100px) auto 100px;
+
+    grid-template-areas: 
+    "h h h h h h h h h h h h"
+    "c c c c c c c c c c c a"
+    "c c c c c c c c c c c a";
+}
+
+#sideBar{
+    display: none;
+}
+
+
+
+}
+
+@media(min-width:901px)
+{
+    .topics_1 button{
+        display: none;
+    }
+    #container
+{   
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns:auto  repeat(11,1fr) ;
+    grid-template-rows: max(5vw,100px) auto 100px;
+
+    grid-template-areas: 
+    "h h h h h h h h h h h h"
+    "s c c c c c c c c c c a"
+    "s c c c c c c c c c c a";
+}
+
+
 }
