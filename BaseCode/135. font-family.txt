@@ -1,1 +1,102 @@
-Blank File
+## 135. `font-family`
+
+### Definition
+The `font-family` CSS property specifies a prioritized list of one or more font family names and/or generic family names for an element.
+
+### Values
+
+| Value         | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| Specific font name | The name of a specific font family, such as "Arial" or "Times New Roman". |
+| Generic family | The name of a generic font family, such as `serif`, `sans-serif`, `monospace`, `cursive`, `fantasy`, or `system-ui`. |
+
+### Example
+
+```css
+.element {
+  font-family: 'Arial', sans-serif; /* Specifies Arial as the primary font and sans-serif as the fallback */
+}
+
+.element {
+  font-family: 'Times New Roman', serif; /* Specifies Times New Roman as the primary font and serif as the fallback */
+}
+```
+
+### Description
+The `font-family` property defines the font to be applied to an element. When specifying a `font-family`, it is good practice to include a generic family name as a fallback to ensure the text is displayed correctly if the specified font is not available. Font names should be listed in order of preference. If a font name contains white-space or special characters, it should be enclosed in quotes.
+
+### All Most Similar Properties
+
+| Property       | Description                                         | Difference                                                    |
+|----------------|-----------------------------------------------------|---------------------------------------------------------------|
+| `font`         | Shorthand property for setting multiple font properties. | `font` sets various font-related properties in one declaration, while `font-family` only sets the font family. |
+| `@font-face`   | Rule for defining custom fonts to be used in a webpage. | `@font-face` is used to load custom fonts, while `font-family` is used to apply fonts to elements.            |
+
+### Browser Compatibility
+
+| Browser        | Support   |
+|----------------|-----------|
+| Chrome         | Yes       |
+| Firefox        | Yes       |
+| Safari         | Yes       |
+| Edge           | Yes       |
+| Internet Explorer | Yes   |
+
+### In JavaScript
+
+```js
+document.querySelector('.element').style.fontFamily = '"Arial", sans-serif';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font-Family Example</title>
+    <style>
+        .main-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+        }
+        .item {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .arial { font-family: 'Arial', sans-serif; background-color: lightcoral; }
+        .times-new-roman { font-family: 'Times New Roman', serif; background-color: lightblue; }
+        .courier-new { font-family: 'Courier New', monospace; background-color: lightgreen; }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Font-Family Values</h1>
+        <div class="sub-container">
+            <h2>'Arial', sans-serif</h2>
+            <div class="item arial">This is Arial, sans-serif</div>
+            <h2>'Times New Roman', serif</h2>
+            <div class="item times-new-roman">This is Times New Roman, serif</div>
+            <h2>'Courier New', monospace</h2>
+            <div class="item courier-new">This is Courier New, monospace</div>
+        </div>
+    </div>
+</body>
+</html>
+```

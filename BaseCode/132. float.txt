@@ -1,1 +1,125 @@
-Blank File
+## 132. `float`
+
+### Definition
+The `float` CSS property places an element on the left or right side of its container, allowing text and inline elements to wrap around it.
+
+### Values
+
+| Value  | Description                                      |
+|--------|--------------------------------------------------|
+| `left` | The element floats to the left of its container. |
+| `right`| The element floats to the right of its container.|
+| `none` | The element does not float.                      |
+| `inherit` | The element inherits the float value of its parent. |
+
+### Example
+
+```css
+.element {
+  float: left; /* Element floats to the left */
+}
+
+.element {
+  float: right; /* Element floats to the right */
+}
+
+.element {
+  float: none; /* Element does not float */
+}
+
+.element {
+  float: inherit; /* Element inherits float value from parent */
+}
+```
+
+### Description
+The `float` property is used to position an element to the left or right within its container, allowing text and inline elements to wrap around it. This property is commonly used for creating layouts and aligning images within text. However, excessive use of `float` can lead to complex and hard-to-maintain code. Modern CSS layout techniques like Flexbox and Grid offer more robust solutions for layout design.
+
+### All Most Similar Properties
+
+| Property       | Description                                         | Difference                                              |
+|----------------|-----------------------------------------------------|---------------------------------------------------------|
+| `position`     | Specifies the type of positioning method used for an element (static, relative, absolute, fixed, sticky). | `float` is for inline and block elements, while `position` applies to all elements. |
+| `display`      | Specifies the display behavior of an element (block, inline, flex, grid, none). | `float` changes the flow of content around an element, while `display` changes the element's rendering box. |
+
+### Browser Compatibility
+
+| Browser        | Support   |
+|----------------|-----------|
+| Chrome         | Yes       |
+| Firefox        | Yes       |
+| Safari         | Yes       |
+| Edge           | Yes       |
+| Internet Explorer | Yes   |
+
+### In JavaScript
+
+```js
+document.querySelector('.element').style.float = 'left';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Example</title>
+    <style>
+        .main-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            overflow: hidden;
+        }
+        .item {
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            background-color: lightcoral;
+            border-radius: 10px;
+        }
+        .left { float: left; }
+        .right { float: right; }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>float: left</h1>
+        <div class="sub-container">
+            <div class="item left">Item 1</div>
+            <div class="item left">Item 2</div>
+            <div class="item left">Item 3</div>
+        </div>
+        
+        <h1>float: right</h1>
+        <div class="sub-container">
+            <div class="item right">Item 1</div>
+            <div class="item right">Item 2</div>
+            <div class="item right">Item 3</div>
+        </div>
+        
+        <h1>float: none</h1>
+        <div class="sub-container">
+            <div class="item" style="float: none;">Item 1</div>
+            <div class="item" style="float: none;">Item 2</div>
+            <div class="item" style="float: none;">Item 3</div>
+        </div>
+    </div>
+</body>
+</html>
+```

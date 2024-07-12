@@ -1,76 +1,122 @@
+## 131. `flex-wrap`
+
+### Definition
+The `flex-wrap` CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. If wrapping is allowed, it controls the direction in which lines are stacked.
+
+### Values
+
+| Value      | Description |
+|------------|-------------|
+| `nowrap`   | All flex items will be on one line. |
+| `wrap`     | Flex items will wrap onto multiple lines, from top to bottom. |
+| `wrap-reverse` | Flex items will wrap onto multiple lines from bottom to top. |
+
+### Example
+
+```css
+.container {
+  display: flex;
+  flex-wrap: nowrap; /* Flex items will stay on one line */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Flex items will wrap onto multiple lines */
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap-reverse; /* Flex items will wrap onto multiple lines in reverse order */
+}
+```
+
+### Description
+The `flex-wrap` property is applied to a flex container to control whether the flex items inside it should wrap or stay on a single line. This property can be useful when designing responsive layouts where the number of items in a row might need to change depending on the screen size. By allowing flex items to wrap, you can create flexible and adaptable layouts that work well on different devices.
+
+### All Most Similar Properties
+
+| Property    | Description                                     | Difference                                      |
+|-------------|-------------------------------------------------|-------------------------------------------------|
+| `flex-direction` | Defines the direction of the flex container's main axis. | Controls the direction of items, not their wrapping. |
+| `align-content`  | Aligns a flex container's lines within the flex container when there is extra space on the cross-axis. | Aligns multiple lines within the container, while `flex-wrap` decides if items should wrap onto multiple lines. |
+
+### Browser Compatibility
+
+| Browser        | Support   |
+|----------------|-----------|
+| Chrome         | Yes       |
+| Firefox        | Yes       |
+| Safari         | Yes       |
+| Edge           | Yes       |
+| Internet Explorer | Partial  |
+
+### In JavaScript
+
+```js
+document.querySelector('.container').style.flexWrap = 'wrap';
+```
+
+### Example Code
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Wrap Example</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
         .main-container {
             width: 80%;
+            margin: 20px auto;
+            padding: 20px;
             background-color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
-            padding: 20px;
             text-align: center;
         }
         .sub-container {
-            width: 40%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
             border-radius: 20px;
             background-color: #dcdbdb;
-            margin: 20px auto;
-            padding: 20px;
-        }
-        .nowrap-container, .wrap-container, .wrap-reverse-container {
-            display: flex;
-            justify-content: center;
-            margin: 10px 0;
         }
         .item {
-            width:150px;
-            background-color: #4caf50;
-            color: white;
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            background-color: lightcoral;
+            border-radius: 10px;
         }
     </style>
-    <title>Flex-wrap Example</title>
 </head>
 <body>
     <div class="main-container">
-        <h1>Flex-wrap Property Values</h1>
-
-        <div class="sub-container nowrap-container">
-            <h2>nowrap</h2>
+        <h1>flex-wrap: nowrap</h1>
+        <div class="sub-container" style="flex-wrap: nowrap;">
             <div class="item">Item 1</div>
             <div class="item">Item 2</div>
             <div class="item">Item 3</div>
         </div>
-
-        <div class="sub-container wrap-container">
-            <h2>wrap</h2>
+        
+        <h1>flex-wrap: wrap</h1>
+        <div class="sub-container" style="flex-wrap: wrap;">
             <div class="item">Item 1</div>
             <div class="item">Item 2</div>
             <div class="item">Item 3</div>
-            <div class="item">Item 4</div>
-            <div class="item">Item 5</div>
         </div>
-
-        <div class="sub-container wrap-reverse-container">
-            <h2>wrap-reverse</h2>
+        
+        <h1>flex-wrap: wrap-reverse</h1>
+        <div class="sub-container" style="flex-wrap: wrap-reverse;">
             <div class="item">Item 1</div>
             <div class="item">Item 2</div>
             <div class="item">Item 3</div>
-            <div class="item">Item 4</div>
-            <div class="item">Item 5</div>
         </div>
     </div>
 </body>
 </html>
+```

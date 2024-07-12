@@ -1,1 +1,120 @@
-Blank File
+## 133. `font`
+
+### Definition
+The `font` CSS property is a shorthand for setting various font-related properties in one declaration. These properties include `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`.
+
+### Values
+
+| Value        | Description                                                                 |
+|--------------|-----------------------------------------------------------------------------|
+| `font-style` | Can be `normal`, `italic`, or `oblique`.                                    |
+| `font-variant` | Can be `normal` or `small-caps`.                                            |
+| `font-weight` | Can be `normal`, `bold`, `bolder`, `lighter`, or a numeric value from `100` to `900`. |
+| `font-size`  | Specifies the size of the font. Can be in units like `px`, `em`, `%`, etc.  |
+| `line-height`| Specifies the height of a line. Can be a number, length, or percentage.     |
+| `font-family`| Specifies the font family.                                                  |
+
+### Example
+
+```css
+.element {
+  font: italic small-caps bold 16px/1.5 "Arial", sans-serif; /* Shorthand example */
+}
+
+.element {
+  font: normal normal normal 12px/1 "Times New Roman", serif; /* Shorthand example */
+}
+```
+
+### Description
+The `font` shorthand property allows you to set multiple font-related properties in a single declaration. It is a convenient way to manage font settings, ensuring consistency across different elements. The values must be specified in the following order: `font-style`, `font-variant`, `font-weight`, `font-size`, `line-height`, and `font-family`. The `font-family` value must always be specified, and `font-size` and `font-family` are required when using the shorthand property.
+
+### All Most Similar Properties
+
+| Property       | Description                                         | Difference                                               |
+|----------------|-----------------------------------------------------|----------------------------------------------------------|
+| `font-style`   | Specifies the style of the font (normal, italic, oblique). | Only sets the font style.                                |
+| `font-weight`  | Specifies the weight (or boldness) of the font.     | Only sets the font weight.                               |
+| `font-size`    | Specifies the size of the font.                     | Only sets the font size.                                 |
+| `font-family`  | Specifies the font family.                          | Only sets the font family.                               |
+
+### Browser Compatibility
+
+| Browser        | Support   |
+|----------------|-----------|
+| Chrome         | Yes       |
+| Firefox        | Yes       |
+| Safari         | Yes       |
+| Edge           | Yes       |
+| Internet Explorer | Yes   |
+
+### In JavaScript
+
+```js
+document.querySelector('.element').style.font = 'italic small-caps bold 16px/1.5 "Arial", sans-serif';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Example</title>
+    <style>
+        .main-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+        }
+        .item {
+            margin: 10px;
+            padding: 20px;
+            background-color: lightcoral;
+            border-radius: 10px;
+        }
+        .italic { font: italic 16px/1.5 "Arial", sans-serif; }
+        .small-caps { font: normal small-caps 16px/1.5 "Arial", sans-serif; }
+        .bold { font: bold 16px/1.5 "Arial", sans-serif; }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>font: italic 16px/1.5 "Arial", sans-serif</h1>
+        <div class="sub-container">
+            <div class="item italic">Item 1</div>
+            <div class="item italic">Item 2</div>
+            <div class="item italic">Item 3</div>
+        </div>
+        
+        <h1>font: normal small-caps 16px/1.5 "Arial", sans-serif</h1>
+        <div class="sub-container">
+            <div class="item small-caps">Item 1</div>
+            <div class="item small-caps">Item 2</div>
+            <div class="item small-caps">Item 3</div>
+        </div>
+        
+        <h1>font: bold 16px/1.5 "Arial", sans-serif</h1>
+        <div class="sub-container">
+            <div class="item bold">Item 1</div>
+            <div class="item bold">Item 2</div>
+            <div class="item bold">Item 3</div>
+        </div>
+    </div>
+</body>
+</html>
+```

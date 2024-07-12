@@ -1,1 +1,116 @@
-Blank File
+## 134. `@font-face`
+
+### Definition
+The `@font-face` CSS at-rule allows custom fonts to be loaded on a webpage. By using `@font-face`, you can define the name and source of a font that can be used later in your stylesheets.
+
+### Values
+
+| Property       | Description                                                   |
+|----------------|---------------------------------------------------------------|
+| `font-family`  | Defines the name of the font.                                 |
+| `src`          | Specifies the location of the font file.                      |
+| `font-style`   | Specifies the style of the font (optional, e.g., `normal`, `italic`). |
+| `font-weight`  | Specifies the weight of the font (optional, e.g., `normal`, `bold`). |
+| `font-display` | Defines how a font face is displayed (optional, e.g., `auto`, `block`, `swap`, `fallback`, `optional`). |
+
+### Example
+
+```css
+@font-face {
+  font-family: 'CustomFont';
+  src: url('customfont.woff2') format('woff2'),
+       url('customfont.woff') format('woff'); /* Define font sources */
+  font-weight: normal; /* Font weight */
+  font-style: normal; /* Font style */
+  font-display: swap; /* Font display */
+}
+```
+
+### Description
+The `@font-face` rule enables the use of custom fonts that are not installed on the user's device. By specifying the font-family name and the source files, you can use these custom fonts in your CSS styles. This rule allows for greater design flexibility and consistency across different browsers and devices.
+
+### All Most Similar Properties
+
+| Property   | Description                                                 | Difference                                                                 |
+|------------|-------------------------------------------------------------|----------------------------------------------------------------------------|
+| `font-family` | Specifies the font family for an element.                    | `font-family` only sets the font for an element, while `@font-face` loads custom fonts. |
+| `src`         | Specifies the URL(s) of the font file(s).                    | `src` is a part of `@font-face` to define font file locations.             |
+| `font-style`  | Specifies the style of the font (normal, italic, oblique).  | `font-style` can be defined within `@font-face` for custom fonts.          |
+| `font-weight` | Specifies the weight of the font.                            | `font-weight` can be defined within `@font-face` for custom fonts.         |
+
+### Browser Compatibility
+
+| Browser        | Support   |
+|----------------|-----------|
+| Chrome         | Yes       |
+| Firefox        | Yes       |
+| Safari         | Yes       |
+| Edge           | Yes       |
+| Internet Explorer | Yes   |
+
+### In JavaScript
+
+```js
+const font = new FontFace('CustomFont', 'url(customfont.woff2)');
+font.load().then(function(loadedFont) {
+  document.fonts.add(loadedFont);
+  document.body.style.fontFamily = 'CustomFont, Arial, sans-serif';
+});
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@font-face Example</title>
+    <style>
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('customfont.woff2') format('woff2'),
+                 url('customfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        .main-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            text-align: center;
+            font-family: 'CustomFont', Arial, sans-serif;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+        }
+        .item {
+            margin: 10px;
+            padding: 20px;
+            background-color: lightcoral;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>@font-face: CustomFont</h1>
+        <div class="sub-container">
+            <div class="item">This is CustomFont</div>
+            <div class="item">This is CustomFont</div>
+            <div class="item">This is CustomFont</div>
+        </div>
+    </div>
+</body>
+</html>
+```

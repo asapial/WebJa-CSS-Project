@@ -1,23 +1,67 @@
-function makeWrapeer()
-{
+document.addEventListener("DOMContentLoaded", function(){
+
     const wrap=document.getElementById("sideBar");
-    wrap.style.display="block";
-
+    const burger=document.getElementById("burger");
+    const content=document.getElementById("content2");
     const container=document.getElementById("container");
+    const preview=document.getElementById("preview");
+   
 
-    // container.style.backgroundColor="red";
-    container.style.gridTemplateColumns="auto  repeat(11,1fr)"
-    container.style.gridTemplateAreas=
-    `
-    "h h h h h h h h h h h h"
-    "s c c c c c c c c c c c"
-    "s c c c c c c c c c c c"
-    `;
+    
+    burger.addEventListener('click',function(event)
+    {      
+        event.stopPropagation();
+        burger.style.display="none";
+        container.style.gridTemplateColumns="auto  repeat(11,1fr)";
+        wrap.style.display="block";
+        container.style.gridTemplateAreas=
+        `
+        "h h h h h h h h h h h h"
+        "s c c c c c c c c c c c"
+        "s c c c c c c c c c c c"
+        `;
+    });
 
-    // const links = document.querySelectorAll('.wrapper a');
-    // links.forEach(link => {
-    //   link.style.fontSize = '2vw';
-    //   link.style.color = '#ECF0F1';
-    //   link.style.textDecoration = 'none';
-    // });
-}
+    content.addEventListener('click',function(event){
+
+        if(!wrap.contains(event.target) && !burger.contains(event.target) && window.innerWidth<900 ){
+            burger.style.display = 'block';
+            wrap.style.display="none";
+            container.style.gridTemplateColumns="auto 1fr";
+            container.style.gridTemplateAreas=
+            `
+       "h h h h h h h h h h h h"
+        "c c c c c c c c c c c c"
+        "c c c c c c c c c c c c"
+        `;
+        }
+    });
+
+
+    document.querySelector('#content').addEventListener('click', function(event) {
+        if (event.target.closest('.mmd-clipboard-copy-container')) {
+          // Get the value from the ClipboardButton element
+          const clipboardButton = event.target.closest('.mmd-clipboard-copy-container').querySelector('.ClipboardButton');
+          const valueToCopy = clipboardButton.getAttribute('value');
+    
+          // Use the Clipboard API to copy text to the clipboard
+          navigator.clipboard.writeText(valueToCopy).then(function() {
+           
+            // Optional: Toggle the check icon visibility
+            const copyIcon = clipboardButton.querySelector('.mmd-clipboard-copy-icon');
+            const checkIcon = clipboardButton.querySelector('.mmd-clipboard-check-icon');
+            copyIcon.style.display = 'none';
+            checkIcon.style.display = 'inline';
+          }).catch(function(error) {
+            console.error('Error copying text: ', error);
+          });
+        }
+      });
+
+});
+
+
+  
+
+
+

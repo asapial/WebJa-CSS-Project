@@ -1,77 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f0f0;
-    }
-    .main-container {
-      background-color: #ffffff;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-      border-radius: 20px;
-      width: 80%;
-      padding: 20px;
-      text-align: center;
-    }
-    .sub-container {
-      width: 80%;
-      margin: 20px auto;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
-      border-radius: 20px;
-      background-color: #dcdbdb;
-      position: relative;
-    }
-    h2 {
-      margin-bottom: 10px;
-    }
-    .element1::before {
-      content: "Hello, World!"; /* Inserts the text 'Hello, World!' */
-    }
-    .element2::after {
-      content: url('image.png'); /* Inserts an image */
-    }
-    .element3::before {
-      content: open-quote; /* Inserts an opening quote */
-    }
-    .element4::after {
-      content: counter(item); /* Inserts the value of the counter named 'item' */
-    }
-    .element5::before {
-      content: attr(data-content); /* Inserts the value of the 'data-content' attribute */
-    }
-  </style>
-  <title>CSS content Property Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy to Clipboard Example</title>
+    <style>
+        .mmd-clipboard-copy-container {
+            right: 0;
+            top: 0;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .ClipboardButton {
+            display: none;
+        }
+
+        .mmd-clipboard-icon {
+            margin: 0.5rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="main-container">
-    <h1>CSS content Property Example</h1>
-    <div class="sub-container element1">
-      <h2>content: "Hello, World!"</h2>
-      <p>This element has text inserted before it.</p>
+    <div class="mmd-clipboard-copy-container">
+        <clipboard-copy
+            aria-label="Copy"
+            class="ClipboardButton mmd-tooltipped-no-delay"
+            tabindex="0"
+            role="button"
+            value=".container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    align-content: center; /* center */
+    /* align-content: flex-start; */  /* flex-start */
+    /* align-content: flex-end; */    /* flex-end */
+    /* align-content: space-between; */  /* space-between */
+    /* align-content: space-around; */   /* space-around */
+    /* align-content: space-evenly; */   /* space-evenly */
+    /* align-content: stretch; */        /* stretch */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}">
+        </clipboard-copy>
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="mmd-clipboard-icon mmd-clipboard-copy-icon" style="margin: 0.5rem">
+            <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path>
+            <path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+        </svg>
+        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="mmd-clipboard-icon mmd-clipboard-check-icon" style="display: none; margin: 0.5rem">
+            <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+        </svg>
     </div>
-    <div class="sub-container element2">
-      <h2>content: url('image.png')</h2>
-      <p>This element has an image inserted after it.</p>
-    </div>
-    <div class="sub-container element3">
-      <h2>content: open-quote</h2>
-      <p>This element has an opening quote inserted before it.</p>
-    </div>
-    <div class="sub-container element4">
-      <h2>content: counter(item)</h2>
-      <p>This element has a counter value inserted after it.</p>
-    </div>
-    <div class="sub-container element5" data-content="Attribute Content">
-      <h2>content: attr(data-content)</h2>
-      <p>This element has attribute content inserted before it.</p>
-    </div>
-  </div>
+
+    <script>
+        document.querySelector('.mmd-clipboard-copy-container').addEventListener('click', function() {
+            // Get the value from the ClipboardButton element
+            const clipboardButton = document.querySelector('.ClipboardButton');
+            const valueToCopy = clipboardButton.getAttribute('value');
+
+            // Use the Clipboard API to copy text to the clipboard
+            navigator.clipboard.writeText(valueToCopy).then(function() {
+                alert('CSS code copied to clipboard!');
+                // Optional: Toggle the check icon visibility
+                const copyIcon = document.querySelector('.mmd-clipboard-copy-icon');
+                const checkIcon = document.querySelector('.mmd-clipboard-check-icon');
+                copyIcon.style.display = 'none';
+                checkIcon.style.display = 'inline';
+            }).catch(function(error) {
+                console.error('Error copying text: ', error);
+            });
+        });
+    </script>
 </body>
 </html>
