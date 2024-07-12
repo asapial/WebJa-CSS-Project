@@ -1,1 +1,160 @@
-Blank File
+### Definition
+
+The `counter-reset` CSS property initializes one or more CSS counters to a specified value.
+
+### Values
+
+| Value                    | Description                                                             |
+|--------------------------|-------------------------------------------------------------------------|
+| `none`                   | No counter is reset.                                                    |
+| `counter-name`           | Initializes the named counter to 0.                                     |
+| `counter-name integer`   | Initializes the named counter to the specified integer value.           |
+
+### Example
+
+```css
+/* Resetting a single counter to 0 */
+.counter-reset-single {
+    counter-reset: section; /* Initializes 'section' counter to 0 */
+}
+
+/* Resetting a single counter to a specific value */
+.counter-reset-specific {
+    counter-reset: section 5; /* Initializes 'section' counter to 5 */
+}
+
+/* Resetting multiple counters */
+.counter-reset-multiple {
+    counter-reset: section 1 chapter 10; /* Initializes 'section' to 1 and 'chapter' to 10 */
+}
+```
+
+### Description
+
+The `counter-reset` property is used in conjunction with the `counter-increment` and `content` properties to create automatic numbering in documents. It initializes one or more counters to a specific value. This is useful for numbering sections, chapters, list items, and other elements that require sequential numbering.
+
+To implement `counter-reset`, you typically:
+
+1. Use `counter-reset` to initialize the counter.
+2. Use `counter-increment` to specify how much the counter should increase.
+3. Use `content: counter(counter-name)` in a `::before` or `::after` pseudo-element to display the counter value.
+
+### All Most Similar Properties
+
+| Property          | Description                                      | Difference                                                                                     |
+|-------------------|--------------------------------------------------|------------------------------------------------------------------------------------------------|
+| `counter-increment` | Increases or decreases the value of a counter.   | `counter-increment` changes the counter's value, while `counter-reset` sets its initial value. |
+| `content`         | Inserts generated content.                       | `content` can use the value of a counter but does not directly alter the counter's value.      |
+
+### Browser Compatibility
+
+| Browser          | Support                        |
+|------------------|--------------------------------|
+| Chrome           | Supported from version 2       |
+| Edge             | Supported from version 12      |
+| Firefox          | Supported from version 1.5     |
+| Safari           | Supported from version 3       |
+| Opera            | Supported from version 9.2     |
+
+### In JavaScript
+
+```javascript
+// Select an element
+const element = document.querySelector('.my-element');
+
+// Set counter-reset to a specific counter
+element.style.counterReset = 'section 1';
+
+// Set counter-reset to multiple counters
+element.style.counterReset = 'section 1 chapter 10';
+
+// Reset the counter-reset
+element.style.counterReset = 'none';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Reset Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: ###f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .main-container {
+            background-color: ###fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: ###dcdbdb;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .counter-reset-single {
+            counter-reset: section;
+        }
+        .counter-reset-single::before {
+            counter-increment: section;
+            content: "Section " counter(section) ". ";
+        }
+
+        .counter-reset-specific {
+            counter-reset: section 5;
+        }
+        .counter-reset-specific::before {
+            counter-increment: section;
+            content: "Section " counter(section) ". ";
+        }
+
+        .counter-reset-multiple {
+            counter-reset: section 1 chapter 10;
+        }
+        .counter-reset-multiple::before {
+            counter-increment: section chapter;
+            content: "Section " counter(section) " Chapter " counter(chapter) ". ";
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Counter Reset</h1>
+        <div class="sub-container counter-reset-single">
+            <h2>single counter reset</h2>
+            <div>This is an example of a single counter reset to 0.</div>
+        </div>
+        <div class="sub-container counter-reset-specific">
+            <h2>specific counter reset</h2>
+            <div>This is an example of a counter reset to 5.</div>
+        </div>
+        <div class="sub-container counter-reset-multiple">
+            <h2>multiple counter resets</h2>
+            <div>This is an example of multiple counters reset to different values.</div>
+        </div>
+    </div>
+</body>
+</html>
+```

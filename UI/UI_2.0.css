@@ -241,7 +241,7 @@ body{
 }
 
 .wrapper a{
-    font-size: 1.2vw;
+    font-size: max(1.2vw,20px);
     font-family: 'Times New Roman', Times, serif;
     color: #ECF0F1;
     text-decoration: none;
@@ -304,7 +304,7 @@ body{
     .topics_1 button{
         display: none;
     }
-    #container
+#container
 {   
     height: 100vh;
     width: 100vw;
@@ -316,6 +316,12 @@ body{
     "h h h h h h h h h h h h"
     "s c c c c c c c c c c a"
     "s c c c c c c c c c c a";
+}
+.wrapper a{
+    font-size: max(1.2vw,20px);
+    font-family: 'Times New Roman', Times, serif;
+    color: #ECF0F1;
+    text-decoration: none;
 }
 
 

@@ -1,1 +1,160 @@
-Blank File
+# Definition
+
+The `counter-increment` CSS property increases or decreases the value of one or more CSS counters.
+
+### Values
+
+| Value                   | Description                                                               |
+|-------------------------|---------------------------------------------------------------------------|
+| `none`                  | No counter is incremented.                                                |
+| `counter-name`          | Increments the named counter by 1.                                        |
+| `counter-name integer`  | Increments the named counter by the specified integer value.              |
+
+### Example
+
+```css
+/* Incrementing a single counter by 1 */
+.counter-single {
+    counter-increment: section; /* Increments 'section' counter by 1 */
+}
+
+/* Incrementing a single counter by a specific value */
+.counter-specific {
+    counter-increment: section 2; /* Increments 'section' counter by 2 */
+}
+
+/* Incrementing multiple counters */
+.counter-multiple {
+    counter-increment: section 1 chapter 2; /* Increments 'section' by 1 and 'chapter' by 2 */
+}
+```
+
+### Description
+
+The `counter-increment` property is used in conjunction with the `counter-reset` and `content` properties to create automatic numbering in documents. It can increment one or more counters by a specified value. This is useful for numbering sections, chapters, list items, and other elements that require sequential numbering.
+
+To implement `counter-increment`, you typically:
+
+1. Use `counter-reset` to initialize the counter.
+2. Use `counter-increment` to specify how much the counter should increase.
+3. Use `content: counter(counter-name)` in a `::before` or `::after` pseudo-element to display the counter value.
+
+### All Most Similar Properties
+
+| Property         | Description                                        | Difference                                                                                       |
+|------------------|----------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| `counter-reset`  | Initializes one or more CSS counters.              | `counter-reset` sets the starting value of a counter, while `counter-increment` changes its value. |
+| `content`        | Inserts generated content.                         | `content` can use the value of a counter but does not directly alter the counter's value.         |
+
+### Browser Compatibility
+
+| Browser          | Support                          |
+|------------------|----------------------------------|
+| Chrome           | Supported from version 2         |
+| Edge             | Supported from version 12        |
+| Firefox          | Supported from version 1.5       |
+| Safari           | Supported from version 3         |
+| Opera            | Supported from version 9.2       |
+
+### In JavaScript
+
+```javascript
+// Select an element
+const element = document.querySelector('.my-element');
+
+// Set counter-increment to a specific counter
+element.style.counterIncrement = 'section 1';
+
+// Set counter-increment to multiple counters
+element.style.counterIncrement = 'section 1 chapter 2';
+
+// Reset the counter-increment
+element.style.counterIncrement = 'none';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Increment Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: ###f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .main-container {
+            background-color: ###fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: ###dcdbdb;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .counter-single {
+            counter-reset: section;
+        }
+        .counter-single::before {
+            counter-increment: section;
+            content: "Section " counter(section) ". ";
+        }
+
+        .counter-specific {
+            counter-reset: section;
+        }
+        .counter-specific::before {
+            counter-increment: section 2;
+            content: "Section " counter(section) ". ";
+        }
+
+        .counter-multiple {
+            counter-reset: section chapter;
+        }
+        .counter-multiple::before {
+            counter-increment: section 1 chapter 2;
+            content: "Section " counter(section) " Chapter " counter(chapter) ". ";
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Counter Increment</h1>
+        <div class="sub-container counter-single">
+            <h2>single counter increment</h2>
+            <div>This is an example of a single counter incremented by 1.</div>
+        </div>
+        <div class="sub-container counter-specific">
+            <h2>specific counter increment</h2>
+            <div>This is an example of a counter incremented by 2.</div>
+        </div>
+        <div class="sub-container counter-multiple">
+            <h2>multiple counter increments</h2>
+            <div>This is an example of multiple counters incremented by different values.</div>
+        </div>
+    </div>
+</body>
+</html>
+```

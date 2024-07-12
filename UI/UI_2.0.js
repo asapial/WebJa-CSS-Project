@@ -14,10 +14,10 @@ function makeWrapeer()
     "s c c c c c c c c c c c"
     `;
 
-    const links = document.querySelectorAll('.wrapper a');
-    links.forEach(link => {
-      link.style.fontSize = '2vw';
-      link.style.color = '#ECF0F1';
-      link.style.textDecoration = 'none';
-    });
+    // const links = document.querySelectorAll('.wrapper a');
+    // links.forEach(link => {
+    //   link.style.fontSize = '2vw';
+    //   link.style.color = '#ECF0F1';
+    //   link.style.textDecoration = 'none';
+    // });
 }

@@ -1,1 +1,178 @@
-Blank File
+### Definition
+The `flex` CSS property is a shorthand property for setting the flexible length on flexible items. This property sets the flex-grow, flex-shrink, and flex-basis properties.
+
+### Values
+| Value                   | Description                                                                                      |
+|-------------------------|--------------------------------------------------------------------------------------------------|
+| `none`                  | Equivalent to `flex: 0 0 auto`.                                                                  |
+| `[flex-grow]`           | Specifies how much the item will grow relative to the rest of the flexible items.                |
+| `[flex-grow] [flex-shrink]` | Specifies how much the item will grow and shrink relative to the rest of the flexible items.|
+| `[flex-grow] [flex-shrink] [flex-basis]` | Specifies how much the item will grow, shrink, and the initial size.              |
+| `auto`                  | Equivalent to `flex: 1 1 auto`.                                                                  |
+| `initial`               | Sets this property to its default value.                                                         |
+| `inherit`               | Inherits this property from its parent element.                                                  |
+
+### Example
+```css
+/* No flex properties */
+.element {
+    flex: none; /* Equivalent to flex: 0 0 auto */
+}
+
+/* Only flex-grow */
+.element {
+    flex: 1; /* Grow factor is 1 */
+}
+
+/* Flex-grow and flex-shrink */
+.element {
+    flex: 1 2; /* Grow factor is 1, shrink factor is 2 */
+}
+
+/* Flex-grow, flex-shrink, and flex-basis */
+.element {
+    flex: 1 2 50px; /* Grow factor is 1, shrink factor is 2, basis is 50px */
+}
+
+/* Auto */
+.element {
+    flex: auto; /* Equivalent to flex: 1 1 auto */
+}
+```
+
+### Description
+The `flex` property is used to define how a flex item will grow or shrink to fit the space available in its flex container. It can accept a single value or a combination of three values, specifying the flex-grow, flex-shrink, and flex-basis properties. The `flex` property is essential in creating flexible and responsive layouts with the flexbox model.
+
+### All Most Similar Properties
+| Property           | Description                                            | Difference                                                                                 |
+|--------------------|--------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `flex-grow`        | Specifies the growth factor of a flex item.            | Only sets the growth factor, while `flex` sets growth, shrink, and basis values.            |
+| `flex-shrink`      | Specifies the shrink factor of a flex item.            | Only sets the shrink factor, while `flex` sets growth, shrink, and basis values.            |
+| `flex-basis`       | Specifies the initial main size of a flex item.        | Only sets the initial size, while `flex` sets growth, shrink, and basis values.             |
+| `order`            | Specifies the order of the flex item.                  | Only sets the order of the item, not the growth, shrink, or basis properties.               |
+| `align-self`       | Aligns the flex item along the cross axis.             | Aligns the item within the flex container, doesn't affect the item's growth or shrink.      |
+
+### Browser Compatibility
+| Browser            | Supported Versions |
+|--------------------|--------------------|
+| Chrome             | Yes                |
+| Firefox            | Yes                |
+| Safari             | Yes                |
+| Edge               | Yes                |
+| Internet Explorer  | 11+                |
+
+### In JavaScript
+```javascript
+// Set flex property using JavaScript
+document.querySelector('.element').style.flex = '1 2 50px';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+            margin: 0;
+        }
+        .main-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            margin: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1em;
+        }
+        .none .box {
+            flex: none;
+        }
+        .grow .box {
+            flex: 1;
+        }
+        .grow-shrink .box {
+            flex: 1 2;
+        }
+        .grow-shrink-basis .box {
+            flex: 1 2 50px;
+        }
+        .auto .box {
+            flex: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>flex Property Values</h1>
+        
+        <div class="sub-container none">
+            <h2>none</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+
+        <div class="sub-container grow">
+            <h2>grow</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+
+        <div class="sub-container grow-shrink">
+            <h2>grow-shrink</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+
+        <div class="sub-container grow-shrink-basis">
+            <h2>grow-shrink-basis</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+
+        <div class="sub-container auto">
+            <h2>auto</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+    </div>
+</body>
+</html>
+```

@@ -3,154 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Border Right Example</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
             margin: 0;
-            background-color: #f5f5f5;
         }
-        .container {
-            width: 80%;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        .main-container {
+            background-color: #fff;
             border-radius: 20px;
-            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
             padding: 20px;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .sub-container {
             width: 80%;
+            margin: 10px auto;
+            padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
             border-radius: 20px;
             background-color: #dcdbdb;
-            margin: 10px auto;
-            padding: 10px;
-            text-align: left;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
         }
-        h1 {
-            text-align: center;
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            margin: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1em;
         }
-        h2 {
-            margin: 10px 0;
+        .none .box {
+            flex: none;
         }
-        .example1 {
-            border-right-width: thin;
+        .grow .box {
+            flex: 1;
         }
-        .example2 {
-            border-right-width: medium;
+        .grow-shrink .box {
+            flex: 1 2;
         }
-        .example3 {
-            border-right-width: thick;
+        .grow-shrink-basis .box {
+            flex: 1 2 50px;
         }
-        .example4 {
-            border-right-width: 10px;
-        }
-        .example5 {
-            border-right-style: none;
-        }
-        .example6 {
-            border-right-style: hidden;
-        }
-        .example7 {
-            border-right-style: dotted;
-        }
-        .example8 {
-            border-right-style: dashed;
-        }
-        .example9 {
-            border-right-style: solid;
-        }
-        .example10 {
-            border-right-style: double;
-        }
-        .example11 {
-            border-right-style: groove;
-        }
-        .example12 {
-            border-right-style: ridge;
-        }
-        .example13 {
-            border-right-style: inset;
-        }
-        .example14 {
-            border-right-style: outset;
-        }
-        .example15 {
-            order-right-style: solid;
-            border-right-color: red;
-        }
-        .example16 {
-            order-right-style: solid;
-            border-right-color: green;
-        }
-        .example17 {
-            order-right-style: solid;
-            border-right-color: blue;
-        }
-        .example18 {
-            order-right-style: solid;
-            border-right-color: #ff00ff;
+        .auto .box {
+            flex: auto;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Border Right Property Examples</h1>
-        <div class="sub-container example1">
-            <h2>border-right-width: thin</h2>
+    <div class="main-container">
+        <h1>flex Property Values</h1>
+        
+        <div class="sub-container none">
+            <h2>none</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
         </div>
-        <div class="sub-container example2">
-            <h2>border-right-width: medium</h2>
+
+        <div class="sub-container grow">
+            <h2>grow</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
         </div>
-        <div class="sub-container example3">
-            <h2>border-right-width: thick</h2>
+
+        <div class="sub-container grow-shrink">
+            <h2>grow-shrink</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
         </div>
-        <div class="sub-container example4">
-            <h2>border-right-width: 10px</h2>
+
+        <div class="sub-container grow-shrink-basis">
+            <h2>grow-shrink-basis</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
         </div>
-        <div class="sub-container example5">
-            <h2>border-right-style: none</h2>
-        </div>
-        <div class="sub-container example6">
-            <h2>border-right-style: hidden</h2>
-        </div>
-        <div class="sub-container example7">
-            <h2>border-right-style: dotted</h2>
-        </div>
-        <div class="sub-container example8">
-            <h2>border-right-style: dashed</h2>
-        </div>
-        <div class="sub-container example9">
-            <h2>border-right-style: solid</h2>
-        </div>
-        <div class="sub-container example10">
-            <h2>border-right-style: double</h2>
-        </div>
-        <div class="sub-container example11">
-            <h2>border-right-style: groove</h2>
-        </div>
-        <div class="sub-container example12">
-            <h2>border-right-style: ridge</h2>
-        </div>
-        <div class="sub-container example13">
-            <h2>border-right-style: inset</h2>
-        </div>
-        <div class="sub-container example14">
-            <h2>border-right-style: outset</h2>
-        </div>
-        <div class="sub-container example15">
-            <h2>border-right-color: red</h2>
-        </div>
-        <div class="sub-container example16">
-            <h2>border-right-color: green</h2>
-        </div>
-        <div class="sub-container example17">
-            <h2>border-right-color: blue</h2>
-        </div>
-        <div class="sub-container example18">
-            <h2>border-right-color: #ff00ff</h2>
+
+        <div class="sub-container auto">
+            <h2>auto</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
         </div>
     </div>
 </body>

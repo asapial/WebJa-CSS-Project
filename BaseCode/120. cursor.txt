@@ -1,1 +1,591 @@
-Blank File
+### Definition
+
+The `cursor` CSS property sets the type of cursor to be displayed when pointing over an element.
+
+### Values
+
+| Value            | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| `auto`           | Default cursor based on the browser.                                        |
+| `default`        | Platform-dependent default cursor, usually an arrow.                        |
+| `none`           | No cursor is rendered.                                                      |
+| `context-menu`   | A context menu is available, usually a question mark or menu.               |
+| `help`           | Help is available, usually a question mark.                                 |
+| `pointer`        | Indicates a link, usually a pointing hand.                                  |
+| `progress`       | An action is in progress, but the user can still interact, usually a spinner.|
+| `wait`           | The program is busy, usually an hourglass or watch.                         |
+| `cell`           | Indicates a cell in a table.                                                |
+| `crosshair`      | Indicates something can be selected or a precise location, usually a cross. |
+| `text`           | Indicates text can be selected, usually an I-beam.                          |
+| `vertical-text`  | Indicates vertical text can be selected.                                    |
+| `alias`          | Indicates an alias or shortcut is being created.                            |
+| `copy`           | Indicates something can be copied, usually a plus sign.                     |
+| `move`           | Indicates something can be moved.                                           |
+| `no-drop`        | Indicates an item cannot be dropped, usually a hand with a no symbol.       |
+| `not-allowed`    | Indicates the action is not allowed, usually a circle with a line through it.|
+| `grab`           | Indicates something can be grabbed.                                         |
+| `grabbing`       | Indicates something is being grabbed.                                       |
+| `all-scroll`     | Indicates scrolling in any direction.                                       |
+| `col-resize`     | Indicates a column can be resized horizontally.                             |
+| `row-resize`     | Indicates a row can be resized vertically.                                  |
+| `n-resize`       | Indicates northward (upward) movement for resizing.                         |
+| `e-resize`       | Indicates eastward (rightward) movement for resizing.                       |
+| `s-resize`       | Indicates southward (downward) movement for resizing.                       |
+| `w-resize`       | Indicates westward (leftward) movement for resizing.                        |
+| `ne-resize`      | Indicates northeast movement for resizing.                                  |
+| `nw-resize`      | Indicates northwest movement for resizing.                                  |
+| `se-resize`      | Indicates southeast movement for resizing.                                  |
+| `sw-resize`      | Indicates southwest movement for resizing.                                  |
+| `ew-resize`      | Indicates horizontal resizing.                                              |
+| `ns-resize`      | Indicates vertical resizing.                                                |
+| `nesw-resize`    | Indicates diagonal resizing from northeast to southwest.                    |
+| `nwse-resize`    | Indicates diagonal resizing from northwest to southeast.                    |
+| `zoom-in`        | Indicates zooming in.                                                       |
+| `zoom-out`       | Indicates zooming out.                                                      |
+| `url('path')`    | Specifies a custom cursor image using a URL.                                |
+
+### Example
+
+```css
+/* Default cursor */
+.cursor-auto {
+    cursor: auto; /* Default browser cursor */
+}
+
+.cursor-default {
+    cursor: default; /* Arrow cursor */
+}
+
+.cursor-none {
+    cursor: none; /* No cursor */
+}
+
+.cursor-context-menu {
+    cursor: context-menu; /* Context menu cursor */
+}
+
+.cursor-help {
+    cursor: help; /* Help cursor */
+}
+
+.cursor-pointer {
+    cursor: pointer; /* Hand cursor */
+}
+
+.cursor-progress {
+    cursor: progress; /* Progress cursor */
+}
+
+.cursor-wait {
+    cursor: wait; /* Wait cursor */
+}
+
+.cursor-cell {
+    cursor: cell; /* Cell cursor */
+}
+
+.cursor-crosshair {
+    cursor: crosshair; /* Crosshair cursor */
+}
+
+.cursor-text {
+    cursor: text; /* Text cursor */
+}
+
+.cursor-vertical-text {
+    cursor: vertical-text; /* Vertical text cursor */
+}
+
+.cursor-alias {
+    cursor: alias; /* Alias cursor */
+}
+
+.cursor-copy {
+    cursor: copy; /* Copy cursor */
+}
+
+.cursor-move {
+    cursor: move; /* Move cursor */
+}
+
+.cursor-no-drop {
+    cursor: no-drop; /* No drop cursor */
+}
+
+.cursor-not-allowed {
+    cursor: not-allowed; /* Not allowed cursor */
+}
+
+.cursor-grab {
+    cursor: grab; /* Grab cursor */
+}
+
+.cursor-grabbing {
+    cursor: grabbing; /* Grabbing cursor */
+}
+
+.cursor-all-scroll {
+    cursor: all-scroll; /* All scroll cursor */
+}
+
+.cursor-col-resize {
+    cursor: col-resize; /* Column resize cursor */
+}
+
+.cursor-row-resize {
+    cursor: row-resize; /* Row resize cursor */
+}
+
+.cursor-n-resize {
+    cursor: n-resize; /* North resize cursor */
+}
+
+.cursor-e-resize {
+    cursor: e-resize; /* East resize cursor */
+}
+
+.cursor-s-resize {
+    cursor: s-resize; /* South resize cursor */
+}
+
+.cursor-w-resize {
+    cursor: w-resize; /* West resize cursor */
+}
+
+.cursor-ne-resize {
+    cursor: ne-resize; /* Northeast resize cursor */
+}
+
+.cursor-nw-resize {
+    cursor: nw-resize; /* Northwest resize cursor */
+}
+
+.cursor-se-resize {
+    cursor: se-resize; /* Southeast resize cursor */
+}
+
+.cursor-sw-resize {
+    cursor: sw-resize; /* Southwest resize cursor */
+}
+
+.cursor-ew-resize {
+    cursor: ew-resize; /* East-west resize cursor */
+}
+
+.cursor-ns-resize {
+    cursor: ns-resize; /* North-south resize cursor */
+}
+
+.cursor-nesw-resize {
+    cursor: nesw-resize; /* Northeast-southwest resize cursor */
+}
+
+.cursor-nwse-resize {
+    cursor: nwse-resize; /* Northwest-southeast resize cursor */
+}
+
+.cursor-zoom-in {
+    cursor: zoom-in; /* Zoom in cursor */
+}
+
+.cursor-zoom-out {
+    cursor: zoom-out; /* Zoom out cursor */
+}
+
+.cursor-custom {
+    cursor: url('custom-cursor.png'), auto; /* Custom cursor image */
+}
+```
+
+### Description
+
+The `cursor` property allows you to specify the type of cursor that should be displayed when the mouse pointer is over an element. This can enhance user experience by providing visual feedback on what action can be performed. You can use predefined cursor types or custom cursor images.
+
+To implement `cursor`:
+
+1. Choose the appropriate cursor type from the predefined list or provide a URL to a custom cursor image.
+2. Apply the cursor type to the desired element using the `cursor` property in your CSS.
+
+### All Most Similar Properties
+
+| Property         | Description                                        | Difference                                                                                       |
+|------------------|----------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| `pointer-events` | Specifies under what circumstances (if any) a particular graphic element can become the target of mouse events. | Controls whether or not an element can be the target of pointer events, while `cursor` changes the cursor's appearance. |
+| `user-select`    | Controls the user's ability to select text.        | Affects text selection behavior, while `cursor` affects the cursor's appearance.                 |
+
+### Browser Compatibility
+
+| Browser          | Support                        |
+|------------------|--------------------------------|
+| Chrome           | Supported from version 1       |
+| Edge             | Supported from version 12      |
+| Firefox          | Supported from version 1.5     |
+| Safari           | Supported from version 3       |
+| Opera            | Supported from version 9.2     |
+
+### In JavaScript
+
+```javascript
+// Select an element
+const element = document.querySelector('.my-element');
+
+// Set cursor to pointer
+element.style.cursor = 'pointer';
+
+// Set cursor to custom cursor
+element.style.cursor = 'url("custom-cursor.png"), auto';
+
+// Reset cursor to default
+element.style.cursor = 'default';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Property Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: ###f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .main-container {
+            background-color: ###fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: ###dcdbdb;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .cursor-auto {
+            cursor: auto;
+        }
+
+        .cursor-default {
+            cursor: default;
+        }
+
+        .cursor-none {
+            cursor: none;
+        }
+
+        .cursor-context-menu {
+            cursor: context-menu;
+        }
+
+        .cursor-help {
+            cursor: help;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .cursor-progress {
+            cursor: progress;
+        }
+
+        .cursor-wait {
+            cursor
+
+: wait;
+        }
+
+        .cursor-cell {
+            cursor: cell;
+        }
+
+        .cursor-crosshair {
+            cursor: crosshair;
+        }
+
+        .cursor-text {
+            cursor: text;
+        }
+
+        .cursor-vertical-text {
+            cursor: vertical-text;
+        }
+
+        .cursor-alias {
+            cursor: alias;
+        }
+
+        .cursor-copy {
+            cursor: copy;
+        }
+
+        .cursor-move {
+            cursor: move;
+        }
+
+        .cursor-no-drop {
+            cursor: no-drop;
+        }
+
+        .cursor-not-allowed {
+            cursor: not-allowed;
+        }
+
+        .cursor-grab {
+            cursor: grab;
+        }
+
+        .cursor-grabbing {
+            cursor: grabbing;
+        }
+
+        .cursor-all-scroll {
+            cursor: all-scroll;
+        }
+
+        .cursor-col-resize {
+            cursor: col-resize;
+        }
+
+        .cursor-row-resize {
+            cursor: row-resize;
+        }
+
+        .cursor-n-resize {
+            cursor: n-resize;
+        }
+
+        .cursor-e-resize {
+            cursor: e-resize;
+        }
+
+        .cursor-s-resize {
+            cursor: s-resize;
+        }
+
+        .cursor-w-resize {
+            cursor: w-resize;
+        }
+
+        .cursor-ne-resize {
+            cursor: ne-resize;
+        }
+
+        .cursor-nw-resize {
+            cursor: nw-resize;
+        }
+
+        .cursor-se-resize {
+            cursor: se-resize;
+        }
+
+        .cursor-sw-resize {
+            cursor: sw-resize;
+        }
+
+        .cursor-ew-resize {
+            cursor: ew-resize;
+        }
+
+        .cursor-ns-resize {
+            cursor: ns-resize;
+        }
+
+        .cursor-nesw-resize {
+            cursor: nesw-resize;
+        }
+
+        .cursor-nwse-resize {
+            cursor: nwse-resize;
+        }
+
+        .cursor-zoom-in {
+            cursor: zoom-in;
+        }
+
+        .cursor-zoom-out {
+            cursor: zoom-out;
+        }
+
+        .cursor-custom {
+            cursor: url('custom-cursor.png'), auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Cursor Property Examples</h1>
+        <div class="sub-container cursor-auto">
+            <h2>auto</h2>
+            <p>Hover over this text to see the auto cursor.</p>
+        </div>
+        <div class="sub-container cursor-default">
+            <h2>default</h2>
+            <p>Hover over this text to see the default cursor.</p>
+        </div>
+        <div class="sub-container cursor-none">
+            <h2>none</h2>
+            <p>Hover over this text to see no cursor.</p>
+        </div>
+        <div class="sub-container cursor-context-menu">
+            <h2>context-menu</h2>
+            <p>Hover over this text to see the context-menu cursor.</p>
+        </div>
+        <div class="sub-container cursor-help">
+            <h2>help</h2>
+            <p>Hover over this text to see the help cursor.</p>
+        </div>
+        <div class="sub-container cursor-pointer">
+            <h2>pointer</h2>
+            <p>Hover over this text to see the pointer cursor.</p>
+        </div>
+        <div class="sub-container cursor-progress">
+            <h2>progress</h2>
+            <p>Hover over this text to see the progress cursor.</p>
+        </div>
+        <div class="sub-container cursor-wait">
+            <h2>wait</h2>
+            <p>Hover over this text to see the wait cursor.</p>
+        </div>
+        <div class="sub-container cursor-cell">
+            <h2>cell</h2>
+            <p>Hover over this text to see the cell cursor.</p>
+        </div>
+        <div class="sub-container cursor-crosshair">
+            <h2>crosshair</h2>
+            <p>Hover over this text to see the crosshair cursor.</p>
+        </div>
+        <div class="sub-container cursor-text">
+            <h2>text</h2>
+            <p>Hover over this text to see the text cursor.</p>
+        </div>
+        <div class="sub-container cursor-vertical-text">
+            <h2>vertical-text</h2>
+            <p>Hover over this text to see the vertical-text cursor.</p>
+        </div>
+        <div class="sub-container cursor-alias">
+            <h2>alias</h2>
+            <p>Hover over this text to see the alias cursor.</p>
+        </div>
+        <div class="sub-container cursor-copy">
+            <h2>copy</h2>
+            <p>Hover over this text to see the copy cursor.</p>
+        </div>
+        <div class="sub-container cursor-move">
+            <h2>move</h2>
+            <p>Hover over this text to see the move cursor.</p>
+        </div>
+        <div class="sub-container cursor-no-drop">
+            <h2>no-drop</h2>
+            <p>Hover over this text to see the no-drop cursor.</p>
+        </div>
+        <div class="sub-container cursor-not-allowed">
+            <h2>not-allowed</h2>
+            <p>Hover over this text to see the not-allowed cursor.</p>
+        </div>
+        <div class="sub-container cursor-grab">
+            <h2>grab</h2>
+            <p>Hover over this text to see the grab cursor.</p>
+        </div>
+        <div class="sub-container cursor-grabbing">
+            <h2>grabbing</h2>
+            <p>Hover over this text to see the grabbing cursor.</p>
+        </div>
+        <div class="sub-container cursor-all-scroll">
+            <h2>all-scroll</h2>
+            <p>Hover over this text to see the all-scroll cursor.</p>
+        </div>
+        <div class="sub-container cursor-col-resize">
+            <h2>col-resize</h2>
+            <p>Hover over this text to see the col-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-row-resize">
+            <h2>row-resize</h2>
+            <p>Hover over this text to see the row-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-n-resize">
+            <h2>n-resize</h2>
+            <p>Hover over this text to see the n-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-e-resize">
+            <h2>e-resize</h2>
+            <p>Hover over this text to see the e-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-s-resize">
+            <h2>s-resize</h2>
+            <p>Hover over this text to see the s-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-w-resize">
+            <h2>w-resize</h2>
+            <p>Hover over this text to see the w-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-ne-resize">
+            <h2>ne-resize</h2>
+            <p>Hover over this text to see the ne-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-nw-resize">
+            <h2>nw-resize</h2>
+            <p>Hover over this text to see the nw-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-se-resize">
+            <h2>se-resize</h2>
+            <p>Hover over this text to see the se-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-sw-resize">
+            <h2>sw-resize</h2>
+            <p>Hover over this text to see the sw-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-ew-resize">
+            <h2>ew-resize</h2>
+            <p>Hover over this text to see the ew-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-ns-resize">
+            <h2>ns-resize</h2>
+            <p>Hover over this text to see the ns-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-nesw-resize">
+            <h2>nesw-resize</h2>
+            <p>Hover over this text to see the nesw-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-nwse-resize">
+            <h2>nwse-resize</h2>
+            <p>Hover over this text to see the nwse-resize cursor.</p>
+        </div>
+        <div class="sub-container cursor-zoom-in">
+            <h2>zoom-in</h2>
+            <p>Hover over this text to see the zoom-in cursor.</p>
+        </div>
+        <div class="sub-container cursor-zoom-out">
+            <h2>zoom-out</h2>
+            <p>Hover over this text to see the zoom-out cursor.</p>
+        </div>
+        <div class="
+
+sub-container cursor-custom">
+            <h2>custom</h2>
+            <p>Hover over this text to see the custom cursor.</p>
+        </div>
+    </div>
+</body>
+</html>
+```

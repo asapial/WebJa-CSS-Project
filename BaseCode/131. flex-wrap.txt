@@ -1,1 +1,76 @@
-Blank File
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .main-container {
+            width: 80%;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 40%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .nowrap-container, .wrap-container, .wrap-reverse-container {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .item {
+            width:150px;
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+    </style>
+    <title>Flex-wrap Example</title>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Flex-wrap Property Values</h1>
+
+        <div class="sub-container nowrap-container">
+            <h2>nowrap</h2>
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <div class="sub-container wrap-container">
+            <h2>wrap</h2>
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+        </div>
+
+        <div class="sub-container wrap-reverse-container">
+            <h2>wrap-reverse</h2>
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+        </div>
+    </div>
+</body>
+</html>

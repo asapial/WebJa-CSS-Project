@@ -1,1 +1,113 @@
-Blank File
+### Definition
+The `direction` CSS property sets the direction of text, table columns, and horizontal overflow.
+
+### Values
+
+| Value     | Description                                              |
+|-----------|----------------------------------------------------------|
+| `ltr`     | Text and other elements go from left to right.           |
+| `rtl`     | Text and other elements go from right to left.           |
+| `inherit` | Inherits the `direction` property from its parent.       |
+
+### Example
+```css
+/* Example */
+.element-ltr {
+  direction: ltr; /* Text flows left to right */
+}
+
+.element-rtl {
+  direction: rtl; /* Text flows right to left */
+}
+
+.element-inherit {
+  direction: inherit; /* Inherits direction from parent */
+}
+```
+
+### Description
+The `direction` property is used to set the text direction of an element to left-to-right (LTR) or right-to-left (RTL). This is particularly useful for languages like Arabic and Hebrew. It also affects the horizontal alignment of elements such as tables and lists.
+
+- **Default Value**: `ltr`
+- **Applies to**: All elements
+- **Inherited**: Yes
+- **Animatable**: No
+- **Media**: Visual
+- **Computed Value**: As specified
+
+### All Most Simillar Properties
+
+| Property          | Description                                                | Difference                                      |
+|-------------------|------------------------------------------------------------|-------------------------------------------------|
+| `unicode-bidi`    | Manages the directionality of text within an element.      | Works with `direction` to handle bidirectional text. |
+
+### Browser Compatibility
+
+| Browser       | Support            |
+|---------------|--------------------|
+| Chrome        | Yes                |
+| Firefox       | Yes                |
+| Safari        | Yes                |
+| Edge          | Yes                |
+| Internet Explorer | Yes            |
+| Opera         | Yes                |
+| Mobile Browsers | Yes              |
+
+### In JavaScript
+```javascript
+// In JavaScript
+document.getElementById("myElement").style.direction = "rtl"; // Example of setting direction to 'rtl'
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+        .main-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>direction Property Values</h1>
+        <div class="sub-container element-ltr">
+            <h2>ltr</h2>
+            <p>This text flows left to right.</p>
+        </div>
+        <div class="sub-container element-rtl">
+            <h2>rtl</h2>
+            <p>هذا النص يتدفق من اليمين إلى اليسار.</p>
+        </div>
+        <div class="sub-container element-inherit">
+            <h2>inherit</h2>
+            <p>This text inherits the direction from its parent.</p>
+        </div>
+    </div>
+</body>
+</html>
+```

@@ -1,1 +1,148 @@
-Blank File
+# Definition
+
+The `content-visibility` CSS property allows the browser to skip an element's rendering work, including layout and painting, until it is needed. This can improve performance, especially for off-screen content.
+
+### Values
+
+| Value          | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| `visible`      | The default value. The element is rendered fully.                           |
+| `hidden`       | The element is skipped during rendering but still affects layout.           |
+| `auto`         | The browser determines if the element should be skipped for rendering work. |
+
+### Example
+
+```css
+.element-visible {
+    content-visibility: visible; /* The element is rendered fully */
+}
+
+.element-hidden {
+    content-visibility: hidden; /* The element is skipped during rendering but still affects layout */
+}
+
+.element-auto {
+    content-visibility: auto; /* The browser determines if the element should be skipped */
+}
+```
+
+### Description
+
+The `content-visibility` property can be particularly useful for optimizing the performance of web pages by deferring the rendering of off-screen elements. This is especially effective for large, scrollable pages where not all elements are visible at once. 
+
+When `content-visibility` is set to `hidden`, the element is skipped during the rendering process, but it still occupies space in the layout, ensuring that the rest of the page's layout remains unchanged. With the `auto` value, the browser uses heuristics to decide whether to skip rendering the element based on its visibility, which can be beneficial for enhancing page load times and interactivity.
+
+### All Most Similar Properties
+
+| Property          | Description                                         | Difference                                                       |
+|-------------------|-----------------------------------------------------|------------------------------------------------------------------|
+| `visibility`      | Controls the visibility of an element.              | `visibility` hides the element but still renders it completely.  |
+| `display`         | Controls the display type of an element.            | `display: none` removes the element from the document flow.      |
+| `opacity`         | Controls the transparency of an element.            | `opacity: 0` makes the element fully transparent but still rendered. |
+
+### Browser Compatibility
+
+| Browser          | Support                        |
+|------------------|--------------------------------|
+| Chrome           | Supported from version 85      |
+| Edge             | Supported from version 85      |
+| Firefox          | Not supported                  |
+| Safari           | Supported from version 14.1    |
+| Opera            | Supported from version 71      |
+
+### In JavaScript
+
+```javascript
+// Select an element
+const element = document.querySelector('.my-element');
+
+// Set content-visibility to auto
+element.style.contentVisibility = 'auto';
+
+// Set content-visibility to hidden
+element.style.contentVisibility = 'hidden';
+
+// Set content-visibility to visible
+element.style.contentVisibility = 'visible';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Visibility Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .main-container {
+            background-color: #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .element-visible {
+            content-visibility: visible;
+            padding: 20px;
+            background-color: #f0a;
+        }
+
+        .element-hidden {
+            content-visibility: hidden;
+            padding: 20px;
+            background-color: #0af;
+        }
+
+        .element-auto {
+            content-visibility: auto;
+            padding: 20px;
+            background-color: #fa0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Content Visibility</h1>
+        <div class="sub-container">
+            <h2>visible</h2>
+            <div class="element-visible">This element is fully rendered.</div>
+        </div>
+        <div class="sub-container">
+            <h2>hidden</h2>
+            <div class="element-hidden">This element is skipped during rendering but still affects layout.</div>
+        </div>
+        <div class="sub-container">
+            <h2>auto</h2>
+            <div class="element-auto">The browser determines if this element should be skipped.</div>
+        </div>
+    </div>
+</body>
+</html>
+```

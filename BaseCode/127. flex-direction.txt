@@ -1,1 +1,163 @@
-Blank File
+### Definition
+The `flex-direction` CSS property specifies how flex items are placed in the flex container, defining the main axis and the direction (normal or reversed).
+
+### Values
+| Value       | Description                                                            |
+|-------------|------------------------------------------------------------------------|
+| `row`       | Items are placed in a row horizontally, left to right in LTR languages.|
+| `row-reverse` | Items are placed in a row horizontally, right to left in LTR languages.|
+| `column`    | Items are placed in a column vertically, top to bottom.                |
+| `column-reverse` | Items are placed in a column vertically, bottom to top.            |
+
+### Example
+```css
+/* Default row direction */
+.container {
+    display: flex;
+    flex-direction: row; /* Horizontal left to right */
+}
+
+/* Row reverse direction */
+.container {
+    display: flex;
+    flex-direction: row-reverse; /* Horizontal right to left */
+}
+
+/* Column direction */
+.container {
+    display: flex;
+    flex-direction: column; /* Vertical top to bottom */
+}
+
+/* Column reverse direction */
+.container {
+    display: flex;
+    flex-direction: column-reverse; /* Vertical bottom to top */
+}
+```
+
+### Description
+The `flex-direction` property is part of the flexbox layout model. It determines the direction in which the flex items are placed inside a flex container. The main axis is defined by the `flex-direction` property and can be horizontal or vertical, and normal or reversed. This property helps in creating responsive layouts by allowing the direction of the content to be controlled easily.
+
+### All Most Similar Properties
+| Property         | Description                                                | Difference                                                                                 |
+|------------------|------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `justify-content` | Aligns flex items along the main axis.                    | Controls alignment within the container, but not the direction of the items.                |
+| `align-items`     | Aligns flex items along the cross axis.                   | Controls alignment along the cross axis, not the main axis direction.                       |
+| `flex-wrap`       | Controls whether the flex items should wrap or not.       | Deals with wrapping of items, whereas `flex-direction` deals with the direction of the main axis. |
+| `order`           | Controls the order of individual flex items.              | Changes the position of individual items, not the overall direction of all items.           |
+| `flex-flow`       | A shorthand for `flex-direction` and `flex-wrap`.         | Combines direction and wrap properties, whereas `flex-direction` focuses solely on direction. |
+
+### Browser Compatibility
+| Browser            | Supported Versions |
+|--------------------|--------------------|
+| Chrome             | Yes                |
+| Firefox            | Yes                |
+| Safari             | Yes                |
+| Edge               | Yes                |
+| Internet Explorer  | 11+                |
+
+### In JavaScript
+```javascript
+// Set flex-direction property using JavaScript
+document.querySelector('.container').style.flexDirection = 'column';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+            margin: 0;
+        }
+        .main-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: flex;
+            margin-bottom: 30px;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            margin: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1em;
+        }
+        .row .box {
+            flex-direction: row;
+        }
+        .row-reverse .box {
+            flex-direction: row-reverse;
+        }
+        .column .box {
+            flex-direction: column;
+        }
+        .column-reverse .box {
+            flex-direction: column-reverse;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>flex-direction Property Values</h1>
+        
+        <div class="sub-container row">
+            <h2>row</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+
+        <div class="sub-container row-reverse">
+            <h2>row-reverse</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+
+        <div class="sub-container column">
+            <h2>column</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+
+        <div class="sub-container column-reverse">
+            <h2>column-reverse</h2>
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+        </div>
+    </div>
+</body>
+</html>
+```

@@ -1,1 +1,260 @@
-Blank File
+### Definition
+The `filter` CSS property applies graphical effects like blur or color shift to an element. Filters are commonly used to adjust the rendering of images, backgrounds, and borders.
+
+### Values
+| Value                   | Description                                                |
+|-------------------------|------------------------------------------------------------|
+| `none`                  | No filter is applied.                                      |
+| `blur(px)`              | Applies a Gaussian blur to the element.                    |
+| `brightness(%)`         | Adjusts the brightness of the element.                     |
+| `contrast(%)`           | Adjusts the contrast of the element.                       |
+| `drop-shadow(offsetX offsetY blur-radius color)` | Applies a drop shadow effect.       |
+| `grayscale(%)`          | Converts the element to grayscale.                         |
+| `hue-rotate(deg)`       | Applies a hue rotation to the element.                     |
+| `invert(%)`             | Inverts the colors of the element.                         |
+| `opacity(%)`            | Adjusts the opacity of the element.                        |
+| `saturate(%)`           | Saturates the colors of the element.                       |
+| `sepia(%)`              | Converts the element to sepia tones.                       |
+| `url()`                 | Applies a custom filter effect defined by a URL.           |
+| `inherit`               | Inherits this property from its parent element.            |
+| `initial`               | Sets this property to its default value.                   |
+| `unset`                 | Resets this property to its natural value.                 |
+
+### Example
+```css
+/* No filter */
+.element {
+    filter: none;
+}
+
+/* Blur effect */
+.element {
+    filter: blur(5px); /* 5 pixels blur */
+}
+
+/* Brightness effect */
+.element {
+    filter: brightness(150%); /* 150% brightness */
+}
+
+/* Contrast effect */
+.element {
+    filter: contrast(200%); /* 200% contrast */
+}
+
+/* Drop shadow effect */
+.element {
+    filter: drop-shadow(10px 10px 5px #000); /* 10px offset, 5px blur, black shadow */
+}
+
+/* Grayscale effect */
+.element {
+    filter: grayscale(100%); /* 100% grayscale */
+}
+
+/* Hue rotate effect */
+.element {
+    filter: hue-rotate(90deg); /* 90 degrees hue rotation */
+}
+
+/* Invert effect */
+.element {
+    filter: invert(100%); /* 100% color inversion */
+}
+
+/* Opacity effect */
+.element {
+    filter: opacity(50%); /* 50% opacity */
+}
+
+/* Saturate effect */
+.element {
+    filter: saturate(300%); /* 300% saturation */
+}
+
+/* Sepia effect */
+.element {
+    filter: sepia(100%); /* 100% sepia */
+}
+```
+
+### Description
+The `filter` property allows you to apply a variety of graphical effects to an element. These effects can be combined and stacked to create complex visual results. The property accepts a list of filter functions as its value, which are applied in order from left to right. This property is particularly useful for images and other visual content where specific visual adjustments are needed without modifying the original source.
+
+### All Most Similar Properties
+| Property  | Description                                               | Difference                                                                                           |
+|-----------|-----------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| `opacity` | Adjusts the transparency of the element.                  | `opacity` only affects the transparency level, while `filter` can apply various graphical effects.   |
+| `box-shadow` | Adds shadow effects around an element's frame.         | `box-shadow` only applies shadow effects, whereas `filter` can apply multiple types of visual effects.|
+
+### Browser Compatibility
+| Browser      | Supported Versions |
+|--------------|--------------------|
+| Chrome       | Yes                |
+| Firefox      | Yes                |
+| Safari       | Yes                |
+| Edge         | Yes                |
+| Internet Explorer | 10+           |
+
+### In JavaScript
+```javascript
+// Set filter property using JavaScript
+document.querySelector('.element').style.filter = 'blur(5px)';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f8f8;
+            margin: 0;
+        }
+        .main-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin-bottom: 30px;
+        }
+        .image-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+        .none .image-container img {
+            filter: none;
+        }
+        .blur .image-container img {
+            filter: blur(5px);
+        }
+        .brightness .image-container img {
+            filter: brightness(150%);
+        }
+        .contrast .image-container img {
+            filter: contrast(200%);
+        }
+        .drop-shadow .image-container img {
+            filter: drop-shadow(10px 10px 5px #000);
+        }
+        .grayscale .image-container img {
+            filter: grayscale(100%);
+        }
+        .hue-rotate .image-container img {
+            filter: hue-rotate(90deg);
+        }
+        .invert .image-container img {
+            filter: invert(100%);
+        }
+        .opacity .image-container img {
+            filter: opacity(50%);
+        }
+        .saturate .image-container img {
+            filter: saturate(300%);
+        }
+        .sepia .image-container img {
+            filter: sepia(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>filter Property Values</h1>
+        
+        <div class="sub-container none">
+            <h2>none</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+
+        <div class="sub-container blur">
+            <h2>blur</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+
+        <div class="sub-container brightness">
+            <h2>brightness</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+
+        <div class="sub-container contrast">
+            <h2>contrast</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+
+        <div class="sub-container drop-shadow">
+            <h2>drop-shadow</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+
+        <div class="sub-container grayscale">
+            <h2>grayscale</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+
+        <div class="sub-container hue-rotate">
+            <h2>hue-rotate</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+
+        <div class="sub-container invert">
+            <h2>invert</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+
+        <div class="sub-container opacity">
+            <h2>opacity</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+
+        <div class="sub-container saturate">
+            <h2>saturate</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+
+        <div class="sub-container sepia">
+            <h2>sepia</h2>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/150" alt="Example Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

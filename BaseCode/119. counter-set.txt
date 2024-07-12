@@ -1,1 +1,160 @@
-Blank File
+### Definition
+
+The `counter-set` CSS property sets a CSS counter to a specific value.
+
+### Values
+
+| Value                   | Description                                                            |
+|-------------------------|------------------------------------------------------------------------|
+| `counter-name`          | Sets the named counter to 0.                                           |
+| `counter-name integer`  | Sets the named counter to the specified integer value.                 |
+
+### Example
+
+```css
+/* Setting a single counter to 0 */
+.counter-set-single {
+    counter-set: section; /* Sets 'section' counter to 0 */
+}
+
+/* Setting a single counter to a specific value */
+.counter-set-specific {
+    counter-set: section 5; /* Sets 'section' counter to 5 */
+}
+
+/* Setting multiple counters */
+.counter-set-multiple {
+    counter-set: section 1 chapter 10; /* Sets 'section' to 1 and 'chapter' to 10 */
+}
+```
+
+### Description
+
+The `counter-set` property directly sets the value of one or more CSS counters to a specified value. This is useful for explicitly defining the start value of counters without the need for incrementing. It is often used in conjunction with the `counter-increment` and `content` properties to manage automatic numbering in documents.
+
+To implement `counter-set`, you typically:
+
+1. Use `counter-set` to initialize the counter to a specific value.
+2. Use `counter-increment` to specify how much the counter should increase.
+3. Use `content: counter(counter-name)` in a `::before` or `::after` pseudo-element to display the counter value.
+
+### All Most Similar Properties
+
+| Property         | Description                                      | Difference                                                                                       |
+|------------------|--------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| `counter-reset`  | Initializes one or more CSS counters.            | `counter-reset` initializes counters to a specified value, but `counter-set` directly sets them. |
+| `counter-increment` | Increases or decreases the value of a counter.   | `counter-increment` changes the counter's value, while `counter-set` directly sets it.           |
+| `content`        | Inserts generated content.                       | `content` can use the value of a counter but does not directly alter the counter's value.        |
+
+### Browser Compatibility
+
+| Browser          | Support                          |
+|------------------|----------------------------------|
+| Chrome           | Supported from version 85        |
+| Edge             | Supported from version 85        |
+| Firefox          | Supported from version 68        |
+| Safari           | Supported from version 14.1      |
+| Opera            | Supported from version 71        |
+
+### In JavaScript
+
+```javascript
+// Select an element
+const element = document.querySelector('.my-element');
+
+// Set counter-set to a specific counter
+element.style.counterSet = 'section 1';
+
+// Set counter-set to multiple counters
+element.style.counterSet = 'section 1 chapter 10';
+
+// Reset the counter-set
+element.style.counterSet = 'none';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Set Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: ###f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .main-container {
+            background-color: ###fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: ###dcdbdb;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .counter-set-single {
+            counter-set: section;
+        }
+        .counter-set-single::before {
+            counter-increment: section;
+            content: "Section " counter(section) ". ";
+        }
+
+        .counter-set-specific {
+            counter-set: section 5;
+        }
+        .counter-set-specific::before {
+            counter-increment: section;
+            content: "Section " counter(section) ". ";
+        }
+
+        .counter-set-multiple {
+            counter-set: section 1 chapter 10;
+        }
+        .counter-set-multiple::before {
+            counter-increment: section chapter;
+            content: "Section " counter(section) " Chapter " counter(chapter) ". ";
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Counter Set</h1>
+        <div class="sub-container counter-set-single">
+            <h2>single counter set</h2>
+            <div>This is an example of a single counter set to 0.</div>
+        </div>
+        <div class="sub-container counter-set-specific">
+            <h2>specific counter set</h2>
+            <div>This is an example of a counter set to 5.</div>
+        </div>
+        <div class="sub-container counter-set-multiple">
+            <h2>multiple counter sets</h2>
+            <div>This is an example of multiple counters set to different values.</div>
+        </div>
+    </div>
+</body>
+</html>
+```

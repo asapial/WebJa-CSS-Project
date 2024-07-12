@@ -1,1 +1,192 @@
-Blank File
+### Definition
+The `flex-basis` CSS property defines the initial main size of a flex item. It sets the length of the item before any remaining space is distributed according to the flex factors.
+
+### Values
+| Value         | Description                                                   |
+|---------------|---------------------------------------------------------------|
+| `<length>`    | Specifies the initial main size in absolute units (px, em, etc.). |
+| `auto`        | The size of the item is based on its content.                 |
+| `content`     | Uses the content size as the flex-basis.                      |
+| `inherit`     | Inherits the property from its parent element.                |
+| `initial`     | Sets the property to its default value.                       |
+| `unset`       | Resets the property to its natural value.                     |
+
+### Example
+```css
+/* Length value */
+.element {
+    flex-basis: 200px; /* Initial size is 200px */
+}
+
+/* Auto value */
+.element {
+    flex-basis: auto; /* Size is based on content */
+}
+
+/* Content value */
+.element {
+    flex-basis: content; /* Uses content size as flex-basis */
+}
+
+/* Inherit value */
+.element {
+    flex-basis: inherit; /* Inherits from parent element */
+}
+
+/* Initial value */
+.element {
+    flex-basis: initial; /* Sets to default value */
+}
+
+/* Unset value */
+.element {
+    flex-basis: unset; /* Resets to natural value */
+}
+```
+
+### Description
+The `flex-basis` property is part of the flexbox layout model and sets the initial main size of a flex item. It is used to define the default size of an element before the available space is distributed based on the flex-grow and flex-shrink properties. This property can accept any length unit or keyword value to adjust the initial size of a flex item.
+
+### All Most Similar Properties
+| Property      | Description                                                | Difference                                                                                 |
+|---------------|------------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| `width`       | Sets the width of an element.                              | Applies to block and inline-block elements, while `flex-basis` applies to flex items.      |
+| `height`      | Sets the height of an element.                             | Applies to block and inline-block elements, while `flex-basis` applies to flex items.      |
+| `min-width`   | Sets the minimum width of an element.                      | Sets the minimum size constraint, while `flex-basis` sets the initial main size.           |
+| `min-height`  | Sets the minimum height of an element.                     | Sets the minimum size constraint, while `flex-basis` sets the initial main size.           |
+| `max-width`   | Sets the maximum width of an element.                      | Sets the maximum size constraint, while `flex-basis` sets the initial main size.           |
+| `max-height`  | Sets the maximum height of an element.                     | Sets the maximum size constraint, while `flex-basis` sets the initial main size.           |
+
+### Browser Compatibility
+| Browser      | Supported Versions |
+|--------------|--------------------|
+| Chrome       | Yes                |
+| Firefox      | Yes                |
+| Safari       | Yes                |
+| Edge         | Yes                |
+| Internet Explorer | 11+           |
+
+### In JavaScript
+```javascript
+// Set flex-basis property using JavaScript
+document.querySelector('.element').style.flexBasis = '200px';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+            margin: 0;
+        }
+        .main-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 10px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .box {
+            height: 50px;
+            background-color: #4CAF50;
+            margin: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1em;
+        }
+        .length .box {
+            flex-basis: 200px;
+        }
+        .auto .box {
+            flex-basis: auto;
+        }
+        .content .box {
+            flex-basis: content;
+        }
+        .inherit .box {
+            flex-basis: inherit;
+        }
+        .initial .box {
+            flex-basis: initial;
+        }
+        .unset .box {
+            flex-basis: unset;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>flex-basis Property Values</h1>
+        
+        <div class="sub-container length">
+            <h2>length</h2>
+            <div class="box">200px</div>
+            <div class="box">200px</div>
+            <div class="box">200px</div>
+        </div>
+
+        <div class="sub-container auto">
+            <h2>auto</h2>
+            <div class="box">Auto</div>
+            <div class="box">Auto</div>
+            <div class="box">Auto</div>
+        </div>
+
+        <div class="sub-container content">
+            <h2>content</h2>
+            <div class="box">Content</div>
+            <div class="box">Content</div>
+            <div class="box">Content</div>
+        </div>
+
+        <div class="sub-container inherit">
+            <h2>inherit</h2>
+            <div class="box">Inherit</div>
+            <div class="box">Inherit</div>
+            <div class="box">Inherit</div>
+        </div>
+
+        <div class="sub-container initial">
+            <h2>initial</h2>
+            <div class="box">Initial</div>
+            <div class="box">Initial</div>
+            <div class="box">Initial</div>
+        </div>
+
+        <div class="sub-container unset">
+            <h2>unset</h2>
+            <div class="box">Unset</div>
+            <div class="box">Unset</div>
+            <div class="box">Unset</div>
+        </div>
+    </div>
+</body>
+</html>
+```
