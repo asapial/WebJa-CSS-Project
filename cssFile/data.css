@@ -951,7 +951,7 @@ ol.enumerate.lower-alpha {
     word-break: break-word;
     padding: 2.5em;
     /* width: max(70vw,430px); */
-    margin: auto;
+    margin: 10px auto 10px auto;
     box-sizing: content-box;
     overflow-x: hidden;
     box-shadow: 4px 10px 8px rgba(0, 0, 0, 0.555);
