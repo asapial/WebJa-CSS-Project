@@ -61,6 +61,17 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 
+const slider = document.getElementById("theme-slider");
+slider.addEventListener("input", () => {
+  const value = slider.value;
+  const lightness = 100 - value;
+  document.body.style.backgroundColor = `hsl(0, 0%, ${lightness}%)`;
+  const fontColor = value < 50 ? "#000000" : "#ffffff";
+  document.body.style.color = fontColor;
+  // const borderColor = value < 50 ? "#000000" : "#ffffff";
+  // document.body.style.borderBottomColor = borderColor;
+});
+
   
 
 

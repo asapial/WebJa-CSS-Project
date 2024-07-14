@@ -15,6 +15,7 @@
             <div class="editor">
                 <textarea id="code" placeholder="Type your HTML and CSS here..."></textarea>
                 <button class="run-button" id="run-button">Run</button>
+                <button class="live-button" id="live-button">Live</button>
             </div>
             <div class="output">
                 <iframe id="output"></iframe>
@@ -32,6 +33,11 @@
         updateOutput(code);
     });
 
+    document.getElementById('live-button').addEventListener('click', function() {
+        const code = document.getElementById('code').value;
+        liveOutput(code);
+    });
+
     function updateOutput(code) {
         const output = document.getElementById('output');
         const doc = output.contentDocument || output.contentWindow.document;
@@ -40,9 +46,11 @@
         doc.close();
     }
 
-    function isValidHtml(html) {
-        const pattern = /<html[\s\S]*<\/html>/i;
-        return pattern.test(html);
+    function liveOutput(code) {
+        const newWindow = window.open();
+        newWindow.document.open();
+        newWindow.document.write(code);
+        newWindow.document.close();
     }
 
     document.addEventListener('DOMContentLoaded', async function() {
@@ -61,5 +69,10 @@
             updateOutput('');
         }
     });
+
+    function isValidHtml(html) {
+        const pattern = /<html[\s\S]*<\/html>/i;
+        return pattern.test(html);
+    }
 </script>
 </html>

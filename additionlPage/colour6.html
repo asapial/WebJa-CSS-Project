@@ -33,24 +33,26 @@
         justify-content: space-around;
         flex-wrap: wrap;
         border-radius: 8px;
-        margin: auto;
+        margin: 10px auto 20px auto;
         border: 1px solid #ddd;
         border-radius: 1vw;
         background: linear-gradient(145deg, #ffffff, #e6e6e6);
         box-shadow: 1vw 1vw 2vw #cbcbcb, -1vw -1vw 2vw #ffffff;
         padding: max(2vw,20px);
+
+        /* border: 2px solid black; */
   
       }
       .color-box {
         /* width: 120px; */
-        height: 80px;
+        height:80px;
         display: flex;
         justify-content: center;
         align-items: center;
         color: white;
         font-weight: bold;
         border-radius: 4px;
-        margin: 0.3vw;
+        margin: 0.4vw;
         border-radius: max(1.5vw, 10px);
         box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.562);
         font-size: max(1vw, 15px);
@@ -78,10 +80,11 @@
         type="number"
         id="boxCount"
         name="boxCount"
-        value="10"
+        value="20"
         min="1"
         max="100"
       />
+      <br /><br />
       <div class="sub-container" id="colorBoxes">
         <!-- Color boxes will be generated here -->
       </div>

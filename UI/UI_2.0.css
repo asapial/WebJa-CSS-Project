@@ -324,3 +324,39 @@ body{
 
 
 }
+
+.slider-container {
+
+    position: relative;
+    text-align: center;
+    background:#2C3E50;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .slider {
+    max-width: 100px;
+    appearance: none;
+    height: 8px;
+    background:#DAF7A6;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+    border-radius: 5px;
+  }
+
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #666;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+  }
+
+  .slider::-webkit-slider-thumb:hover {
+    background: #555;
+  }

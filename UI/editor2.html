@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="editor.css">
+    <title>WebJa HTML Editor</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 90%;
+            width: 100%;
+        }
+
+        .header, .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .header{
+            margin: 0px 0px 10px 0px;
+        }
+
+        .editPanel {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            margin: 10px 0px 0px 0px;
+        }
+
+        .editor, .output {
+            flex: 1;
+            overflow: auto;
+        }
+
+        .editor {
+            position: relative;
+        }
+
+        #code {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            border: none;
+            resize: none;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        .run-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .output {
+            background: #f0f0f0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .resizer {
+            width: 5px;
+            background: #333;
+            cursor: ew-resize;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>WebJa HTML Editor</h1>
+        </div>
+        <div class="editPanel">
+            <div class="editor">
+                <textarea id="code" placeholder="Type your HTML and CSS here..."></textarea>
+                <button class="run-button" id="run-button">Run</button>
+            </div>
+            <div class="resizer" id="resizer"></div>
+            <div class="output">
+                <iframe id="output"></iframe>
+            </div>
+        </div>
+        <div class="footer">
+            ©️ WebJa
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('run-button').addEventListener('click', function() {
+            const code = document.getElementById('code').value;
+            updateOutput(code);
+        });
+
+        function updateOutput(code) {
+            const output = document.getElementById('output');
+            const doc = output.contentDocument || output.contentWindow.document;
+            doc.open();
+            doc.write(code);
+            doc.close();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const initialCode = document.getElementById('code').value;
+            updateOutput(initialCode);
+        });
+
+        // Resizer functionality
+        const resizer = document.getElementById('resizer');
+        const leftPanel = document.querySelector('.editor');
+        const rightPanel = document.querySelector('.output');
+
+        let isResizing = false;
+
+        resizer.addEventListener('mousedown', function(e) {
+            isResizing = true;
+            document.addEventListener('mousemove', resize);
+            document.addEventListener('mouseup', stopResize);
+        });
+
+        function resize(e) {
+            if (isResizing) {
+                const leftWidth = e.clientX - leftPanel.getBoundingClientRect().left;
+                const rightWidth = leftPanel.parentNode.getBoundingClientRect().width - leftWidth - resizer.offsetWidth;
+                leftPanel.style.flex = `0 0 ${leftWidth}px`;
+                rightPanel.style.flex = `0 0 ${rightWidth}px`;
+            }
+        }
+
+        function stopResize() {
+            isResizing = false;
+            document.removeEventListener('mousemove', resize);
+            document.removeEventListener('mouseup', stopResize);
+        }
+    </script>
+</body>
+</html>
