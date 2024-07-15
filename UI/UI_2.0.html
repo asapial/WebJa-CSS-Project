@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="UI_2.0.css">
-      <link rel="icon" href="/UI/icon/webja-logo-zip-file (2)/png/logo-no-background.png" type="image/x-icon">
+      <link rel="icon" href="/Picture/WebJaTitileIcon.png" type="image/x-icon">
   </head>
   <body>
 
@@ -46,7 +46,7 @@
                 <a href="">LogIn</a>
               </div>
               <div class="LiveIt">
-                <button><a href="editor.html" target="_blank">LiveIt</a></button>
+                <button><a href="editor3.html" target="_blank">LiveIt</a></button>
               </div>
           </div>
           <div class="topics">
@@ -600,6 +600,34 @@
 
     </script>
     <script src="UI_2.0.js" ></script>
+
+    <!-- <script>
+      function loadHTMLContent(url, elementId) {
+  const element = document.getElementById(elementId);
+
+  // Remove the loaded class to start with the hidden state
+  element.classList.remove('loaded');
+
+  fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+      element.innerHTML = data;
+
+      // Force reflow to ensure the transition starts
+      void element.offsetWidth;
+
+      // Add the loaded class to trigger the fade-in transition
+      element.classList.add('loaded');
+    })
+    .catch((error) =>
+      console.error("Error loading HTML content:", error)
+    );
+}
+
+// Usage example
+loadHTMLContent("/Learning Topics/1. align-content.html", "content2");
+
+    </script> -->
   </body> 
 
 </html>

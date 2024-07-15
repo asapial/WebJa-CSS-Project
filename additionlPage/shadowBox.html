@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Shadow Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            padding: 2em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: center;
+        }
+
+        .box-shadow-example {
+            text-align: center;
+            width: 250px;
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            margin-bottom: 0.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .shadow1 { box-shadow: 10px 10px 5px #888888; }
+        .shadow2 { box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); }
+        .shadow3 { box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3); }
+        .shadow4 { box-shadow: 3px 3px 3px 3px rgba(255,0,0,0.2); }
+        .shadow5 { box-shadow: 3px 3px 3px rgba(0,0,255,0.5); }
+        .shadow6 { box-shadow: inset 0 0 10px #000000; }
+        .shadow7 { box-shadow: 2px 2px 2px #ff0000; }
+        .shadow8 { box-shadow: -5px 5px 15px #0000ff; }
+        .shadow9 { box-shadow: 5px 10px 20px #00ff00; }
+        .shadow10 { box-shadow: 0 0 5px 5px #ff00ff; }
+        .shadow11 { box-shadow: 10px 10px 20px -5px rgba(0,0,0,0.5); }
+        .shadow12 { box-shadow: 5px 5px 20px rgba(0,0,0,0.3); }
+        .shadow13 { box-shadow: 10px 10px 30px rgba(0,0,0,0.2); }
+        .shadow14 { box-shadow: 0px 0px 10px 5px #aaaaaa; }
+        .shadow15 { box-shadow: 2px 2px 10px 2px #0000ff; }
+        .shadow16 { box-shadow: 0 0 10px 5px #0000ff; }
+        .shadow17 { box-shadow: 0 0 20px 10px rgba(0,0,0,0.5); }
+        .shadow18 { box-shadow: -5px -5px 15px rgba(0,0,0,0.2); }
+        .shadow19 { box-shadow: 0px 5px 15px rgba(0,0,0,0.3); }
+        .shadow20 { box-shadow: 5px 5px 25px rgba(0,0,0,0.5); }
+        .shadow21 { box-shadow: 15px 15px 20px rgba(0,0,0,0.2); }
+        .shadow22 { box-shadow: 20px 20px 30px rgba(0,0,0,0.1); }
+        .shadow23 { box-shadow: 10px 10px 50px rgba(0,0,0,0.3); }
+        .shadow24 { box-shadow: 10px 10px 20px rgba(0,0,0,0.5); }
+        .shadow25 { box-shadow: 20px 20px 60px rgba(0,0,0,0.1); }
+        .shadow26 { box-shadow: 25px 25px 75px rgba(0,0,0,0.2); }
+        .shadow27 { box-shadow: 30px 30px 40px rgba(0,0,0,0.3); }
+        .shadow28 { box-shadow: 5px 5px 25px rgba(0,0,0,0.4); }
+        .shadow29 { box-shadow: 10px 10px 30px rgba(0,0,0,0.5); }
+        .shadow30 { box-shadow: 15px 15px 35px rgba(0,0,0,0.2); }
+        .shadow31 { box-shadow: 20px 20px 45px rgba(0,0,0,0.3); }
+        .shadow32 { box-shadow: 25px 25px 55px rgba(0,0,0,0.4); }
+        .shadow33 { box-shadow: 30px 30px 60px rgba(0,0,0,0.5); }
+        .shadow34 { box-shadow: 0 0 10px rgba(0,0,0,0.6); }
+        .shadow35 { box-shadow: 0 0 15px rgba(0,0,0,0.7); }
+        .shadow36 { box-shadow: 0 0 20px rgba(0,0,0,0.8); }
+        .shadow37 { box-shadow: 0 0 25px rgba(0,0,0,0.9); }
+        .shadow38 { box-shadow: 0 0 30px rgba(0,0,0,1); }
+        .shadow39 { box-shadow: 10px 10px 10px rgba(0,0,0,0.6); }
+        .shadow40 { box-shadow: 20px 20px 20px rgba(0,0,0,0.7); }
+        .shadow41 { box-shadow: 30px 30px 30px rgba(0,0,0,0.8); }
+        .shadow42 { box-shadow: 40px 40px 40px rgba(0,0,0,0.9); }
+        .shadow43 { box-shadow: 50px 50px 50px rgba(0,0,0,1); }
+        .shadow44 { box-shadow: 5px 5px 15px rgba(0,0,0,0.4); }
+        .shadow45 { box-shadow: 10px 10px 20px rgba(0,0,0,0.5); }
+        .shadow46 { box-shadow: 15px 15px 25px rgba(0,0,0,0.6); }
+        .shadow47 { box-shadow: 20px 20px 30px rgba(0,0,0,0.7); }
+        .shadow48 { box-shadow: 25px 25px 35px rgba(0,0,0,0.8); }
+        .shadow49 { box-shadow: 30px 30px 40px rgba(0,0,0,0.9); }
+        .shadow50 { box-shadow: 35px 35px 45px rgba(0,0,0,1); }
+
+
+        .premium1 { box-shadow: 0 0 10px 10px rgba(0,0,255,0.5); }
+.premium2 { box-shadow: 0 10px 20px -10px rgba(255,0,0,0.5); }
+.premium3 { box-shadow: 0 10px 30px -10px rgba(0,255,0,0.5); }
+.premium4 { box-shadow: 0 15px 15px -10px rgba(255,0,255,0.5); }
+.premium5 { box-shadow: 0 5px 15px -5px rgba(0,255,255,0.5); }
+.premium6 { box-shadow: 0 20px 20px -10px rgba(255,255,0,0.5); }
+.premium7 { box-shadow: 0 10px 25px -10px rgba(255,0,255,0.5); }
+.premium8 { box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.4); }
+.premium9 { box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 20px 40px rgba(0,0,0,0.4); }
+.premium10 { box-shadow: 0 0 10px rgba(0,0,0,0.3), 0 10px 10px rgba(0,0,0,0.5); }
+.premium11 { box-shadow: 0 0 15px rgba(255,0,0,0.5), 0 15px 15px rgba(255,0,0,0.7); }
+.premium12 { box-shadow: 0 0 20px rgba(0,255,0,0.5), 0 20px 20px rgba(0,255,0,0.7); }
+.premium13 { box-shadow: 0 0 25px rgba(0,0,255,0.5), 0 25px 25px rgba(0,0,255,0.7); }
+.premium14 { box-shadow: 0 0 30px rgba(255,255,0,0.5), 0 30px 30px rgba(255,255,0,0.7); }
+.premium15 { box-shadow: 0 0 35px rgba(0,255,255,0.5), 0 35px 35px rgba(0,255,255,0.7); }
+.premium16 { box-shadow: 0 0 40px rgba(255,0,255,0.5), 0 40px 40px rgba(255,0,255,0.7); }
+.premium17 { box-shadow: 0 0 45px rgba(255,0,0,0.5), 0 45px 45px rgba(255,0,0,0.7); }
+.premium18 { box-shadow: 0 0 50px rgba(0,255,0,0.5), 0 50px 50px rgba(0,255,0,0.7); }
+.premium19 { box-shadow: 0 0 55px rgba(0,0,255,0.5), 0 55px 55px rgba(0,0,255,0.7); }
+.premium20 { box-shadow: 0 0 60px rgba(255,255,0,0.5), 0 60px 60px rgba(255,255,0,0.7); }
+.premium21 { box-shadow: 0 0 65px rgba(0,255,255,0.5), 0 65px 65px rgba(0,255,255,0.7); }
+.premium22 { box-shadow: 0 0 70px rgba(255,0,255,0.5), 0 70px 70px rgba(255,0,255,0.7); }
+.premium23 { box-shadow: 0 0 75px rgba(255,0,0,0.5), 0 75px 75px rgba(255,0,0,0.7); }
+.premium24 { box-shadow: 0 0 80px rgba(0,255,0,0.5), 0 80px 80px rgba(0,255,0,0.7); }
+.premium25 { box-shadow: 0 0 85px rgba(0,0,255,0.5), 0 85px 85px rgba(0,0,255,0.7); }
+.premium26 { box-shadow: 0 0 90px rgba(255,255,0,0.5), 0 90px 90px rgba(255,255,0,0.7); }
+.premium27 { box-shadow: 0 0 95px rgba(0,255,255,0.5), 0 95px 95px rgba(0,255,255,0.7); }
+.premium28 { box-shadow: 0 0 100px rgba(255,0,255,0.5), 0 100px 100px rgba(255,0,255,0.7); }
+.premium29 { box-shadow: 0 0 10px rgba(0,0,0,0.4), 0 10px 20px rgba(0,0,0,0.6); }
+.premium30 { box-shadow: 0 0 15px rgba(255,0,0,0.6), 0 15px 30px rgba(255,0,0,0.8); }
+.premium31 { box-shadow: 0 0 20px rgba(0,255,0,0.6), 0 20px 40px rgba(0,255,0,0.8); }
+.premium32 { box-shadow: 0 0 25px rgba(0,0,255,0.6), 0 25px 50px rgba(0,0,255,0.8); }
+.premium33 { box-shadow: 0 0 30px rgba(255,255,0,0.6), 0 30px 60px rgba(255,255,0,0.8); }
+.premium34 { box-shadow: 0 0 35px rgba(0,255,255,0.6), 0 35px 70px rgba(0,255,255,0.8); }
+.premium35 { box-shadow: 0 0 40px rgba(255,0,255,0.6), 0 40px 80px rgba(255,0,255,0.8); }
+.premium36 { box-shadow: 0 0 45px rgba(255,0,0,0.6), 0 45px 90px rgba(255,0,0,0.8); }
+.premium37 { box-shadow: 0 0 50px rgba(0,255,0,0.6), 0 50px 100px rgba(0,255,0,0.8); }
+.premium38 { box-shadow: 0 0 55px rgba(0,0,255,0.6), 0 55px 110px rgba(0,0,255,0.8); }
+.premium39 { box-shadow: 0 0 60px rgba(255,255,0,0.6), 0 60px 120px rgba(255,255,0,0.8); }
+.premium40 { box-shadow: 0 0 65px rgba(0,255,255,0.6), 0 65px 130px rgba(0,255,255,0.8); }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Box Shadow Examples</h1>
+    </header>
+    <main>
+        <div class="box-shadow-example">
+            <div class="box shadow1">Box Shadow 1</div>
+            <code>box-shadow: 10px 10px 5px #888888;</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow2">Box Shadow 2</div>
+            <code>box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow3">Box Shadow 3</div>
+            <code>box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow4">Box Shadow 4</div>
+            <code>box-shadow: 3px 3px 3px 3px rgba(255,0,0,0.2);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow5">Box Shadow 5</div>
+            <code>box-shadow: 3px 3px 3px rgba(0,0,255,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow6">Box Shadow 6</div>
+            <code>box-shadow: inset 0 0 10px #000000;</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow7">Box Shadow 7</div>
+            <code>box-shadow: 2px 2px 2px #ff0000;</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow8">Box Shadow 8</div>
+            <code>box-shadow: -5px 5px 15px #0000ff;</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow9">Box Shadow 9</div>
+            <code>box-shadow: 5px 10px 20px #00ff00;</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow10">Box Shadow 10</div>
+            <code>box-shadow: 0 0 5px 5px #ff00ff;</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow11">Box Shadow 11</div>
+            <code>box-shadow: 10px 10px 20px -5px rgba(0,0,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow12">Box Shadow 12</div>
+            <code>box-shadow: 5px 5px 20px rgba(0,0,0,0.3);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow13">Box Shadow 13</div>
+            <code>box-shadow: 10px 10px 30px rgba(0,0,0,0.2);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow14">Box Shadow 14</div>
+            <code>box-shadow: 0px 0px 10px 5px #aaaaaa;</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow15">Box Shadow 15</div>
+            <code>box-shadow: 2px 2px 10px 2px #0000ff;</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow16">Box Shadow 16</div>
+            <code>box-shadow: 0 0 10px 5px #0000ff;</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow17">Box Shadow 17</div>
+            <code>box-shadow: 0 0 20px 10px rgba(0,0,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow18">Box Shadow 18</div>
+            <code>box-shadow: -5px -5px 15px rgba(0,0,0,0.2);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow19">Box Shadow 19</div>
+            <code>box-shadow: 0px 5px 15px rgba(0,0,0,0.3);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow20">Box Shadow 20</div>
+            <code>box-shadow: 5px 5px 25px rgba(0,0,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow21">Box Shadow 21</div>
+            <code>box-shadow: 15px 15px 20px rgba(0,0,0,0.2);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow22">Box Shadow 22</div>
+            <code>box-shadow: 20px 20px 30px rgba(0,0,0,0.1);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow23">Box Shadow 23</div>
+            <code>box-shadow: 10px 10px 50px rgba(0,0,0,0.3);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow24">Box Shadow 24</div>
+            <code>box-shadow: 10px 10px 20px rgba(0,0,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow25">Box Shadow 25</div>
+            <code>box-shadow: 20px 20px 60px rgba(0,0,0,0.1);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow26">Box Shadow 26</div>
+            <code>box-shadow: 25px 25px 75px rgba(0,0,0,0.2);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow27">Box Shadow 27</div>
+            <code>box-shadow: 30px 30px 40px rgba(0,0,0,0.3);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow28">Box Shadow 28</div>
+            <code>box-shadow: 5px 5px 25px rgba(0,0,0,0.4);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow29">Box Shadow 29</div>
+            <code>box-shadow: 10px 10px 30px rgba(0,0,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow30">Box Shadow 30</div>
+            <code>box-shadow: 15px 15px 35px rgba(0,0,0,0.2);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow31">Box Shadow 31</div>
+            <code>box-shadow: 20px 20px 45px rgba(0,0,0,0.3);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow32">Box Shadow 32</div>
+            <code>box-shadow: 25px 25px 55px rgba(0,0,0,0.4);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow33">Box Shadow 33</div>
+            <code>box-shadow: 30px 30px 60px rgba(0,0,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow34">Box Shadow 34</div>
+            <code>box-shadow: 0 0 10px rgba(0,0,0,0.6);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow35">Box Shadow 35</div>
+            <code>box-shadow: 0 0 15px rgba(0,0,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow36">Box Shadow 36</div>
+            <code>box-shadow: 0 0 20px rgba(0,0,0,0.8);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow37">Box Shadow 37</div>
+            <code>box-shadow: 0 0 25px rgba(0,0,0,0.9);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow38">Box Shadow 38</div>
+            <code>box-shadow: 0 0 30px rgba(0,0,0,1);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow39">Box Shadow 39</div>
+            <code>box-shadow: 10px 10px 10px rgba(0,0,0,0.6);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow40">Box Shadow 40</div>
+            <code>box-shadow: 20px 20px 20px rgba(0,0,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow41">Box Shadow 41</div>
+            <code>box-shadow: 30px 30px 30px rgba(0,0,0,0.8);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow42">Box Shadow 42</div>
+            <code>box-shadow: 40px 40px 40px rgba(0,0,0,0.9);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow43">Box Shadow 43</div>
+            <code>box-shadow: 50px 50px 50px rgba(0,0,0,1);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow44">Box Shadow 44</div>
+            <code>box-shadow: 5px 5px 15px rgba(0,0,0,0.4);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow45">Box Shadow 45</div>
+            <code>box-shadow: 10px 10px 20px rgba(0,0,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow46">Box Shadow 46</div>
+            <code>box-shadow: 15px 15px 25px rgba(0,0,0,0.6);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow47">Box Shadow 47</div>
+            <code>box-shadow: 20px 20px 30px rgba(0,0,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow48">Box Shadow 48</div>
+            <code>box-shadow: 25px 25px 35px rgba(0,0,0,0.8);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow49">Box Shadow 49</div>
+            <code>box-shadow: 30px 30px 40px rgba(0,0,0,0.9);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box shadow50">Box Shadow 50</div>
+            <code>box-shadow: 35px 35px 45px rgba(0,0,0,1);</code>
+        </div>
+
+
+        <div class="box-shadow-example">
+            <div class="box premium1">Premium Shadow 1</div>
+            <code>box-shadow: 0 0 10px 10px rgba(0,0,255,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium2">Premium Shadow 2</div>
+            <code>box-shadow: 0 10px 20px -10px rgba(255,0,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium3">Premium Shadow 3</div>
+            <code>box-shadow: 0 10px 30px -10px rgba(0,255,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium4">Premium Shadow 4</div>
+            <code>box-shadow: 0 15px 15px -10px rgba(255,0,255,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium5">Premium Shadow 5</div>
+            <code>box-shadow: 0 5px 15px -5px rgba(0,255,255,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium6">Premium Shadow 6</div>
+            <code>box-shadow: 0 20px 20px -10px rgba(255,255,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium7">Premium Shadow 7</div>
+            <code>box-shadow: 0 10px 25px -10px rgba(255,0,255,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium8">Premium Shadow 8</div>
+            <code>box-shadow: 0 5px 10px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.4);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium9">Premium Shadow 9</div>
+            <code>box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 20px 40px rgba(0,0,0,0.4);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium10">Premium Shadow 10</div>
+            <code>box-shadow: 0 0 10px rgba(0,0,0,0.3), 0 10px 10px rgba(0,0,0,0.5);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium11">Premium Shadow 11</div>
+            <code>box-shadow: 0 0 15px rgba(255,0,0,0.5), 0 15px 15px rgba(255,0,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium12">Premium Shadow 12</div>
+            <code>box-shadow: 0 0 20px rgba(0,255,0,0.5), 0 20px 20px rgba(0,255,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium13">Premium Shadow 13</div>
+            <code>box-shadow: 0 0 25px rgba(0,0,255,0.5), 0 25px 25px rgba(0,0,255,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium14">Premium Shadow 14</div>
+            <code>box-shadow: 0 0 30px rgba(255,255,0,0.5), 0 30px 30px rgba(255,255,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium15">Premium Shadow 15</div>
+            <code>box-shadow: 0 0 35px rgba(0,255,255,0.5), 0 35px 35px rgba(0,255,255,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium16">Premium Shadow 16</div>
+            <code>box-shadow: 0 0 40px rgba(255,0,255,0.5), 0 40px 40px rgba(255,0,255,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium17">Premium Shadow 17</div>
+            <code>box-shadow: 0 0 45px rgba(255,0,0,0.5), 0 45px 45px rgba(255,0,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium18">Premium Shadow 18</div>
+            <code>box-shadow: 0 0 50px rgba(0,255,0,0.5), 0 50px 50px rgba(0,255,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium19">Premium Shadow 19</div>
+            <code>box-shadow: 0 0 55px rgba(0,0,255,0.5), 0 55px 55px rgba(0,0,255,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium20">Premium Shadow 20</div>
+            <code>box-shadow: 0 0 60px rgba(255,255,0,0.5), 0 60px 60px rgba(255,255,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium21">Premium Shadow 21</div>
+            <code>box-shadow: 0 0 65px rgba(0,255,255,0.5), 0 65px 65px rgba(0,255,255,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium22">Premium Shadow 22</div>
+            <code>box-shadow: 0 0 70px rgba(255,0,255,0.5), 0 70px 70px rgba(255,0,255,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium23">Premium Shadow 23</div>
+            <code>box-shadow: 0 0 75px rgba(255,0,0,0.5), 0 75px 75px rgba(255,0,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium24">Premium Shadow 24</div>
+            <code>box-shadow: 0 0 80px rgba(0,255,0,0.5), 0 80px 80px rgba(0,255,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium25">Premium Shadow 25</div>
+            <code>box-shadow: 0 0 85px rgba(0,0,255,0.5), 0 85px 85px rgba(0,0,255,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium26">Premium Shadow 26</div>
+            <code>box-shadow: 0 0 90px rgba(255,255,0,0.5), 0 90px 90px rgba(255,255,0,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium27">Premium Shadow 27</div>
+            <code>box-shadow: 0 0 95px rgba(0,255,255,0.5), 0 95px 95px rgba(0,255,255,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium28">Premium Shadow 28</div>
+            <code>box-shadow: 0 0 100px rgba(255,0,255,0.5), 0 100px 100px rgba(255,0,255,0.7);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium29">Premium Shadow 29</div>
+            <code>box-shadow: 0 0 10px rgba(0,0,0,0.4), 0 10px 20px rgba(0,0,0,0.6);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium30">Premium Shadow 30</div>
+            <code>box-shadow: 0 0 15px rgba(255,0,0,0.6), 0 15px 30px rgba(255,0,0,0.8);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium31">Premium Shadow 31</div>
+            <code>box-shadow: 0 0 20px rgba(0,255,0,0.6), 0 20px 40px rgba(0,255,0,0.8);</code>
+        </div>
+        <div class="box-shadow-example">
+            <div class="box premium32">Premium Shadow 32</div>
+            <code>box-shadow: 0 0 25px rgba(0,0,255,0.6), 0 25px 50px rgba(0,0,255,0.8);</code>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+    <script>
+        document.querySelectorAll('.box-shadow-example').forEach(example => {
+            example.addEventListener('click', () => {
+                const code = example.querySelector('code').innerText;
+                navigator.clipboard.writeText(code).then(() => {
+                    alert('CSS code copied to clipboard!');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

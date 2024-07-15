@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Shadow Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            margin: 20px auto;
+            border-radius: 8px;
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        .controls {
+            margin: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box">Box</div>
+        <div class="controls">
+            <label>
+                Horizontal Offset:
+                <input type="range" id="hOffset" min="-50" max="50" value="0">
+            </label>
+            <label>
+                Vertical Offset:
+                <input type="range" id="vOffset" min="-50" max="50" value="0">
+            </label>
+            <label>
+                Blur Radius:
+                <input type="range" id="blur" min="0" max="100" value="20">
+            </label>
+            <label>
+                Spread Radius:
+                <input type="range" id="spread" min="-50" max="50" value="0">
+            </label>
+            <button id="copyButton">Copy CSS</button>
+        </div>
+        <textarea id="cssOutput" readonly></textarea>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const box = document.getElementById('box');
+            const hOffset = document.getElementById('hOffset');
+            const vOffset = document.getElementById('vOffset');
+            const blur = document.getElementById('blur');
+            const spread = document.getElementById('spread');
+            const cssOutput = document.getElementById('cssOutput');
+            const copyButton = document.getElementById('copyButton');
+
+            function updateBoxShadow() {
+                const hValue = hOffset.value;
+                const vValue = vOffset.value;
+                const blurValue = blur.value;
+                const spreadValue = spread.value;
+                const boxShadow = `${hValue}px ${vValue}px ${blurValue}px ${spreadValue}px rgba(0, 0, 0, 0.5)`;
+                box.style.boxShadow = boxShadow;
+                cssOutput.value = `box-shadow: ${boxShadow};`;
+            }
+
+            hOffset.addEventListener('input', updateBoxShadow);
+            vOffset.addEventListener('input', updateBoxShadow);
+            blur.addEventListener('input', updateBoxShadow);
+            spread.addEventListener('input', updateBoxShadow);
+
+            copyButton.addEventListener('click', () => {
+                cssOutput.select();
+                document.execCommand('copy');
+            });
+
+            updateBoxShadow();
+        });
+    </script>
+</body>
+</html>

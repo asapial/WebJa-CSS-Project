@@ -1,0 +1,147 @@
+/* body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.box {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.shadow1 { box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); }
+.shadow2 { box-shadow: -2px -2px 10px rgba(0, 0, 0, 0.5); }
+.shadow3 { box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); }
+.shadow4 { box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+.shadow5 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); }
+.shadow6 { box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4); }
+.shadow7 { box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.5); }
+.shadow8 { box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.5); }
+.shadow9 { box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+.shadow10 { box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); }
+.shadow11 { box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); }
+.shadow12 { box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.3); }
+.shadow13 { box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.5); }
+.shadow14 { box-shadow: 0 0 25px rgba(0, 0, 0, 0.3); }
+.shadow15 { box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6); }
+.shadow16 { box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); }
+.shadow17 { box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4); }
+.shadow18 { box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.5); }
+.shadow19 { box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.4); }
+.shadow20 { box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6); }
+.shadow21 { box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); }
+.shadow22 { box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.5); }
+.shadow23 { box-shadow: -15px 15px 30px rgba(0, 0, 0, 0.4); }
+.shadow24 { box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); }
+.shadow25 { box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); }
+.shadow26 { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+.shadow27 { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); }
+.shadow28 { box-shadow: -5px -5px 20px rgba(0, 0, 0, 0.5); }
+.shadow29 { box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.6); }
+.shadow30 { box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+.shadow31 { box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); }
+.shadow32 { box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.4); }
+.shadow33 { box-shadow: -10px -10px 20px rgba(0, 0, 0, 0.5); }
+.shadow34 { box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.3); }
+.shadow35 { box-shadow: 0 15px 20px rgba(0, 0, 0, 0.4); }
+.shadow36 { box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5); }
+.shadow37 { box-shadow: -5px -5px 25px rgba(0, 0, 0, 0.3); }
+.shadow38 { box-shadow: -10px -10px 30px rgba(0, 0, 0, 0.4); }
+.shadow39 { box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); }
+.shadow40 { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); }
+.shadow41 { box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5); }
+.shadow42 { box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); }
+.shadow43 { box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.5); }
+.shadow44 { box-shadow: -15px 15px 20px rgba(0, 0, 0, 0.3); }
+.shadow45 { box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4); }
+.shadow46 { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); }
+.shadow47 { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); }
+.shadow48 { box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4); }
+.shadow49 { box-shadow: -5px -5px 20px rgba(0, 0, 0, 0.5); }
+.shadow50 { box-shadow: 0 0 30px rgba(0, 0, 0, 0.6); } */
+
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.box {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.shadow1 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 20px 40px rgba(0, 0, 0, 0.1); }
+.shadow2 { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12), 0 25px 50px rgba(0, 0, 0, 0.1); }
+.shadow3 { box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1); }
+.shadow4 { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 25px 50px rgba(0, 0, 0, 0.1); }
+.shadow5 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 20px 30px rgba(0, 0, 0, 0.12); }
+.shadow6 { box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow7 { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), 0 15px 30px rgba(0, 0, 0, 0.1); }
+.shadow8 { box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15), 0 30px 50px rgba(0, 0, 0, 0.1); }
+.shadow9 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 15px 25px rgba(0, 0, 0, 0.1); }
+.shadow10 { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow11 { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.1); }
+.shadow12 { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 25px 50px rgba(0, 0, 0, 0.1); }
+.shadow13 { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 20px 35px rgba(0, 0, 0, 0.1); }
+.shadow14 { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow15 { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12), 0 15px 30px rgba(0, 0, 0, 0.1); }
+.shadow16 { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 30px 50px rgba(0, 0, 0, 0.1); }
+.shadow17 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 20px 30px rgba(0, 0, 0, 0.12); }
+.shadow18 { box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow19 { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), 0 15px 30px rgba(0, 0, 0, 0.1); }
+.shadow20 { box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15), 0 30px 50px rgba(0, 0, 0, 0.1); }
+.shadow21 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 15px 25px rgba(0, 0, 0, 0.1); }
+.shadow22 { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow23 { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.1); }
+.shadow24 { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 25px 50px rgba(0, 0, 0, 0.1); }
+.shadow25 { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 20px 35px rgba(0, 0, 0, 0.1); }
+.shadow26 { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow27 { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12), 0 15px 30px rgba(0, 0, 0, 0.1); }
+.shadow28 { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 30px 50px rgba(0, 0, 0, 0.1); }
+.shadow29 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 20px 30px rgba(0, 0, 0, 0.12); }
+.shadow30 { box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow31 { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), 0 15px 30px rgba(0, 0, 0, 0.1); }
+.shadow32 { box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15), 0 30px 50px rgba(0, 0, 0, 0.1); }
+.shadow33 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 15px 25px rgba(0, 0, 0, 0.1); }
+.shadow34 { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow35 { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.1); }
+.shadow36 { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 25px 50px rgba(0, 0, 0, 0.1); }
+.shadow37 { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 20px 35px rgba(0, 0, 0, 0.1); }
+.shadow38 { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow39 { box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12), 0 15px 30px rgba(0, 0, 0, 0.1); }
+.shadow40 { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 30px 50px rgba(0, 0, 0, 0.1); }
+.shadow41 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 20px 30px rgba(0, 0, 0, 0.12); }
+.shadow42 { box-shadow: 0 15px 25px rgba(0, 0, 0, 0.12), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow43 { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), 0 15px 30px rgba(0, 0, 0, 0.1); }
+.shadow44 { box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15), 0 30px 50px rgba(0, 0, 0, 0.1); }
+.shadow45 { box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 15px 25px rgba(0, 0, 0, 0.1); }
+.shadow46 { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 25px 45px rgba(0, 0, 0, 0.1); }
+.shadow47 { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12), 0 10px 20px rgba(0, 0, 0, 0.1); }
+.shadow48 { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 25px 50px rgba(0, 0, 0, 0.1); }
+.shadow49 { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12), 0 20px 35px rgba(0, 0, 0, 0.1); }
+.shadow50 { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 25px 45px rgba(0, 0, 0, 0.1); }

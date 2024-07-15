@@ -3,86 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copy to Clipboard Example</title>
+    <title>Control Box Radius</title>
     <style>
-        .mmd-clipboard-copy-container {
-            right: 0;
-            top: 0;
-            position: absolute;
-            cursor: pointer;
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin: 20px auto;
         }
-
-        .ClipboardButton {
-            display: none;
+        .controls {
+            text-align: center;
+            margin: 10px 0;
         }
-
-        .mmd-clipboard-icon {
-            margin: 0.5rem;
+        .controls label {
+            margin: 0 10px;
+        }
+        #cssCode {
+            margin: 20px auto;
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
-    <div class="mmd-clipboard-copy-container">
-        <clipboard-copy
-            aria-label="Copy"
-            class="ClipboardButton mmd-tooltipped-no-delay"
-            tabindex="0"
-            role="button"
-            value=".container {
-    display: flex;
-    flex-wrap: wrap;
-    height: 200px;
-    align-content: center; /* center */
-    /* align-content: flex-start; */  /* flex-start */
-    /* align-content: flex-end; */    /* flex-end */
-    /* align-content: space-between; */  /* space-between */
-    /* align-content: space-around; */   /* space-around */
-    /* align-content: space-evenly; */   /* space-evenly */
-    /* align-content: stretch; */        /* stretch */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-}
 
-.item {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    background-color: #f3f3f3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-}">
-        </clipboard-copy>
-        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="mmd-clipboard-icon mmd-clipboard-copy-icon" style="margin: 0.5rem">
-            <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path>
-            <path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
-        </svg>
-        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="mmd-clipboard-icon mmd-clipboard-check-icon" style="display: none; margin: 0.5rem">
-            <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
-        </svg>
-    </div>
+<div id="box"></div>
 
-    <script>
-        document.querySelector('.mmd-clipboard-copy-container').addEventListener('click', function() {
-            // Get the value from the ClipboardButton element
-            const clipboardButton = document.querySelector('.ClipboardButton');
-            const valueToCopy = clipboardButton.getAttribute('value');
+<div class="controls">
+    <label>
+        Top-Left Radius:
+        <input type="number" id="topLeftRadius" min="0" value="0" oninput="updateRadius()">
+    </label>
+    <label>
+        Top-Right Radius:
+        <input type="number" id="topRightRadius" min="0" value="0" oninput="updateRadius()">
+    </label>
+    <label>
+        Bottom-Right Radius:
+        <input type="number" id="bottomRightRadius" min="0" value="0" oninput="updateRadius()">
+    </label>
+    <label>
+        Bottom-Left Radius:
+        <input type="number" id="bottomLeftRadius" min="0" value="0" oninput="updateRadius()">
+    </label>
+</div>
 
-            // Use the Clipboard API to copy text to the clipboard
-            navigator.clipboard.writeText(valueToCopy).then(function() {
-                alert('CSS code copied to clipboard!');
-                // Optional: Toggle the check icon visibility
-                const copyIcon = document.querySelector('.mmd-clipboard-copy-icon');
-                const checkIcon = document.querySelector('.mmd-clipboard-check-icon');
-                copyIcon.style.display = 'none';
-                checkIcon.style.display = 'inline';
-            }).catch(function(error) {
-                console.error('Error copying text: ', error);
-            });
-        });
-    </script>
+<div id="cssCode">
+    <code>
+        #box {
+            border-radius: 0px 0px 0px 0px;
+        }
+    </code>
+</div>
+
+<script>
+    function updateRadius() {
+        const topLeft = document.getElementById('topLeftRadius').value;
+        const topRight = document.getElementById('topRightRadius').value;
+        const bottomRight = document.getElementById('bottomRightRadius').value;
+        const bottomLeft = document.getElementById('bottomLeftRadius').value;
+
+        const box = document.getElementById('box');
+        const cssCode = document.getElementById('cssCode').querySelector('code');
+
+        box.style.borderRadius = `${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px`;
+        cssCode.innerText = `#box {\n    border-radius: ${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px;\n}`;
+    }
+</script>
+
 </body>
 </html>
