@@ -28,11 +28,11 @@ for(auto x:s)
     int sizi=len.size();
     link=x.substr(sizi+3,x.size()-sizi-4);
     topic=link;
-    link="https://asapial.github.io/WebJa/CSS/LearningTopics/"+to_string(i)+'.'+" "+link+'.'+"html";
+    link="https://asapial.github.io/WebJa-CSS-Project/Learning Topics/"+to_string(i)+'.'+" "+link+'.'+"html";
     cout<<"<a href=\"#\" onclick=\"loadHTMLContent(\'"<<link<<"\', \'content2\');  return false;\">"<<topic<<"</a>"<<endl;
     i++;
 }
 return 0;
 }
 
-// loadHTMLContent(" https://asapial.github.io/WebJa/CSS/LearningTopics/1. align-content.html", "content2");
+// loadHTMLContent(" https://asapial.github.io/WebJa-CSS-Project/Learning Topics/1. align-content.html", "content2");
