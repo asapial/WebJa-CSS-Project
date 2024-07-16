@@ -3,75 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control Box Radius</title>
     <style>
-        #box {
-            width: 200px;
-            height: 200px;
-            background-color: lightblue;
-            margin: 20px auto;
-        }
-        .controls {
-            text-align: center;
-            margin: 10px 0;
-        }
-        .controls label {
-            margin: 0 10px;
-        }
-        #cssCode {
-            margin: 20px auto;
-            width: 80%;
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
             padding: 10px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
         }
+
+        .container {
+            width:50vw;
+            display: flex;
+            flex-wrap: wrap;
+            height: 50vw; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 2vw; 
+            border-radius: 1vw;
+            margin: 2vw 0; 
+            background-color: #fff;
+        }
+
+        .item {
+            width: 10vw; 
+            height: 10vw; 
+            margin: 1vw; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5vw;
+            color: #fff;
+        }
+
+        .flex-start { align-content: flex-start; }
+        .flex-end { align-content: flex-end; }
+        .center { align-content: center; }
+        .space-between { align-content: space-between; }
+        .space-around { align-content: space-around; }
+        .space-evenly { align-content: space-evenly; }
+        .stretch { align-content: stretch; }
+
+        .item-1 { background-color: #ff6f61; }
+        .item-2 { background-color: #6b5b95; }
+        .item-3 { background-color: #88b04b; }
+        .item-4 { background-color: #f7cac9; }
+        .item-5 { background-color: #92a8d1; }
+        .item-6 { background-color: #955251; }
     </style>
+    <title>Align Content Example</title>
 </head>
 <body>
+    <div>
+        <h1>align-content: flex-start</h1>
+        <div class="container flex-start">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </div>
 
-<div id="box"></div>
+        <h1>align-content: flex-end</h1>
+        <div class="container flex-end">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </div>
 
-<div class="controls">
-    <label>
-        Top-Left Radius:
-        <input type="number" id="topLeftRadius" min="0" value="0" oninput="updateRadius()">
-    </label>
-    <label>
-        Top-Right Radius:
-        <input type="number" id="topRightRadius" min="0" value="0" oninput="updateRadius()">
-    </label>
-    <label>
-        Bottom-Right Radius:
-        <input type="number" id="bottomRightRadius" min="0" value="0" oninput="updateRadius()">
-    </label>
-    <label>
-        Bottom-Left Radius:
-        <input type="number" id="bottomLeftRadius" min="0" value="0" oninput="updateRadius()">
-    </label>
-</div>
+        <h1>align-content: center</h1>
+        <div class="container center">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </div>
 
-<div id="cssCode">
-    <code>
-        #box {
-            border-radius: 0px 0px 0px 0px;
-        }
-    </code>
-</div>
+        <h1>align-content: space-between</h1>
+        <div class="container space-between">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </div>
 
-<script>
-    function updateRadius() {
-        const topLeft = document.getElementById('topLeftRadius').value;
-        const topRight = document.getElementById('topRightRadius').value;
-        const bottomRight = document.getElementById('bottomRightRadius').value;
-        const bottomLeft = document.getElementById('bottomLeftRadius').value;
+        <h1>align-content: space-around</h1>
+        <div class="container space-around">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </div>
 
-        const box = document.getElementById('box');
-        const cssCode = document.getElementById('cssCode').querySelector('code');
+        <h1>align-content: space-evenly</h1>
+        <div class="container space-evenly">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </div>
 
-        box.style.borderRadius = `${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px`;
-        cssCode.innerText = `#box {\n    border-radius: ${topLeft}px ${topRight}px ${bottomRight}px ${bottomLeft}px;\n}`;
-    }
-</script>
-
+        <h1>align-content: stretch</h1>
+        <div class="container stretch">
+            <div class="item item-1">1</div>
+            <div class="item item-2">2</div>
+            <div class="item item-3">3</div>
+            <div class="item item-4">4</div>
+            <div class="item item-5">5</div>
+            <div class="item item-6">6</div>
+        </div>
+    </div>
 </body>
 </html>
