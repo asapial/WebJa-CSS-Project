@@ -228,8 +228,7 @@ body{
     padding-right: .3vw;
 }
 
-.wrapper,.login,{
-    font-size: 1vw;
+.wrapper,.login{
     color: #C0C0C0;
     font-family: 'Times New Roman', Times, serif;
     transition: .3s ease-out;
@@ -243,7 +242,7 @@ body{
 }
 
 .wrapper a{
-    font-size: max(1.2vw,5px);
+    font-size: max(1.2vw,10px);
     font-family: 'Times New Roman', Times, serif;
     color: #ECF0F1;
     text-decoration: none;
