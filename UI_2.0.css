@@ -243,7 +243,7 @@ body{
 }
 
 .wrapper a{
-    font-size: max(1.2vw,20px);
+    font-size: max(1.2vw,5px);
     font-family: 'Times New Roman', Times, serif;
     color: #ECF0F1;
     text-decoration: none;
