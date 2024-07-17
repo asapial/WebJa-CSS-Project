@@ -814,7 +814,7 @@ body{
     padding: 1rem;
     display: block;
     overflow-x: auto;
-    line-height: 24px;
+    line-height: 2vw;
   }
 
   .empty {
