@@ -292,8 +292,8 @@ body{
 
     grid-template-areas: 
     "h h h h h h h h h h h h"
-    "c c c c c c c c c c c a"
-    "c c c c c c c c c c c a";
+    "c c c c c c c c c c c c"
+    "c c c c c c c c c c c c";
 }
 
 #sideBar{
