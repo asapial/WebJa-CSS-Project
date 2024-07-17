@@ -511,6 +511,7 @@ body{
   kbd,
   samp {
     font-size: 1em;
+    color: #A93226;
   }
 
   pre {
@@ -1314,7 +1315,7 @@ ol.enumerate.lower-alpha {
 
   #preview {
     font-family: 'CMU Serif', 'Georgia', Helvetica, Arial, sans-serif;
-    font-size: max(1.7vw,12px);
+    font-size: max(1.5vw,8px);
     visibility: visible;
     word-break: break-word;
     padding: 2.5em;
