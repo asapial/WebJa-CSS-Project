@@ -313,7 +313,7 @@ body{
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns:100px  repeat(11,1fr) ;
+    grid-template-columns:auto  repeat(11,1fr) ;
     grid-template-rows: max(5vw,100px) auto 100px;
 
     grid-template-areas: 
@@ -322,7 +322,7 @@ body{
     "s c c c c c c c c c c a";
 }
 .wrapper a{
-    font-size: max(1.2vw,20px);
+    font-size: max(1.2vw,10px);
     font-family: 'Times New Roman', Times, serif;
     color: #ECF0F1;
     text-decoration: none;

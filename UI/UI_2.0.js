@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if(!wrap.contains(event.target) && !burger.contains(event.target) && window.innerWidth<900 ){
             burger.style.display = 'block';
             wrap.style.display="none";
-            container.style.gridTemplateColumns="auto 1fr";
+            container.style.gridTemplateColumns=" repeat(12,1fr)";
             container.style.gridTemplateAreas=
             `
        "h h h h h h h h h h h h"
