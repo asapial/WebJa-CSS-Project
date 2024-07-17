@@ -229,7 +229,7 @@ body{
 }
 
 .wrapper,.login,{
-    font-size: 1.2vw;
+    font-size: 1vw;
     color: #C0C0C0;
     font-family: 'Times New Roman', Times, serif;
     transition: .3s ease-out;
