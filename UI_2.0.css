@@ -1314,7 +1314,7 @@ ol.enumerate.lower-alpha {
 
   #preview {
     font-family: 'CMU Serif', 'Georgia', Helvetica, Arial, sans-serif;
-    font-size: 17px;
+    font-size: max(1.7vw,12px);
     visibility: visible;
     word-break: break-word;
     padding: 2.5em;
