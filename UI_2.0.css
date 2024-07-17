@@ -217,6 +217,7 @@ body{
     grid-area: s;
     background-color: #2C3E50;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .wrapper
@@ -814,7 +815,7 @@ body{
     padding: 1rem;
     display: block;
     overflow-x: auto;
-    line-height: 2vw;
+    line-height: 1.7vw;
   }
 
   .empty {
@@ -843,7 +844,7 @@ body{
   #setText table th,
   #preview-content table th {
     border: 1px solid #dfe2e5;
-    padding: 6px 13px;
+    padding: .5vw 1vw;
   }
 
   #setText table tr,
@@ -1108,7 +1109,7 @@ body{
   #setText pre code {
     font-family: 'DM Mono', Inconsolata, monospace;
     color: #333;
-    font-size: max(1.3vw,6px);
+    font-size: max(1vw,5px);
   }
 
   .hljs-comment,
@@ -1315,12 +1316,12 @@ ol.enumerate.lower-alpha {
 
   #preview {
     font-family: 'CMU Serif', 'Georgia', Helvetica, Arial, sans-serif;
-    font-size: max(1.5vw,8px);
+    font-size: max(1.2vw,8px);
     visibility: visible;
     word-break: break-word;
     padding: 2.5em;
     /* width: max(70vw,430px); */
-    margin: 10px auto 10px auto;
+    margin: 1vw auto 1vw auto;
     box-sizing: content-box;
     overflow-x: hidden;
     /* box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
