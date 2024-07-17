@@ -236,7 +236,7 @@ body{
 .wrapper h3{
     color: #ECF0F1 ;
     text-align: center;
-    font-size: max(1.5vw,30px);
+    font-size: max(1.5vw,12px);
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
 }
