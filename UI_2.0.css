@@ -1108,7 +1108,7 @@ body{
   #setText pre code {
     font-family: 'DM Mono', Inconsolata, monospace;
     color: #333;
-    font-size: 15px;
+    font-size: max(1.5vw,8px);
   }
 
   .hljs-comment,
