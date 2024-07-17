@@ -1343,7 +1343,7 @@ ol.enumerate.lower-alpha {
     word-break: break-word;
     padding: 2.5em;
     /* width: max(70vw,430px); */
-    margin: 1vw auto 1vw auto;
+    margin: 1vw auto 5vw auto;
     box-sizing: content-box;
     overflow-x: hidden;
     /* box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
@@ -1516,7 +1516,7 @@ ol.enumerate.lower-alpha {
 
   .mmd-tooltipped-no-delay:hover::before,
   .mmd-tooltipped-no-delay:hover::after {
-    animation-delay: 0s;
+    animation-delay: .3s;
   }
 
   .mmd-tooltipped:hover::before,
@@ -1590,33 +1590,5 @@ ol.enumerate.lower-alpha {
 
 
 
-.clock {
-  padding: 10px 10px;
-  border-radius: 50px;
-  display: flexbox;
-  align-items: center;
-  font-size: 10px;
-  font-weight: 5px;
-  color: rgb(253, 245, 212);
-  background-image: linear-gradient(#55596b, #757887, #55596b);
-  box-shadow: 0px 0px 3px 3px #f9f97c ,
-  0px 0px 3px 3px #d4a818 ;
-  font-size: 1.2em;
-  height: 40px;
 
-
-}
-
-.clock span {
-  background-color: rgba(250, 128, 114, 0);
-}
-
-footer
-{
-  align-items: flex-end;
-  justify-content: center;
-  display: flex;
-
-
-}
 
