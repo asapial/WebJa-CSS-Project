@@ -541,7 +541,8 @@ body{
   caption {
     padding-top: 0.75em;
     padding-bottom: 0.3em;
-    color: rgba(0, 0, 0, 0.45) text-align: left;
+    color: rgba(0, 0, 0, 0.45);
+    text-align: left;
     caption-side: bottom;
   }
 
@@ -1522,7 +1523,8 @@ ol.enumerate.lower-alpha {
     display: none;
     width: 0;
     height: 0;
-    color: rgb(36, 41, 47) pointer-events: none;
+    color: rgb(36, 41, 47);
+    pointer-events: none;
     content: "";
     border: 6px solid transparent;
     opacity: 0;
