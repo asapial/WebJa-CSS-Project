@@ -3,110 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box Shadow Generator</title>
+    <title>CSS clip-path Property Example</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             background-color: #f0f0f0;
             margin: 0;
         }
-
         .container {
+            width: 80%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
-
-        .box {
-            width: 200px;
-            height: 200px;
-            background-color: #fff;
+        .sub-container {
+            width: 80%;
             margin: 20px auto;
-            border-radius: 8px;
-            transition: box-shadow 0.2s ease-in-out;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
         }
-
-        .controls {
-            margin: 20px;
-        }
-
-        label {
-            display: block;
-            margin: 10px 0;
-        }
-
-        input[type="range"] {
-            width: 100%;
-        }
-
-        textarea {
-            width: 100%;
+        .example {
+            margin: 10px;
+            padding: 10px;
+            /* background-color: #fafafa; */
+            border: 1px solid #ccc;
             height: 100px;
-            margin-top: 20px;
-            font-family: monospace;
-            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+            background-image: url("/Picture/pattern.jpg");
+
+        }
+        .example-none {
+            clip-path: none;
+        }
+        .example-url {
+            clip-path: url(#myClipPath);
+        }
+        .example-inset {
+            clip-path: inset(10px 20px 30px 40px);
+        }
+        .example-circle {
+            clip-path: circle(50% at 50% 50%);
+        }
+        .example-ellipse {
+            clip-path: ellipse(50% 30% at 50% 50%);
+        }
+        .example-polygon {
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+        .example-path {
+            clip-path: path('M10 10 H 90 V 90 H 10 L 10 10');
+        }
+        .example-inherit {
+            clip-path: inherit;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="box" id="box">Box</div>
-        <div class="controls">
-            <label>
-                Horizontal Offset:
-                <input type="range" id="hOffset" min="-50" max="50" value="0">
-            </label>
-            <label>
-                Vertical Offset:
-                <input type="range" id="vOffset" min="-50" max="50" value="0">
-            </label>
-            <label>
-                Blur Radius:
-                <input type="range" id="blur" min="0" max="100" value="20">
-            </label>
-            <label>
-                Spread Radius:
-                <input type="range" id="spread" min="-50" max="50" value="0">
-            </label>
-            <button id="copyButton">Copy CSS</button>
+        <h1>CSS clip-path Property Values</h1>
+        <div class="sub-container">
+            <h2>clip-path: none</h2>
+            <div class="example example-none">This is fully visible content.</div>
         </div>
-        <textarea id="cssOutput" readonly></textarea>
+        <div class="sub-container">
+            <h2>clip-path: url(#myClipPath)</h2>
+            <svg width="0" height="0">
+                <defs>
+                    <clipPath id="myClipPath">
+                        <circle cx="50" cy="50" r="50"/>
+                    </clipPath>
+                </defs>
+            </svg>
+            <div class="example example-url">This is clipped using an SVG path.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: inset(10px 20px 30px 40px)</h2>
+            <div class="example example-inset">This is clipped content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: circle(50% at 50% 50%)</h2>
+            <div class="example example-circle">This is circular clipped content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: ellipse(50% 30% at 50% 50%)</h2>
+            <div class="example example-ellipse">This is elliptical clipped content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: polygon(50% 0%, 0% 100%, 100% 100%)</h2>
+            <div class="example example-polygon">This is polygonal clipped content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: path('M10 10 H 90 V 90 H 10 L 10 10')</h2>
+            <div class="example example-path">This is path-based clipped content.</div>
+        </div>
+        <div class="sub-container">
+            <h2>clip-path: inherit</h2>
+            <div class="example example-inherit">This inherits clipping from its parent.</div>
+        </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const box = document.getElementById('box');
-            const hOffset = document.getElementById('hOffset');
-            const vOffset = document.getElementById('vOffset');
-            const blur = document.getElementById('blur');
-            const spread = document.getElementById('spread');
-            const cssOutput = document.getElementById('cssOutput');
-            const copyButton = document.getElementById('copyButton');
-
-            function updateBoxShadow() {
-                const hValue = hOffset.value;
-                const vValue = vOffset.value;
-                const blurValue = blur.value;
-                const spreadValue = spread.value;
-                const boxShadow = `${hValue}px ${vValue}px ${blurValue}px ${spreadValue}px rgba(0, 0, 0, 0.5)`;
-                box.style.boxShadow = boxShadow;
-                cssOutput.value = `box-shadow: ${boxShadow};`;
-            }
-
-            hOffset.addEventListener('input', updateBoxShadow);
-            vOffset.addEventListener('input', updateBoxShadow);
-            blur.addEventListener('input', updateBoxShadow);
-            spread.addEventListener('input', updateBoxShadow);
-
-            copyButton.addEventListener('click', () => {
-                cssOutput.select();
-                document.execCommand('copy');
-            });
-
-            updateBoxShadow();
-        });
-    </script>
 </body>
 </html>

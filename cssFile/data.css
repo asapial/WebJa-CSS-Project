@@ -170,7 +170,8 @@ html,body {
   caption {
     padding-top: 0.75em;
     padding-bottom: 0.3em;
-    color: rgba(0, 0, 0, 0.45) text-align: left;
+    color: rgba(0, 0, 0, 0.45) ;
+    text-align: left;
     caption-side: bottom;
   }
 
@@ -435,7 +436,7 @@ html,body {
     line-height: 1.45;
     border-radius: 6px;
     box-sizing: border-box;
-    background: cornsilk;
+    background-color: cornsilk;
     user-select:all !important;
   }
 
@@ -478,7 +479,7 @@ html,body {
 
   #setText table tr,
   #preview-content table tr {
-    /* background-color: #fff; */
+    background-color: #fff;
     border-top: 1px solid #c6cbd1;
   }
 
@@ -718,13 +719,11 @@ html,body {
     text-align: center;
   }
 
-  #preview_content_code,
+  #preview-content code,
   #setText code {
     font-family: Inconsolata;
     font-size: inherit;
     display: initial;
-    /* background: cornsilk; */
-    /* background: red; */
   }
 
   #preview-content .mmd-highlight code,
@@ -949,14 +948,11 @@ ol.enumerate.lower-alpha {
     visibility: visible;
     word-break: break-word;
     padding: 2.5em;
-    /* width: max(70vw,430px); */
     margin: 10px auto 10px auto;
     box-sizing: content-box;
     overflow-x: hidden;
-    /* box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     border-radius: 20px;
-  
   }
 
   #preview h1,
