@@ -48,7 +48,7 @@ header h1
 .input
 {
     grid-area: ip;
-    background-color:#ECF0F1;
+    background-color:#292d3e;
     display: grid;
     grid-template-columns: repeat(6,1fr);
     grid-template-rows: 30px auto;
@@ -124,11 +124,12 @@ header h1
 .input-panel textarea
 {
     width: 95% !important;
-    height: 95% !important;
+    height: 100% !important;
     border: none;
     outline: none;
     resize: none;
     background-color:#ECF0F1;
+    overflow-y: hidden;
 }
 footer{
     grid-area: f; 
@@ -154,4 +155,8 @@ footer h2{
         "op op op op op op";
     }
     
+}
+
+::-webkit-scrollbar-thumb{
+    background: #292d3e;
 }

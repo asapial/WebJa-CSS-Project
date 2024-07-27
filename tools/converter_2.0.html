@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML to Markdown Converter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/material-darker.min.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,7 +14,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* height: 100vh; */
             padding: 20px;
             box-sizing: border-box;
         }
@@ -48,56 +49,50 @@
             font-family: 'Times New Roman', Times, serif;
         }
 
-        #html-input
-        {
+        #html-input {
             grid-area: ip;
         }
-        .button-container_1{
+
+        .button-container_1 {
             grid-area: bt1;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
         }
-        #markdown-output{
+
+        #markdown-output {
             grid-area: op;
         }
-        .button-container_2{
+
+        .button-container_2 {
             grid-area: bt2;
         }
-        textarea {
-            width: calc(100% - px);
+
+        .CodeMirror {
             height: 300px;
-            /* margin-bottom: 10px; */
-            padding: 15px;
-            border: 1px solid #ccc;
             border-radius: 10px;
-            font-size: 16px;
-            resize: none;
-            font-family: 'Courier New', Courier, monospace;
+            border: 1px solid #ccc;
         }
 
         button {
             display: inline-block;
             width: calc(30% - 10px);
             padding: 10px;
-            color: #DAF7A6 ;
+            color: #DAF7A6;
             border: none;
             border-radius: 10px;
             font-size: 16px;
             cursor: pointer;
             margin-top: 10px;
-            background-image: linear-gradient( #2C3E50, #506a83, #2C3E50);
-            box-shadow:rgba(0, 0, 0, 0.4) 0px 2px 4px 0px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.568) 0px -3px 0px 0px inset;
+            background-image: linear-gradient(#2C3E50, #506a83, #2C3E50);
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px 0px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.568) 0px -3px 0px 0px inset;
             transition: .5s ease-in;
         }
 
-
-
         button:hover {
-            color: #d2ff7d ;
+            color: #d2ff7d;
             scale: 1.05;
         }
-
 
         button:disabled {
             background-color: #ccc !important;
@@ -114,7 +109,7 @@
 <body>
     <div class="container">
         <h1>HTML to Markdown Converter</h1>
-        <textarea id="html-input" placeholder="Paste your HTML code here..."></textarea>
+        <textarea id="html-input"></textarea>
         <div class="button-container_1">
             <button id="convert-btn">Convert to Markdown</button>
             <button id="copy-html-btn">Copy HTML</button>
@@ -125,26 +120,43 @@
         </div>
     </div>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/turndown/dist/turndown.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/turndown-plugin-gfm/dist/turndown-plugin-gfm.min.js"></script> -->
-    <script src="turnDownPlugin.js"></script>
-    <script src="turnDownService.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turndown/7.1.2/turndown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/turndown-plugin-gfm/dist/turndown-plugin-gfm.min.js"></script>
     <script>
+        const htmlEditor = CodeMirror.fromTextArea(document.getElementById('html-input'), {
+            mode: 'xml',
+            theme: 'material-darker',
+            lineNumbers: true,
+            lineWrapping: true,
+            autoCloseTags: true,
+        });
+
+        const markdownEditor = CodeMirror.fromTextArea(document.getElementById('markdown-output'), {
+            mode: 'markdown',
+            theme: 'material-darker',
+            lineNumbers: true,
+            lineWrapping: true,
+            readOnly: true,
+        });
+
         document.getElementById('convert-btn').addEventListener('click', function() {
-            const htmlInput = document.getElementById('html-input').value;
+            const htmlInput = htmlEditor.getValue();
             if (htmlInput.trim() !== "") {
                 const markdownOutput = htmlToMarkdown(htmlInput);
-                document.getElementById('markdown-output').value = markdownOutput;
+                markdownEditor.setValue(markdownOutput);
                 document.getElementById('copy-markdown-btn').disabled = false;
             }
         });
 
         document.getElementById('copy-html-btn').addEventListener('click', function() {
-            copyToClipboard('html-input');
+            copyToClipboard(htmlEditor);
         });
 
         document.getElementById('copy-markdown-btn').addEventListener('click', function() {
-            copyToClipboard('markdown-output');
+            copyToClipboard(markdownEditor);
         });
 
         function htmlToMarkdown(html) {
@@ -154,12 +166,11 @@
             return markdown;
         }
 
-        function copyToClipboard(elementId) {
-            const textarea = document.getElementById(elementId);
-            textarea.select();
-            textarea.setSelectionRange(0, 99999); // For mobile devices
+        function copyToClipboard(editor) {
+            editor.focus();
+            editor.execCommand('selectAll');
             document.execCommand('copy');
-            alert("Copied the text: " + textarea.value);
+            alert("Copied the text: " + editor.getValue());
         }
     </script>
 </body>

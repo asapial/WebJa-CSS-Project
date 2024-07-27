@@ -216,6 +216,7 @@ body{
     grid-area: s;
     background-color: #2C3E50;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .wrapper
@@ -364,4 +365,23 @@ body{
 
   .slider::-webkit-slider-thumb:hover {
     background: #555;
+  }
+
+.sideBar::-webkit-scrollbar{
+    width: 6px;
+  }
+
+.sideBar::-webkit-scrollbar-thumb{
+    background: #DAF7A6;
+    border-radius: 10px;
+    
+}
+.content::-webkit-scrollbar{
+    width: 6px;
+}
+
+.content::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg,#68068f,#68068f,#ff0000,#6C3483);
+    /* background: #2C3E50; */
+    border-radius: 10px;
   }
