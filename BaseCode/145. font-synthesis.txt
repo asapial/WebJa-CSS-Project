@@ -1,1 +1,143 @@
-Blank File
+## Definition
+
+The `font-synthesis` CSS property controls whether the browser is allowed to synthesize bold or italic font faces when they are not available within the specified `font-family`.
+
+## Values
+
+| Value      | Description                                              |
+|------------|----------------------------------------------------------|
+| `none`     | Disables all font synthesis.                             |
+| `weight`   | Allows the browser to synthesize bold font faces.        |
+| `style`    | Allows the browser to synthesize italic font faces.      |
+| `weight style` | Allows the browser to synthesize both bold and italic font faces. |
+
+## Example
+
+```css
+p.none {
+  font-synthesis: none; /* No synthesis allowed */
+}
+
+p.weight {
+  font-synthesis: weight; /* Allows bold synthesis */
+}
+
+p.style {
+  font-synthesis: style; /* Allows italic synthesis */
+}
+
+p.weight-style {
+  font-synthesis: weight style; /* Allows both bold and italic synthesis */
+}
+```
+
+## Description
+
+The `font-synthesis` property allows developers to control whether the browser can simulate bold or italic styles when they are not available in the specified font. This can be useful for maintaining consistent typography and ensuring that text is displayed as intended, even if a font does not include all variations. By default, browsers may synthesize bold or italic styles if they are not available in the font. Using `font-synthesis`, you can disable this behavior or specify which styles can be synthesized.
+
+To implement `font-synthesis`, apply it to the desired element in your CSS. For example, `font-synthesis: none;` will prevent the browser from synthesizing any styles.
+
+## All Most Similar Properties
+
+| Property        | Description                                       | Difference                                               |
+|-----------------|---------------------------------------------------|----------------------------------------------------------|
+| `font-style`    | Specifies whether a font should be styled italic or oblique. | Controls the actual style rather than synthesis behavior.|
+| `font-weight`   | Adjusts the weight (boldness) of the font.        | Controls the actual weight rather than synthesis behavior.|
+| `font-variant`  | Controls the usage of alternate glyphs.           | Changes glyph variants rather than synthesis behavior.    |
+
+## Browser Compatibility
+
+| Browser           | Support |
+|-------------------|---------|
+| Chrome            | Yes     |
+| Firefox           | Yes     |
+| Safari            | Yes     |
+| Edge              | Yes     |
+| Opera             | Yes     |
+| Internet Explorer | No      |
+
+## In JavaScript
+
+```js
+// Setting font-synthesis in JavaScript
+document.querySelector('p').style.fontSynthesis = 'weight style';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Synthesis Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+  .container {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .sub-container {
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 10px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  .none {
+    font-synthesis: none;
+  }
+  .weight {
+    font-synthesis: weight;
+  }
+  .style {
+    font-synthesis: style;
+  }
+  .weight-style {
+    font-synthesis: weight style;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>font-synthesis Values</h1>
+
+    <div class="sub-container">
+      <h2>none</h2>
+      <p class="none">This is no font-synthesis.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>weight</h2>
+      <p class="weight">This allows bold synthesis.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>style</h2>
+      <p class="style">This allows italic synthesis.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>weight style</h2>
+      <p class="weight-style">This allows both bold and italic synthesis.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+```

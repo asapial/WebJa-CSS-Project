@@ -1,1 +1,147 @@
-Blank File
+### Definition
+The `grid-area` CSS property is a shorthand property that specifies a grid item’s position and size within a grid container. It defines a grid item's start and end positions on both the row and column axes, or assigns a name to a grid area.
+
+### Values
+
+| Value           | Description |
+|-----------------|-------------|
+| `<name>`        | Assigns a name to the grid item. Can be referenced in the `grid-template-areas` property. |
+| `<row-start> / <column-start> / <row-end> / <column-end>` | Specifies the grid lines where the item starts and ends. The values are numbers or named grid lines. |
+| `auto`          | Indicates that the grid item should be auto-placed according to the automatic placement algorithm. |
+
+### Example
+
+```css
+/* Using named area */
+.grid-item {
+  grid-area: header; /* Assigns a name to the grid item */
+}
+
+/* Using grid line numbers */
+.grid-item {
+  grid-area: 1 / 2 / 3 / 4; /* Places the item starting from row line 1, column line 2, ending at row line 3, column line 4 */
+}
+
+/* Auto placement */
+.grid-item {
+  grid-area: auto; /* Uses the auto-placement algorithm */
+}
+```
+
+### Description
+The `grid-area` property simplifies the process of positioning grid items within a grid container. It can accept a named grid area (as defined in the `grid-template-areas` property) or a combination of four values specifying the start and end positions of the item across rows and columns.
+
+When defining grid positions, the four values (`row-start`, `column-start`, `row-end`, `column-end`) determine where the grid item will be placed within the grid structure. The `auto` value allows the item to be automatically placed according to the grid's structure.
+
+### All Most Similar Properties
+
+| Property                | Description | Difference |
+|-------------------------|-------------|------------|
+| `grid-column`           | Specifies the size and location of a grid item within a grid column | `grid-column` only applies to the column axis, whereas `grid-area` includes both row and column. |
+| `grid-row`              | Specifies the size and location of a grid item within a grid row | `grid-row` only applies to the row axis, whereas `grid-area` includes both row and column. |
+| `grid-template-areas`   | Defines named grid areas within the grid container | `grid-template-areas` is used to define the overall layout, while `grid-area` assigns or positions grid items within that layout. |
+
+### Browser Compatibility
+
+| Browser         | Support |
+|-----------------|---------|
+| Google Chrome   | Yes     |
+| Mozilla Firefox | Yes     |
+| Safari          | Yes     |
+| Microsoft Edge  | Yes     |
+| Opera           | Yes     |
+
+### In JavaScript
+
+```javascript
+// Set grid-area using JavaScript
+const gridItem = document.querySelector('.grid-item');
+gridItem.style.gridArea = '1 / 2 / 3 / 4'; // Position grid item using grid-area
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 100px);
+            grid-template-areas: 
+                "header header header header"
+                "main main . sidebar"
+                "main main . sidebar"
+                "footer footer footer footer";
+            gap: 10px;
+        }
+
+        .grid-item {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #f8b400;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #f85f73;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #6a0572;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #008891;
+        }
+
+        h2 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">Values Used in grid-area</h2>
+        <div class="grid-container">
+            <div class="grid-item header">Header</div>
+            <div class="grid-item main">Main</div>
+            <div class="grid-item sidebar">Sidebar</div>
+            <div class="grid-item footer">Footer</div>
+        </div>
+    </div>
+</body>
+</html>
+```

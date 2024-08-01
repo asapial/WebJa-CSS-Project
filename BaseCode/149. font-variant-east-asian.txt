@@ -1,1 +1,226 @@
-Blank File
+## Definition
+
+The `font-variant-east-asian` CSS property allows for control over the use of alternate glyphs for East Asian scripts (like Chinese, Japanese, Korean). This includes features such as traditional and simplified forms, as well as alternate width and style options.
+
+## Values
+
+| Value               | Description                                                             |
+|---------------------|-------------------------------------------------------------------------|
+| `normal`            | Default value. No East Asian font variant features are applied.         |
+| `jis78`             | Uses the JIS78 variant for Japanese characters.                         |
+| `jis83`             | Uses the JIS83 variant for Japanese characters.                         |
+| `jis90`             | Uses the JIS90 variant for Japanese characters.                         |
+| `jis04`             | Uses the JIS04 variant for Japanese characters.                         |
+| `simplified`        | Uses simplified forms for Chinese characters.                           |
+| `traditional`       | Uses traditional forms for Chinese characters.                          |
+| `full-width`        | Uses full-width forms for East Asian characters.                        |
+| `proportional-width`| Uses proportional-width forms for East Asian characters.                |
+| `ruby`              | Uses forms suitable for ruby annotation.                                |
+
+## Example
+
+```css
+p.normal {
+  font-variant-east-asian: normal; /* Default value */
+}
+
+p.jis78 {
+  font-variant-east-asian: jis78;
+}
+
+p.jis83 {
+  font-variant-east-asian: jis83;
+}
+
+p.jis90 {
+  font-variant-east-asian: jis90;
+}
+
+p.jis04 {
+  font-variant-east-asian: jis04;
+}
+
+p.simplified {
+  font-variant-east-asian: simplified;
+}
+
+p.traditional {
+  font-variant-east-asian: traditional;
+}
+
+p.full-width {
+  font-variant-east-asian: full-width;
+}
+
+p.proportional-width {
+  font-variant-east-asian: proportional-width;
+}
+
+p.ruby {
+  font-variant-east-asian: ruby;
+}
+```
+
+## Description
+
+The `font-variant-east-asian` property provides control over the display of East Asian text by specifying the use of various alternate glyphs. This can include traditional vs. simplified Chinese characters, different variants of Japanese characters, and alternate width forms. It allows for greater typographic customization for East Asian scripts.
+
+To implement `font-variant-east-asian`, apply it to the desired element in your CSS. For example, `font-variant-east-asian: simplified;` will use simplified forms for Chinese characters if available in the font.
+
+## All Most Similar Properties
+
+| Property               | Description                                  | Difference                                         |
+|------------------------|----------------------------------------------|---------------------------------------------------|
+| `font-variant`         | Controls the usage of alternate glyphs.      | More general, does not specify East Asian features.|
+| `font-feature-settings`| Provides low-level control over OpenType features. | Offers more granular control over specific features.|
+
+## Browser Compatibility
+
+| Browser           | Support |
+|-------------------|---------|
+| Chrome            | Yes     |
+| Firefox           | Yes     |
+| Safari            | Yes     |
+| Edge              | Yes     |
+| Opera             | Yes     |
+| Internet Explorer | No      |
+
+## In JavaScript
+
+```js
+// Setting font-variant-east-asian in JavaScript
+document.querySelector('p').style.fontVariantEastAsian = 'simplified';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Variant East Asian Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+    margin: 0;
+  }
+  .container {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .sub-container {
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 10px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  p {
+    margin: 0;
+    font-size: 1.2em;
+    padding: 10px;
+  }
+  .normal {
+    font-variant-east-asian: normal;
+  }
+  .jis78 {
+    font-variant-east-asian: jis78;
+  }
+  .jis83 {
+    font-variant-east-asian: jis83;
+  }
+  .jis90 {
+    font-variant-east-asian: jis90;
+  }
+  .jis04 {
+    font-variant-east-asian: jis04;
+  }
+  .simplified {
+    font-variant-east-asian: simplified;
+  }
+  .traditional {
+    font-variant-east-asian: traditional;
+  }
+  .full-width {
+    font-variant-east-asian: full-width;
+  }
+  .proportional-width {
+    font-variant-east-asian: proportional-width;
+  }
+  .ruby {
+    font-variant-east-asian: ruby;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>font-variant-east-asian Values</h1>
+
+    <div class="sub-container">
+      <h2>normal</h2>
+      <p class="normal">这是普通字体变体东亚。</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>jis78</h2>
+      <p class="jis78">这是JIS78字体变体东亚。</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>jis83</h2>
+      <p class="jis83">这是JIS83字体变体东亚。</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>jis90</h2>
+      <p class="jis90">这是JIS90字体变体东亚。</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>jis04</h2>
+      <p class="jis04">这是JIS04字体变体东亚。</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>simplified</h2>
+      <p class="simplified">这是简体字体变体东亚。</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>traditional</h2>
+      <p class="traditional">這是繁體字體變體東亞。</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>full-width</h2>
+      <p class="full-width">これは全角フォントバリアント東アジアです。</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>proportional-width</h2>
+      <p class="proportional-width">これはプロポーショナル幅のフォントバリアント東アジアです。</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>ruby</h2>
+      <p class="ruby">これはルビ用のフォントバリアント東アジアです。</p>
+    </div>
+
+  </div>
+</body>
+</html>
+```

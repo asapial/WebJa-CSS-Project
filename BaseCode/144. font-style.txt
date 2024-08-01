@@ -1,1 +1,160 @@
-Blank File
+## Definition
+
+The `font-style` CSS property specifies whether a font should be styled with a normal, italic, or oblique face from its `font-family`.
+
+## Values
+
+| Value      | Description                             |
+|------------|-----------------------------------------|
+| `normal`   | The text is shown in a standard face.   |
+| `italic`   | The text is shown in italic face.       |
+| `oblique`  | The text is shown in an oblique face.   |
+| `initial`  | Sets the property to its default value. |
+| `inherit`  | Inherits this property from its parent. |
+
+## Example
+
+```css
+p.normal {
+  font-style: normal; /* Default value */
+}
+
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}
+
+p.initial {
+  font-style: initial;
+}
+
+p.inherit {
+  font-style: inherit;
+}
+```
+
+## Description
+
+The `font-style` property is used to specify the style of the font, allowing for differentiation between normal, italic, and oblique text. It can be particularly useful for emphasizing text or creating a visual hierarchy. The property can be applied to any text element, and not all fonts support all values.
+
+To implement `font-style`, simply apply it to the desired element in your CSS. For instance, using `font-style: italic;` will render the text in an italicized form.
+
+## All Most Similar Properties
+
+| Property        | Description                                   | Difference                                        |
+|-----------------|-----------------------------------------------|---------------------------------------------------|
+| `font-weight`   | Adjusts the weight (boldness) of the font.    | Changes weight instead of style.                  |
+| `font-variant`  | Controls the usage of alternate glyphs.       | Changes glyph variants instead of style.          |
+| `text-transform`| Controls the capitalization of text.          | Transforms text case instead of changing font style. |
+
+## Browser Compatibility
+
+| Browser           | Support |
+|-------------------|---------|
+| Chrome            | Yes     |
+| Firefox           | Yes     |
+| Safari            | Yes     |
+| Edge              | Yes     |
+| Opera             | Yes     |
+| Internet Explorer | Yes     |
+
+## In JavaScript
+
+```js
+// Setting font-style in JavaScript
+document.querySelector('p').style.fontStyle = 'italic';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Style Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+  .container {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .sub-container {
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 10px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+ p.normal {
+  font-style: normal; /* Default value */
+}
+
+p.italic {
+  font-style: italic;
+}
+
+p.oblique {
+  font-style: oblique;
+}
+
+p.initial {
+  font-style: initial;
+}
+
+p.inherit {
+  font-style: inherit;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>font-style Values</h1>
+
+    <div class="sub-container">
+      <h2>normal</h2>
+      <p class="normal">This is normal font-style.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>italic</h2>
+      <p class="italic">This is italic font-style.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>oblique</h2>
+      <p class="oblique">This is oblique font-style.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>initial</h2>
+      <p class="initial">This is initial font-style.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>inherit</h2>
+      <p class="inherit">This is inherit font-style.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+```

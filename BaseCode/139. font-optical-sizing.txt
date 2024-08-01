@@ -1,1 +1,116 @@
-Blank File
+### Definition
+The `font-optical-sizing` CSS property allows the use of the optical size variation in variable fonts, which adjusts glyph shapes to optimize legibility at different sizes.
+
+### Values
+
+| Value       | Description                                                                 |
+|-------------|-----------------------------------------------------------------------------|
+| `auto`      | Default value. Uses the font's optical sizing feature if available.         |
+| `none`      | Disables the use of the font's optical sizing feature.                      |
+
+### Example
+```css
+p {
+  font-optical-sizing: auto; /* Uses the font's optical sizing feature if available */
+}
+
+h1 {
+  font-optical-sizing: none; /* Disables the use of the font's optical sizing feature */
+}
+```
+
+### Description
+The `font-optical-sizing` property is used to control the optical size variation in variable fonts. This feature optimizes the shapes of glyphs at different sizes to improve readability and aesthetics. When set to `auto`, the font's optical sizing feature is enabled if the font supports it. This typically results in subtle adjustments to glyph shapes, making them more legible at smaller sizes and more refined at larger sizes. Setting it to `none` disables this feature, keeping the glyph shapes consistent regardless of size.
+
+### All Most Similar Properties
+| Property              | Description                                             | Difference                                    |
+|-----------------------|---------------------------------------------------------|-----------------------------------------------|
+| `font-size-adjust`    | Adjusts the font size to achieve a consistent x-height  | `font-optical-sizing` adjusts glyph shapes for different sizes |
+| `font-feature-settings` | Controls advanced typographic features                  | `font-optical-sizing` specifically adjusts glyphs for size optimization |
+
+### Browser Compatibility
+| Browser            | Support |
+|--------------------|---------|
+| Chrome             | Yes     |
+| Firefox            | Yes     |
+| Safari             | Yes     |
+| Edge               | Yes     |
+| Opera              | Yes     |
+| Internet Explorer  | No      |
+
+### In JavaScript
+```javascript
+// Select the element
+var element = document.querySelector('p');
+
+// Apply the font-optical-sizing property
+element.style.fontOpticalSizing = 'auto';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>font-optical-sizing Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    width: 80%;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .sub-container {
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  h2 {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">font-optical-sizing Examples</div>
+
+  <div class="sub-container">
+    <h2>auto</h2>
+    <p style="font-optical-sizing: auto; font-size: 12px;">Optical sizing enabled with auto value at 12px.</p>
+    <p style="font-optical-sizing: auto; font-size: 24px;">Optical sizing enabled with auto value at 24px.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>none</h2>
+    <p style="font-optical-sizing: none; font-size: 12px;">Optical sizing disabled with none value at 12px.</p>
+    <p style="font-optical-sizing: none; font-size: 24px;">Optical sizing disabled with none value at 24px.</p>
+  </div>
+</div>
+
+</body>
+</html>
+```

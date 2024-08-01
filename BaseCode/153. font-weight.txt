@@ -1,1 +1,222 @@
-Blank File
+## Definition
+The `font-weight` CSS property sets the weight (or boldness) of the font. This can be defined by a keyword or a numerical value.
+
+## Values
+
+| Value     | Description                                                   |
+|-----------|---------------------------------------------------------------|
+| `normal`  | Normal weight. Equivalent to a value of 400.                  |
+| `bold`    | Bold weight. Equivalent to a value of 700.                    |
+| `bolder`  | Bolder than the inherited font weight.                        |
+| `lighter` | Lighter than the inherited font weight.                       |
+| `100`     | Thin weight.                                                  |
+| `200`     | Extra light weight.                                           |
+| `300`     | Light weight.                                                 |
+| `400`     | Normal weight. Same as `normal`.                              |
+| `500`     | Medium weight.                                                |
+| `600`     | Semi-bold weight.                                             |
+| `700`     | Bold weight. Same as `bold`.                                  |
+| `800`     | Extra bold weight.                                            |
+| `900`     | Ultra bold (black) weight.                                    |
+
+## Example
+```css
+/* Normal weight */
+p.normal {
+  font-weight: normal; /* Equivalent to 400 */
+}
+
+/* Bold weight */
+p.bold {
+  font-weight: bold; /* Equivalent to 700 */
+}
+
+/* Bolder than inherited weight */
+p.bolder {
+  font-weight: bolder;
+}
+
+/* Lighter than inherited weight */
+p.lighter {
+  font-weight: lighter;
+}
+
+/* Numerical values */
+p.thin {
+  font-weight: 100;
+}
+p.extra-light {
+  font-weight: 200;
+}
+p.light {
+  font-weight: 300;
+}
+p.medium {
+  font-weight: 500;
+}
+p.semi-bold {
+  font-weight: 600;
+}
+p.extra-bold {
+  font-weight: 800;
+}
+p.ultra-bold {
+  font-weight: 900;
+}
+```
+
+## Description
+The `font-weight` property is used to specify the weight or boldness of the font. It can take predefined keywords like `normal` and `bold`, relative keywords like `bolder` and `lighter`, or numerical values ranging from 100 to 900 in increments of 100. The numerical values provide more granular control over the font weight, making it possible to fine-tune the appearance of text. 
+
+The property can be applied to any HTML element that displays text. When `bolder` or `lighter` is used, the browser calculates the weight relative to the inherited font weight, creating a bolder or lighter effect.
+
+## All Most Similar Properties
+
+| Property        | Description                                    | Difference                                           |
+|-----------------|------------------------------------------------|------------------------------------------------------|
+| `font-style`    | Specifies the style of the font (italic, normal, oblique). | Changes the style rather than the weight.            |
+| `font-variant`  | Controls the usage of small-caps and other font variants. | Modifies the variant rather than the weight.         |
+| `font-size`     | Sets the size of the font.                     | Changes the size rather than the weight.             |
+
+## Browser Compatibility
+
+| Browser             | Support      |
+|---------------------|--------------|
+| Chrome              | Yes          |
+| Firefox             | Yes          |
+| Safari              | Yes          |
+| Edge                | Yes          |
+| Internet Explorer   | Yes          |
+
+## In JavaScript
+```javascript
+// Example of setting font-weight in JavaScript
+document.querySelector('p').style.fontWeight = 'bold'; // Setting to bold
+document.querySelector('p').style.fontWeight = '700';  // Setting to numerical value
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Weight Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .normal {
+            font-weight: normal; /* Equivalent to 400 */
+        }
+        .bold {
+            font-weight: bold; /* Equivalent to 700 */
+        }
+        .bolder {
+            font-weight: bolder;
+        }
+        .lighter {
+            font-weight: lighter;
+        }
+        .thin {
+            font-weight: 100;
+        }
+        .extra-light {
+            font-weight: 200;
+        }
+        .light {
+            font-weight: 300;
+        }
+        .medium {
+            font-weight: 500;
+        }
+        .semi-bold {
+            font-weight: 600;
+        }
+        .extra-bold {
+            font-weight: 800;
+        }
+        .ultra-bold {
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>font-weight Values</h1>
+        <div class="sub-container">
+            <h2>normal</h2>
+            <p class="normal">This is normal weight text.</p>
+        </div>
+        <div class="sub-container">
+            <h2>bold</h2>
+            <p class="bold">This is bold weight text.</p>
+        </div>
+        <div class="sub-container">
+            <h2>bolder</h2>
+            <p class="bolder">This is bolder weight text.</p>
+        </div>
+        <div class="sub-container">
+            <h2>lighter</h2>
+            <p class="lighter">This is lighter weight text.</p>
+        </div>
+        <div class="sub-container">
+            <h2>thin (100)</h2>
+            <p class="thin">This is thin weight text (100).</p>
+        </div>
+        <div class="sub-container">
+            <h2>extra-light (200)</h2>
+            <p class="extra-light">This is extra-light weight text (200).</p>
+        </div>
+        <div class="sub-container">
+            <h2>light (300)</h2>
+            <p class="light">This is light weight text (300).</p>
+        </div>
+        <div class="sub-container">
+            <h2>medium (500)</h2>
+            <p class="medium">This is medium weight text (500).</p>
+        </div>
+        <div class="sub-container">
+            <h2>semi-bold (600)</h2>
+            <p class="semi-bold">This is semi-bold weight text (600).</p>
+        </div>
+        <div class="sub-container">
+            <h2>extra-bold (800)</h2>
+            <p class="extra-bold">This is extra-bold weight text (800).</p>
+        </div>
+        <div class="sub-container">
+            <h2>ultra-bold (900)</h2>
+            <p class="ultra-bold">This is ultra-bold weight text (900).</p>
+        </div>
+    </div>
+</body>
+</html>
+```

@@ -1,1 +1,181 @@
-Blank File
+## Definition
+
+The `font-stretch` CSS property selects a normal, condensed, or expanded face from a font.
+
+## Values
+
+| Value          | Description                                                |
+|----------------|------------------------------------------------------------|
+| `normal`       | No stretching; the default value.                          |
+| `ultra-condensed` | The most condensed (narrowest) font face.                 |
+| `extra-condensed` | Extra condensed font face.                               |
+| `condensed`    | Condensed font face.                                       |
+| `semi-condensed` | Semi-condensed font face.                                 |
+| `semi-expanded` | Semi-expanded font face.                                   |
+| `expanded`     | Expanded font face.                                        |
+| `extra-expanded` | Extra expanded font face.                                 |
+| `ultra-expanded` | The most expanded (widest) font face.                     |
+
+## Example
+
+```css
+p.normal {
+  font-stretch: normal; /* Default value */
+}
+
+p.ultra-condensed {
+  font-stretch: ultra-condensed;
+}
+
+p.extra-condensed {
+  font-stretch: extra-condensed;
+}
+
+p.condensed {
+  font-stretch: condensed;
+}
+
+p.semi-condensed {
+  font-stretch: semi-condensed;
+}
+
+p.semi-expanded {
+  font-stretch: semi-expanded;
+}
+
+p.expanded {
+  font-stretch: expanded;
+}
+
+p.extra-expanded {
+  font-stretch: extra-expanded;
+}
+
+p.ultra-expanded {
+  font-stretch: ultra-expanded;
+}
+```
+
+## Description
+
+The `font-stretch` property allows you to make text narrower or wider. It's particularly useful when dealing with responsive designs or when you want to create a specific visual effect. This property works with variable fonts that support font-stretch settings.
+
+To implement this property, you must use a font family that includes different font stretch variations. Not all fonts support all stretch values, so it's important to test with the font you're using.
+
+## All Most Similar Properties
+
+| Property         | Description                                     | Difference                                       |
+|------------------|-------------------------------------------------|--------------------------------------------------|
+| `font-weight`    | Adjusts the weight (boldness) of the font.      | Changes weight instead of width.                 |
+| `font-style`     | Defines the style of the font (italic, normal). | Changes style (italic or oblique) instead of width. |
+| `font-variant`   | Controls the usage of alternate glyphs.         | Changes glyph variants instead of width.         |
+
+## Browser Compatibility
+
+| Browser        | Support        |
+|----------------|----------------|
+| Chrome         | Yes            |
+| Firefox        | Yes            |
+| Safari         | Yes            |
+| Edge           | Yes            |
+| Opera          | Yes            |
+| Internet Explorer | No          |
+
+## In JavaScript
+
+```js
+// Setting font-stretch in JavaScript
+document.querySelector('p').style.fontStretch = 'condensed';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Stretch Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+  .container {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .sub-container {
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 10px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>font-stretch Values</h1>
+
+    <div class="sub-container">
+      <h2>normal</h2>
+      <p class="normal">This is normal font-stretch.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>ultra-condensed</h2>
+      <p class="ultra-condensed">This is ultra-condensed font-stretch.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>extra-condensed</h2>
+      <p class="extra-condensed">This is extra-condensed font-stretch.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>condensed</h2>
+      <p class="condensed">This is condensed font-stretch.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>semi-condensed</h2>
+      <p class="semi-condensed">This is semi-condensed font-stretch.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>semi-expanded</h2>
+      <p class="semi-expanded">This is semi-expanded font-stretch.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>expanded</h2>
+      <p class="expanded">This is expanded font-stretch.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>extra-expanded</h2>
+      <p class="extra-expanded">This is extra-expanded font-stretch.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>ultra-expanded</h2>
+      <p class="ultra-expanded">This is ultra-expanded font-stretch.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+```

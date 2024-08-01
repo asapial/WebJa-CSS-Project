@@ -1,1 +1,135 @@
-Blank File
+### Definition
+The `font-smooth` CSS property controls the application of anti-aliasing when fonts are rendered.
+
+### Values
+
+| Value     | Description                                                                           |
+|-----------|---------------------------------------------------------------------------------------|
+| `auto`    | Default value. The browser determines the font smoothing method.                      |
+| `never`   | No font smoothing is applied.                                                         |
+| `always`  | Always apply font smoothing.                                                          |
+| `<number>`| Specifies the degree of font smoothing to apply.                                      |
+
+### Example
+```css
+p {
+  font-smooth: auto; /* Default value */
+}
+
+h1 {
+  font-smooth: never; /* No smoothing */
+}
+
+h2 {
+  font-smooth: always; /* Always smooth */
+}
+
+div {
+  font-smooth: 2; /* Custom smoothing value */
+}
+```
+
+### Description
+The `font-smooth` property is used to control the anti-aliasing of fonts, affecting how smooth the edges of the text appear. This property can enhance text readability by reducing jagged edges. The `auto` value lets the browser decide the best method of smoothing, while `never` and `always` can forcefully disable or enable smoothing. The `<number>` value allows for custom smoothing levels, although this is not widely supported.
+
+### All Most Similar Properties
+| Property              | Description                                             | Difference                                    |
+|-----------------------|---------------------------------------------------------|-----------------------------------------------|
+| `text-rendering`      | Provides hints to the browser about what aspects of text rendering to optimize | `font-smooth` focuses specifically on anti-aliasing, while `text-rendering` can optimize for speed, legibility, or geometric precision |
+| `font-weight`         | Sets the weight (boldness) of the font                  | `font-weight` affects the thickness of characters, not their smoothing |
+| `font-style`          | Sets the style (italic, normal) of the font             | `font-style` affects the slant and style, not the smoothing of the font edges |
+
+### Browser Compatibility
+| Browser            | Support |
+|--------------------|---------|
+| Chrome             | No      |
+| Firefox            | No      |
+| Safari             | Yes     |
+| Edge               | No      |
+| Opera              | No      |
+| Internet Explorer  | No      |
+
+### In JavaScript
+```javascript
+// Select the element
+var element = document.querySelector('p');
+
+// Apply the font-smooth property
+element.style.fontSmooth = 'always';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>font-smooth Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    width: 80%;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .sub-container {
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  h2 {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">font-smooth Examples</div>
+
+  <div class="sub-container">
+    <h2>auto</h2>
+    <p style="font-smooth: auto;">This text uses the default value of auto.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>never</h2>
+    <p style="font-smooth: never;">This text uses a font-smooth value of never.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>always</h2>
+    <p style="font-smooth: always;">This text uses a font-smooth value of always.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>2</h2>
+    <p style="font-smooth: 2;">This text uses a font-smooth value of 2.</p>
+  </div>
+</div>
+
+</body>
+</html>
+```

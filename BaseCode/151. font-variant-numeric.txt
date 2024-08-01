@@ -1,1 +1,162 @@
-Blank File
+## Definition
+The `font-variant-numeric` CSS property controls the usage of alternate glyphs for numbers, fractions, and ordinal markers.
+
+## Values
+
+| Value              | Description                                                     |
+|--------------------|-----------------------------------------------------------------|
+| `normal`           | Default numeric glyphs.                                         |
+| `ordinal`          | Enables display of numbers with ordinal markers.                |
+| `slashed-zero`     | Displays the number zero with a slash.                          |
+| `lining-nums`      | Uses lining numerals (same height as uppercase letters).        |
+| `oldstyle-nums`    | Uses old-style numerals (varying heights like lowercase letters).|
+| `proportional-nums`| Uses proportional numerals (variable width).                    |
+| `tabular-nums`     | Uses tabular numerals (fixed width).                            |
+| `diagonal-fractions` | Displays fractions with diagonal separators.                  |
+| `stacked-fractions`  | Displays fractions with stacked separators.                   |
+
+## Example
+```css
+/* Ordinal numbers */
+p.ordinal {
+  font-variant-numeric: ordinal; /* Enables ordinal markers */
+}
+
+/* Slashed zero */
+p.slashed-zero {
+  font-variant-numeric: slashed-zero; /* Displays zero with a slash */
+}
+
+/* Lining numerals */
+p.lining {
+  font-variant-numeric: lining-nums; /* Uses lining numerals */
+}
+
+/* Old-style numerals */
+p.oldstyle {
+  font-variant-numeric: oldstyle-nums; /* Uses old-style numerals */
+}
+
+/* Proportional numerals */
+p.proportional {
+  font-variant-numeric: proportional-nums; /* Uses proportional numerals */
+}
+
+/* Tabular numerals */
+p.tabular {
+  font-variant-numeric: tabular-nums; /* Uses tabular numerals */
+}
+
+/* Diagonal fractions */
+p.diagonal {
+  font-variant-numeric: diagonal-fractions; /* Displays diagonal fractions */
+}
+
+/* Stacked fractions */
+p.stacked {
+  font-variant-numeric: stacked-fractions; /* Displays stacked fractions */
+}
+```
+
+## Description
+The `font-variant-numeric` property provides control over the numeric typography in a text, allowing designers to specify different numeric styles such as lining or old-style numerals, proportional or tabular numerals, and the display of fractions. This property enhances the typographic quality of text involving numbers, ensuring clarity and consistency in presentation.
+
+## All Most Similar Properties
+
+| Property             | Description                                           | Difference                                              |
+|----------------------|-------------------------------------------------------|---------------------------------------------------------|
+| `font-feature-settings` | Allows for low-level control over OpenType features. | More granular control over typographic features.        |
+| `font-variant`       | Shorthand for various font variant properties.        | Broader control including ligatures, small caps, etc.   |
+
+## Browser Compatibility
+
+| Browser       | Support      |
+|---------------|--------------|
+| Chrome        | Yes          |
+| Firefox       | Yes          |
+| Safari        | Yes          |
+| Edge          | Yes          |
+| Internet Explorer | No       |
+
+## In JavaScript
+```javascript
+// Example of setting font-variant-numeric in JavaScript
+document.querySelector('p').style.fontVariantNumeric = 'ordinal';
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Variant Numeric Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>font-variant-numeric Values</h1>
+        <div class="sub-container">
+            <h2>ordinal</h2>
+            <p class="ordinal">1st 2nd 3rd</p>
+        </div>
+        <div class="sub-container">
+            <h2>slashed-zero</h2>
+            <p class="slashed-zero">1234567890</p>
+        </div>
+        <div class="sub-container">
+            <h2>lining-nums</h2>
+            <p class="lining">1234567890</p>
+        </div>
+        <div class="sub-container">
+            <h2>oldstyle-nums</h2>
+            <p class="oldstyle">1234567890</p>
+        </div>
+        <div class="sub-container">
+            <h2>proportional-nums</h2>
+            <p class="proportional">1234567890</p>
+        </div>
+        <div class="sub-container">
+            <h2>tabular-nums</h2>
+            <p class="tabular">1234567890</p>
+        </div>
+        <div class="sub-container">
+            <h2>diagonal-fractions</h2>
+            <p class="diagonal">1/2 3/4 5/6</p>
+        </div>
+        <div class="sub-container">
+            <h2>stacked-fractions</h2>
+            <p class="stacked">1/2 3/4 5/6</p>
+        </div>
+    </div>
+</body>
+</html>
+```

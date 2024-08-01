@@ -1,1 +1,126 @@
-Blank File
+## Definition
+The `font-variant-position` CSS property controls the use of alternate, smaller glyphs positioned as superscript or subscript relative to the baseline of the text.
+
+## Values
+
+| Value        | Description                                         |
+|--------------|-----------------------------------------------------|
+| `normal`     | Default positioning of the text.                    |
+| `sub`        | Enables subscript positioning of the text.          |
+| `super`      | Enables superscript positioning of the text.        |
+
+## Example
+```css
+/* Normal text positioning */
+p.normal {
+  font-variant-position: normal; /* Default positioning */
+}
+
+/* Subscript text positioning */
+p.sub {
+  font-variant-position: sub; /* Subscript positioning */
+}
+
+/* Superscript text positioning */
+p.super {
+  font-variant-position: super; /* Superscript positioning */
+}
+```
+
+## Description
+The `font-variant-position` property allows the use of smaller glyphs that are positioned as subscripts or superscripts relative to the baseline of the text. This property is useful for typographic control, particularly in scientific, mathematical, or technical writing where subscripts and superscripts are frequently used. Unlike the `vertical-align` property, which shifts the position of the entire text, `font-variant-position` uses specific glyphs designed for subscript or superscript rendering.
+
+## All Most Similar Properties
+
+| Property            | Description                                              | Difference                                                |
+|---------------------|----------------------------------------------------------|-----------------------------------------------------------|
+| `vertical-align`    | Adjusts the vertical position of an element relative to its line box. | Shifts entire element instead of using specific glyphs.   |
+| `font-size`         | Adjusts the size of the font.                            | Changes the font size but does not alter positioning glyphs.|
+
+## Browser Compatibility
+
+| Browser       | Support      |
+|---------------|--------------|
+| Chrome        | Yes          |
+| Firefox       | Yes          |
+| Safari        | Yes          |
+| Edge          | Yes          |
+| Internet Explorer | No       |
+
+## In JavaScript
+```javascript
+// Example of setting font-variant-position in JavaScript
+document.querySelector('p').style.fontVariantPosition = 'super';
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Variant Position Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        /* Normal text positioning */
+        .normal {
+            font-variant-position: normal;
+        }
+        /* Subscript text positioning */
+        .sub {
+            font-variant-position: sub;
+        }
+        /* Superscript text positioning */
+        .super {
+            font-variant-position: super;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>font-variant-position Values</h1>
+        <div class="sub-container">
+            <h2>normal</h2>
+            <p class="normal">H<sub>2</sub>O</p>
+        </div>
+        <div class="sub-container">
+            <h2>sub</h2>
+            <p class="sub">H<sub>2</sub>O</p>
+        </div>
+        <div class="sub-container">
+            <h2>super</h2>
+            <p class="super">E=mc<sup>2</sup></p>
+        </div>
+    </div>
+</body>
+</html>
+```

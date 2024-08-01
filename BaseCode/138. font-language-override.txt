@@ -1,1 +1,123 @@
-Blank File
+### Definition
+The `font-language-override` CSS property allows authors to control the usage of language-specific glyphs in a typeface, overriding the default language system.
+
+### Values
+
+| Value       | Description                                                                            |
+|-------------|----------------------------------------------------------------------------------------|
+| `normal`    | Default value. No language override is applied.                                        |
+| `<string>`  | A string of three lowercase letters representing the language system to be used.       |
+
+### Example
+```css
+p {
+  font-language-override: "lat"; /* Uses Latin language-specific glyphs */
+}
+
+h1 {
+  font-language-override: "cyrl"; /* Uses Cyrillic language-specific glyphs */
+}
+
+h2 {
+  font-language-override: "grek"; /* Uses Greek language-specific glyphs */
+}
+```
+
+### Description
+The `font-language-override` property is used to specify which language-specific glyphs a typeface should use. This property is particularly useful when the default language system does not render the text as desired. It allows authors to provide a three-letter string to override the default language system with a specified one, affecting the glyph shapes chosen by the font.
+
+### All Most Similar Properties
+| Property                | Description                                             | Difference                                    |
+|-------------------------|---------------------------------------------------------|-----------------------------------------------|
+| `font-feature-settings` | Controls advanced typographic features                  | `font-language-override` specifically overrides language systems |
+| `lang`                  | HTML attribute to specify the language of the element   | `font-language-override` controls glyph selection at a font level |
+
+### Browser Compatibility
+| Browser            | Support |
+|--------------------|---------|
+| Chrome             | Yes     |
+| Firefox            | Yes     |
+| Safari             | No      |
+| Edge               | Yes     |
+| Opera              | Yes     |
+| Internet Explorer  | No      |
+
+### In JavaScript
+```javascript
+// Select the element
+var element = document.querySelector('p');
+
+// Apply the font-language-override property
+element.style.fontLanguageOverride = '"lat"';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>font-language-override Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    width: 80%;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .sub-container {
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  h2 {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">font-language-override Examples</div>
+
+  <div class="sub-container">
+    <h2>"lat"</h2>
+    <p style="font-language-override: 'lat';">This text uses Latin language-specific glyphs.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"cyrl"</h2>
+    <p style="font-language-override: 'cyrl';">This text uses Cyrillic language-specific glyphs.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"grek"</h2>
+    <p style="font-language-override: 'grek';">This text uses Greek language-specific glyphs.</p>
+  </div>
+</div>
+
+</body>
+</html>
+```
