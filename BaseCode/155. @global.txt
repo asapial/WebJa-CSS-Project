@@ -1,1 +1,136 @@
-Blank File
+## Definition
+The `@global` at-rule is not a standard CSS property. Instead, it is commonly used in CSS-in-JS libraries such as JSS (JavaScript Style Sheets) to define global CSS rules that are applied globally rather than scoped to a particular component.
+
+## Values
+
+| Value           | Description                                                      |
+|-----------------|------------------------------------------------------------------|
+| `global styles` | CSS rules that should be applied globally across the application.|
+
+## Example
+```css
+/* Example of using @global in JSS */
+const styles = {
+  '@global': {
+    body: {
+      margin: 0, /* Global style for body */
+      fontFamily: 'Arial, sans-serif', /* Global font family */
+    },
+    h1: {
+      color: 'blue', /* Global style for h1 */
+    }
+  }
+};
+```
+
+## Description
+The `@global` at-rule is typically used in CSS-in-JS solutions to apply global styles within a JavaScript context. These global styles are applied to the entire document rather than being scoped to a specific component. This is particularly useful when using component-based frameworks like React, where styles are often scoped to individual components by default. The `@global` rule ensures that certain styles are applied universally across the application.
+
+## All Most Similar Properties
+
+| Property      | Description                                               | Difference                                                  |
+|---------------|-----------------------------------------------------------|-------------------------------------------------------------|
+| `:root`       | Pseudo-class that targets the highest-level parent in the document tree. | Limited to declaring global custom properties (CSS variables). |
+| `body`        | Targets the `<body>` element globally.                     | Applies only to the body element, not to other global styles.  |
+| `html`        | Targets the `<html>` element globally.                     | Applies only to the html element, not to other global styles.  |
+
+## Browser Compatibility
+
+| Browser             | Support      |
+|---------------------|--------------|
+| Chrome              | N/A          |
+| Firefox             | N/A          |
+| Safari              | N/A          |
+| Edge                | N/A          |
+| Internet Explorer   | N/A          |
+
+(Note: `@global` is not a standard CSS feature and is not supported by browsers directly. It is used within JavaScript styling solutions.)
+
+## In JavaScript
+```javascript
+// Example of using @global in a JSS setup with React
+import { createUseStyles } from 'react-jss';
+
+const useStyles = createUseStyles({
+  '@global': {
+    body: {
+      margin: 0,
+      fontFamily: 'Arial, sans-serif',
+    },
+    h1: {
+      color: 'blue',
+    },
+  },
+  myComponent: {
+    padding: '20px',
+    backgroundColor: '#f0f0f0',
+  },
+});
+
+function MyComponent() {
+  const classes = useStyles();
+  return (
+    <div className={classes.myComponent}>
+      <h1>Global Styles Example</h1>
+      <p>This is an example of using @global in JSS.</p>
+    </div>
+  );
+}
+
+export default MyComponent;
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@global Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 20px auto;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h2 {
+            color: blue;
+            margin-bottom: 10px;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>@global Values</h1>
+        <div class="sub-container">
+            <h2>Global Styles</h2>
+            <div class="content">
+                <p>This is an example of using @global in CSS-in-JS solutions.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

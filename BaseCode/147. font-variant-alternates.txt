@@ -1,1 +1,182 @@
-Blank File
+## Definition
+
+The `font-variant-alternates` CSS property controls the use of alternate glyphs in fonts, allowing for the selection of different stylistic sets, historical forms, and other alternates.
+
+## Values
+
+| Value                  | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| `normal`               | Default value. No alternate glyphs are used.                                |
+| `historical-forms`     | Uses historical forms of the glyphs.                                        |
+| `stylistic(<set>)`     | Uses a specific stylistic set of glyphs.                                    |
+| `styleset(<set>)`      | Uses a specific stylistic set of glyphs.                                    |
+| `character-variant(<variant>)` | Uses a specific character variant of glyphs.                        |
+| `swash(<set>)`         | Uses swash alternates for the glyphs.                                       |
+| `ornaments(<set>)`     | Uses ornament alternates for the glyphs.                                    |
+| `annotation(<set>)`    | Uses annotation alternates for the glyphs.                                  |
+
+## Example
+
+```css
+p.normal {
+  font-variant-alternates: normal; /* Default value */
+}
+
+p.historical-forms {
+  font-variant-alternates: historical-forms;
+}
+
+p.stylistic-set {
+  font-variant-alternates: stylistic(1); /* Example using the first stylistic set */
+}
+
+p.character-variant {
+  font-variant-alternates: character-variant(1); /* Example using the first character variant */
+}
+
+p.swash {
+  font-variant-alternates: swash(1); /* Example using the first swash set */
+}
+
+p.ornaments {
+  font-variant-alternates: ornaments(1); /* Example using the first ornaments set */
+}
+
+p.annotation {
+  font-variant-alternates: annotation(1); /* Example using the first annotation set */
+}
+```
+
+## Description
+
+The `font-variant-alternates` property allows you to specify different alternate glyphs to be used for rendering text. This can be useful for applying historical forms, stylistic sets, character variants, swashes, ornaments, and annotations, provided the font supports these features. It enables fine-grained control over the appearance of text by allowing the use of alternate designs for specific characters or groups of characters.
+
+To implement `font-variant-alternates`, apply it to the desired element in your CSS. For example, `font-variant-alternates: historical-forms;` will use historical forms of the glyphs if available in the font.
+
+## All Most Similar Properties
+
+| Property               | Description                                  | Difference                                         |
+|------------------------|----------------------------------------------|---------------------------------------------------|
+| `font-variant`         | Controls the usage of alternate glyphs.      | More general, does not specify alternate types.   |
+| `font-feature-settings`| Provides low-level control over OpenType features. | Offers more granular control over specific features. |
+
+## Browser Compatibility
+
+| Browser           | Support |
+|-------------------|---------|
+| Chrome            | Yes     |
+| Firefox           | Yes     |
+| Safari            | Yes     |
+| Edge              | Yes     |
+| Opera             | Yes     |
+| Internet Explorer | No      |
+
+## In JavaScript
+
+```js
+// Setting font-variant-alternates in JavaScript
+document.querySelector('p').style.fontVariantAlternates = 'historical-forms';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Variant Alternates Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+  .container {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .sub-container {
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 10px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  .normal {
+    font-variant-alternates: normal;
+  }
+  .historical-forms {
+    font-variant-alternates: historical-forms;
+  }
+  .stylistic-set {
+    font-variant-alternates: stylistic(1);
+  }
+  .character-variant {
+    font-variant-alternates: character-variant(1);
+  }
+  .swash {
+    font-variant-alternates: swash(1);
+  }
+  .ornaments {
+    font-variant-alternates: ornaments(1);
+  }
+  .annotation {
+    font-variant-alternates: annotation(1);
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>font-variant-alternates Values</h1>
+
+    <div class="sub-container">
+      <h2>normal</h2>
+      <p class="normal">This is normal font-variant-alternates.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>historical-forms</h2>
+      <p class="historical-forms">This is historical-forms font-variant-alternates.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>stylistic-set</h2>
+      <p class="stylistic-set">This is stylistic-set font-variant-alternates.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>character-variant</h2>
+      <p class="character-variant">This is character-variant font-variant-alternates.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>swash</h2>
+      <p class="swash">This is swash font-variant-alternates.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>ornaments</h2>
+      <p class="ornaments">This is ornaments font-variant-alternates.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>annotation</h2>
+      <p class="annotation">This is annotation font-variant-alternates.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+```

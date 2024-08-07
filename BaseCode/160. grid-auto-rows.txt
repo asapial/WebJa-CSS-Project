@@ -1,1 +1,196 @@
-Blank File
+### Definition
+The `grid-auto-rows` CSS property specifies the size of rows in a grid container that are implicitly created. When grid items are placed outside the explicitly defined grid rows, new rows are automatically created, and this property sets the size of those rows.
+
+### Values
+
+| Value                   | Description |
+|-------------------------|-------------|
+| `<length>`              | Specifies a fixed size for the implicitly created rows, e.g., `100px`. |
+| `<percentage>`          | Specifies a size as a percentage of the grid container’s size, e.g., `50%`. |
+| `auto`                  | The size of the row is determined by the size of its content. |
+| `min-content`           | The row is sized to fit its content without overflowing. |
+| `max-content`           | The row is sized to fit the content as large as possible without overflowing. |
+| `fit-content(<length>)` | The row is sized to fit the content, up to a maximum specified length. |
+
+### Example
+
+```css
+/* Fixed size */
+.grid-container {
+  grid-auto-rows: 150px; /* Rows will be 150px tall */
+}
+
+/* Percentage */
+.grid-container {
+  grid-auto-rows: 20%; /* Rows will be 20% of the grid container's height */
+}
+
+/* Auto size */
+.grid-container {
+  grid-auto-rows: auto; /* Rows will size based on their content */
+}
+
+/* Min-content */
+.grid-container {
+  grid-auto-rows: min-content; /* Rows will be as small as possible without causing overflow */
+}
+
+/* Max-content */
+.grid-container {
+  grid-auto-rows: max-content; /* Rows will be as tall as the content without causing overflow */
+}
+
+/* Fit-content */
+.grid-container {
+  grid-auto-rows: fit-content(200px); /* Rows will fit the content, but not exceed 200px */
+}
+```
+
+### Description
+The `grid-auto-rows` property is useful when you have items placed in a grid beyond the explicitly defined rows (i.e., those defined by `grid-template-rows`). This property specifies the size of the rows that are automatically generated. This can be a fixed length, a percentage, or a flexible value like `auto`, `min-content`, `max-content`, or `fit-content`.
+
+For instance, if you place an item in the fourth row, but only three rows are explicitly defined, `grid-auto-rows` will determine the height of the fourth (and any subsequent) row.
+
+### All Most Similar Properties
+
+| Property               | Description | Difference |
+|------------------------|-------------|------------|
+| `grid-template-rows`   | Defines the size of explicit grid rows | `grid-template-rows` sets the size for explicitly defined rows, while `grid-auto-rows` sets the size for rows created automatically. |
+| `grid-auto-columns`    | Defines the size of implicitly created grid columns | `grid-auto-columns` applies to columns, while `grid-auto-rows` applies to rows. |
+| `grid-row-gap`         | Specifies the size of the gap between rows | `grid-row-gap` affects spacing between rows, while `grid-auto-rows` affects the size of the rows themselves. |
+
+### Browser Compatibility
+
+| Browser         | Support |
+|-----------------|---------|
+| Google Chrome   | Yes     |
+| Mozilla Firefox | Yes     |
+| Safari          | Yes     |
+| Microsoft Edge  | Yes     |
+| Opera           | Yes     |
+
+### In JavaScript
+
+```javascript
+// Set grid-auto-rows using JavaScript
+const gridContainer = document.querySelector('.grid-container');
+gridContainer.style.gridAutoRows = '150px'; // Set implicitly created rows to 150px tall
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-rows: 100px 100px; /* Explicit grid with 2 rows */
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-item {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            height: 100px;
+        }
+
+        .grid-auto-rows-150px {
+            grid-auto-rows: 150px;
+            background-color: #f8b400;
+        }
+
+        .grid-auto-rows-20percent {
+            grid-auto-rows: 20%;
+            background-color: #f85f73;
+        }
+
+        .grid-auto-rows-auto {
+            grid-auto-rows: auto;
+            background-color: #6a0572;
+        }
+
+        .grid-auto-rows-mincontent {
+            grid-auto-rows: min-content;
+            background-color: #008891;
+        }
+
+        .grid-auto-rows-maxcontent {
+            grid-auto-rows: max-content;
+            background-color: #00587a;
+        }
+
+        .grid-auto-rows-fitcontent {
+            grid-auto-rows: fit-content(200px);
+            background-color: #ffc93c;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Values Used in grid-auto-rows</h2>
+        <div class="grid-container grid-auto-rows-150px">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit row -->
+        </div>
+        <div class="grid-container grid-auto-rows-20percent">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit row -->
+        </div>
+        <div class="grid-container grid-auto-rows-auto">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit row -->
+        </div>
+        <div class="grid-container grid-auto-rows-mincontent">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit row -->
+        </div>
+        <div class="grid-container grid-auto-rows-maxcontent">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit row -->
+        </div>
+        <div class="grid-container grid-auto-rows-fitcontent">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit row -->
+        </div>
+    </div>
+</body>
+</html>
+```

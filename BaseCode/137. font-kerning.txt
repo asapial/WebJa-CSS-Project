@@ -1,1 +1,124 @@
-Blank File
+### Definition
+The `font-kerning` CSS property controls the usage of kerning information (spacing adjustments between specific pairs of characters) stored in a font.
+
+### Values
+
+| Value       | Description                                                                                         |
+|-------------|-----------------------------------------------------------------------------------------------------|
+| `auto`      | Default value. Uses the font's built-in kerning data.                                               |
+| `normal`    | Enables kerning. Equivalent to `auto`.                                                              |
+| `none`      | Disables kerning, using the default spacing for all character pairs.                                |
+
+### Example
+```css
+p {
+  font-kerning: auto; /* Uses the font's built-in kerning data */
+}
+
+h1 {
+  font-kerning: normal; /* Enables kerning */
+}
+
+h2 {
+  font-kerning: none; /* Disables kerning */
+}
+```
+
+### Description
+The `font-kerning` property is used to control kerning in text, which is the process of adjusting the space between characters to improve the visual appearance of text. Kerning can make text more readable and aesthetically pleasing by adjusting the spacing based on character pairs. This property can be particularly useful in headings and other large text elements where the visual impact of kerning is more noticeable. The `auto` and `normal` values enable kerning using the font's built-in data, while the `none` value disables kerning, applying uniform spacing between characters.
+
+### All Most Similar Properties
+| Property              | Description                                             | Difference                                    |
+|-----------------------|---------------------------------------------------------|-----------------------------------------------|
+| `font-feature-settings` | Controls advanced typographic features               | More granular control over individual features|
+| `letter-spacing`      | Controls the space between characters                   | Adjusts spacing uniformly rather than pairwise|
+
+### Browser Compatibility
+| Browser       | Support          |
+|---------------|------------------|
+| Chrome        | Yes              |
+| Firefox       | Yes              |
+| Safari        | Yes              |
+| Edge          | Yes              |
+| Opera         | Yes              |
+| Internet Explorer | No           |
+
+### In JavaScript
+```javascript
+// Select the element
+var element = document.querySelector('p');
+
+// Apply the font-kerning property
+element.style.fontKerning = 'auto';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>font-kerning Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    width: 80%;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .sub-container {
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  h2 {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">font-kerning Examples</div>
+
+  <div class="sub-container">
+    <h2>auto</h2>
+    <p style="font-kerning: auto;">Kerning enabled with auto value example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>normal</h2>
+    <p style="font-kerning: normal;">Kerning enabled with normal value example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>none</h2>
+    <p style="font-kerning: none;">Kerning disabled with none value example text.</p>
+  </div>
+</div>
+
+</body>
+</html>
+```

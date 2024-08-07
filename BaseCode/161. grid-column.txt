@@ -1,1 +1,155 @@
-Blank File
+### Definition
+The `grid-column` CSS property is a shorthand property that specifies a grid item’s size and location within a grid column by setting both `grid-column-start` and `grid-column-end` in a single declaration. It determines how many columns the item will span and where it starts and ends.
+
+### Values
+
+| Value                           | Description |
+|---------------------------------|-------------|
+| `<start-line> / <end-line>`     | Specifies the starting and ending lines of the grid item within the grid columns. |
+| `<start-line> / span <number>`  | Specifies the starting line and spans the item across a specified number of columns. |
+| `<start-line> / span <name>`    | Specifies the starting line and spans the item across columns up to a named grid line. |
+| `span <number> / <end-line>`    | Specifies the ending line and spans the item back across a specified number of columns. |
+| `span <name> / <end-line>`      | Specifies the ending line and spans the item back across columns up to a named grid line. |
+| `auto`                          | Automatically places the grid item based on the flow of the layout. |
+
+### Example
+
+```css
+/* Span 2 columns starting at line 1 */
+.grid-item {
+  grid-column: 1 / 3; /* Starts at line 1, ends at line 3 */
+}
+
+/* Span 3 columns starting from line 2 */
+.grid-item {
+  grid-column: 2 / span 3; /* Starts at line 2, spans across 3 columns */
+}
+
+/* Span 2 columns ending at line 5 */
+.grid-item {
+  grid-column: span 2 / 5; /* Spans back from line 5 across 2 columns */
+}
+
+/* Auto placement */
+.grid-item {
+  grid-column: auto; /* Automatically places the item based on grid flow */
+}
+```
+
+### Description
+The `grid-column` property is essential for defining how an item is placed and spans across columns in a CSS Grid Layout. By controlling the start and end lines, developers can precisely position elements within a grid. This property can be particularly useful for creating responsive layouts where items need to adjust based on screen size.
+
+The shorthand syntax `grid-column: <start-line> / <end-line>` allows for compact and readable code. If only one value is provided, it applies to both `grid-column-start` and `grid-column-end`.
+
+When using the `span` keyword, you can control how many columns an item should span either forward or backward from a specific grid line.
+
+### All Most Similar Properties
+
+| Property              | Description | Difference |
+|-----------------------|-------------|------------|
+| `grid-column-start`    | Specifies the starting line of a grid item | `grid-column` combines both `grid-column-start` and `grid-column-end`. |
+| `grid-column-end`      | Specifies the ending line of a grid item | `grid-column` combines both `grid-column-start` and `grid-column-end`. |
+| `grid-row`             | Shorthand for `grid-row-start` and `grid-row-end` | `grid-row` controls the vertical placement while `grid-column` controls the horizontal placement. |
+
+### Browser Compatibility
+
+| Browser         | Support |
+|-----------------|---------|
+| Google Chrome   | Yes     |
+| Mozilla Firefox | Yes     |
+| Safari          | Yes     |
+| Microsoft Edge  | Yes     |
+| Opera           | Yes     |
+
+### In JavaScript
+
+```javascript
+// Set grid-column using JavaScript
+const gridItem = document.querySelector('.grid-item');
+gridItem.style.gridColumn = '2 / span 3'; // Places the item starting from column line 2, spanning 3 columns
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-item {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            height: 100px;
+        }
+
+        .grid-column-1-3 {
+            grid-column: 1 / 3;
+            background-color: #f8b400;
+        }
+
+        .grid-column-2-span3 {
+            grid-column: 2 / span 3;
+            background-color: #f85f73;
+        }
+
+        .grid-column-span2-5 {
+            grid-column: span 2 / 5;
+            background-color: #6a0572;
+        }
+
+        .grid-column-auto {
+            grid-column: auto;
+            background-color: #008891;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Values Used in grid-column</h2>
+        <div class="grid-container">
+            <div class="grid-item grid-column-1-3">1 / 3</div>
+            <div class="grid-item grid-column-2-span3">2 / span 3</div>
+            <div class="grid-item grid-column-span2-5">span 2 / 5</div>
+            <div class="grid-item grid-column-auto">auto</div>
+        </div>
+    </div>
+</body>
+</html>
+```

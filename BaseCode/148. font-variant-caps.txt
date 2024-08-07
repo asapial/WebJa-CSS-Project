@@ -1,1 +1,181 @@
-Blank File
+## Definition
+
+The `font-variant-caps` CSS property controls the use of alternate glyphs for capital letters. It allows for the selection of different styles of capital letters, such as small caps, all small caps, or titling caps.
+
+## Values
+
+| Value          | Description                                              |
+|----------------|----------------------------------------------------------|
+| `normal`       | Default value. No special capitalization is applied.     |
+| `small-caps`   | Enables small capital letters.                           |
+| `all-small-caps` | All letters are converted to small capital letters.     |
+| `petite-caps`  | Enables petite capital letters.                          |
+| `all-petite-caps` | All letters are converted to petite capital letters.  |
+| `unicase`      | Uses a mixed case where letters are neither upper nor lower. |
+| `titling-caps` | Uses titling capitals, which are designed for titles.    |
+
+## Example
+
+```css
+p.normal {
+  font-variant-caps: normal; /* Default value */
+}
+
+p.small-caps {
+  font-variant-caps: small-caps;
+}
+
+p.all-small-caps {
+  font-variant-caps: all-small-caps;
+}
+
+p.petite-caps {
+  font-variant-caps: petite-caps;
+}
+
+p.all-petite-caps {
+  font-variant-caps: all-petite-caps;
+}
+
+p.unicase {
+  font-variant-caps: unicase;
+}
+
+p.titling-caps {
+  font-variant-caps: titling-caps;
+}
+```
+
+## Description
+
+The `font-variant-caps` property allows you to select different styles of capital letters for text rendering. This can be useful for applying small caps, petite caps, titling caps, and other capitalization styles, provided the font supports these features. It enables fine-grained control over the appearance of text by allowing the use of alternate designs for capital letters.
+
+To implement `font-variant-caps`, apply it to the desired element in your CSS. For example, `font-variant-caps: small-caps;` will use small capital letters if available in the font.
+
+## All Most Similar Properties
+
+| Property               | Description                                  | Difference                                         |
+|------------------------|----------------------------------------------|---------------------------------------------------|
+| `text-transform`       | Controls the capitalization of text.         | More general, affects all text transformations.   |
+| `font-feature-settings`| Provides low-level control over OpenType features. | Offers more granular control over specific features. |
+
+## Browser Compatibility
+
+| Browser           | Support |
+|-------------------|---------|
+| Chrome            | Yes     |
+| Firefox           | Yes     |
+| Safari            | Yes     |
+| Edge              | Yes     |
+| Opera             | Yes     |
+| Internet Explorer | No      |
+
+## In JavaScript
+
+```js
+// Setting font-variant-caps in JavaScript
+document.querySelector('p').style.fontVariantCaps = 'small-caps';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Variant Caps Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+  .container {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .sub-container {
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 10px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  .normal {
+    font-variant-caps: normal;
+  }
+  .small-caps {
+    font-variant-caps: small-caps;
+  }
+  .all-small-caps {
+    font-variant-caps: all-small-caps;
+  }
+  .petite-caps {
+    font-variant-caps: petite-caps;
+  }
+  .all-petite-caps {
+    font-variant-caps: all-petite-caps;
+  }
+  .unicase {
+    font-variant-caps: unicase;
+  }
+  .titling-caps {
+    font-variant-caps: titling-caps;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>font-variant-caps Values</h1>
+
+    <div class="sub-container">
+      <h2>normal</h2>
+      <p class="normal">This is normal font-variant-caps.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>small-caps</h2>
+      <p class="small-caps">This is small-caps font-variant-caps.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>all-small-caps</h2>
+      <p class="all-small-caps">This is all-small-caps font-variant-caps.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>petite-caps</h2>
+      <p class="petite-caps">This is petite-caps font-variant-caps.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>all-petite-caps</h2>
+      <p class="all-petite-caps">This is all-petite-caps font-variant-caps.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>unicase</h2>
+      <p class="unicase">This is unicase font-variant-caps.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>titling-caps</h2>
+      <p class="titling-caps">This is titling-caps font-variant-caps.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+```

@@ -1,1 +1,314 @@
-Blank File
+## Definition
+
+The `font-variant` CSS property is used to control the usage of alternate glyphs for certain types of text, typically for small caps, ligatures, and other stylistic variations in a font.
+
+## Values
+
+| Value              | Description                                         |
+|--------------------|-----------------------------------------------------|
+| `normal`           | Default value. Text is not altered.                 |
+| `small-caps`       | Text is displayed in small capitals.                |
+| `all-small-caps`   | All characters are displayed in small capitals.     |
+| `petite-caps`      | Text is displayed in petite capitals.               |
+| `all-petite-caps`  | All characters are displayed in petite capitals.    |
+| `unicase`          | Text is displayed in a mix of uppercase and lowercase letters. |
+| `titling-caps`     | Text is displayed in titling capitals.              |
+| `slashed-zero`     | Uses a zero with a slash to differentiate it from the letter "O". |
+| `ordinal`          | Uses a glyph for the ordinal indicator.             |
+| `lining-nums`      | Uses lining numerals.                               |
+| `oldstyle-nums`    | Uses old-style numerals.                            |
+| `proportional-nums`| Uses proportional numerals.                         |
+| `tabular-nums`     | Uses tabular numerals.                              |
+| `diagonal-fractions`| Uses diagonal fractions.                           |
+| `stacked-fractions`| Uses stacked fractions.                             |
+| `historical-forms` | Uses historical forms of glyphs.                    |
+| `stylistic(<set>)` | Uses a stylistic set.                               |
+
+## Example
+
+```css
+p.normal {
+  font-variant: normal; /* Default value */
+}
+
+p.small-caps {
+  font-variant: small-caps;
+}
+
+p.all-small-caps {
+  font-variant: all-small-caps;
+}
+
+p.petite-caps {
+  font-variant: petite-caps;
+}
+
+p.all-petite-caps {
+  font-variant: all-petite-caps;
+}
+
+p.unicase {
+  font-variant: unicase;
+}
+
+p.titling-caps {
+  font-variant: titling-caps;
+}
+
+p.slashed-zero {
+  font-variant: slashed-zero;
+}
+
+p.ordinal {
+  font-variant: ordinal;
+}
+
+p.lining-nums {
+  font-variant: lining-nums;
+}
+
+p.oldstyle-nums {
+  font-variant: oldstyle-nums;
+}
+
+p.proportional-nums {
+  font-variant: proportional-nums;
+}
+
+p.tabular-nums {
+  font-variant: tabular-nums;
+}
+
+p.diagonal-fractions {
+  font-variant: diagonal-fractions;
+}
+
+p.stacked-fractions {
+  font-variant: stacked-fractions;
+}
+
+p.historical-forms {
+  font-variant: historical-forms;
+}
+
+p.stylistic-set {
+  font-variant: stylistic(1); /* Example using the first stylistic set */
+}
+```
+
+## Description
+
+The `font-variant` property allows for fine-tuning the display of text by using alternate glyphs that are available within a font. This includes small caps, different numeral styles, ligatures, and other stylistic variations. It can be used to achieve specific typographic effects and enhance the readability or aesthetic of text.
+
+To use `font-variant`, you need to specify the desired value for the text element. Some values like `small-caps` or `ordinal` are widely supported, while others, such as `stylistic(<set>)`, depend on the specific font used and its OpenType features.
+
+## All Most Similar Properties
+
+| Property         | Description                                        | Difference                                         |
+|------------------|----------------------------------------------------|---------------------------------------------------|
+| `font-style`     | Specifies whether a font should be styled italic or oblique. | Changes font style rather than glyph variant.      |
+| `font-weight`    | Adjusts the weight (boldness) of the font.         | Changes weight rather than variant.                |
+| `font-stretch`   | Selects a normal, condensed, or expanded face from a font. | Changes width rather than variant.                 |
+
+## Browser Compatibility
+
+| Browser           | Support |
+|-------------------|---------|
+| Chrome            | Yes     |
+| Firefox           | Yes     |
+| Safari            | Yes     |
+| Edge              | Yes     |
+| Opera             | Yes     |
+| Internet Explorer | Limited |
+
+## In JavaScript
+
+```js
+// Setting font-variant in JavaScript
+document.querySelector('p').style.fontVariant = 'small-caps';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Font Variant Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+  .container {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  .sub-container {
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 10px;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  .normal {
+    font-variant: normal;
+  }
+  .small-caps {
+    font-variant: small-caps;
+  }
+  .all-small-caps {
+    font-variant: all-small-caps;
+  }
+  .petite-caps {
+    font-variant: petite-caps;
+  }
+  .all-petite-caps {
+    font-variant: all-petite-caps;
+  }
+  .unicase {
+    font-variant: unicase;
+  }
+  .titling-caps {
+    font-variant: titling-caps;
+  }
+  .slashed-zero {
+    font-variant: slashed-zero;
+  }
+  .ordinal {
+    font-variant: ordinal;
+  }
+  .lining-nums {
+    font-variant: lining-nums;
+  }
+  .oldstyle-nums {
+    font-variant: oldstyle-nums;
+  }
+  .proportional-nums {
+    font-variant: proportional-nums;
+  }
+  .tabular-nums {
+    font-variant: tabular-nums;
+  }
+  .diagonal-fractions {
+    font-variant: diagonal-fractions;
+  }
+  .stacked-fractions {
+    font-variant: stacked-fractions;
+  }
+  .historical-forms {
+    font-variant: historical-forms;
+  }
+  .stylistic-set {
+    font-variant: stylistic(1);
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>font-variant Values</h1>
+
+    <div class="sub-container">
+      <h2>normal</h2>
+      <p class="normal">This is normal font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>small-caps</h2>
+      <p class="small-caps">This is small-caps font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>all-small-caps</h2>
+      <p class="all-small-caps">This is all-small-caps font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>petite-caps</h2>
+      <p class="petite-caps">This is petite-caps font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>all-petite-caps</h2>
+      <p class="all-petite-caps">This is all-petite-caps font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>unicase</h2>
+      <p class="unicase">This is unicase font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>titling-caps</h2>
+      <p class="titling-caps">This is titling-caps font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>slashed-zero</h2>
+      <p class="slashed-zero">This is slashed-zero font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>ordinal</h2>
+      <p class="ordinal">This is ordinal font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>lining-nums</h2>
+      <p class="lining-nums">This is lining-nums font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>oldstyle-nums</h2>
+      <p class="oldstyle-nums">This is oldstyle-nums font-variant.</p>
+    </div>
+
+    <div
+
+ class="sub-container">
+      <h2>proportional-nums</h2>
+      <p class="proportional-nums">This is proportional-nums font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>tabular-nums</h2>
+      <p class="tabular-nums">This is tabular-nums font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>diagonal-fractions</h2>
+      <p class="diagonal-fractions">This is diagonal-fractions font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>stacked-fractions</h2>
+      <p class="stacked-fractions">This is stacked-fractions font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>historical-forms</h2>
+      <p class="historical-forms">This is historical-forms font-variant.</p>
+    </div>
+
+    <div class="sub-container">
+      <h2>stylistic-set</h2>
+      <p class="stylistic-set">This is stylistic-set font-variant.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+```

@@ -1,1 +1,195 @@
-Blank File
+### Definition
+The `grid-auto-columns` CSS property defines the size of implicitly created grid columns. When a grid item is placed outside the explicit grid (i.e., beyond the defined `grid-template-columns`), new columns are created, and this property sets the size of those columns.
+
+### Values
+
+| Value               | Description |
+|---------------------|-------------|
+| `<length>`          | Specifies a fixed size for the implicitly created columns, e.g., `100px`. |
+| `<percentage>`      | Specifies a size as a percentage of the grid container’s size, e.g., `50%`. |
+| `auto`              | The size of the column is determined by the size of its content. |
+| `min-content`       | The column is sized to fit its content without overflowing. |
+| `max-content`       | The column is sized to fit the content as large as possible without overflowing. |
+| `fit-content(<length>)` | The column is sized to fit the content, up to a maximum specified length. |
+
+### Example
+
+```css
+/* Fixed size */
+.grid-container {
+  grid-auto-columns: 150px; /* Columns will be 150px wide */
+}
+
+/* Percentage */
+.grid-container {
+  grid-auto-columns: 20%; /* Columns will be 20% of the grid container's width */
+}
+
+/* Auto size */
+.grid-container {
+  grid-auto-columns: auto; /* Columns will size based on their content */
+}
+
+/* Min-content */
+.grid-container {
+  grid-auto-columns: min-content; /* Columns will be as small as possible without causing overflow */
+}
+
+/* Max-content */
+.grid-container {
+  grid-auto-columns: max-content; /* Columns will be as wide as the content without causing overflow */
+}
+
+/* Fit-content */
+.grid-container {
+  grid-auto-columns: fit-content(200px); /* Columns will fit the content, but not exceed 200px */
+}
+```
+
+### Description
+The `grid-auto-columns` property is particularly useful when grid items are placed into a grid beyond the defined columns (`grid-template-columns`). This property dictates the size of any new columns that are generated automatically. 
+
+For example, if a grid item is placed in column 5, but only 4 columns are explicitly defined, `grid-auto-columns` will determine the width of the fifth (and any subsequent) columns. The value can be any valid CSS length unit, a percentage, or a keyword like `auto`, `min-content`, `max-content`, or `fit-content`.
+
+### All Most Similar Properties
+
+| Property              | Description | Difference |
+|-----------------------|-------------|------------|
+| `grid-template-columns` | Defines the size of explicit grid columns | `grid-template-columns` sets the size for explicitly defined columns, while `grid-auto-columns` sets the size for columns created automatically. |
+| `grid-auto-rows`        | Defines the size of implicitly created grid rows | `grid-auto-rows` applies to rows, while `grid-auto-columns` applies to columns. |
+
+### Browser Compatibility
+
+| Browser         | Support |
+|-----------------|---------|
+| Google Chrome   | Yes     |
+| Mozilla Firefox | Yes     |
+| Safari          | Yes     |
+| Microsoft Edge  | Yes     |
+| Opera           | Yes     |
+
+### In JavaScript
+
+```javascript
+// Set grid-auto-columns using JavaScript
+const gridContainer = document.querySelector('.grid-container');
+gridContainer.style.gridAutoColumns = '150px'; // Set implicitly created columns to 150px wide
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 100px 100px; /* Explicit grid with 2 columns */
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-item {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            height: 100px;
+        }
+
+        .grid-auto-columns-150px {
+            grid-auto-columns: 150px;
+            background-color: #f8b400;
+        }
+
+        .grid-auto-columns-20percent {
+            grid-auto-columns: 20%;
+            background-color: #f85f73;
+        }
+
+        .grid-auto-columns-auto {
+            grid-auto-columns: auto;
+            background-color: #6a0572;
+        }
+
+        .grid-auto-columns-mincontent {
+            grid-auto-columns: min-content;
+            background-color: #008891;
+        }
+
+        .grid-auto-columns-maxcontent {
+            grid-auto-columns: max-content;
+            background-color: #00587a;
+        }
+
+        .grid-auto-columns-fitcontent {
+            grid-auto-columns: fit-content(200px);
+            background-color: #ffc93c;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Values Used in grid-auto-columns</h2>
+        <div class="grid-container grid-auto-columns-150px">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit column -->
+        </div>
+        <div class="grid-container grid-auto-columns-20percent">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit column -->
+        </div>
+        <div class="grid-container grid-auto-columns-auto">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit column -->
+        </div>
+        <div class="grid-container grid-auto-columns-mincontent">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit column -->
+        </div>
+        <div class="grid-container grid-auto-columns-maxcontent">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit column -->
+        </div>
+        <div class="grid-container grid-auto-columns-fitcontent">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div> <!-- Implicit column -->
+        </div>
+    </div>
+</body>
+</html>
+```

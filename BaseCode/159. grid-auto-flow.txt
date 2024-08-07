@@ -1,1 +1,170 @@
-Blank File
+### Definition
+The `grid-auto-flow` CSS property controls how the auto-placement algorithm places items in a grid container. It determines whether the auto-placement will fill rows or columns first and whether items will be placed in a dense or sparse pattern when there's unused space.
+
+### Values
+
+| Value               | Description |
+|---------------------|-------------|
+| `row`               | Places items by filling each row in turn, starting from left to right. This is the default value. |
+| `column`            | Places items by filling each column in turn, starting from top to bottom. |
+| `row dense`         | Places items in rows, attempting to fill gaps in earlier rows when possible. |
+| `column dense`      | Places items in columns, attempting to fill gaps in earlier columns when possible. |
+
+### Example
+
+```css
+/* Default: Row-wise placement */
+.grid-container {
+  grid-auto-flow: row; /* Fills rows first */
+}
+
+/* Column-wise placement */
+.grid-container {
+  grid-auto-flow: column; /* Fills columns first */
+}
+
+/* Row dense placement */
+.grid-container {
+  grid-auto-flow: row dense; /* Fills rows and tries to minimize gaps */
+}
+
+/* Column dense placement */
+.grid-container {
+  grid-auto-flow: column dense; /* Fills columns and tries to minimize gaps */
+}
+```
+
+### Description
+The `grid-auto-flow` property determines the order in which grid items are placed in a grid container. By default, items are placed row by row (`row` value), but this behavior can be changed to column by column (`column` value).
+
+When using the `dense` keyword, the browser will attempt to fill any gaps left by items that span multiple rows or columns. The `dense` option can make the layout more compact but may result in items appearing out of order in the DOM.
+
+### All Most Similar Properties
+
+| Property                | Description | Difference |
+|-------------------------|-------------|------------|
+| `grid-template-columns`  | Defines the columns in the grid layout | `grid-template-columns` defines the grid structure, while `grid-auto-flow` determines how items are placed within that structure. |
+| `grid-template-rows`     | Defines the rows in the grid layout | `grid-template-rows` defines the grid structure, while `grid-auto-flow` determines how items are placed within that structure. |
+| `justify-items`          | Aligns grid items along the row axis | `justify-items` affects alignment within grid cells, while `grid-auto-flow` affects the placement order of the items. |
+| `align-items`            | Aligns grid items along the column axis | `align-items` affects alignment within grid cells, while `grid-auto-flow` affects the placement order of the items. |
+
+### Browser Compatibility
+
+| Browser         | Support |
+|-----------------|---------|
+| Google Chrome   | Yes     |
+| Mozilla Firefox | Yes     |
+| Safari          | Yes     |
+| Microsoft Edge  | Yes     |
+| Opera           | Yes     |
+
+### In JavaScript
+
+```javascript
+// Set grid-auto-flow using JavaScript
+const gridContainer = document.querySelector('.grid-container');
+gridContainer.style.gridAutoFlow = 'row dense'; // Set auto-placement to row dense
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-color: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .grid-item {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            height: 100px;
+        }
+
+        .grid-auto-flow-row {
+            grid-auto-flow: row;
+            background-color: #f8b400;
+        }
+
+        .grid-auto-flow-column {
+            grid-auto-flow: column;
+            background-color: #f85f73;
+        }
+
+        .grid-auto-flow-row-dense {
+            grid-auto-flow: row dense;
+            background-color: #6a0572;
+        }
+
+        .grid-auto-flow-column-dense {
+            grid-auto-flow: column dense;
+            background-color: #008891;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 0 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Values Used in grid-auto-flow</h2>
+        <div class="grid-container grid-auto-flow-row">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div> <!-- Items placed row by row -->
+        </div>
+        <div class="grid-container grid-auto-flow-column">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div> <!-- Items placed column by column -->
+        </div>
+        <div class="grid-container grid-auto-flow-row-dense">
+            <div class="grid-item" style="grid-row: span 2;">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div> <!-- Items placed row by row, filling gaps -->
+        </div>
+        <div class="grid-container grid-auto-flow-column-dense">
+            <div class="grid-item" style="grid-column: span 2;">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div> <!-- Items placed column by column, filling gaps -->
+        </div>
+    </div>
+</body>
+</html>
+```

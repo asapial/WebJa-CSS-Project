@@ -1,1 +1,197 @@
-Blank File
+### Definition
+The `font-feature-settings` CSS property allows control over advanced typographic features in OpenType fonts, including ligatures, kerning, and alternate glyphs.
+
+### Values
+
+| Value         | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| `"normal"`    | Default value. No special features are enabled.                             |
+| `"kern"`      | Enables kerning.                                                            |
+| `"liga"`      | Enables standard ligatures.                                                 |
+| `"dlig"`      | Enables discretionary ligatures.                                            |
+| `"smcp"`      | Enables small capitals.                                                     |
+| `"calt"`      | Enables contextual alternates.                                              |
+| `"ss01"`      | Enables stylistic set 1.                                                    |
+| `"onum"`      | Enables oldstyle figures.                                                   |
+| `"lnum"`      | Enables lining figures.                                                     |
+| `"tnum"`      | Enables tabular figures.                                                    |
+| `"pnum"`      | Enables proportional figures.                                               |
+| Custom Value  | Allows specifying custom feature tags and values in the format `'"tag" value'`.|
+
+### Example
+```css
+p {
+  font-feature-settings: "kern" 1; /* Enables kerning */
+}
+
+h1 {
+  font-feature-settings: "liga" 1; /* Enables standard ligatures */
+}
+
+h2 {
+  font-feature-settings: "dlig" 1; /* Enables discretionary ligatures */
+}
+
+h3 {
+  font-feature-settings: "smcp" 1; /* Enables small capitals */
+}
+
+h4 {
+  font-feature-settings: "calt" 1; /* Enables contextual alternates */
+}
+
+h5 {
+  font-feature-settings: "ss01" 1; /* Enables stylistic set 1 */
+}
+
+h6 {
+  font-feature-settings: "onum" 1; /* Enables oldstyle figures */
+}
+
+div {
+  font-feature-settings: "lnum" 1; /* Enables lining figures */
+}
+
+span {
+  font-feature-settings: "tnum" 1; /* Enables tabular figures */
+}
+
+a {
+  font-feature-settings: "pnum" 1; /* Enables proportional figures */
+}
+```
+
+### Description
+The `font-feature-settings` property is used to specify OpenType font features. This property is particularly useful when advanced typography settings are needed, such as enabling ligatures, kerning, or other typographic features. Each feature is specified using a four-letter tag and an optional value. The value can either be `0` (to disable the feature) or `1` (to enable the feature). This property allows fine-grained control over font rendering, enabling designers to utilize specific typographic features provided by the font.
+
+### All Most Similar Properties
+| Property              | Description                                             | Difference                                                  |
+|-----------------------|---------------------------------------------------------|-------------------------------------------------------------|
+| `font-variant`        | Controls various font variant features                  | `font-feature-settings` provides more granular control      |
+| `font-kerning`        | Controls the use of kerning                             | `font-feature-settings` can enable/disable specific kerning |
+| `font-variant-ligatures` | Controls ligatures                                   | `font-feature-settings` allows specifying individual ligatures|
+
+### Browser Compatibility
+| Browser       | Support          |
+|---------------|------------------|
+| Chrome        | Yes              |
+| Firefox       | Yes              |
+| Safari        | Yes              |
+| Edge          | Yes              |
+| Opera         | Yes              |
+| Internet Explorer | No           |
+
+### In JavaScript
+```javascript
+// Select the element
+var element = document.querySelector('p');
+
+// Apply the font-feature-settings property
+element.style.fontFeatureSettings = '"kern" 1';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>font-feature-settings Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    width: 80%;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .sub-container {
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  h2 {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">font-feature-settings Examples</div>
+
+  <div class="sub-container">
+    <h2>"kern" 1</h2>
+    <p style="font-feature-settings: 'kern' 1;">Kerning enabled example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"liga" 1</h2>
+    <p style="font-feature-settings: 'liga' 1;">Ligatures enabled example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"dlig" 1</h2>
+    <p style="font-feature-settings: 'dlig' 1;">Discretionary ligatures enabled example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"smcp" 1</h2>
+    <p style="font-feature-settings: 'smcp' 1;">Small capitals enabled example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"calt" 1</h2>
+    <p style="font-feature-settings: 'calt' 1;">Contextual alternates enabled example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"ss01" 1</h2>
+    <p style="font-feature-settings: 'ss01' 1;">Stylistic set 1 enabled example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"onum" 1</h2>
+    <p style="font-feature-settings: 'onum' 1;">Oldstyle figures enabled example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"lnum" 1</h2>
+    <p style="font-feature-settings: 'lnum' 1;">Lining figures enabled example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"tnum" 1</h2>
+    <p style="font-feature-settings: 'tnum' 1;">Tabular figures enabled example text.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>"pnum" 1</h2>
+    <p style="font-feature-settings: 'pnum' 1;">Proportional figures enabled example text.</p>
+  </div>
+</div>
+
+</body>
+</html>
+```

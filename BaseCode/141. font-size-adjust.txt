@@ -1,1 +1,115 @@
-Blank File
+### Definition
+The `font-size-adjust` CSS property allows you to specify an aspect value for an element that preserves the x-height of the first-choice font when fallback fonts are used.
+
+### Values
+
+| Value       | Description                                               |
+|-------------|-----------------------------------------------------------|
+| `none`      | Default value. No font size adjustment is applied.        |
+| `<number>`  | A positive number representing the aspect value.          |
+
+### Example
+```css
+p {
+  font-size-adjust: none; /* No adjustment */
+}
+
+h1 {
+  font-size-adjust: 0.5; /* Adjust font size to maintain x-height */
+}
+```
+
+### Description
+The `font-size-adjust` property is used to control the font size based on the aspect value, which is the ratio of the font's x-height to its font size. This ensures that the x-height remains consistent across different fonts, providing better readability when a fallback font is used. By adjusting the font size using an aspect value, you can maintain a consistent visual appearance even when the preferred font is unavailable.
+
+### All Most Similar Properties
+| Property              | Description                                             | Difference                                    |
+|-----------------------|---------------------------------------------------------|-----------------------------------------------|
+| `font-size`           | Sets the size of the font                               | `font-size` directly sets the font size, while `font-size-adjust` adjusts based on the x-height |
+| `line-height`         | Sets the height of a line box                           | `line-height` affects spacing between lines, not font size |
+| `font`                | A shorthand for setting font-related properties         | `font` includes multiple properties, while `font-size-adjust` specifically adjusts font size based on x-height |
+
+### Browser Compatibility
+| Browser            | Support |
+|--------------------|---------|
+| Chrome             | Yes     |
+| Firefox            | Yes     |
+| Safari             | Yes     |
+| Edge               | Yes     |
+| Opera              | Yes     |
+| Internet Explorer  | No      |
+
+### In JavaScript
+```javascript
+// Select the element
+var element = document.querySelector('p');
+
+// Apply the font-size-adjust property
+element.style.fontSizeAdjust = '0.5';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>font-size-adjust Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    width: 80%;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .sub-container {
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  h2 {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">font-size-adjust Examples</div>
+
+  <div class="sub-container">
+    <h2>none</h2>
+    <p style="font-size-adjust: none;">This text uses the default value of none.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>0.5</h2>
+    <p style="font-size-adjust: 0.5;">This text uses a font-size-adjust value of 0.5.</p>
+  </div>
+</div>
+
+</body>
+</html>
+```

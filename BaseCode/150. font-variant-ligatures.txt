@@ -1,1 +1,136 @@
-Blank File
+## Definition
+The `font-variant-ligatures` CSS property controls the usage of ligatures and contextual forms in text.
+
+## Values
+
+| Value          | Description                                                |
+|----------------|------------------------------------------------------------|
+| `normal`       | No ligatures or contextual forms will be used.             |
+| `none`         | Disables all ligatures and contextual forms.               |
+| `common-ligatures` | Enables common ligatures (default in most fonts).       |
+| `no-common-ligatures` | Disables common ligatures.                             |
+| `discretionary-ligatures` | Enables discretionary ligatures.                  |
+| `no-discretionary-ligatures` | Disables discretionary ligatures.              |
+| `historical-ligatures` | Enables historical ligatures.                       |
+| `no-historical-ligatures` | Disables historical ligatures.                     |
+| `contextual`   | Enables contextual alternates.                             |
+| `no-contextual` | Disables contextual alternates.                            |
+
+## Example
+```css
+/* Common ligatures */
+p.common {
+  font-variant-ligatures: common-ligatures; /* Enables common ligatures */
+}
+
+/* No ligatures */
+p.none {
+  font-variant-ligatures: none; /* Disables all ligatures */
+}
+
+/* Discretionary ligatures */
+p.discretionary {
+  font-variant-ligatures: discretionary-ligatures; /* Enables discretionary ligatures */
+}
+
+/* Historical ligatures */
+p.historical {
+  font-variant-ligatures: historical-ligatures; /* Enables historical ligatures */
+}
+
+/* Contextual alternates */
+p.contextual {
+  font-variant-ligatures: contextual; /* Enables contextual alternates */
+}
+```
+
+## Description
+The `font-variant-ligatures` property allows for fine-tuned control over which ligatures and contextual forms are used in text. Ligatures are combinations of characters that are merged into a single glyph to improve readability or aesthetics. Contextual alternates are variations of characters that depend on the surrounding characters. This property is useful for advanced typography, providing options to enable or disable specific types of ligatures and contextual forms.
+
+## All Most Similar Properties
+
+| Property             | Description                                           | Difference                                              |
+|----------------------|-------------------------------------------------------|---------------------------------------------------------|
+| `font-feature-settings` | Allows for low-level control over OpenType features. | More granular control over typographic features.        |
+| `font-variant`       | Shorthand for various font variant properties.        | Broader control including small caps, numeric forms, etc.|
+
+## Browser Compatibility
+
+| Browser       | Support      |
+|---------------|---------------|
+| Chrome        | Yes           |
+| Firefox       | Yes           |
+| Safari        | Yes           |
+| Edge          | Yes           |
+| Internet Explorer | No        |
+
+## In JavaScript
+```javascript
+// Example of setting font-variant-ligatures in JavaScript
+document.querySelector('p').style.fontVariantLigatures = 'common-ligatures';
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Variant Ligatures Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>font-variant-ligatures Values</h1>
+        <div class="sub-container">
+            <h2>common-ligatures</h2>
+            <p class="common">affinity office</p>
+        </div>
+        <div class="sub-container">
+            <h2>none</h2>
+            <p class="none">affinity office</p>
+        </div>
+        <div class="sub-container">
+            <h2>discretionary-ligatures</h2>
+            <p class="discretionary">affinity office</p>
+        </div>
+        <div class="sub-container">
+            <h2>historical-ligatures</h2>
+            <p class="historical">affinity office</p>
+        </div>
+        <div class="sub-container">
+            <h2>contextual</h2>
+            <p class="contextual">affinity office</p>
+        </div>
+    </div>
+</body>
+</html>
+```

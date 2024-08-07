@@ -1,1 +1,140 @@
-Blank File
+### Definition
+The `font-size` CSS property sets the size of the font. This property affects the height of the characters and indirectly affects the overall size of the element.
+
+### Values
+
+| Value            | Description                                                                                          |
+|------------------|------------------------------------------------------------------------------------------------------|
+| `<absolute-size>` | Keywords representing fixed sizes: `xx-small`, `x-small`, `small`, `medium`, `large`, `x-large`, `xx-large` |
+| `<relative-size>` | Keywords representing relative sizes: `larger`, `smaller`                                                   |
+| `<length>`       | A fixed size value, such as `px`, `em`, `rem`, `pt`, `cm`, etc.                                        |
+| `<percentage>`   | A percentage of the parent element's font size.                                                      |
+
+### Example
+```css
+p {
+  font-size: 16px; /* Fixed size */
+}
+
+h1 {
+  font-size: large; /* Absolute size */
+}
+
+h2 {
+  font-size: 1.5em; /* Relative to parent font size */
+}
+
+div {
+  font-size: 150%; /* Percentage of parent font size */
+}
+```
+
+### Description
+The `font-size` property is used to set the size of the font in an element. This size can be specified in various units, including absolute sizes (keywords like `small` or `large`), relative sizes (keywords like `larger` or `smaller`), fixed sizes (units like `px`, `em`, `rem`, etc.), and percentages (relative to the parent element's font size). Choosing the right unit depends on the desired responsiveness and scalability of the text.
+
+### All Most Similar Properties
+| Property              | Description                                             | Difference                                    |
+|-----------------------|---------------------------------------------------------|-----------------------------------------------|
+| `line-height`         | Sets the height of a line box                           | `line-height` affects the spacing between lines of text |
+| `font-weight`         | Sets the weight (boldness) of the font                  | `font-weight` affects the thickness of characters, not their size |
+| `font-variation-settings` | Allows control over variable font properties       | `font-size` directly sets the size, while `font-variation-settings` can adjust aspects like weight and width |
+
+### Browser Compatibility
+| Browser            | Support |
+|--------------------|---------|
+| Chrome             | Yes     |
+| Firefox            | Yes     |
+| Safari             | Yes     |
+| Edge               | Yes     |
+| Opera              | Yes     |
+| Internet Explorer  | Yes     |
+
+### In JavaScript
+```javascript
+// Select the element
+var element = document.querySelector('p');
+
+// Apply the font-size property
+element.style.fontSize = '16px';
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>font-size Example</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    width: 80%;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .sub-container {
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+    border-radius: 20px;
+    background-color: #dcdbdb;
+    padding: 20px;
+    margin: 10px auto;
+  }
+
+  h2 {
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">font-size Examples</div>
+
+  <div class="sub-container">
+    <h2>Absolute Size</h2>
+    <p style="font-size: small;">This text uses a small absolute size.</p>
+    <p style="font-size: medium;">This text uses a medium absolute size.</p>
+    <p style="font-size: large;">This text uses a large absolute size.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>Relative Size</h2>
+    <p style="font-size: smaller;">This text uses a smaller relative size.</p>
+    <p style="font-size: larger;">This text uses a larger relative size.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>Fixed Size</h2>
+    <p style="font-size: 14px;">This text uses a fixed size of 14px.</p>
+    <p style="font-size: 1.5em;">This text uses a fixed size of 1.5em.</p>
+  </div>
+
+  <div class="sub-container">
+    <h2>Percentage Size</h2>
+    <p style="font-size: 100%;">This text uses a percentage size of 100%.</p>
+    <p style="font-size: 150%;">This text uses a percentage size of 150%.</p>
+  </div>
+</div>
+
+</body>
+</html>
+```
