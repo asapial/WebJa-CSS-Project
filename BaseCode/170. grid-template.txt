@@ -1,1 +1,127 @@
-Blank File
+### Definition
+The `grid-template` CSS property is a shorthand property for defining both the rows and columns of a grid, including their sizes, and the areas of the grid. It combines the `grid-template-rows`, `grid-template-columns`, and `grid-template-areas` properties into a single declaration.
+
+### Values
+| Value                                      | Description                                                                 |
+|--------------------------------------------|-----------------------------------------------------------------------------|
+| `none`                                     | No explicit grid template is defined.                                       |
+| `<grid-template-rows> / <grid-template-columns>` | Defines the rows and columns of the grid.                                    |
+| `[ <grid-template-areas> ] / <grid-template-rows> / <grid-template-columns>` | Defines the grid areas, rows, and columns.                                   |
+
+### Example
+```css
+.container {
+    grid-template: none; /* No explicit grid template */
+}
+
+.container {
+    grid-template: 100px 200px / 1fr 2fr; /* Defines rows and columns */
+}
+
+.container {
+    grid-template: 
+        "header header"
+        "sidebar content" 
+        "footer footer" 
+        / 100px 1fr; /* Defines grid areas, rows, and columns */
+}
+```
+
+### Description
+The `grid-template` property allows for a concise way to set up the entire grid structure, defining the number of rows and columns, their sizes, and named grid areas. This property can be very powerful for creating complex layouts with a single line of code.
+
+### All Most Similar Properties
+| Property                   | Description                                         | Difference                                             |
+|----------------------------|-----------------------------------------------------|--------------------------------------------------------|
+| `grid-template-rows`       | Defines the row sizes of the grid                   | Only affects the rows                                  |
+| `grid-template-columns`    | Defines the column sizes of the grid                | Only affects the columns                               |
+| `grid-template-areas`      | Defines named grid areas                            | Only affects the named areas                           |
+
+### Browser Compatibility
+| Browser           | Support Version  |
+|-------------------|------------------|
+| Google Chrome     | 57+              |
+| Mozilla Firefox   | 52+              |
+| Microsoft Edge    | 16+              |
+| Safari            | 10.1+            |
+| Opera             | 44+              |
+| Internet Explorer | Not supported    |
+
+### In JavaScript
+```js
+// Using JavaScript to set the grid-template property
+document.querySelector('.container').style.gridTemplate = '100px 200px / 1fr 2fr';
+
+// Or using setProperty
+document.querySelector('.container').style.setProperty('grid-template', '100px 200px / 1fr 2fr');
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .main-container {
+            background-color: white;
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .grid-container {
+            display: grid;
+            gap: 10px;
+        }
+        .grid-item {
+            background-color: #dcdbdb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h2 style="text-align: center;">Grid Template Values</h2>
+        <div class="grid-container" style="grid-template: none;">
+            <div class="grid-item">
+                <h3>none</h3>
+            </div>
+        </div>
+        <div class="grid-container" style="grid-template: 100px 200px / 1fr 2fr;">
+            <div class="grid-item">
+                <h3>100px 200px / 1fr 2fr</h3>
+            </div>
+            <div class="grid-item">
+                <h3>100px 200px / 1fr 2fr</h3>
+            </div>
+        </div>
+        <div class="grid-container" style="grid-template: 
+            'header header'
+            'sidebar content' 
+            'footer footer' 
+            / 100px 1fr;">
+            <div class="grid-item">
+                <h3>"header header" "sidebar content" "footer footer" / 100px 1fr</h3>
+            </div>
+            <div class="grid-item">
+                <h3>"header header" "sidebar content" "footer footer" / 100px 1fr</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

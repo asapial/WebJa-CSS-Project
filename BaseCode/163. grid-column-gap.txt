@@ -1,1 +1,117 @@
-Blank File
+## Definition
+The `grid-column-gap` CSS property sets the size of the gap (gutter) between an element's grid columns.
+
+## Values
+
+| Value   | Description                            |
+|---------|----------------------------------------|
+| `<length>` | Defines the gap between columns in fixed units (px, em, rem, etc.). |
+| `normal` | Default value; specifies a normal gap between columns. |
+
+## Example
+```css
+.container1 {
+  grid-column-gap: 20px; /* 20 pixels gap between columns */
+}
+
+.container2 {
+  grid-column-gap: 1rem; /* 1 rem gap between columns */
+}
+
+.container3 {
+  grid-column-gap: normal; /* Default normal gap between columns */
+}
+```
+
+## Description
+The `grid-column-gap` property allows you to control the spacing between grid columns within a grid container. This spacing can be defined in various units such as pixels, ems, rems, and more. It ensures a consistent and visually appealing separation between columns. By default, the gap is set to `normal`, which provides a standard gap size defined by the browser.
+
+## All Most Similar Properties
+
+| Property         | Description                                       | Difference                                               |
+|------------------|---------------------------------------------------|----------------------------------------------------------|
+| `grid-row-gap`   | Sets the size of the gap between grid rows.       | Applies to rows instead of columns.                      |
+| `column-gap`     | Sets the gap between columns in a multi-column layout. | Similar function but used for multi-column layout, not grid. |
+
+## Browser Compatibility
+
+| Browser            | Support   |
+|--------------------|-----------|
+| Chrome             | Yes       |
+| Firefox            | Yes       |
+| Safari             | Yes       |
+| Edge               | Yes       |
+| Opera              | Yes       |
+| Internet Explorer  | Partial   |
+
+## In JavaScript
+```js
+element.style.gridColumnGap = "20px"; // Example to set grid-column-gap to 20px
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Column Gap Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .item {
+            padding: 20px;
+            background-color: #dcdbdb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Grid Column Gap Property Values</div>
+        <div class="grid" style="grid-column-gap: 20px;">
+            <div class="item">
+                <h2>grid-column-gap: 20px</h2>
+            </div>
+        </div>
+        <div class="grid" style="grid-column-gap: 1rem;">
+            <div class="item">
+                <h2>grid-column-gap: 1rem</h2>
+            </div>
+        </div>
+        <div class="grid" style="grid-column-gap: normal;">
+            <div class="item">
+                <h2>grid-column-gap: normal</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

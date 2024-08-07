@@ -1,1 +1,158 @@
-Blank File
+### Definition
+The `grid-template-columns` CSS property defines the line names and track sizing functions of the grid columns. It sets the number and sizes of the columns in the grid layout.
+
+### Values
+| Value                      | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `none`                     | No columns are defined, effectively making the grid container inline-level. |
+| `<track-size>`             | Defines the size of the columns. Can be a length, percentage, or flexible (fr) unit. |
+| `repeat(<count>, <track-size>)` | Repeats a pattern of columns.                                          |
+| `min-content`              | The minimum size the column can be.                                         |
+| `max-content`              | The maximum size the column can be.                                         |
+| `auto`                     | The size is determined by the browser based on the content.                 |
+
+### Example
+```css
+.container {
+    grid-template-columns: none; /* No columns defined */
+}
+
+.container {
+    grid-template-columns: 100px 200px; /* Defines two columns with fixed sizes */
+}
+
+.container {
+    grid-template-columns: 1fr 2fr; /* Defines two columns with flexible sizes */
+}
+
+.container {
+    grid-template-columns: repeat(3, 1fr); /* Defines three columns with equal flexible sizes */
+}
+
+.container {
+    grid-template-columns: min-content max-content; /* Defines columns with minimum and maximum content size */
+}
+
+.container {
+    grid-template-columns: auto; /* Column size is determined by the browser */
+}
+```
+
+### Description
+The `grid-template-columns` property is used to specify the number and size of columns in a grid container. It allows for a flexible and dynamic grid layout by using a combination of fixed, flexible, and content-based sizing. This property can define columns using specific lengths, percentages, or the `fr` unit, which allocates space based on available space and the number of columns.
+
+### All Most Similar Properties
+| Property                  | Description                                    | Difference                                             |
+|---------------------------|------------------------------------------------|--------------------------------------------------------|
+| `grid-template-rows`      | Defines the row sizes of the grid              | Only affects the rows                                  |
+| `grid-template-areas`     | Defines named grid areas                       | Defines named areas rather than columns or rows        |
+| `grid-template`           | Shorthand property for setting grid areas, rows, and columns | Combines all grid template properties into one         |
+
+### Browser Compatibility
+| Browser           | Support Version  |
+|-------------------|------------------|
+| Google Chrome     | 57+              |
+| Mozilla Firefox   | 52+              |
+| Microsoft Edge    | 16+              |
+| Safari            | 10.1+            |
+| Opera             | 44+              |
+| Internet Explorer | Not supported    |
+
+### In JavaScript
+```js
+// Using JavaScript to set the grid-template-columns property
+document.querySelector('.container').style.gridTemplateColumns = '100px 200px';
+
+// Or using setProperty
+document.querySelector('.container').style.setProperty('grid-template-columns', '1fr 2fr');
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Columns Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .main-container {
+            background-color: white;
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .grid-container {
+            display: grid;
+            gap: 10px;
+        }
+        .grid-item {
+            background-color: #dcdbdb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h2 style="text-align: center;">Grid Template Columns Values</h2>
+        <div class="grid-container" style="grid-template-columns: none;">
+            <div class="grid-item">
+                <h3>none</h3>
+            </div>
+        </div>
+        <div class="grid-container" style="grid-template-columns: 100px 200px;">
+            <div class="grid-item">
+                <h3>100px 200px</h3>
+            </div>
+            <div class="grid-item">
+                <h3>100px 200px</h3>
+            </div>
+        </div>
+        <div class="grid-container" style="grid-template-columns: 1fr 2fr;">
+            <div class="grid-item">
+                <h3>1fr 2fr</h3>
+            </div>
+            <div class="grid-item">
+                <h3>1fr 2fr</h3>
+            </div>
+        </div>
+        <div class="grid-container" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="grid-item">
+                <h3>repeat(3, 1fr)</h3>
+            </div>
+            <div class="grid-item">
+                <h3>repeat(3, 1fr)</h3>
+            </div>
+            <div class="grid-item">
+                <h3>repeat(3, 1fr)</h3>
+            </div>
+        </div>
+        <div class="grid-container" style="grid-template-columns: min-content max-content;">
+            <div class="grid-item">
+                <h3>min-content max-content</h3>
+            </div>
+            <div class="grid-item">
+                <h3>min-content max-content</h3>
+            </div>
+        </div>
+        <div class="grid-container" style="grid-template-columns: auto;">
+            <div class="grid-item">
+                <h3>auto</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

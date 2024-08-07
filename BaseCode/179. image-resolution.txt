@@ -1,1 +1,137 @@
-Blank File
+## Definition
+The `image-resolution` CSS property specifies the intrinsic resolution of all raster images used in or on the element. This can affect how the images are rendered, especially on high-resolution displays.
+
+## Values
+
+| Value               | Description |
+|---------------------|-------------|
+| `<resolution>`      | Sets the resolution explicitly (e.g., `300dpi`, `2dppx`). |
+| `from-image`        | Uses the resolution specified in the image file itself. If not specified, it defaults to 1x (96dpi). |
+
+## Example
+
+```css
+/* Use the resolution specified in the image file */
+img {
+  image-resolution: from-image; /* Uses the image's intrinsic resolution */
+}
+
+/* Set a specific resolution in dots per inch (dpi) */
+img {
+  image-resolution: 300dpi; /* Image rendered at 300dpi */
+}
+
+/* Set a specific resolution in dots per pixel (dppx) */
+img {
+  image-resolution: 2dppx; /* Image rendered at double pixel density */
+}
+```
+
+## Description
+The `image-resolution` property is used to control the display resolution of images. By default, images are displayed based on their intrinsic resolution, but you can override this using this property. This is particularly useful when dealing with high-resolution displays (like Retina displays), where an image might otherwise appear smaller or less sharp than intended.
+
+- **Resolution Units**: The resolution can be defined in dots per inch (`dpi`), dots per centimeter (`dpcm`), or dots per pixel (`dppx`).
+- **`from-image`**: Allows the image to be displayed at its inherent resolution.
+
+This property can be applied to any image element and is typically used in scenarios where images need to be displayed at a specific resolution for better quality or consistency across different devices.
+
+## All Most Simillar Properties
+
+| Property                | Description                                        | Difference                                   |
+|-------------------------|----------------------------------------------------|----------------------------------------------|
+| `image-rendering`       | Controls how the image is rendered when scaled.    | `image-rendering` deals with scaling quality, not resolution. |
+| `object-fit`            | Specifies how an image should fit in its container.| Controls fit, not resolution.                |
+| `background-size`       | Specifies the size of the background image.        | Controls size, not the resolution of the image itself. |
+
+## Browser Compatibility
+
+| Browser      | Supported Versions          |
+|--------------|-----------------------------|
+| Chrome       | Not Supported                |
+| Firefox      | Not Supported                |
+| Safari       | Not Supported                |
+| Edge         | Not Supported                |
+| Opera        | Not Supported                |
+
+## In JavaScript
+
+```javascript
+// Set image resolution using JavaScript
+const image = document.querySelector('img');
+
+// Use image's intrinsic resolution
+image.style.imageResolution = 'from-image';
+
+// Set resolution to 300dpi
+image.style.imageResolution = '300dpi';
+
+// Set resolution to 2dppx (double pixel density)
+image.style.imageResolution = '2dppx';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .sub-container h2 {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>Image Resolution Example</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Resolution</h1>
+        
+        <div class="sub-container">
+            <h2>from-image</h2>
+            <img src="example.jpg" style="image-resolution: from-image;" alt="from-image resolution">
+        </div>
+        
+        <div class="sub-container">
+            <h2>300dpi</h2>
+            <img src="example.jpg" style="image-resolution: 300dpi;" alt="300dpi resolution">
+        </div>
+
+        <div class="sub-container">
+            <h2>2dppx</h2>
+            <img src="example.jpg" style="image-resolution: 2dppx;" alt="2dppx resolution">
+        </div>
+    </div>
+</body>
+</html>
+```

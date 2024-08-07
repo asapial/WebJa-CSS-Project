@@ -1,1 +1,155 @@
-Blank File
+## Definition
+The `image-rendering` CSS property provides a hint to the browser about how it should render an image when it is scaled. It helps control how images are scaled, either for a crisper or smoother appearance.
+
+## Values
+
+| Value             | Description |
+|-------------------|-------------|
+| `auto`            | Default value. The browser chooses the best rendering algorithm for the image. |
+| `smooth`          | Images are scaled with a smooth algorithm, generally resulting in a softer, less pixelated appearance. This is typically the default behavior. |
+| `high-quality`    | A synonym for `smooth`, aiming for the best possible quality. |
+| `crisp-edges`     | Images are scaled to preserve sharp edges and details, often resulting in a pixelated look when upscaled. |
+| `pixelated`       | Images are rendered in a blocky, pixelated style, where individual pixels are clearly visible. |
+| `initial`         | Sets the property to its default value. |
+| `inherit`         | Inherits the value from its parent element. |
+| `unset`           | Resets the property to either `inherit` or `initial` depending on the context. |
+
+## Example
+
+```css
+/* Default browser rendering */
+img {
+  image-rendering: auto; /* Default */
+}
+
+/* Smooth rendering, ideal for photographs */
+img {
+  image-rendering: smooth; /* Smooth scaling */
+}
+
+/* Crisp rendering, good for icons or pixel art */
+img {
+  image-rendering: crisp-edges; /* Preserve edges */
+}
+
+/* Pixelated rendering for a retro or artistic effect */
+img {
+  image-rendering: pixelated; /* Pixelated look */
+}
+```
+
+## Description
+The `image-rendering` property allows developers to control how an image is scaled in the browser. This can be particularly useful when dealing with images that need to maintain their sharpness, such as icons or pixel art, or when you want a smoother appearance for photographs.
+
+- **`auto`**: Lets the browser decide the best rendering method.
+- **`smooth`/`high-quality`**: Ideal for upscaling photographs where a soft appearance is preferred.
+- **`crisp-edges`**: Best for icons or images where sharpness is crucial.
+- **`pixelated`**: Deliberately scales images to give a blocky, retro appearance.
+
+This property can be applied to any image element, and it is particularly useful when images are displayed at different sizes than their natural resolution.
+
+## All Most Simillar Properties
+
+| Property                 | Description                                        | Difference                                           |
+|--------------------------|----------------------------------------------------|------------------------------------------------------|
+| `object-fit`             | Specifies how an image should fit in its container.| Controls the fit, not the rendering method.           |
+| `image-orientation`      | Controls the orientation of an image.              | Controls orientation, not the scaling/rendering method.|
+| `filter`                 | Applies visual effects like blur or grayscale.     | Alters image appearance through filters, not rendering.|
+
+## Browser Compatibility
+
+| Browser      | Supported Versions          |
+|--------------|-----------------------------|
+| Chrome       | 4+                           |
+| Firefox      | 3.6+                         |
+| Safari       | 6+                           |
+| Edge         | 12+                          |
+| Opera        | 10.5+                        |
+
+## In JavaScript
+
+```javascript
+// Set image rendering style using JavaScript
+const image = document.querySelector('img');
+
+// Smooth rendering
+image.style.imageRendering = 'smooth';
+
+// Crisp edges rendering
+image.style.imageRendering = 'crisp-edges';
+
+// Pixelated rendering
+image.style.imageRendering = 'pixelated';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .sub-container h2 {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>Image Rendering Example</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Rendering</h1>
+        
+        <div class="sub-container">
+            <h2>auto</h2>
+            <img src="example.jpg" style="image-rendering: auto;" alt="auto rendering">
+        </div>
+        
+        <div class="sub-container">
+            <h2>smooth</h2>
+            <img src="example.jpg" style="image-rendering: smooth;" alt="smooth rendering">
+        </div>
+
+        <div class="sub-container">
+            <h2>crisp-edges</h2>
+            <img src="example.jpg" style="image-rendering: crisp-edges;" alt="crisp edges rendering">
+        </div>
+        
+        <div class="sub-container">
+            <h2>pixelated</h2>
+            <img src="example.jpg" style="image-rendering: pixelated;" alt="pixelated rendering">
+        </div>
+    </div>
+</body>
+</html>
+```

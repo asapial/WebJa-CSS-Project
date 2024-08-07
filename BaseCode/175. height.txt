@@ -1,1 +1,143 @@
-Blank File
+### Definition
+The `height` CSS property specifies the height of an element.
+
+### Values
+
+| Value         | Description                                                              |
+|---------------|--------------------------------------------------------------------------|
+| auto          | The browser calculates the height of the element.                        |
+| `<length>`    | Specifies the height using a length value (e.g., px, em, rem, etc.).     |
+| `<percentage>`| Specifies the height as a percentage of the containing block's height.   |
+| max-content   | The intrinsic preferred height of the content.                           |
+| min-content   | The intrinsic minimum height of the content.                             |
+| fit-content   | Fits the content within a specified maximum height.                      |
+| inherit       | Inherits the height value from the parent element.                       |
+| initial       | Sets the property to its default value.                                  |
+| unset         | Resets the property to its natural value.                                |
+
+### Example
+
+```css
+/* Auto height */
+.example-auto {
+  height: auto;
+}
+
+/* Height in pixels */
+.example-px {
+  height: 200px;
+}
+
+/* Height in percentage */
+.example-percent {
+  height: 50%;
+}
+
+/* max-content height */
+.example-max-content {
+  height: max-content;
+}
+
+/* min-content height */
+.example-min-content {
+  height: min-content;
+}
+
+/* fit-content height */
+.example-fit-content {
+  height: fit-content(300px);
+}
+```
+
+### Description
+The `height` property is used to control the vertical dimension of an element. By setting the height, you can control how much space an element takes up on the page. Various units can be used, such as pixels (px), percentages (%), or other CSS length units. Additionally, the `height` property can be set to specific keywords that dictate intrinsic sizing based on the content or the containing block.
+
+### All Most Similar Properties
+
+| Property       | Description                                         | Difference                                                     |
+|----------------|-----------------------------------------------------|----------------------------------------------------------------|
+| `min-height`   | Sets the minimum height of an element.              | Ensures the element is not shorter than the specified value.   |
+| `max-height`   | Sets the maximum height of an element.              | Ensures the element is not taller than the specified value.    |
+| `width`        | Specifies the width of an element.                  | Controls the horizontal dimension instead of the vertical one. |
+
+### Browser Compatibility
+
+| Browser           | Support   |
+|-------------------|-----------|
+| Google Chrome     | Yes       |
+| Mozilla Firefox   | Yes       |
+| Microsoft Edge    | Yes       |
+| Safari            | Yes       |
+| Opera             | Yes       |
+
+### In JavaScript
+
+```js
+const element = document.querySelector('.example');
+element.style.height = '200px';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .main-container {
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Height Values</h1>
+        <div class="sub-container example-auto">
+            <h2>auto</h2>
+            <div style="height: auto; background-color: #ffcccb;">Auto height</div>
+        </div>
+        <div class="sub-container example-px">
+            <h2>200px</h2>
+            <div style="height: 200px; background-color: #add8e6;">200px height</div>
+        </div>
+        <div class="sub-container example-percent">
+            <h2>50%</h2>
+            <div style="height: 50%; background-color: #90ee90;">50% height</div>
+        </div>
+        <div class="sub-container example-max-content">
+            <h2>max-content</h2>
+            <div style="height: max-content; background-color: #ffd700;">Max-content height</div>
+        </div>
+        <div class="sub-container example-min-content">
+            <h2>min-content</h2>
+            <div style="height: min-content; background-color: #ffb6c1;">Min-content height</div>
+        </div>
+        <div class="sub-container example-fit-content">
+            <h2>fit-content(300px)</h2>
+            <div style="height: fit-content(300px); background-color: #dda0dd;">Fit-content height</div>
+        </div>
+    </div>
+</body>
+</html>
+```

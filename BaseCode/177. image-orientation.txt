@@ -1,1 +1,137 @@
-Blank File
+### Definition
+The `image-orientation` CSS property specifies a layout-independent correction to the orientation of an image.
+
+### Values
+
+| Value            | Description                                                                                 |
+|------------------|---------------------------------------------------------------------------------------------|
+| from-image       | Uses the image's orientation as specified in its metadata.                                  |
+| `angle`          | Rotates the image by a specified angle (0deg, 90deg, 180deg, 270deg, etc.).                 |
+| `flip`           | Flips the image horizontally.                                                               |
+| `angle flip`     | Rotates the image by the specified angle and then flips it horizontally.                    |
+| initial          | Sets the property to its default value.                                                     |
+| inherit          | Inherits the property value from its parent element.                                        |
+| unset            | Resets the property to its natural value, either inherited or the default value.            |
+
+### Example
+
+```css
+/* Use the image's metadata orientation */
+.example-from-image {
+  image-orientation: from-image;
+}
+
+/* Rotate the image by 90 degrees */
+.example-90deg {
+  image-orientation: 90deg;
+}
+
+/* Rotate the image by 180 degrees */
+.example-180deg {
+  image-orientation: 180deg;
+}
+
+/* Flip the image horizontally */
+.example-flip {
+  image-orientation: flip;
+}
+
+/* Rotate the image by 90 degrees and flip it horizontally */
+.example-90deg-flip {
+  image-orientation: 90deg flip;
+}
+```
+
+### Description
+The `image-orientation` property allows you to control the orientation of an image regardless of its actual orientation in the file. This can be particularly useful when dealing with images that have embedded orientation metadata (e.g., photos taken with a camera or phone). By using this property, you can ensure that images are displayed correctly without manually editing their orientation in an image editor.
+
+### All Most Similar Properties
+
+| Property          | Description                                                         | Difference                                         |
+|-------------------|---------------------------------------------------------------------|----------------------------------------------------|
+| `transform`       | Applies a 2D or 3D transformation to an element.                    | More general property for transformations, not specific to images. |
+| `image-rendering` | Provides a hint to the browser about how to handle the rendering of images. | Deals with rendering quality, not orientation.     |
+| `object-fit`      | Specifies how the content of a replaced element should be resized to fit its container. | Controls resizing, not orientation.                |
+
+### Browser Compatibility
+
+| Browser           | Support   |
+|-------------------|-----------|
+| Google Chrome     | Yes       |
+| Mozilla Firefox   | Yes       |
+| Microsoft Edge    | Yes       |
+| Safari            | Yes       |
+| Opera             | Yes       |
+
+### In JavaScript
+
+```js
+const exampleElement = document.querySelector('.example');
+exampleElement.style.imageOrientation = '90deg flip';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .main-container {
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            margin: 20px auto;
+        }
+        .sub-container img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Image Orientation Values</h1>
+        <div class="sub-container example-from-image">
+            <h2>from-image</h2>
+            <img src="/PictureForWebDevlopment/640X360.jpg" style="image-orientation: from-image;" alt="Example Image">
+        </div>
+        <div class="sub-container example-90deg">
+            <h2>90deg</h2>
+            <img src="/PictureForWebDevlopment/640X360.jpg" style="image-orientation: none;" alt="Example Image">
+        </div>
+        <div class="sub-container example-180deg">
+            <h2>180deg</h2>
+            <img src="/PictureForWebDevlopment/640X360.jpg" style="image-orientation: 180deg;" alt="Example Image">
+        </div>
+        <div class="sub-container example-flip">
+            <h2>flip</h2>
+            <img src="/PictureForWebDevlopment/640X360.jpg" style="image-orientation: flip;" alt="Example Image">
+        </div>
+        <div class="sub-container example-90deg-flip">
+            <h2>90deg flip</h2>
+            <img src="/PictureForWebDevlopment/640X360.jpg" style="image-orientation: 90deg flip;" alt="Example Image">
+        </div>
+    </div>
+</body>
+</html>
+
+```

@@ -1,1 +1,130 @@
-Blank File
+### Definition
+The `hanging-punctuation` CSS property determines whether a punctuation mark should hang outside the line box at the start or end of a full line of text.
+
+### Values
+
+| Value             | Description                                                         |
+|-------------------|---------------------------------------------------------------------|
+| none              | No punctuation hangs.                                               |
+| first             | Punctuation hangs at the start of the first line.                   |
+| last              | Punctuation hangs at the end of the last line.                      |
+| force-end         | Forces punctuation to hang at the end of every line.                |
+| allow-end         | Allows punctuation to hang if needed at the end of every line.      |
+
+### Example
+
+```css
+/* No punctuation hangs */
+.example-none {
+  hanging-punctuation: none;
+}
+
+/* Punctuation hangs at the start of the first line */
+.example-first {
+  hanging-punctuation: first;
+}
+
+/* Punctuation hangs at the end of the last line */
+.example-last {
+  hanging-punctuation: last;
+}
+
+/* Forces punctuation to hang at the end of every line */
+.example-force-end {
+  hanging-punctuation: force-end;
+}
+
+/* Allows punctuation to hang at the end of every line */
+.example-allow-end {
+  hanging-punctuation: allow-end;
+}
+```
+
+### Description
+The `hanging-punctuation` property is used to control how punctuation marks are rendered in relation to the text layout. It can enhance the visual appearance of text blocks by allowing punctuation marks to extend beyond the line box, which can create a more aesthetically pleasing and readable text alignment. This property is particularly useful in typographic design where precise text alignment is crucial.
+
+### All Most Similar Properties
+
+| Property               | Description                                          | Difference                                                        |
+|------------------------|------------------------------------------------------|-------------------------------------------------------------------|
+| `text-align`           | Specifies the horizontal alignment of text.          | Affects the alignment of the entire line of text, not just punctuation. |
+| `word-spacing`         | Sets the spacing between words.                      | Affects spacing between words rather than punctuation positioning. |
+| `letter-spacing`       | Sets the spacing between characters.                 | Affects spacing between letters rather than punctuation positioning. |
+
+### Browser Compatibility
+
+| Browser           | Support   |
+|-------------------|-----------|
+| Google Chrome     | No       |
+| Mozilla Firefox   | No       |
+| Microsoft Edge    | No       |
+| Safari            | Yes       |
+| Opera             | No       |
+
+### In JavaScript
+
+```js
+const exampleElement = document.querySelector('.example');
+exampleElement.style.hangingPunctuation = 'first';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        .main-container {
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Hanging Punctuation Values</h1>
+        <div class="sub-container example-none">
+            <h2>none</h2>
+            <p>"This is an example of hanging punctuation: none."</p>
+        </div>
+        <div class="sub-container example-first">
+            <h2>first</h2>
+            <p>"This is an example of hanging punctuation: first."</p>
+        </div>
+        <div class="sub-container example-last">
+            <h2>last</h2>
+            <p>"This is an example of hanging punctuation: last."</p>
+        </div>
+        <div class="sub-container example-force-end">
+            <h2>force-end</h2>
+            <p>"This is an example of hanging punctuation: force-end."</p>
+        </div>
+        <div class="sub-container example-allow-end">
+            <h2>allow-end</h2>
+            <p>"This is an example of hanging punctuation: allow-end."</p>
+        </div>
+    </div>
+</body>
+</html>
+```

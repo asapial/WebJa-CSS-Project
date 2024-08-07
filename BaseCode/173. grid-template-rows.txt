@@ -1,1 +1,110 @@
-Blank File
+### Definition
+The `grid-template-rows` CSS property defines the line names and track sizing functions of the grid rows.
+
+### Values
+
+| Value                        | Description                                                |
+|------------------------------|------------------------------------------------------------|
+| none                         | No row tracks are defined.                                 |
+| `<track-size>`               | Defines the size of the row track.                         |
+| `<line-name>`                | Assigns a name to the line.                                |
+| repeat()                     | Repeats a track definition a specified number of times.    |
+| minmax(min, max)             | Defines a size range greater than or equal to min and less than or equal to max. |
+| auto                         | The size of the row is determined by the content.          |
+| max-content                  | The size of the row is based on the largest item.          |
+| min-content                  | The size of the row is based on the smallest item.         |
+| fit-content(length)          | The size of the row is based on the size of the content, but no larger than the specified length. |
+
+### Example
+
+```css
+.container {
+  display: grid;
+  grid-template-rows: 100px 200px auto minmax(100px, 300px);
+}
+
+/* Example with named lines */
+.container {
+  display: grid;
+  grid-template-rows: [row1-start] 100px [row1-end row2-start] 200px [row2-end row3-start] auto [row3-end];
+}
+```
+
+### Description
+The `grid-template-rows` property allows you to define the height of each row in a grid container. You can use various units for the row heights, such as pixels, percentages, fr units, and more. Additionally, you can name grid lines for easier reference when placing items within the grid. This property is particularly useful for creating complex layouts with rows of varying heights.
+
+### All Most Similar Properties
+
+| Property               | Description                                                                 | Difference                                                        |
+|------------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------------|
+| `grid-template-columns`| Defines the line names and track sizing functions of the grid columns.      | Similar in functionality but applies to columns instead of rows.  |
+| `grid-auto-rows`       | Specifies the size of implicitly created grid rows.                         | Affects rows created automatically, not explicitly defined ones.  |
+| `grid-row`             | Shorthand for `grid-row-start` and `grid-row-end`.                          | Used for positioning grid items, not defining row sizes.          |
+
+### Browser Compatibility
+
+| Browser           | Support   |
+|-------------------|-----------|
+| Google Chrome     | Yes       |
+| Mozilla Firefox   | Yes       |
+| Microsoft Edge    | Yes       |
+| Safari            | Yes       |
+| Opera             | Yes       |
+
+### In JavaScript
+
+```js
+const container = document.querySelector('.container');
+container.style.gridTemplateRows = '100px 200px auto minmax(100px, 300px)';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .main-container {
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-rows: 100px 200px auto minmax(100px, 300px);
+            gap: 10px;
+        }
+        .grid-item {
+            background-color: #dcdbdb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Grid Template Rows Values</h1>
+        <div class="grid-container">
+            <div class="grid-item">100px</div>
+            <div class="grid-item">200px</div>
+            <div class="grid-item">auto</div>
+            <div class="grid-item">minmax(100px, 300px)</div>
+        </div>
+    </div>
+</body>
+</html>
+```

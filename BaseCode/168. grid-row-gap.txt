@@ -1,1 +1,124 @@
-Blank File
+### Definition
+The `grid-row-gap` CSS property specifies the size of the gap (gutter) between grid rows in a grid layout.
+
+### Values
+| Value            | Description                                                    |
+|------------------|----------------------------------------------------------------|
+| `<length>`       | Specifies the gap size between rows (e.g., `10px`, `1rem`).    |
+| `<percentage>`   | Specifies the gap size as a percentage of the grid container.  |
+
+### Example
+```css
+.container {
+    display: grid;
+    grid-row-gap: 20px; /* 20px gap between rows */
+}
+
+.container {
+    display: grid;
+    grid-row-gap: 10%; /* 10% gap between rows */
+}
+
+.container {
+    display: grid;
+    grid-row-gap: 1rem; /* 1rem gap between rows */
+}
+```
+
+### Description
+The `grid-row-gap` property is used to set the vertical spacing between rows in a CSS Grid Layout. It defines the size of the space between each row, making it easier to create visually appealing and organized grid layouts. The value can be set using various length units such as pixels, percentages, or other relative units like `rem`.
+
+### All Most Similar Properties
+| Property           | Description                                              | Difference                                                                    |
+|--------------------|----------------------------------------------------------|-------------------------------------------------------------------------------|
+| `grid-column-gap`  | Sets the gap size between columns in a grid layout       | Affects columns instead of rows                                               |
+| `gap`              | Shorthand for `grid-row-gap` and `grid-column-gap`       | Applies to both rows and columns, and is used in both grid and flexbox layouts|
+
+### Browser Compatibility
+| Browser           | Support Version  |
+|-------------------|------------------|
+| Google Chrome     | 57+              |
+| Mozilla Firefox   | 52+              |
+| Microsoft Edge    | 16+              |
+| Safari            | 10.1+            |
+| Opera             | 44+              |
+| Internet Explorer | Not supported    |
+
+### In JavaScript
+```js
+// Using JavaScript to set the grid-row-gap property
+document.querySelector('.container').style.gridRowGap = '20px';
+
+// Or using setProperty
+document.querySelector('.container').style.setProperty('grid-row-gap', '20px');
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Row Gap Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .main-container {
+            background-color: white;
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .grid-item {
+            background-color: #dcdbdb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h2 style="text-align: center;">Grid Row Gap Values</h2>
+        <div class="grid-container" style="grid-row-gap: 20px;">
+            <div class="grid-item">
+                <h3>20px</h3>
+            </div>
+            <div class="grid-item">
+                <h3>20px</h3>
+            </div>
+        </div>
+        <div class="grid-container" style="grid-row-gap: 10%;">
+            <div class="grid-item">
+                <h3>10%</h3>
+            </div>
+            <div class="grid-item">
+                <h3>10%</h3>
+            </div>
+        </div>
+        <div class="grid-container" style="grid-row-gap: 1rem;">
+            <div class="grid-item">
+                <h3>1rem</h3>
+            </div>
+            <div class="grid-item">
+                <h3>1rem</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

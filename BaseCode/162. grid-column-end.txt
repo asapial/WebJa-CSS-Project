@@ -1,1 +1,115 @@
-Blank File
+## Definition
+The `grid-column-end` CSS property determines a grid item's ending position within the grid column, allowing it to span multiple columns.
+
+## Values
+
+| Value     | Description                                                                                   |
+|-----------|-----------------------------------------------------------------------------------------------|
+| `<integer>` | A positive integer value that specifies the ending column line for the item.                 |
+| `span <number>` | Indicates the number of columns the item should span.                                    |
+| `auto`       | Default value; places the item according to the auto-placement algorithm.                   |
+
+## Example
+```css
+.item1 {
+  grid-column-end: 3; /* Ends at column line 3 */
+}
+
+.item2 {
+  grid-column-end: span 2; /* Spans across 2 columns */
+}
+
+.item3 {
+  grid-column-end: auto; /* Default behavior */
+}
+```
+
+## Description
+The `grid-column-end` property specifies the grid item's ending column line within the grid layout. It is often used with `grid-column-start` to define the start and end positions, controlling the span of the grid item across multiple columns. The property accepts an integer value representing the ending column line, a span value indicating the number of columns to span, or the keyword `auto` for automatic placement.
+
+## All Most Similar Properties
+
+| Property            | Description                                                         | Difference                                                   |
+|---------------------|---------------------------------------------------------------------|--------------------------------------------------------------|
+| `grid-column-start` | Defines the starting position of a grid item within the columns.    | Sets the start position, while `grid-column-end` sets the end. |
+| `grid-row-end`      | Defines the ending position of a grid item within the rows.         | Applies to rows instead of columns.                           |
+| `grid-row-start`    | Defines the starting position of a grid item within the rows.       | Sets the start position for rows, not columns.                |
+
+## Browser Compatibility
+
+| Browser        | Support   |
+|----------------|-----------|
+| Chrome         | Yes       |
+| Firefox        | Yes       |
+| Safari         | Yes       |
+| Edge           | Yes       |
+| Opera          | Yes       |
+| Internet Explorer | No       |
+
+## In JavaScript
+```js
+element.style.gridColumnEnd = "span 2"; // Example to set grid-column-end to span 2 columns
+```
+
+## Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Column End Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .item {
+            padding: 20px;
+            background-color: #dcdbdb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Grid Column End Property Values</div>
+        <div class="grid">
+            <div class="item" style="grid-column-end: 3;">
+                <h2>grid-column-end: 3</h2>
+            </div>
+            <div class="item" style="grid-column-end: span 2;">
+                <h2>grid-column-end: span 2</h2>
+            </div>
+            <div class="item" style="grid-column-end: auto;">
+                <h2>grid-column-end: auto</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

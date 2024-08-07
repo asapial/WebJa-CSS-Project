@@ -1,1 +1,130 @@
-Blank File
+## Definition
+The `inherit` value in CSS is used to explicitly set a property so that it inherits the value from its parent element. This is useful when you want a child element to have the same style as its parent.
+
+## Values
+
+| Value               | Description |
+|---------------------|-------------|
+| `inherit`           | Inherits the value from the parent element. |
+
+## Example
+
+```css
+/* Parent element with a specific color */
+.parent {
+  color: blue;
+}
+
+/* Child element inherits the color from the parent */
+.child {
+  color: inherit; /* Inherits blue from the parent */
+}
+```
+
+## Description
+The `inherit` keyword in CSS forces an element to take the same computed value as its parent element for a specific property. This can be useful in ensuring consistent styling across a component or section without having to manually set the same value for multiple elements.
+
+- **Usage**: The `inherit` value can be applied to any CSS property, and it will always refer to the parent element's computed value.
+- **Specificity**: If a property is not explicitly set on an element, it may inherit the value from its parent implicitly. However, using `inherit` forces this inheritance explicitly.
+
+**Scenarios**:
+- Resetting styles where some elements might override default inheritance.
+- Creating modular styles where child elements naturally follow parent styles.
+
+## All Most Simillar Properties
+
+| Property                | Description                                        | Difference                                   |
+|-------------------------|----------------------------------------------------|----------------------------------------------|
+| `initial`               | Sets the property to its default value.            | `initial` resets to the default, not the parent value. |
+| `unset`                 | Resets the property to either `inherit` or `initial` depending on the context. | `unset` can result in either inherited or default value, while `inherit` always takes the parent value. |
+| `revert`                | Rolls back the property value to the one defined by the user-agent stylesheet or previous CSS rule. | `revert` looks at previous styles, `inherit` directly takes from the parent. |
+
+## Browser Compatibility
+
+| Browser      | Supported Versions          |
+|--------------|-----------------------------|
+| Chrome       | All Versions                 |
+| Firefox      | All Versions                 |
+| Safari       | All Versions                 |
+| Edge         | All Versions                 |
+| Opera        | All Versions                 |
+
+## In JavaScript
+
+```javascript
+// Apply inherited style using JavaScript
+const childElement = document.querySelector('.child');
+
+// Set color to inherit from parent
+childElement.style.color = 'inherit';
+
+// Example for inheriting font-size
+childElement.style.fontSize = 'inherit';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .sub-container h2 {
+            margin-bottom: 20px;
+        }
+        .parent {
+            color: blue;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .child {
+            color: inherit;
+            font-size: inherit;
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>Inherit Property Example</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Inherit Property in CSS</h1>
+        
+        <div class="sub-container">
+            <h2>Parent Element</h2>
+            <p class="parent">This is the parent element with specific styles.</p>
+        </div>
+        
+        <div class="sub-container">
+            <h2>Child Element</h2>
+            <p class="child">This is the child element that inherits styles from the parent.</p>
+        </div>
+    </div>
+</body>
+</html>
+```

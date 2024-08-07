@@ -1,1 +1,120 @@
-Blank File
+### Definition
+The `grid-template-areas` CSS property specifies how grid items are placed in named grid areas within a grid container. This allows for a clear, visual representation of the layout, using names to represent grid areas.
+
+### Values
+| Value        | Description                                                       |
+|--------------|-------------------------------------------------------------------|
+| `none`       | No named grid areas are defined.                                  |
+| `<string>`   | A string of cell names, separated by spaces, defining grid areas. |
+
+### Example
+```css
+.container {
+    grid-template-areas: "header header"
+                         "sidebar content"
+                         "footer footer"; /* Defines grid areas with names */
+}
+
+.container {
+    grid-template-areas: none; /* No named grid areas */
+}
+```
+
+### Description
+The `grid-template-areas` property defines a grid layout using named areas. This method is more intuitive and readable than specifying exact line numbers for grid items. It simplifies the process of creating complex layouts by allowing the use of descriptive names for different parts of the layout.
+
+### All Most Similar Properties
+| Property                  | Description                                          | Difference                                             |
+|---------------------------|------------------------------------------------------|--------------------------------------------------------|
+| `grid-template-rows`      | Defines the row sizes of the grid                    | Only affects the rows                                  |
+| `grid-template-columns`   | Defines the column sizes of the grid                 | Only affects the columns                               |
+| `grid-template`           | Shorthand property for setting grid areas, rows, and columns | Combines all grid template properties into one         |
+
+### Browser Compatibility
+| Browser           | Support Version  |
+|-------------------|------------------|
+| Google Chrome     | 57+              |
+| Mozilla Firefox   | 52+              |
+| Microsoft Edge    | 16+              |
+| Safari            | 10.1+            |
+| Opera             | 44+              |
+| Internet Explorer | Not supported    |
+
+### In JavaScript
+```js
+// Using JavaScript to set the grid-template-areas property
+document.querySelector('.container').style.gridTemplateAreas = '"header header" "sidebar content" "footer footer"';
+
+// Or using setProperty
+document.querySelector('.container').style.setProperty('grid-template-areas', '"header header" "sidebar content" "footer footer"');
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Areas Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .main-container {
+            background-color: white;
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto;
+            gap: 10px;
+        }
+        .grid-item {
+            background-color: #dcdbdb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .header { grid-area: header; }
+        .sidebar { grid-area: sidebar; }
+        .content { grid-area: content; }
+        .footer { grid-area: footer; }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h2 style="text-align: center;">Grid Template Areas Values</h2>
+        <div class="grid-container" style="grid-template-areas: 'header header' 'sidebar content' 'footer footer';">
+            <div class="grid-item header">
+                <h3>header</h3>
+            </div>
+            <div class="grid-item sidebar">
+                <h3>sidebar</h3>
+            </div>
+            <div class="grid-item content">
+                <h3>content</h3>
+            </div>
+            <div class="grid-item footer">
+                <h3>footer</h3>
+            </div>
+        </div>
+        <div class="grid-container" style="grid-template-areas: none;">
+            <div class="grid-item">
+                <h3>none</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

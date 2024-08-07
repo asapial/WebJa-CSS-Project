@@ -1,1 +1,186 @@
-Blank File
+## Definition
+The `inset` CSS property is a shorthand that sets the `top`, `right`, `bottom`, and `left` properties of a positioned element. It controls how far the element is inset from the edges of its containing block.
+
+## Values
+
+| Value            | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| `<length>`       | Specifies the distance using units like `px`, `em`, `rem`, etc.             |
+| `<percentage>`   | Specifies the distance as a percentage of the containing block's size.      |
+| `auto`           | The browser calculates the position of the element based on other properties. |
+| `inherit`        | Inherits the value from its parent element.                                 |
+| `initial`        | Sets the property to its default value.                                     |
+| `unset`          | Resets the property to its inherited value or initial value.                |
+
+## Example
+
+```css
+/* Length values */
+.box1 {
+  inset: 10px 20px 30px 40px; /* top, right, bottom, left */
+}
+
+/* Percentage values */
+.box2 {
+  inset: 10% 15% 20% 25%; /* top, right, bottom, left */
+}
+
+/* Single value for all sides */
+.box3 {
+  inset: 20px; /* 20px for all sides */
+}
+
+/* Inherit value */
+.box4 {
+  inset: inherit; /* Inherits from parent */
+}
+
+/* Mixed values */
+.box5 {
+  inset: 10px 20px; /* top and bottom 10px, left and right 20px */
+}
+```
+
+## Description
+The `inset` property is a shorthand for setting the `top`, `right`, `bottom`, and `left` properties in one declaration. It allows you to position an element relative to its containing block by specifying how far it should be inset from each edge. The property is useful in layouts where you want to quickly define the positioning of an element without writing out each side individually.
+
+**Scenarios**:
+- Centering elements within a parent by using auto margins and positioning.
+- Creating responsive designs where elements need to be dynamically positioned.
+- Aligning elements with padding or margins in different layouts.
+
+**Shorthand Notation**:
+- If one value is provided, it applies to all four sides.
+- If two values are provided, the first applies to `top` and `bottom`, and the second to `left` and `right`.
+- If three values are provided, the first applies to `top`, the second to `left` and `right`, and the third to `bottom`.
+- If four values are provided, they apply to `top`, `right`, `bottom`, and `left` respectively.
+
+## All Most Simillar Properties
+
+| Property  | Description                                         | Difference                                                 |
+|-----------|-----------------------------------------------------|------------------------------------------------------------|
+| `top`     | Defines the top offset of a positioned element.      | `inset` combines `top`, `right`, `bottom`, and `left` in one property. |
+| `right`   | Defines the right offset of a positioned element.    |                                                            |
+| `bottom`  | Defines the bottom offset of a positioned element.   |                                                            |
+| `left`    | Defines the left offset of a positioned element.     |                                                            |
+| `margin`  | Defines the space outside the element's border.      | `inset` deals with positioning, while `margin` deals with spacing. |
+
+## Browser Compatibility
+
+| Browser  | Supported Versions       |
+|----------|--------------------------|
+| Chrome   | 87+                       |
+| Firefox  | 66+                       |
+| Safari   | 14.5+                     |
+| Edge     | 87+                       |
+| Opera    | 73+                       |
+
+## In JavaScript
+
+```javascript
+// Set the inset property using JavaScript
+const element = document.querySelector('.box');
+element.style.inset = '10px 20px 30px 40px'; // Set specific values
+
+// Set inset to percentage values
+element.style.inset = '10% 15% 20% 25%';
+
+// Set inset to a single value for all sides
+element.style.inset = '20px';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+            position: relative;
+        }
+        .sub-container h2 {
+            margin-bottom: 20px;
+        }
+        .box {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: absolute;
+        }
+        .box1 {
+            inset: 10px 20px 30px 40px; /* Top, Right, Bottom, Left */
+        }
+        .box2 {
+            inset: 10% 15% 20% 25%; /* Percentage values */
+        }
+        .box3 {
+            inset: 20px; /* Same value for all sides */
+        }
+        .box4 {
+            inset: inherit; /* Inherited value */
+        }
+        .box5 {
+            inset: 10px 20px; /* Top and Bottom 10px, Left and Right 20px */
+        }
+    </style>
+    <title>Inset Property Example</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Inset Property in CSS</h1>
+        
+        <div class="sub-container">
+            <h2>10px 20px 30px 40px</h2>
+            <div class="box box1">Inset: 10px 20px 30px 40px</div>
+        </div>
+
+        <div class="sub-container">
+            <h2>10% 15% 20% 25%</h2>
+            <div class="box box2">Inset: 10% 15% 20% 25%</div>
+        </div>
+
+        <div class="sub-container">
+            <h2>20px (Same Value for All Sides)</h2>
+            <div class="box box3">Inset: 20px</div>
+        </div>
+
+        <div class="sub-container">
+            <h2>inherit (Inherited Value)</h2>
+            <div class="box box4">Inset: inherit</div>
+        </div>
+
+        <div class="sub-container">
+            <h2>10px 20px</h2>
+            <div class="box box5">Inset: 10px 20px</div>
+        </div>
+    </div>
+</body>
+</html>
+```

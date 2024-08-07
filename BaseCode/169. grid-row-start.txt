@@ -1,1 +1,118 @@
-Blank File
+### Definition
+The `grid-row-start` CSS property specifies a grid item's start position within the grid row by defining a grid line, a span, or using the keyword `auto`.
+
+### Values
+| Value          | Description                                                                        |
+|----------------|------------------------------------------------------------------------------------|
+| `auto`         | Default value. The item will be placed automatically.                              |
+| `<integer>`    | A positive integer specifying the starting grid line.                              |
+| `<name>`       | The name of the grid line to start at.                                             |
+| `span <integer>` | Spans the item across the specified number of rows from the current position.      |
+
+### Example
+```css
+.element {
+    grid-row-start: 2; /* Starts at the second row line */
+}
+
+.element {
+    grid-row-start: span 3; /* Spans across 3 rows starting from the current position */
+}
+
+.element {
+    grid-row-start: auto; /* Default value */
+}
+
+.element {
+    grid-row-start: row-start; /* Starts at the named grid line "row-start" */
+}
+```
+
+### Description
+The `grid-row-start` property is used in CSS Grid Layout to determine where a grid item starts within the grid rows. By specifying a line number, a name, or a keyword, it allows for flexible positioning of items within the grid. This property is particularly useful for defining the start position of items in complex grid layouts.
+
+### All Most Similar Properties
+| Property           | Description                                                    | Difference                                                                 |
+|--------------------|----------------------------------------------------------------|----------------------------------------------------------------------------|
+| `grid-row-end`     | Specifies a grid item's end position within the grid rows      | Determines the end position instead of the start position                   |
+| `grid-column-start`| Specifies a grid item's start position within the grid columns | Applies to columns instead of rows                                         |
+| `grid-column-end`  | Specifies a grid item's end position within the grid columns   | Determines the end position in columns instead of rows                     |
+
+### Browser Compatibility
+| Browser           | Support Version  |
+|-------------------|------------------|
+| Google Chrome     | 57+              |
+| Mozilla Firefox   | 52+              |
+| Microsoft Edge    | 16+              |
+| Safari            | 10.1+            |
+| Opera             | 44+              |
+| Internet Explorer | Not supported    |
+
+### In JavaScript
+```js
+// Using JavaScript to set the grid-row-start property
+document.querySelector('.element').style.gridRowStart = '2';
+
+// Or using setProperty
+document.querySelector('.element').style.setProperty('grid-row-start', '2');
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Row Start Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .main-container {
+            background-color: white;
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .grid-item {
+            background-color: #dcdbdb;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h2 style="text-align: center;">Grid Row Start Values</h2>
+        <div class="grid-container">
+            <div class="grid-item" style="grid-row-start: 2;">
+                <h3>2</h3>
+            </div>
+            <div class="grid-item" style="grid-row-start: span 3;">
+                <h3>span 3</h3>
+            </div>
+            <div class="grid-item" style="grid-row-start: auto;">
+                <h3>auto</h3>
+            </div>
+            <div class="grid-item" style="grid-row-start: row-start;">
+                <h3>row-start</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```

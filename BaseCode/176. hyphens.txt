@@ -1,1 +1,121 @@
-Blank File
+### Definition
+The `hyphens` CSS property specifies how words should be hyphenated when text wraps across multiple lines.
+
+### Values
+
+| Value      | Description                                                      |
+|------------|------------------------------------------------------------------|
+| none       | Words are not hyphenated.                                        |
+| manual     | Words are only hyphenated where there are explicit hyphenation points. |
+| auto       | The browser determines hyphenation points automatically.         |
+
+### Example
+
+```css
+/* No hyphenation */
+.example-none {
+  hyphens: none;
+}
+
+/* Manual hyphenation */
+.example-manual {
+  hyphens: manual;
+}
+
+/* Automatic hyphenation */
+.example-auto {
+  hyphens: auto;
+}
+```
+
+### Description
+The `hyphens` property is used to control the hyphenation of text within an element. It is particularly useful for improving text readability and creating visually appealing text layouts in various languages. When set to `auto`, the browser automatically inserts hyphens at appropriate points within words when wrapping text. The `manual` value allows for hyphenation only where explicit hyphenation characters (soft hyphens) are inserted. The `none` value prevents hyphenation entirely.
+
+### All Most Similar Properties
+
+| Property         | Description                              | Difference                                                 |
+|------------------|------------------------------------------|------------------------------------------------------------|
+| `word-break`     | Specifies how words should break when reaching the end of a line. | Controls breaking of words, not hyphenation.                |
+| `overflow-wrap`  | Specifies whether the browser should insert line breaks within words to prevent overflow. | Deals with breaking words to prevent overflow, not hyphenation. |
+| `white-space`    | Specifies how white space inside an element is handled. | Controls handling of white space, not hyphenation.          |
+
+### Browser Compatibility
+
+| Browser           | Support   |
+|-------------------|-----------|
+| Google Chrome     | Yes       |
+| Mozilla Firefox   | Yes       |
+| Microsoft Edge    | Yes       |
+| Safari            | Yes       |
+| Opera             | Yes       |
+
+### In JavaScript
+
+```js
+const exampleElement = document.querySelector('.example');
+exampleElement.style.hyphens = 'auto';
+```
+
+### Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .main-container {
+            width: 80%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            margin: 20px auto;
+        }
+        p {
+            width: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Hyphens Values</h1>
+        <div class="sub-container example-none">
+            <h2>none</h2>
+            <p style="hyphens: none;">
+                This is an example of text with no hyphenation. Words will not break across lines.
+            </p>
+        </div>
+        <div class="sub-container example-manual">
+            <h2>manual</h2>
+            <p style="hyphens: manual;">
+                This is an example of text with manual hyphenation. Words will only break at hyphenation points.
+            </p>
+        </div>
+        <div class="sub-container example-auto">
+            <h2>auto</h2>
+            <p style="hyphens: auto;">
+                This is an example of text with automatic hyphenation. The browser will automatically insert hyphens where appropriate.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+```

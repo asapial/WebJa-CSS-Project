@@ -1,1 +1,130 @@
-Blank File
+## Definition
+The `initial` keyword in CSS is used to set a property to its default value as defined by the CSS specification. This value is not affected by inheritance and is typically the value a property would have if no other styles were applied.
+
+## Values
+
+| Value     | Description                                               |
+|-----------|-----------------------------------------------------------|
+| `initial` | Sets the property to its default value as defined by CSS.  |
+
+## Example
+
+```css
+/* Example of overriding a property and then resetting it to its initial value */
+.example {
+  color: red; /* Overriding the color property */
+  color: initial; /* Resetting the color property to its default value */
+}
+```
+
+## Description
+The `initial` keyword in CSS allows you to explicitly reset a property to its default value as defined by the CSS specification, regardless of the parent element's properties. This is useful for resetting styles without needing to know the specific default value of a property.
+
+- **Usage**: You can use `initial` on any CSS property to revert it to its initial state.
+- **Default Behavior**: By default, CSS properties have predefined initial values, which can vary depending on the property.
+- **Non-Inherited Properties**: For properties that are not inherited by default (like `display` or `background-color`), `initial` sets them back to their default, non-inherited state.
+
+**Scenarios**:
+- Resetting styles when customizing a theme or overriding global styles.
+- Ensuring a specific element does not inherit any undesired styles.
+
+## All Most Simillar Properties
+
+| Property   | Description                                     | Difference                                                       |
+|------------|-------------------------------------------------|------------------------------------------------------------------|
+| `inherit`  | Forces the property to inherit the value from its parent. | `inherit` takes the parent's value, while `initial` resets to the default. |
+| `unset`    | Resets the property to either `inherit` or `initial` depending on whether the property is normally inherited. | `unset` can either inherit or reset, while `initial` always resets. |
+| `revert`   | Rolls back the property value to the value defined by the user-agent stylesheet or a previous CSS rule. | `revert` looks at the user-agent or previous rules, not the CSS specification's default value. |
+
+## Browser Compatibility
+
+| Browser      | Supported Versions          |
+|--------------|-----------------------------|
+| Chrome       | All Versions                 |
+| Firefox      | All Versions                 |
+| Safari       | All Versions                 |
+| Edge         | All Versions                 |
+| Opera        | All Versions                 |
+
+## In JavaScript
+
+```javascript
+// Apply the initial value to a style property using JavaScript
+const element = document.querySelector('.example');
+
+// Reset the color property to its initial value
+element.style.color = 'initial';
+
+// Example for resetting the background-color
+element.style.backgroundColor = 'initial';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .sub-container h2 {
+            margin-bottom: 20px;
+        }
+        .example {
+            color: red;
+            font-size: 24px;
+            background-color: yellow;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .example-reset {
+            color: initial;
+            font-size: initial;
+            background-color: initial;
+            padding: 10px;
+        }
+    </style>
+    <title>Initial Property Example</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Initial Property in CSS</h1>
+        
+        <div class="sub-container">
+            <h2>Overridden Styles</h2>
+            <p class="example">This element has overridden styles.</p>
+        </div>
+        
+        <div class="sub-container">
+            <h2>Reset to Initial Values</h2>
+            <p class="example-reset">This element has styles reset to their initial values.</p>
+        </div>
+    </div>
+</body>
+</html>
+```

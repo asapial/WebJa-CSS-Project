@@ -1,1 +1,194 @@
-Blank File
+## Definition
+The `inline-size` CSS property defines the horizontal size (width) of an element when writing modes are horizontal, and the vertical size (height) when writing modes are vertical. This property is useful for supporting layouts in different writing directions (like left-to-right or top-to-bottom).
+
+## Values
+
+| Value              | Description                                                                                           |
+|--------------------|-------------------------------------------------------------------------------------------------------|
+| `<length>`         | Defines the size using a length unit like `px`, `em`, `rem`, etc.                                      |
+| `<percentage>`     | Defines the size as a percentage of the containing block's inline size.                                |
+| `auto`             | The browser calculates the inline size.                                                                |
+| `max-content`      | The inline size is the size of the largest content without breaking lines.                             |
+| `min-content`      | The inline size is the smallest size that doesn't cause overflow.                                      |
+| `fit-content`      | The inline size is determined by the content but doesn't exceed a maximum size, behaving like `min(max-content, max-inline-size)`. |
+| `inherit`          | Inherits the value from its parent element.                                                            |
+| `initial`          | Sets the property to its default value.                                                                |
+| `unset`            | Resets the property to its natural value, either inheriting from its parent or to its initial value.   |
+
+## Example
+
+```css
+/* Length value */
+.box1 {
+  inline-size: 200px; /* Fixed size */
+}
+
+/* Percentage value */
+.box2 {
+  inline-size: 50%; /* 50% of the parent's inline size */
+}
+
+/* max-content */
+.box3 {
+  inline-size: max-content; /* Size based on the content */
+}
+
+/* min-content */
+.box4 {
+  inline-size: min-content; /* Smallest size without causing overflow */
+}
+
+/* fit-content */
+.box5 {
+  inline-size: fit-content(300px); /* Size based on content, but no more than 300px */
+}
+
+/* inherit */
+.box6 {
+  inline-size: inherit; /* Inherits from parent */
+}
+```
+
+## Description
+The `inline-size` property provides a more logical way to define the size of elements in layouts that must adapt to different writing modes (e.g., left-to-right, right-to-left, top-to-bottom). This is particularly useful for web pages with internationalization needs, ensuring that elements size appropriately regardless of the writing direction.
+
+- **Writing Modes**: In horizontal writing modes, `inline-size` is equivalent to `width`. In vertical writing modes, it is equivalent to `height`.
+- **Responsive Design**: By using values like percentages, `max-content`, or `fit-content`, elements can dynamically adjust their size based on the content or parent size, enhancing responsive design.
+
+**Scenarios**:
+- Designing web pages that support multiple languages and writing directions.
+- Creating responsive components that adapt to the available space.
+
+## All Most Simillar Properties
+
+| Property     | Description                                          | Difference                                                         |
+|--------------|------------------------------------------------------|--------------------------------------------------------------------|
+| `width`      | Defines the horizontal size of an element.           | `width` does not adapt based on writing mode, unlike `inline-size`. |
+| `height`     | Defines the vertical size of an element.             | `height` does not adapt based on writing mode, unlike `inline-size`. |
+| `block-size` | Defines the block size (opposite of `inline-size`).  | `block-size` is the vertical size in horizontal writing modes and horizontal in vertical modes. |
+
+## Browser Compatibility
+
+| Browser      | Supported Versions          |
+|--------------|-----------------------------|
+| Chrome       | 57+                          |
+| Firefox      | 41+                          |
+| Safari       | 10.1+                        |
+| Edge         | 79+                          |
+| Opera        | 44+                          |
+
+## In JavaScript
+
+```javascript
+// Set the inline-size property using JavaScript
+const element = document.querySelector('.box');
+element.style.inlineSize = '50%'; // Example with percentage value
+
+// Set to a fixed size
+element.style.inlineSize = '200px';
+
+// Set to fit-content
+element.style.inlineSize = 'fit-content(300px)';
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+        .container {
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .sub-container h2 {
+            margin-bottom: 20px;
+        }
+        .box {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .box1 {
+            inline-size: 200px; /* Fixed size */
+        }
+        .box2 {
+            inline-size: 50%; /* 50% of parent's inline size */
+        }
+        .box3 {
+            inline-size: max-content; /* Size based on the content */
+        }
+        .box4 {
+            inline-size: min-content; /* Smallest size without overflow */
+        }
+        .box5 {
+            inline-size: fit-content(300px); /* Content-based size, max 300px */
+        }
+        .box6 {
+            inline-size: inherit; /* Inherits from parent */
+        }
+    </style>
+    <title>Inline-Size Property Example</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Inline-Size Property in CSS</h1>
+        
+        <div class="sub-container">
+            <h2>200px (Fixed Size)</h2>
+            <div class="box box1">This box has a fixed inline size of 200px.</div>
+        </div>
+
+        <div class="sub-container">
+            <h2>50% (Percentage)</h2>
+            <div class="box box2">This box has an inline size of 50% of the parent's size.</div>
+        </div>
+
+        <div class="sub-container">
+            <h2>max-content</h2>
+            <div class="box box3">This box's inline size is determined by the max-content.</div>
+        </div>
+
+        <div class="sub-container">
+            <h2>min-content</h2>
+            <div class="box box4">This box's inline size is determined by the min-content.</div>
+        </div>
+
+        <div class="sub-container">
+            <h2>fit-content(300px)</h2>
+            <div class="box box5">This box's inline size is content-based but doesn't exceed 300px.</div>
+        </div>
+
+        <div class="sub-container">
+            <h2>inherit</h2>
+            <div class="box box6">This box inherits its inline size from its parent.</div>
+        </div>
+    </div>
+</body>
+</html>
+```
