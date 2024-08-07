@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container with Subcontainers and Boxes</title>
+    <link rel="stylesheet" href="colour.css">
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        .subcontainer {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .box {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+            color: #fff;
+            user-select: all;
+        }
+    </style> -->
+</head>
+<body>
+
+<div class="container" id="mainContainer"></div>
+<div id="colour"></div>
+<script>
+
+
+function generateHexColor() {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+}
+
+const col=document.getElementById("colour");
+function generateUniqueHexColors(size) {
+    const colors = new Set();
+    while (colors.size < size) {
+        colors.add(generateHexColor());
+    }
+
+
+    return Array.from(colors);
+}
+
+const uniqueHexColors = generateUniqueHexColors(1000);
+const quotedColorsString = uniqueHexColors.map(color => `"${color}"`).join(', ');
+
+console.log(quotedColorsString);
+    function createShade(color, percent) {
+        const f = parseInt(color.slice(1), 16),
+              t = percent < 0 ? 0 : 255,
+              p = percent < 0 ? percent * -1 : percent,
+              R = f >> 16,
+              G = f >> 8 & 0x00FF,
+              B = f & 0x0000FF;
+        return '#' + (0x1000000 + (Math.round((t - R) * p) + R) * 0x10000 + (Math.round((t - G) * p) + G) * 0x100 + (Math.round((t - B) * p) + B)).toString(16).slice(1);
+    }
+
+    function createBox(color, text) {
+        const box = document.createElement('div');
+        box.className = 'box';
+        box.style.backgroundColor = color;
+        box.textContent = color;
+        return box;
+    }
+
+    function createSubcontainer(baseColor) {
+        const subcontainer = document.createElement('div');
+        subcontainer.className = 'subcontainer';
+        subcontainer.appendChild(createBox(baseColor, 'Primary Color'));
+
+        for (let i = 1; i <= 4; i++) {
+            const shade = createShade(baseColor, -0.1 * i);
+            subcontainer.appendChild(createBox(shade, 'Shade ' + i));
+        }
+
+        return subcontainer;
+    }
+
+    const mainContainer = document.getElementById('mainContainer');
+
+    uniqueHexColors.forEach(color => {
+        mainContainer.appendChild(createSubcontainer(color));
+    });
+</script>
+
+</body>
+</html>

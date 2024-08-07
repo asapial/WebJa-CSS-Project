@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Color Boxes</title>
+    <style>
+        /* Styling for the main container */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        /* Styling for each subcontainer */
+        .subcontainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #444;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        /* Styling for each box */
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <!-- Subcontainers will be generated here -->
+    </div>
+
+    <script>
+        // Function to generate random hex color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Generate 500 unique colors
+        const uniqueColors = new Set();
+        while (uniqueColors.size < 5000) {
+            uniqueColors.add(getRandomColor());
+        }
+        const colorsArray = Array.from(uniqueColors);
+
+        // Organize colors into 100 palettes of 5 colors each
+        const colors = [];
+        for (let i = 0; i < 1000; i++) {
+            colors.push(colorsArray.slice(i * 5, (i + 1) * 5));
+        }
+
+        // Function to generate subcontainers with boxes
+        function generateSubcontainers(num) {
+            const container = document.getElementById('mainContainer');
+            for (let i = 0; i < num; i++) {
+                const subcontainer = document.createElement('div');
+                subcontainer.className = 'subcontainer';
+                const colorPalette = colors[i % colors.length];
+
+                colorPalette.forEach((color) => {
+                    const box = document.createElement('div');
+                    box.className = 'box';
+                    box.style.backgroundColor = color;
+                    box.textContent = color;
+                    subcontainer.appendChild(box);
+                });
+
+                container.appendChild(subcontainer);
+            }
+        }
+
+        // Generate 50 subcontainers
+        generateSubcontainers(1000);
+    </script>
+</body>
+</html>
