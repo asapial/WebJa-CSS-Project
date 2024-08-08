@@ -1,1 +1,153 @@
-Blank File
+## Definition
+The `@keyframes` CSS at-rule is used to define the intermediate steps in a CSS animation sequence. It allows you to control the changes in CSS properties over time by specifying a series of keyframes that define the start, end, and possible intermediate points of an animation.
+
+## Values
+
+| Value | Description |
+|-------|-------------|
+| Percentage | Defines the point in time where the animation step occurs, given as a percentage (e.g., `0%`, `50%`, `100%`). |
+| `from` | Represents the starting point of the animation, equivalent to `0%`. |
+| `to` | Represents the ending point of the animation, equivalent to `100%`. |
+
+## Example
+
+```css
+@keyframes example-animation {
+    from { opacity: 0; } /* Starting state */
+    50% { opacity: 0.5; } /* Intermediate state */
+    to { opacity: 1; } /* Ending state */
+}
+
+.element {
+    animation: example-animation 2s infinite; /* Applying the animation */
+}
+```
+
+## Description
+The `@keyframes` rule is crucial for creating CSS animations. It lets you define a sequence of steps that specify how an element should change its appearance over a given duration. Each keyframe within a `@keyframes` block specifies a state of the element at a specific time, defined by a percentage or the keywords `from` and `to`. These keyframes are then applied to an element using the `animation` property.
+
+### Implementation:
+1. Define a `@keyframes` rule with a unique name.
+2. Specify keyframes within the rule using percentage values or the keywords `from` and `to`.
+3. Apply the animation to an element using the `animation` property, referencing the name of the `@keyframes` rule.
+
+Animations can include properties like `transform`, `opacity`, `background-color`, and more. The smoothness and behavior of the transition between keyframes can be controlled by specifying the `animation-timing-function`, `animation-duration`, and other related properties.
+
+## All Most Similar Properties
+
+| Property            | Description | Difference |
+|---------------------|-------------|------------|
+| `animation`         | Shorthand property that allows applying a `@keyframes` animation to an element. | The `animation` property references the `@keyframes` rule, while `@keyframes` defines the animation itself. |
+| `transition`        | Controls the change of a property over a given duration when a specific state is triggered. | `@keyframes` creates complex animations over time, while `transition` only animates between two states. |
+| `transform`         | Applies transformations like scaling, rotating, and translating elements. | `@keyframes` can animate transformations, but `transform` defines the type of transformation. |
+
+## Browser Compatibility
+
+| Browser            | Support |
+|--------------------|---------|
+| Chrome             | Yes     |
+| Firefox            | Yes     |
+| Safari             | Yes     |
+| Edge               | Yes     |
+| Internet Explorer  | Yes     |
+| Opera              | Yes     |
+
+## In JavaScript
+
+```javascript
+const element = document.querySelector('.element');
+element.style.animation = 'example-animation 2s infinite'; // Applying animation via JavaScript
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .main-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+        .element {
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            animation: example-animation 4s infinite;
+        }
+        @keyframes example-animation {
+            from {
+                transform: scale(1);
+                background-color: #4CAF50;
+                opacity: 1;
+            }
+            25% {
+                transform: scale(1.5);
+                background-color: #FF5722;
+                opacity: 0.75;
+            }
+            50% {
+                transform: scale(1);
+                background-color: #FFC107;
+                opacity: 0.5;
+            }
+            75% {
+                transform: scale(1.5);
+                background-color: #3F51B5;
+                opacity: 0.75;
+            }
+            to {
+                transform: scale(1);
+                background-color: #4CAF50;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>@keyframes Animation Example</h1>
+
+            <h2>Example Animation</h2>
+        <div class="sub-container">
+            <div class="element"></div>
+        </div>
+    </div>
+</body>
+</html>
+```

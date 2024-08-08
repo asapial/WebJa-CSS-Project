@@ -1,1 +1,165 @@
-Blank File
+## Definition
+The `justify-self` CSS property aligns a grid item along the inline (row) axis within its grid area. It overrides the `justify-items` value for individual grid items, allowing for specific alignment control on a per-item basis.
+
+## Values
+
+| Value      | Description                                                                                              |
+|------------|----------------------------------------------------------------------------------------------------------|
+| `auto`     | The item is aligned according to the value of `justify-items` on its parent container.                    |
+| `start`    | Aligns the item at the start of the grid area along the inline axis.                                      |
+| `end`      | Aligns the item at the end of the grid area along the inline axis.                                        |
+| `center`   | Centers the item within its grid area along the inline axis.                                              |
+| `stretch`  | Stretches the item to fill the width of its grid area along the inline axis (if the item's width is auto).|
+
+## Example
+
+```css
+.item-auto {
+    justify-self: auto; /* Inherits alignment from justify-items or default */
+}
+
+.item-start {
+    justify-self: start; /* Aligns the item to the start of its grid area */
+}
+
+.item-end {
+    justify-self: end; /* Aligns the item to the end of its grid area */
+}
+
+.item-center {
+    justify-self: center; /* Centers the item within its grid area */
+}
+
+.item-stretch {
+    justify-self: stretch; /* Stretches the item to fill its grid area */
+}
+```
+
+## Description
+The `justify-self` property is used in CSS Grid layouts to align individual grid items along the inline axis. This property allows for granular control of each grid item's alignment within its grid area, independent of the alignment set by the `justify-items` property on the grid container. If not specified, a grid item will inherit its alignment from the `justify-items` property of the grid container.
+
+### Implementation:
+1. Ensure the container has `display: grid`.
+2. Apply the `justify-self` property to individual grid items to control their alignment along the inline axis.
+
+This property is particularly useful for aligning specific items differently from the rest of the grid items within a grid container.
+
+## All Most Similar Properties
+
+| Property        | Description                                                                                                   | Difference                                                                                                 |
+|-----------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| `justify-items` | Aligns all grid items within the grid container along the inline axis.                                        | `justify-items` sets alignment for all items, while `justify-self` controls alignment for individual items.|
+| `align-self`    | Aligns individual grid items along the block (column) axis within their grid areas.                           | `align-self` affects the block axis, while `justify-self` affects the inline axis.                         |
+| `justify-content`| Aligns the entire grid container’s content along the inline axis.                                            | `justify-content` aligns the entire grid content, while `justify-self` aligns individual grid items.        |
+
+## Browser Compatibility
+
+| Browser          | Support |
+|------------------|---------|
+| Chrome           | Yes     |
+| Firefox          | Yes     |
+| Safari           | Yes     |
+| Edge             | Yes     |
+| Internet Explorer| No      |
+| Opera            | Yes     |
+
+## In JavaScript
+
+```javascript
+document.querySelector('.grid-item').style.justifySelf = 'center'; // Centers the selected grid item within its area
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .main-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: 150px;
+            align-items: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .item {
+            background-color: #15a6fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            outline: 3px dashed rgb(9, 9, 71);
+            justify-items: center;
+        }
+        .start { justify-self: start; }
+        .end { justify-self: end; }
+        .center { justify-self: center; }
+        .stretch { justify-self: stretch; }
+
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Justify-Items Property Values</h1>
+
+        <h2>start</h2>
+        <div class="sub-container">
+            <div class="item start">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>end</h2>
+        <div class="sub-container">
+            <div class="item end">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>center</h2>
+        <div class="sub-container ">
+            <div class="item center">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>stretch</h2>
+        <div class="sub-container">
+            <div class="item stretch">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+```

@@ -1,1 +1,105 @@
-Blank File
+### Definition
+The `isolation` CSS property determines whether an element should create a new stacking context. This can be useful to prevent elements with certain blend modes from affecting the stacking context.
+
+### Values
+| Value     | Description                                                                                      |
+|-----------|--------------------------------------------------------------------------------------------------|
+| `auto`    | The element does not create a new stacking context. This is the default value.                    |
+| `isolate` | The element creates a new stacking context, isolating its children from the rest of the document. |
+
+### Example
+```css
+.example1 {
+  isolation: auto; /* auto */
+}
+
+.example2 {
+  isolation: isolate; /* isolate */
+}
+```
+
+### Description
+The `isolation` property is primarily used to address issues with blending and compositing in CSS. When you set `isolation: isolate`, the element creates a new stacking context, which means it and its children are treated as a separate layer from the rest of the document. This can prevent unintended blending effects and ensure that certain visual properties are contained within the element.
+
+### All Most Similar Properties
+| Property       | Description                              | Difference                                                       |
+|----------------|------------------------------------------|------------------------------------------------------------------|
+| `z-index`      | Controls the vertical stacking order.    | `isolation` creates a new stacking context, while `z-index` controls the order within a stacking context. |
+| `opacity`      | Sets the opacity of an element.          | `opacity` affects transparency, while `isolation` controls stacking context. |
+
+### Browser Compatibility
+| Browser         | Supported Version |
+|-----------------|-------------------|
+| Chrome          | 41+               |
+| Firefox         | 36+               |
+| Safari          | 9+                |
+| Edge            | 17+               |
+| Opera           | 28+               |
+
+### In JavaScript
+```js
+// Setting the isolation property in JavaScript
+document.getElementById("example").style.isolation = "isolate";
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            position: relative;
+        }
+        .example1 {
+            isolation: auto;
+            background-color: #ffcccc;
+            height: 100px;
+            margin-top: 20px;
+        }
+        .example2 {
+            isolation: isolate;
+            background-color: #ccffcc;
+            height: 100px;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Isolation Property Example</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Isolation Property Values</h1>
+        <div class="sub-container example1">
+            <h2>auto</h2>
+        </div>
+        <div class="sub-container example2">
+            <h2>isolate</h2>
+        </div>
+    </div>
+</body>
+</html>
+```

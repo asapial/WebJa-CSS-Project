@@ -1,1 +1,132 @@
-Blank File
+### Definition
+The `inset-inline-end` CSS property defines the logical inline-end offset of an element, which can be a length, a percentage, or auto. It takes into account the writing mode of the document (e.g., horizontal, vertical, etc.).
+
+### Values
+| Value            | Description                                                                 |
+|------------------|-----------------------------------------------------------------------------|
+| `auto`           | The browser calculates the inset inline-end value.                          |
+| `<length>`       | Specifies a fixed offset, e.g., `10px`, `1em`.                              |
+| `<percentage>`   | Specifies a percentage of the containing block's inline-size, e.g., `50%`.  |
+
+### Example
+```css
+.example1 {
+  inset-inline-end: auto; /* auto */
+}
+
+.example2 {
+  inset-inline-end: 20px; /* 20px */
+}
+
+.example3 {
+  inset-inline-end: 10%; /* 10% */
+}
+```
+
+### Description
+The `inset-inline-end` property sets the inline-end offset of an element, which is the distance from the end edge of the element's containing block. This property is influenced by the writing mode of the document, making it a useful property for responsive design and internationalization. For example, in a left-to-right writing mode, inline-end would refer to the right edge of an element, while in a right-to-left writing mode, it would refer to the left edge.
+
+### All Most Similar Properties
+| Property               | Description                                                   | Difference                                                                                           |
+|------------------------|---------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| `inset-inline-start`   | Sets the inline start offset of an element.                   | `inset-inline-end` sets the end offset, while `inset-inline-start` sets the start offset.            |
+| `inset-inline`         | Sets both inline-start and inline-end offsets of an element.  | `inset-inline` is a shorthand for setting both start and end, whereas `inset-inline-end` sets only the end offset. |
+| `inset`                | Sets the top, right, bottom, and left offsets of an element.  | `inset` sets all four sides, while `inset-inline-end` only sets the inline-end offset.               |
+
+### Browser Compatibility
+| Browser         | Supported Version |
+|-----------------|-------------------|
+| Chrome          | 87+               |
+| Firefox         | 66+               |
+| Safari          | 14+               |
+| Edge            | 87+               |
+| Opera           | 73+               |
+
+### In JavaScript
+```js
+// Setting the inset-inline-end property in JavaScript
+document.getElementById("example").style.insetInlineEnd = "20px";
+```
+
+### Example Code
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            padding: 20px;
+            position: relative;
+        }
+        .example1 {
+            inset-inline-end: auto;
+            background-color: #ffcccc;
+            height: 100px;
+            margin-top: 20px;
+        }
+        .example2 {
+            inset-inline-end: 20px;
+            background-color: #ccffcc;
+            height: 100px;
+            margin-top: 20px;
+        }
+        .example3 {
+            inset-inline-end: 10%;
+            background-color: #ccccff;
+            height: 100px;
+            margin-top: 20px;
+        }
+        .box {
+            position: absolute;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <title>Inset Inline-End Property Example</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Inset Inline-End Property Values</h1>
+        <div class="sub-container example1">
+            <h2>auto</h2>
+            <div class="box" style="right: 0;">Auto</div>
+        </div>
+        <div class="sub-container example2">
+            <h2>20px</h2>
+            <div class="box" style="right: 20px;">20px</div>
+        </div>
+        <div class="sub-container example3">
+            <h2>10%</h2>
+            <div class="box" style="right: 10%;">10%</div>
+        </div>
+    </div>
+</body>
+</html>
+```

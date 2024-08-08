@@ -10,51 +10,69 @@
             justify-content: center;
             align-items: center;
             margin: 0;
+            font-family: Arial, sans-serif;
         }
-        .container {
-            background-color: #ffffff;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        .main-container {
+            background-color: #fff;
             border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             width: 80%;
             padding: 20px;
             text-align: center;
         }
         .sub-container {
             width: 80%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.555);
-            border-radius: 20px;
-            background-color: #dcdbdb;
             margin: 20px auto;
             padding: 20px;
-        }
-        .sub-container h2 {
-            margin-bottom: 20px;
-        }
-        img {
-            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 20px;
-            margin-bottom: 20px;
+            background-color: #dcdbdb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            position: relative;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 100%;
+            margin-top: 50px;
+        }
+        .text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .text-normal {
+            letter-spacing: normal;
+        }
+        .text-wider {
+            letter-spacing: 3px;
+        }
+        .text-tighter {
+            letter-spacing: -1px;
         }
     </style>
-    <title>Image Resolution Example</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Image Resolution</h1>
-        
+    <div class="main-container">
+        <h1>Letter Spacing Examples</h1>
+
+        <h2>Normal Spacing</h2>
         <div class="sub-container">
-            <h2>Original Image</h2>
-            <img src="/PictureForWebDevlopment/640X360.jpg" alt="Original Image">
-        </div>
-        
-        <div class="sub-container">
-            <h2>300dpi Image</h2>
-            <img src="/PictureForWebDevlopment/640X360_300dpi.jpg" alt="300dpi Image">
+            <div class="text text-normal">Example Text</div>
         </div>
 
+        <h2>Wider Spacing (3px)</h2>
         <div class="sub-container">
-            <h2>2x Resolution Image</h2>
-            <img src="/PictureForWebDevlopment/640X360_2x.jpg" alt="2x Resolution Image">
+            <div class="text text-wider">Example Text</div>
+        </div>
+
+        <h2>Tighter Spacing (-1px)</h2>
+        <div class="sub-container">
+            <div class="text text-tighter">Example Text</div>
         </div>
     </div>
 </body>

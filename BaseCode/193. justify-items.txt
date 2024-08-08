@@ -1,1 +1,165 @@
-Blank File
+## Definition
+The `justify-items` CSS property defines the default alignment of grid items along the inline (row) axis within their grid areas. It applies to all the grid items inside a grid container, aligning them along the inline axis according to the specified value.
+
+## Values
+
+| Value          | Description                                                                                                                               |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| `start`        | Aligns grid items at the start of the grid area along the inline axis.                                                                     |
+| `end`          | Aligns grid items at the end of the grid area along the inline axis.                                                                       |
+| `center`       | Centers grid items within their grid area along the inline axis.                                                                           |
+| `stretch`      | Stretches grid items to fill the entire width of their grid area along the inline axis.                                                    |
+| `baseline`     | Aligns grid items based on their baseline along the inline axis.                                                                            |
+| `first baseline` | Aligns grid items based on the first baseline of the grid area along the inline axis.                                                   |
+| `last baseline` | Aligns grid items based on the last baseline of the grid area along the inline axis.                                                    |
+| `safe`         | Prevents alignment from causing overflow that may clip content or cause scrolling, applying "safe" alignment behavior.                     |
+| `unsafe`       | Allows alignment even if it may cause overflow or clipping of content, applying "unsafe" alignment behavior.                               |
+| `left`         | Aligns grid items to the left of their grid area.                                                                                          |
+| `right`        | Aligns grid items to the right of their grid area.                                                                                         |
+| `legacy`       | Defines legacy alignment for grid items, which can be a combination of inline and block alignment in older implementations.                |
+
+## Example
+
+```css
+.container {
+    display: grid;
+    justify-items: start; /* Aligns items to the start of the grid area */
+    justify-items: end; /* Aligns items to the end of the grid area */
+    justify-items: center; /* Centers items within the grid area */
+    justify-items: stretch; /* Stretches items to fill the width of the grid area */
+    justify-items: baseline; /* Aligns items based on their baseline */
+    justify-items: first baseline; /* Aligns items to the first baseline */
+    justify-items: last baseline; /* Aligns items to the last baseline */
+    justify-items: left; /* Aligns items to the left of the grid area */
+    justify-items: right; /* Aligns items to the right of the grid area */
+    justify-items: safe; /* Safely aligns items to avoid overflow */
+    justify-items: unsafe; /* Aligns items even if it may cause overflow */
+}
+```
+
+## Description
+The `justify-items` property is primarily used in CSS Grid layouts. It defines how grid items are aligned within their grid cells along the inline (row) axis. When using this property, it applies to all items within the grid container, unless `justify-self` is specified for individual grid items, which overrides it.
+
+### Implementation:
+1. Ensure the container has `display: grid`.
+2. Use `justify-items` to define the alignment for all grid items within their respective grid areas.
+
+The `justify-items` property only affects the alignment along the inline axis; for cross-axis alignment, you would use `align-items`.
+
+## All Most Similar Properties
+
+| Property        | Description                                                                                                   | Difference                                                                                                 |
+|-----------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| `justify-content`| Aligns grid container's content along the inline axis.                                                        | `justify-content` aligns the entire grid, while `justify-items` aligns individual items within their areas.|
+| `align-items`   | Aligns grid items along the block (column) axis within their grid areas.                                       | `align-items` affects alignment along the block axis, while `justify-items` affects the inline axis.       |
+| `justify-self`  | Aligns individual grid items along the inline axis within their grid areas.                                    | `justify-self` overrides `justify-items` for individual grid items.                                         |
+| `align-content` | Aligns the grid container’s content along the block (column) axis, distributing space between grid tracks.     | `align-content` aligns the grid's tracks, while `justify-items` aligns items within the tracks.             |
+
+## Browser Compatibility
+
+| Browser          | Support |
+|------------------|---------|
+| Chrome           | Yes     |
+| Firefox          | Yes     |
+| Safari           | Yes     |
+| Edge             | Yes     |
+| Internet Explorer| No      |
+| Opera            | Yes     |
+
+## In JavaScript
+
+```javascript
+document.querySelector('.container').style.justifyItems = 'center'; // Centers all grid items within their areas
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .main-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            height: 150px;
+            align-items: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .item {
+            background-color: #15a6fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            outline: 3px dashed rgb(9, 9, 71);
+        }
+        .start { justify-items: start; }
+        .end { justify-items: end; }
+        .center { justify-items: center; }
+        .stretch { justify-items: stretch; }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Justify-Items Property Values</h1>
+
+        <h2>start</h2>
+        <div class="sub-container start">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>end</h2>
+        <div class="sub-container end">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>center</h2>
+        <div class="sub-container center">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>stretch</h2>
+        <div class="sub-container stretch">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+    </div>
+</body>
+</html>
+
+```

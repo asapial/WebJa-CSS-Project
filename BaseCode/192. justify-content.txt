@@ -1,1 +1,180 @@
-Blank File
+## Definition
+The `justify-content` CSS property aligns flex items along the main axis of the current flex line. It distributes extra space when flex items exceed the space available or aligns items when there is extra space remaining.
+
+## Values
+
+| Value                   | Description                                                                                                                                       |
+|-------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| `flex-start`            | Aligns flex items at the start of the container.                                                                                                  |
+| `flex-end`              | Aligns flex items at the end of the container.                                                                                                    |
+| `center`                | Aligns flex items at the center of the container.                                                                                                 |
+| `space-between`         | Distributes flex items evenly with the first item at the start and the last item at the end.                                                      |
+| `space-around`          | Distributes flex items evenly with equal space around them.                                                                                       |
+| `space-evenly`          | Distributes flex items evenly with equal space between them and the edges of the container.                                                       |
+| `start`                 | Aligns flex items at the start of the container according to the writing mode (left or right in horizontal and top or bottom in vertical layouts). |
+| `end`                   | Aligns flex items at the end of the container according to the writing mode.                                                                      |
+| `left`                  | Aligns flex items at the left edge of the container.                                                                                              |
+| `right`                 | Aligns flex items at the right edge of the container.                                                                                             |
+| `safe center`           | Ensures safe alignment to the center without risking data loss from overflow.                                                                     |
+| `unsafe center`         | Centers flex items without safety considerations for overflow.                                                                                    |
+
+## Example
+
+```css
+.container {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the start */
+    justify-content: flex-end; /* Aligns items to the end */
+    justify-content: center; /* Centers items */
+    justify-content: space-between; /* Even spacing between items, with first and last items at container edges */
+    justify-content: space-around; /* Even spacing around items */
+    justify-content: space-evenly; /* Even spacing between items and container edges */
+    justify-content: start; /* Aligns items to the start based on writing mode */
+    justify-content: end; /* Aligns items to the end based on writing mode */
+    justify-content: left; /* Aligns items to the left edge */
+    justify-content: right; /* Aligns items to the right edge */
+    justify-content: safe center; /* Centers items safely */
+    justify-content: unsafe center; /* Centers items without safety concerns */
+}
+```
+
+## Description
+The `justify-content` property is used within a flex container to control the alignment and spacing of flex items along the main axis. It can align items at the start, end, or center of the container, or distribute space between items in various ways.
+
+### Implementation:
+1. Ensure the container has `display: flex` or `display: inline-flex`.
+2. Use `justify-content` to define the desired alignment or spacing along the main axis.
+
+The main axis can be horizontal or vertical depending on the flex container's direction, determined by the `flex-direction` property.
+
+## All Most Similar Properties
+
+| Property      | Description                                                                                           | Difference                                                                                               |
+|---------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| `align-items` | Aligns flex items along the cross axis (perpendicular to the main axis).                               | `justify-content` aligns items on the main axis, while `align-items` handles alignment on the cross axis. |
+| `align-content`| Distributes space between rows in a multi-line flex container.                                        | `align-content` affects multi-line alignment, while `justify-content` affects single-line main axis alignment. |
+| `justify-self`| Aligns individual items within their container in grid layouts.                                        | `justify-self` is used in grid layouts for individual items, while `justify-content` is for flex items.     |
+
+## Browser Compatibility
+
+| Browser          | Support |
+|------------------|---------|
+| Chrome           | Yes     |
+| Firefox          | Yes     |
+| Safari           | Yes     |
+| Edge             | Yes     |
+| Internet Explorer| No      |
+| Opera            | Yes     |
+
+## In JavaScript
+
+```javascript
+document.querySelector('.container').style.justifyContent = 'center'; // Aligns items to the center
+```
+
+## Example Code
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .main-container {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+        .sub-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            background-color: #dcdbdb;
+            display: flex;
+            height: 100px;
+            align-items: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .item {
+            background-color: #15a6fa;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            outline: 3px dashed rgb(9, 9, 71);
+
+        }
+        .flex-start { justify-content: flex-start; }
+        .flex-end { justify-content: flex-end; }
+        .center { justify-content: center; }
+        .space-between { justify-content: space-between; }
+        .space-around { justify-content: space-around; }
+        .space-evenly { justify-content: space-evenly; }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Justify-Content Property Values</h1>
+		<h2>flex-start</h2>
+        <div class="sub-container flex-start">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>flex-end</h2>
+        <div class="sub-container flex-end">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>center</h2>
+        <div class="sub-container center">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>space-between</h2>
+        <div class="sub-container space-between">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>space-around</h2>
+        <div class="sub-container space-around">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+
+        <h2>space-evenly</h2>
+        <div class="sub-container space-evenly">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
+    </div>
+</body>
+</html>
+
+```
